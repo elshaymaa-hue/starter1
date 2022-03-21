@@ -84,10 +84,10 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link" href="{{ url('radars/create') }}">Add Station</a>
+                <a class="nav-link" href="{{ url('power_stations/create') }}">Add Station</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ url('radars/all') }}">Display Stations</a>
+                <a class="nav-link" href="{{ url('power_stations/all') }}">Display Stations</a>
             </li>
             @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
                 <li class="nav-item active">
@@ -126,14 +126,14 @@
     <tr>
         <th scope="col">#</th>
         <th scope="col">{{__('messages.station name')}}</th>
-        <th scope="col">{{__('messages.location')}}</th>
-        <th scope="col">{{__('messages.supply date')}}</th>
-        <th scope="col">{{__('messages.installation')}}</th>
-        <th scope="col">{{__('messages.operation_date')}}</th>
-        <th scope="col">{{__('messages.delivery')}}</th>
-        <th scope="col">{{__('messages.status_of_tower')}}</th>
-        <th scope="col">{{__('messages.LetterDate')}}</th>
-        <th scope="col">{{__('messages.Remarks')}}</th>
+        <th scope="col">{{__('messages.UpsSttp')}}</th>
+        <th scope="col">{{__('messages.UpsRadar')}}</th>
+        <th scope="col">{{__('messages.ContractUPS')}}</th>
+        <th scope="col">{{__('messages.UpslInstallation')}}</th>
+        <th scope="col">{{__('messages.PreDeliveryUPS')}}</th>
+        <th scope="col">{{__('messages.FinalDeliveryUPS')}}</th>
+        <th scope="col">{{__('messages.StatusRatioRadar')}}</th>
+        <th scope="col">{{__('messages.StatusRatioSTTB')}}</th>
         <th scope="col">صوره المحطة</th>
         <th scope="col">{{__('messages.operation')}}</th>
 
@@ -143,28 +143,29 @@
     <tbody>
 
 
-    @foreach($radars as $radar)
-        <tr>
-            <th scope="row">{{$radar -> id}}</th>
-            <td>{{$radar -> station_name}}</td>
-            <td>{{$radar -> location}}</td>
-            <td>{{$radar -> supply_date}}</td>
-            <td>{{$radar->installation}}</td>
-            <td>{{$radar->operation_date}}</td>
-            <td>{{$radar->delivery}}</td>
-            <td>{{$radar->status_of_tower}}</td>
-            <td>{{$radar->LetterDate}}</td>
-            <td>{{$radar->Remarks}}</td>
+    @foreach($power_stations as $power_station)
 
-            @if($radar->photo)
+        <tr>
+            <th scope="row">{{$power_station -> id}}</th>
+            <td>{{$power_station -> station_name}}</td>
+            <td>{{$power_station -> UpsSttp}}</td>
+            <td>{{$power_station -> UpsRadar}}</td>
+            <td>{{$power_station->ContractUPS}}</td>
+            <td>{{$power_station->UpslInstallation}}</td>
+            <td>{{$power_station->PreDeliveryUPS}}</td>
+            <td>{{$power_station->FinalDeliveryUPS}}</td>
+            <td>{{$power_station->StatusRatioRadar}}</td>
+            <td>{{$power_station->StatusRatioSTTB}}</td>
+
+            @if($power_station->photo)
 {{--            <td><img  style="width: 90px; height: 90px;" src="{{asset('images/offers/'.$offer->photo)}}"></td>--}}
-            <td><embed src="{{asset('images/radars/'.$radar->photo)}}" width="300px" height ="300px"></td>
+            <td><embed src="{{asset('images/power_stations/'.$power_station->photo)}}" width="300px" height ="300px"></td>
             @else
                 <td></td>
             @endif
 
             <td>
-                <a href="{{url('radars/edit/'.$radar -> id)}}" class="btn btn-success"> {{__('messages.update')}}</a>
+                <a href="{{url('power_stations/edit/'.$power_station -> id)}}" class="btn btn-success"> {{__('messages.update')}}</a>
                 {{--                <a href="{{route('offers.delete',$offer -> id)}}" class="btn btn-danger"> {{__('messages.delete')}}</a>--}}
             </td>
 

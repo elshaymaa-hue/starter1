@@ -53,6 +53,7 @@ Route::group(['prefix'=>LaravelLocalization::setLocale(),'middleware' => [ 'loca
         Route::post('store', 'CrudController@store')->name('offers.store');
         Route::get('create', 'CrudController@create');
         Route::get('all', 'CrudController@getAllOffers');
+        Route::get('filter', 'CrudController@complexFilter')->name('offers.filter');
         Route::get('edit/{offer_id}','CrudController@editOffer');
         Route::post('update/{offer_id}','CrudController@UpdateOffer')->name('offers.update');
 
@@ -66,6 +67,17 @@ Route::group(['prefix'=>LaravelLocalization::setLocale(),'middleware' => [ 'loca
         Route::get('all', 'RadarController@getAllRadars');
         Route::get('edit/{radar_id}','RadarController@editRadar');
         Route::post('update/{radar_id}','RadarController@UpdateRadar')->name('radars.update');
+
+    });
+});
+Route::get('fillable','Power_StationController@getPower_Stations');
+Route::group(['prefix'=>LaravelLocalization::setLocale(),'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]],function() {
+    Route::group(['prefix' => 'power_stations'], function () {
+        Route::post('store', 'Power_StationController@store')->name('power_stations.store');
+        Route::get('create', 'Power_StationController@create');
+        Route::get('all', 'Power_StationController@getAllPower_Stations');
+        Route::get('edit/{power_station_id}','Power_StationController@editPower_Stations');
+        Route::post('update/{power_station_id}','Power_StationController@UpdatePower_Stations')->name('power_stations.update');
 
     });
 });

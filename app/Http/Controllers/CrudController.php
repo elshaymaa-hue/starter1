@@ -20,6 +20,8 @@ class CrudController extends Controller
        return Offer::select('id', 'name_'.LaravelLocalization::getCurrentLocale().' as name','details_'.LaravelLocalization::getCurrentLocale().' as details','price')->get();
       //  return Offer::select('id', 'name_ar','name_en','details_ar', 'details_en','price')->get();
     }
+
+
     public function getAllOffers()
     {
         /* $offers = Offer::select('id',
@@ -71,12 +73,9 @@ class CrudController extends Controller
         $file_extension = $request->photo->getClientOriginalExtension();
         $file_name = time() . '.' . $file_extension;
         $path = 'images/offers';
-        if(Exception instanceof Illuminate\Http\Exceptions\PostTooLargeException){
-            return redirect()->back()->withErrors(['File size is too large']);
-        }
-        else {
+
             $request->photo->move($path, $file_name);
-        }
+
         }
         //insert
 //        offer::create([
@@ -98,6 +97,26 @@ class CrudController extends Controller
 
        return redirect()->back()->with(['success'=> $file_name.'-'.'تم اضافة العرض بنجاج']);
     }
+    public function complexFilter(Request $request){
+
+        $name =$request->get('search_');
+
+      //  return $name;
+        $offers = Offer::where('name_ar','=',$name)->orderBy('id')->paginate(6);
+        return view('offers.all',['offers' => $offers]);
+        $categories=Offer::get();
+        $categories= collect($categories);
+
+        $resultOfFilter = $categories->filter(function ($value, $key){
+
+            return $value['name_en']= '23/11/2021';
+        });
+
+        $offers=array_values($resultOfFilter->all());
+        return view('offers.all', compact('offers'));
+
+    }
+
     public function create(){
         return view('offers.create');
     }
@@ -105,7 +124,7 @@ class CrudController extends Controller
       $offer=  Offer::find($offer_id);
       if(!$offer)
       return redirect()->back();
-      $offer=Offer::select ('id','name_ar','name_en','details_ar','details_en','price')->find($offer_id);
+      $offer=Offer::select ('id','name_ar','name_en','details_ar','details_en','price','photo')->find($offer_id);
       return view('offers.edit',compact('offer'));
 //      return $offer_id;
     }
