@@ -135,15 +135,7 @@
             <div class="content">
                 <div class="title m-b-md">
 
-{{--                    {{$obj -> name}} -- {{$obj -> age}}--}}
-{{--                    @if($obj-> name =='Ahmed')--}}
-{{--                        <p>YES</p>--}}
-{{--                        @else--}}
-{{--                        <p> no</p>--}}
-{{--                        @endif--}}
-{{--                    @foreach($data as $_data)--}}
-{{--                        <p>{{$_data}}</p>--}}
-{{--                        @endforeach--}}
+
                 </div>
 
                 <div class="links">
