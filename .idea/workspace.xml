@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="04332bee-8904-44dc-9f5b-0ad54cafa314" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Power_StationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Power_StationController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/RadarController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/RadarController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/offers/all.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/offers/all.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/power_stations/all.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/power_stations/all.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/radars/all.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/radars/all.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/vendor/composer/" />
     <ignored path="$PROJECT_DIR$/vendor/doctrine/inflector/" />
@@ -134,11 +131,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Power_StationController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="354">
-              <caret line="61" column="5" lean-forward="true" selection-start-line="61" selection-start-column="5" selection-end-line="61" selection-end-column="5" />
+            <state relative-caret-position="558">
+              <caret line="61" column="5" selection-start-line="61" selection-start-column="5" selection-end-line="61" selection-end-column="5" />
               <folding>
                 <element signature="e#39#82#0#PHP" expanded="true" />
               </folding>
@@ -150,7 +147,7 @@
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CrudController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="337">
-              <caret line="112" column="11" lean-forward="true" selection-start-line="99" selection-start-column="2" selection-end-line="117" selection-end-column="5" />
+              <caret line="112" column="11" selection-start-line="99" selection-start-column="2" selection-end-line="117" selection-end-column="5" />
               <folding>
                 <element signature="e#39#74#0#PHP" expanded="true" />
               </folding>
@@ -170,11 +167,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/welcome.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1844">
-              <caret line="144" column="76" selection-start-line="144" selection-start-column="76" selection-end-line="144" selection-end-column="76" />
+            <state relative-caret-position="283">
+              <caret line="136" column="47" selection-start-line="136" selection-start-column="47" selection-end-line="136" selection-end-column="47" />
             </state>
           </provider>
         </entry>
@@ -182,8 +179,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/offers/create.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="269">
-              <caret line="113" column="19" lean-forward="true" selection-start-line="110" selection-start-column="9" selection-end-line="114" />
+            <state relative-caret-position="-190">
+              <caret line="113" column="19" selection-start-line="110" selection-start-column="9" selection-end-line="114" />
             </state>
           </provider>
         </entry>
@@ -309,13 +306,13 @@
         <option value="$PROJECT_DIR$/resources/lang/en/messages.php" />
         <option value="$PROJECT_DIR$/resources/views/auth/register.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/auth/login.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/welcome.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/offers/all.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/radars/all.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/power_stations/all.blade.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/RadarController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Power_StationController.php" />
+        <option value="$PROJECT_DIR$/resources/views/welcome.blade.php" />
       </list>
     </option>
   </component>
@@ -625,7 +622,7 @@
       <workItem from="1647862793698" duration="3727000" />
       <workItem from="1647936182645" duration="379000" />
       <workItem from="1647936957204" duration="730000" />
-      <workItem from="1647937903614" duration="5812000" />
+      <workItem from="1647937903614" duration="7398000" />
     </task>
     <task id="LOCAL-00001" summary="powee">
       <created>1647865291576</created>
@@ -676,13 +673,27 @@
       <option name="project" value="LOCAL" />
       <updated>1647943164390</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="new welcome">
+      <created>1647943778934</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1647943778934</updated>
+    </task>
+    <task id="LOCAL-00009" summary="new welcome">
+      <created>1647943980514</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1647943980514</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="178441000" />
+    <option name="totallyTimeSpent" value="180027000" />
   </component>
-  <component name="TodoView">
+  <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
       <is-autoscroll-to-source value="true" />
     </todo-panel>
@@ -695,7 +706,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.7467742" visible="true" weight="0.21215352" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.7467742" visible="true" weight="0.21215352" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" sideWeight="0.2532258" side_tool="true" visible="true" weight="0.21215352" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -707,10 +718,10 @@
       <window_info anchor="bottom" id="Favorites" order="6" weight="0.32936078" />
       <window_info anchor="bottom" id="TODO" order="7" weight="0.32936078" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32936078" />
-      <window_info anchor="bottom" id="Database Changes" order="10" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50044924" side_tool="true" weight="0.35063437" />
-      <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.49955076" visible="true" weight="0.32827735" />
+      <window_info anchor="bottom" id="Database Changes" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50044924" side_tool="true" weight="0.35063437" />
+      <window_info anchor="bottom" id="Version Control" order="11" weight="0.32936078" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="12" sideWeight="0.49955076" visible="true" weight="0.32827735" />
       <window_info anchor="bottom" id="Messages" order="13" weight="0.32936078" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -743,12 +754,39 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="powee" />
     <MESSAGE value="new welcome" />
     <option name="LAST_COMMIT_MESSAGE" value="new welcome" />
+    <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1037,31 +1075,10 @@
     <entry file="file://$PROJECT_DIR$/.env.example">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/welcome.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1844">
-          <caret line="144" column="76" selection-start-line="144" selection-start-column="76" selection-end-line="144" selection-end-column="76" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/offers/create.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="269">
-          <caret line="113" column="19" lean-forward="true" selection-start-line="110" selection-start-column="9" selection-end-line="114" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/offers/all.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="490">
           <caret line="105" selection-start-line="105" selection-end-line="105" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/radars/all.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="365">
-          <caret line="101" column="84" selection-start-line="101" selection-start-column="84" selection-end-line="101" selection-end-column="84" />
         </state>
       </provider>
     </entry>
@@ -1082,7 +1099,7 @@
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CrudController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="337">
-          <caret line="112" column="11" lean-forward="true" selection-start-line="99" selection-start-column="2" selection-end-line="117" selection-end-column="5" />
+          <caret line="112" column="11" selection-start-line="99" selection-start-column="2" selection-end-line="117" selection-end-column="5" />
           <folding>
             <element signature="e#39#74#0#PHP" expanded="true" />
           </folding>
@@ -1101,11 +1118,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Power_StationController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="354">
-          <caret line="61" column="5" lean-forward="true" selection-start-line="61" selection-start-column="5" selection-end-line="61" selection-end-column="5" />
+        <state relative-caret-position="558">
+          <caret line="61" column="5" selection-start-line="61" selection-start-column="5" selection-end-line="61" selection-end-column="5" />
           <folding>
             <element signature="e#39#82#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/radars/all.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="365">
+          <caret line="101" column="84" selection-start-line="101" selection-start-column="84" selection-end-line="101" selection-end-column="84" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/offers/create.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-190">
+          <caret line="113" column="19" selection-start-line="110" selection-start-column="9" selection-end-line="114" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/welcome.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="283">
+          <caret line="136" column="47" selection-start-line="136" selection-start-column="47" selection-end-line="136" selection-end-column="47" />
         </state>
       </provider>
     </entry>
