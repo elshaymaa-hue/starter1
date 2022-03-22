@@ -142,7 +142,7 @@
 
                     <a href="{{ url('offers/all') }}">Display Documents</a>
                     <a href="{{ url('radars/all') }}">Display Stations</a>
-                    <a href="{{ url('power_stations/all') }}">Display Stations</a>
+                    <a href="{{ url('power_stations/all') }}">Display Power Stations</a>
 {{--                    <a href="https://laravel.com/docs">Docs</a>--}}
 {{--                    <a href="https://laracasts.com">Laracasts</a>--}}
 {{--                    <a href="https://laravel-news.com">News</a>--}}
