@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Http\Requests\Power_StationRequest;
+use App\Models\Offer;
 use App\Models\power_station;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -48,7 +49,15 @@ class Power_StationController extends Controller
 
         //return view('Power_Stations.paginations',compact('Power_Stations'));
     }
+    public function complexFilter(Request $request){
 
+        $name =$request->get('search_');
+
+        //  return $name;
+        $power_stations= Power_Station::where('station_name','=',$name)->orderBy('id')->paginate(6);
+        return view('radars.all',['radars' => $power_stations]);
+
+    }
     public function store(Power_StationRequest $request)
     {
 //        $rules = $request->getRules();

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Http\Requests\RadarRequest;
+use App\Models\Offer;
 use App\Models\Radar;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -53,7 +54,15 @@ class RadarController extends Controller
 
         //return view('offers.paginations',compact('offers'));
     }
+    public function complexFilter(Request $request){
 
+        $name =$request->get('search_');
+
+        //  return $name;
+        $radars= Radar::where('station_name','=',$name)->orderBy('id')->paginate(6);
+        return view('radars.all',['radars' => $radars]);
+
+    }
     public function store(RadarRequest $request)
     {
 //        $rules = $request->getRules();

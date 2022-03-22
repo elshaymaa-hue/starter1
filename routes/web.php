@@ -65,6 +65,7 @@ Route::group(['prefix'=>LaravelLocalization::setLocale(),'middleware' => [ 'loca
         Route::post('store', 'RadarController@store')->name('radars.store');
         Route::get('create', 'RadarController@create');
         Route::get('all', 'RadarController@getAllRadars');
+        Route::get('filter', 'RadarController@complexFilter')->name('radars.filter');
         Route::get('edit/{radar_id}','RadarController@editRadar');
         Route::post('update/{radar_id}','RadarController@UpdateRadar')->name('radars.update');
 
@@ -76,6 +77,7 @@ Route::group(['prefix'=>LaravelLocalization::setLocale(),'middleware' => [ 'loca
         Route::post('store', 'Power_StationController@store')->name('power_stations.store');
         Route::get('create', 'Power_StationController@create');
         Route::get('all', 'Power_StationController@getAllPower_Stations');
+        Route::get('filter', 'Power_StationController@complexFilter')->name('power_stations.filter');
         Route::get('edit/{power_station_id}','Power_StationController@editPower_Stations');
         Route::post('update/{power_station_id}','Power_StationController@UpdatePower_Stations')->name('power_stations.update');
 
