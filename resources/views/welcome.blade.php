@@ -135,7 +135,7 @@
             <div class="content">
                 <div class="title m-b-md">
                     <p> {{__('messages.welcome')}}</p>
-<p>test</p>
+<p>test 1</p>
                 </div>
 
                 <div class="links">
