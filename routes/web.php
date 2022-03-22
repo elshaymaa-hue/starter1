@@ -11,17 +11,17 @@ define('PAGINATION_COUNT',3);
 |
 */
 Route::get('/', function () {
-    $data=['name'=>'Elshaymaa', 'age'=>47, 'gender'=> 'female'];
-//        $data['age']=47;
-//        $data['name']='Elshaymaa Nassar';
+//    $data=['name'=>'Elshaymaa', 'age'=>47, 'gender'=> 'female'];
+////        $data['age']=47;
+////        $data['name']='Elshaymaa Nassar';
+//
+//
+//    $obj= new \stdClass();
+//    $obj->name='Elshaymaa';
+//    $obj->age=47;
+//    $obj->gender='female';
 
-
-    $obj= new \stdClass();
-    $obj->name='Elshaymaa';
-    $obj->age=47;
-    $obj->gender='female';
-
-    return view('welcome')->with('data',$data);//
+    return view('welcome');//
     //(['string'=>'Elshaymaa Nassar','age'=>'47']);
     //return view ('welcome',compact('obj'));
 
