@@ -11,3 +11,7 @@ Homestead.json
 Homestead.yaml
 npm-debug.log
 yarn-error.log
+app/Http/Controllers/CrudController.php 
+package-lock.json 
+resources/views/offers/create.blade.php 
+resources/views/power_stations/all.blade.php 
