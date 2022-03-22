@@ -145,7 +145,7 @@
 {{--                        <p>{{$_data}}</p>--}}
 {{--                        @endforeach--}}
                 </div>
-                <h1>{{__('messages.welcome')}}</h1>
+
                 <div class="links">
 
                     <a href="{{ url('offers/all') }}">Display Documents</a>
