@@ -103,14 +103,14 @@ class Power_StationController extends Controller
        return redirect()->back()->with(['success'=>'تم اضافة العرض بنجاج']);
     }
     public function create(){
-        return view('Power_Stations.create');
+        return view('power_stations.create');
     }
     public function editPower_Station($Power_Station_id){
       $Power_Station=  Power_Station::find($Power_Station_id);
       if(!$Power_Station)
       return redirect()->back();
       $Power_Station=Power_Station::select ('id','station_name',  'UpsSttp' ,  'UpsRadar' ,  'ContractUPS' ,  'UpslInstallation',  'PreDeliveryUPS' ,  'FinalDeliveryUPS' ,  'StatusRatioRadar' ,  'StatusRatioSTTB')->find($Power_Station_id);
-      return view('Power_Stations.edit',compact('Power_Station'));
+      return view('power_stations.edit',compact('Power_Station'));
 //      return $Power_Station_id;
     }
     public function UpdatePower_Station(Power_StationRequest $request, $Power_Station_id)
