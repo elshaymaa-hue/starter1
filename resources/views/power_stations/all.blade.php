@@ -167,7 +167,7 @@
 
             <td>
                 <a href="{{url('power_stations/edit/'.$power_station -> id)}}" class="btn btn-success"> {{__('messages.update')}}</a>
-                {{--                <a href="{{route('offers.delete',$offer -> id)}}" class="btn btn-danger"> {{__('messages.delete')}}</a>--}}
+                <a href="{{route('power_stations.delete',$power_station -> id)}}" class="btn btn-danger"> {{__('messages.delete')}}</a>
             </td>
 
         </tr>

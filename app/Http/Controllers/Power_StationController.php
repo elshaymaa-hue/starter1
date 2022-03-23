@@ -105,15 +105,15 @@ class Power_StationController extends Controller
     public function create(){
         return view('power_stations.create');
     }
-    public function editPower_Station($Power_Station_id){
-      $Power_Station=  Power_Station::find($Power_Station_id);
-      if(!$Power_Station)
+    public function editPower_Station($power_station_id){
+      $power_station=  Power_Station::find($power_station_id);
+      if(!$power_station)
       return redirect()->back();
-      $Power_Station=Power_Station::select ('id','station_name',  'UpsSttp' ,  'UpsRadar' ,  'ContractUPS' ,  'UpslInstallation',  'PreDeliveryUPS' ,  'FinalDeliveryUPS' ,  'StatusRatioRadar' ,  'StatusRatioSTTB')->find($Power_Station_id);
-      return view('power_stations.edit',compact('Power_Station'));
+      $power_station=Power_Station::select ('id','station_name',  'UpsSttp' ,  'UpsRadar' ,  'ContractUPS' ,  'UpslInstallation',  'PreDeliveryUPS' ,  'FinalDeliveryUPS' ,  'StatusRatioRadar' ,  'StatusRatioSTTB')->find($power_station_id);
+      return view('power_stations.edit',compact('power_station'));
 //      return $Power_Station_id;
     }
-    public function UpdatePower_Station(Power_StationRequest $request, $Power_Station_id)
+    public function UpdatePower_Station(Power_StationRequest $request, $power_station_id)
     {
         $file_name ="";
         //validtion
@@ -125,8 +125,8 @@ class Power_StationController extends Controller
         }
         // chek if Power_Station exists
 
-        $Power_Station = Power_Station::find($Power_Station_id);
-        if (!$Power_Station)
+        $power_station = Power_Station::find($power_station_id);
+        if (!$power_station)
             return redirect()->back();
 
         //update data
@@ -134,7 +134,7 @@ class Power_StationController extends Controller
      //   $Power_Station->update($request->all());
 
 
-       $Power_Station->update([
+       $power_station->update([
            'photo'=>$file_name,
            'station_name'=>$request->station_name,
            'UpsSttp' =>$request->UpsSttp,
@@ -165,4 +165,13 @@ class Power_StationController extends Controller
 //            'details'=>'required',
 //        ];
 //    }
+    public function delete($power_station_id){
+        $power_station=  Power_Station::find($power_station_id);
+//        $power_station= Power_Station::where('id','$power_station_id')->first();
+        if (!$power_station){
+            return redirect()->back()->with(['error'=>"المحطة غير موجودة"]);
+        }
+        $power_station->delete();
+        return redirect()->back()->with(['error'=>"تم المسحح بنجاح"]);
+    }
 }

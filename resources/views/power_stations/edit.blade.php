@@ -84,10 +84,10 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link" href="{{ url('radars/create') }}">Add Station</a>
+                <a class="nav-link" href="{{ url('power_stations/create') }}">Add Station</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ url('radars/all') }}">Display Stations</a>
+                <a class="nav-link" href="{{ url('power_stations/all') }}">Display Stations</a>
             </li>
             @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
                 <li class="nav-item active">
@@ -112,7 +112,7 @@
             {{__('messages.update station')}}
 
         </div>
-        '
+
         @if(Session::has('success'))
             <div class="alert alert-success" role="alert">
                 {{ Session::get('success') }}
@@ -120,7 +120,7 @@
         @endif
 
         <br>
-        <form method="POST" action="{{route('radars.update',$radar->id)}}" enctype="multipart/form-data">
+        <form method="POST" action="{{route('power_stations.update',$power_station->id)}}" enctype="multipart/form-data">
             @csrf
             {{-- <input name="_token" value="{{csrf_token()}}"> --}}
 
@@ -134,9 +134,9 @@
             </div>
 {{--                <p>{{'offers.update'.$offer->id}}</p>--}}
 
-                       <div class="form-group">
+            <div class="form-group">
                 <label for="exampleInputEmail1">{{__('messages.station name')}}</label>
-                <input type="text" class="form-control" name="station_name" placeholder="{{__('messages.station name')}}" value="{{$radar->station_name}}">
+                <input type="text" class="form-control" name="station_name" placeholder="{{__('messages.station name')}}" value="{{$power_station->station_name}}">
                 @error('station_name')
                 <small class="form-text text-danger">{{$message}}</small>
                 @enderror
@@ -144,85 +144,69 @@
 
 
             <div class="form-group">
-                <label for="exampleInputEmail1">{{__('messages.location')}}</label>
-                <input type="text" class="form-control" name="location" placeholder="{{__('messages.location')}}" value="{{$radar->location}}">
-                @error('location')
+                <label for="exampleInputEmail1">{{__('messages.UpsSttp')}}</label>
+                <input type="text" class="form-control" name ="UpsSttp" aria-describedby="emailHelp" placeholder="{{__('messages.UpsSttp')}}" value="{{$power_station->UpsSttp}}">
+                @error('UpsSttp')
+                <small class="form-text text-danger">{{$message}}</small>
+                @enderror
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">{{__('messages.UpsRadar')}}</label>
+                <input type="text" class="form-control" name ="UpsRadar" placeholder="{{__('messages.UpsRadar')}}" value="{{$power_station->UpsRadar}}">
+                @error('UpsRadar')
                 <small class="form-text text-danger">{{$message}}</small>
                 @enderror
             </div>
 
+            {{--                    'ContractUPS'=>$request->ContractUPS,--}}
             <div class="form-group">
-                <label for="exampleInputPassword1">{{__('messages.supply date')}}</label>
-                <input type="text" class="form-control" name="supply_date" placeholder="{{__('messages.supply date')}}" value="{{$radar->supply_date}}">
-                @error('supply_date')
+                <label for="exampleInputPassword1">{{__('messages.ContractUPS')}}</label>
+                <input type="text" class="form-control" name ="ContractUPS" placeholder="{{__('messages.ContractUPS')}}" value="{{$power_station->ContractUPS}}">
+                @error('ContractUPS')
                 <small class="form-text text-danger">{{$message}}</small>
                 @enderror
             </div>
-            {{--                    'installation'=>$request->installation,--}}
             <div class="form-group">
-                <label for="exampleInputPassword1">{{__('messages.installation')}}</label>
-                <input type="text" class="form-control" name ="installation" placeholder="{{__('messages.installation')}}" value="{{$radar->installation}}">
-                @error('installation')
+                <label for="exampleInputPassword1">{{__('messages.UpslInstallation')}}</label>
+                <input type="text" class="form-control" name ="UpslInstallation" placeholder="{{__('messages.UpslInstallation')}}" value="{{$power_station->UpslInstallation}}">
+                @error('UpslInstallation')
                 <small class="form-text text-danger">{{$message}}</small>
                 @enderror
             </div>
-            {{--                    'operation_date'=>$request->operation_date,--}}
+            {{--                    'PreFinalDeliveryUPSUPS'=>$request->PreFinalDeliveryUPSUPS,--}}
             <div class="form-group">
-                <label for="exampleInputPassword1">{{__('messages.operation_date')}}</label>
-                <input type="text" class="form-control" name ="operation_date" placeholder="{{__('messages.operation_date')}}" value="{{$radar->operation_date}}">
-                @error('operation_date')
+                <label for="exampleInputPassword1">{{__('messages.PreDeliveryUPS')}}</label>
+                <input type="text" class="form-control" name ="PreDeliveryUPS" placeholder="{{__('messages.PreDeliveryUPS')}}" value="{{$power_station->PreDeliveryUPS}}">
+                @error('PreDeliveryUPS')
                 <small class="form-text text-danger">{{$message}}</small>
                 @enderror
             </div>
-            {{--                    'delivery'=>$request->delivery,--}}
+            {{--                    'FinalDeliveryUPS'=>$request->FinalDeliveryUPS,--}}
             <div class="form-group">
-                <label for="exampleInputPassword1">{{__('messages.delivery')}}</label>
-                <input type="text" class="form-control" name ="delivery" placeholder="{{__('messages.delivery')}}" value="{{$radar->delivery}}">
-                @error('delivery')
+                <label for="exampleInputPassword1">{{__('messages.FinalDeliveryUPS')}}</label>
+                <input type="text" class="form-control" name ="FinalDeliveryUPS" placeholder="{{__('messages.FinalDeliveryUPS')}}" value="{{$power_station->FinalDeliveryUPS}}">
+                @error('FinalDeliveryUPS')
                 <small class="form-text text-danger">{{$message}}</small>
                 @enderror
             </div>
-            {{--                    'status_of_tower'=>$request->status_of_tower,--}}
+            {{--                    'StatusRatiopower_station'=>$request->StatusRatiopower_station,--}}
             <div class="form-group">
-                <label for="exampleInputPassword1">{{__('messages.status_of_tower')}}</label>
-                <input type="text" class="form-control" name ="status_of_tower" placeholder="{{__('messages.status_of_tower')}}" value="{{$radar->status_of_tower}}">
-                @error('status_of_tower')
+                <label for="exampleInputPassword1">{{__('messages.StatusRatioRadar')}}</label>
+                <input type="text" class="form-control" name ="SStatusRatioRadar" placeholder="{{__('messages.StatusRatioRadar')}}" value="{{$power_station->StatusRatioRadar}}">
+                @error('StatusRatioRadar')
                 <small class="form-text text-danger">{{$message}}</small>
                 @enderror
             </div>
-            {{--                    'LetterDate'=>$request->LetterDate,--}}
+            {{--                    'StatusRatioSTTB'=>$request->StatusRatioSTTB,--}}
             <div class="form-group">
-                <label for="exampleInputPassword1">{{__('messages.LetterDate')}}</label>
-                <input type="text" class="form-control" name ="LetterDate" placeholder="{{__('messages.LetterDate')}}" value="{{$radar->LetterDate}}">
-                @error('LetterDate')
+                <label for="exampleInputPassword1">{{__('messages.StatusRatioSTTB')}}</label>
+                <input type="text" class="form-control" name ="StatusRatioSTTB" placeholder="{{__('messages.StatusRatioSTTB')}}" value="{{$power_station->StatusRatioSTTB}}">
+                @error('StatusRatioSTTB')
                 <small class="form-text text-danger">{{$message}}</small>
                 @enderror
             </div>
             {{--                    'Remarks'=>$request->Remarks,--}}
-            <div class="form-group">
-                <label for="exampleInputPassword1">{{__('messages.Remarks')}}</label>
-                <input type="text" class="form-control" name ="Remarks" placeholder="{{__('messages.Remarks')}}" value="{{$radar->Remarks}}">
-                @error('Remarks')
-                <small class="form-text text-danger">{{$message}}</small>
-                @enderror
-            </div>
-{{--            <div class="form-group">--}}
-{{--                <label for="exampleInputPassword1">{{__('messages.Offer details ar')}}</label>--}}
-{{--                <input type="text" class="form-control" name="details_ar"--}}
-{{--                       placeholder="{{__('messages.Offer details ar')}}" value="{{$offer->details_ar}}">--}}
-{{--                @error('details_ar')--}}
-{{--                <small class="form-text text-danger">{{$message}}</small>--}}
-{{--                @enderror--}}
-{{--            </div>--}}
 
-{{--            <div class="form-group">--}}
-{{--                <label for="exampleInputPassword1">{{__('messages.Offer details en')}}</label>--}}
-{{--                <input type="text" class="form-control" name="details_en"--}}
-{{--                       placeholder="{{__('messages.Offer details en')}}" value="{{$offer->details_en}}">--}}
-{{--                @error('details_en')--}}
-{{--                <small class="form-text text-danger">{{$message}}</small>--}}
-{{--                @enderror--}}
-{{--            </div>--}}
 
             <button type="submit" class="btn btn-primary">{{__('messages.update station')}}</button>
         </form>

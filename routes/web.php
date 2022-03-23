@@ -78,8 +78,9 @@ Route::group(['prefix'=>LaravelLocalization::setLocale(),'middleware' => [ 'loca
         Route::get('create', 'Power_StationController@create');
         Route::get('all', 'Power_StationController@getAllPower_Stations');
         Route::get('filter', 'Power_StationController@complexFilter')->name('power_stations.filter');
-        Route::get('edit/{power_station_id}','Power_StationController@editPower_Stations');
-        Route::post('update/{power_station_id}','Power_StationController@UpdatePower_Stations')->name('power_stations.update');
+        Route::get('edit/{power_station_id}','Power_StationController@editPower_Station');
+        Route::post('update/{power_station_id}','Power_StationController@UpdatePower_Station')->name('power_stations.update');
+        Route::get('delete/{power_station_id}','Power_StationController@delete')->name('power_stations.delete');
 
     });
 });

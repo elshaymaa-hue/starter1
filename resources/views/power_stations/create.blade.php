@@ -226,13 +226,7 @@
                         @enderror
                     </div>
 {{--                    'Remarks'=>$request->Remarks,--}}
-                    <div class="form-group">
-                        <label for="exampleInputPassword1">{{__('messages.StatusRatioSTTB')}}</label>
-                        <input type="text" class="form-control" name ="StatusRatioSTTB" placeholder="{{__('messages.StatusRatioSTTB')}}">
-                        @error('StatusRatioSTTB')
-                        <small class="form-text text-danger">{{$message}}</small>
-                        @enderror
-                    </div>
+
 {{--                    <div class="form-group ">--}}
 
 {{--                        <label for="exampleInputEmail1">{{__('messages.Offer details ar')}}</label>--}}
