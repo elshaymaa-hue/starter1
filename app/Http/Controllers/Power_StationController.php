@@ -44,7 +44,7 @@ class Power_StationController extends Controller
 
 
 
-        return view('Power_Stations.all', compact('power_stations'));
+        return view('power_stations.all', compact('power_stations'));
 
 
         //return view('Power_Stations.paginations',compact('Power_Stations'));
@@ -55,7 +55,7 @@ class Power_StationController extends Controller
 
         //  return $name;
         $power_stations= Power_Station::where('station_name','=',$name)->orderBy('id')->paginate(6);
-        return view('radars.all',['radars' => $power_stations]);
+        return view('power_stations.all',['power_stations' => $power_stations]);
 
     }
     public function store(Power_StationRequest $request)

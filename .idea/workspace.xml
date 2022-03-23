@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="04332bee-8904-44dc-9f5b-0ad54cafa314" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Power_StationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Power_StationController.php" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/vendor/composer/" />
     <ignored path="$PROJECT_DIR$/vendor/doctrine/inflector/" />
@@ -130,11 +130,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Power_StationController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="558">
-              <caret line="61" column="5" selection-start-line="61" selection-start-column="5" selection-end-line="61" selection-end-column="5" />
+            <state relative-caret-position="337">
+              <caret line="57" column="57" selection-start-line="57" selection-start-column="57" selection-end-line="57" selection-end-column="57" />
               <folding>
                 <element signature="e#39#82#0#PHP" expanded="true" />
               </folding>
@@ -175,7 +175,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="119">
@@ -313,9 +313,9 @@
         <option value="$PROJECT_DIR$/resources/views/power_stations/all.blade.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/RadarController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Power_StationController.php" />
-        <option value="$PROJECT_DIR$/resources/views/welcome.blade.php" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/resources/views/welcome.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Power_StationController.php" />
       </list>
     </option>
   </component>
@@ -625,7 +625,7 @@
       <workItem from="1647862793698" duration="3727000" />
       <workItem from="1647936182645" duration="379000" />
       <workItem from="1647936957204" duration="730000" />
-      <workItem from="1647937903614" duration="9102000" />
+      <workItem from="1647937903614" duration="11355000" />
     </task>
     <task id="LOCAL-00001" summary="powee">
       <created>1647865291576</created>
@@ -739,11 +739,32 @@
       <option name="project" value="LOCAL" />
       <updated>1647947427085</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="add test2">
+      <created>1647947666298</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1647947666298</updated>
+    </task>
+    <task id="LOCAL-00018" summary="add test2">
+      <created>1647948181467</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1647948181467</updated>
+    </task>
+    <task id="LOCAL-00019" summary="add test4">
+      <created>1647948199915</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1647948199915</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="181731000" />
+    <option name="totallyTimeSpent" value="183984000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -758,7 +779,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.7467742" visible="true" weight="0.21215352" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.7467742" visible="true" weight="0.21215352" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" sideWeight="0.2532258" side_tool="true" visible="true" weight="0.21215352" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -771,9 +792,9 @@
       <window_info anchor="bottom" id="TODO" order="7" weight="0.32936078" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50159913" side_tool="true" visible="true" weight="0.32827735" />
-      <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.49946696" weight="0.32936078" />
-      <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.49840087" visible="true" weight="0.32827735" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50373137" side_tool="true" visible="true" weight="0.32827735" />
+      <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.49840087" weight="0.32936078" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="12" sideWeight="0.49626866" visible="true" weight="0.32827735" />
       <window_info anchor="bottom" id="Messages" order="13" weight="0.32936078" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -841,7 +862,8 @@
     <MESSAGE value="add test" />
     <MESSAGE value="add test1" />
     <MESSAGE value="add test2" />
-    <option name="LAST_COMMIT_MESSAGE" value="add test2" />
+    <MESSAGE value="add test4" />
+    <option name="LAST_COMMIT_MESSAGE" value="add test4" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1164,16 +1186,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Power_StationController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="558">
-          <caret line="61" column="5" selection-start-line="61" selection-start-column="5" selection-end-line="61" selection-end-column="5" />
-          <folding>
-            <element signature="e#39#82#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/radars/all.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="365">
@@ -1188,6 +1200,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="8" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/welcome.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="402">
@@ -1195,10 +1214,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Power_StationController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="8" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
+        <state relative-caret-position="337">
+          <caret line="57" column="57" selection-start-line="57" selection-start-column="57" selection-end-line="57" selection-end-column="57" />
+          <folding>
+            <element signature="e#39#82#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
