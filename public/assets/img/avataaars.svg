@@ -1,248 +1,84 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 23.0.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 264 280" style="enable-background:new 0 0 264 280;" xml:space="preserve">
-<style type="text/css">
-	.st0{fill-rule:evenodd;clip-rule:evenodd;fill:#E6E6E6;}
-	.st1{filter:url(#Adobe_OpacityMaskFilter);}
-	.st2{fill-rule:evenodd;clip-rule:evenodd;fill:#FFFFFF;}
-	.st3{mask:url(#mask-2_1_);}
-	.st4{fill-rule:evenodd;clip-rule:evenodd;fill:#2C3E50;}
-	.st5{filter:url(#Adobe_OpacityMaskFilter_1_);}
-	.st6{mask:url(#mask-4_1_);}
-	.st7{fill-rule:evenodd;clip-rule:evenodd;fill:#D0C6AC;}
-	.st8{filter:url(#Adobe_OpacityMaskFilter_2_);}
-	.st9{mask:url(#mask-6_1_);}
-	.st10{fill-rule:evenodd;clip-rule:evenodd;fill:#EDB98A;}
-	.st11{filter:url(#Adobe_OpacityMaskFilter_3_);}
-	.st12{mask:url(#mask-6_2_);fill-rule:evenodd;clip-rule:evenodd;fill-opacity:0.1;}
-	.st13{filter:url(#Adobe_OpacityMaskFilter_4_);}
-	.st14{mask:url(#react-mask-952_1_);}
-	.st15{filter:url(#Adobe_OpacityMaskFilter_5_);}
-	.st16{opacity:0.6;mask:url(#react-mask-952_2_);}
-	.st17{fill-rule:evenodd;clip-rule:evenodd;fill-opacity:0.16;}
-	.st18{fill-rule:evenodd;clip-rule:evenodd;fill-opacity:0.7;}
-	.st19{filter:url(#Adobe_OpacityMaskFilter_6_);}
-	.st20{mask:url(#react-mask-934_1_);fill-rule:evenodd;clip-rule:evenodd;fill:#FFFFFF;}
-	.st21{filter:url(#Adobe_OpacityMaskFilter_7_);}
-	.st22{mask:url(#react-mask-934_2_);}
-	.st23{fill-rule:evenodd;clip-rule:evenodd;fill:#FF4F6D;}
-	.st24{fill-rule:evenodd;clip-rule:evenodd;fill-opacity:0.6;}
-	.st25{filter:url(#Adobe_OpacityMaskFilter_8_);}
-	.st26{mask:url(#react-mask-925_1_);}
-	.st27{fill-rule:evenodd;clip-rule:evenodd;fill:#28354B;}
-	.st28{filter:url(#Adobe_OpacityMaskFilter_9_);}
-	.st29{mask:url(#react-mask-924_1_);}
-	.st30{fill-rule:evenodd;clip-rule:evenodd;fill:#4A312C;}
-</style>
-<desc>Created with getavataaars.com</desc>
+	 viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+<rect x="207.935" y="16.196" style="fill:#4BAF78;" width="95.033" height="23.947"/>
 <g>
-	<g transform="translate(-825.000000, -1100.000000)">
-		<g transform="translate(825.000000, 1100.000000)">
-			<g id="Circle" transform="translate(12.000000, 40.000000)">
-				<g id="Circle-Background">
-					<circle class="st0" cx="120" cy="120" r="120"/>
-				</g>
-				<defs>
-					<filter id="Adobe_OpacityMaskFilter" filterUnits="userSpaceOnUse" x="0" y="0" width="240" height="240">
-						<feColorMatrix  type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
-					</filter>
-				</defs>
-				<mask maskUnits="userSpaceOnUse" x="0" y="0" width="240" height="240" id="mask-2_1_">
-					<g class="st1">
-						<circle id="path-1_1_" class="st2" cx="120" cy="120" r="120"/>
-					</g>
-				</mask>
-				<g class="st3">
-					<rect class="st4" width="240" height="240"/>
-				</g>
-			</g>
-			<g id="Mask">
-			</g>
-			<defs>
-				<filter id="Adobe_OpacityMaskFilter_1_" filterUnits="userSpaceOnUse" x="-1" y="0" width="265" height="280">
-					<feColorMatrix  type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
-				</filter>
-			</defs>
-			<mask maskUnits="userSpaceOnUse" x="-1" y="0" width="265" height="280" id="mask-4_1_">
-				<g class="st5">
-					<path id="path-3_1_" class="st2" d="M12,160c0,66.3,53.7,120,120,120s120-53.7,120-120h12V0H0v160H12z"/>
-				</g>
-			</mask>
-			<g id="Avataaar" class="st6">
-				<g id="Body" transform="translate(32.000000, 36.000000)">
-					<g>
-						<path class="st7" d="M124,144.6V163h4l0,0c39.8,0,72,32.2,72,72v9H0v-9c0-39.8,32.2-72,72-72l0,0h4v-18.4
-							c-17.2-8.2-29.6-24.9-31.7-44.7C38.5,99.1,34,94.1,34,88V74c0-5.9,4.3-10.9,10-11.8V56l0,0c0-30.9,25.1-56,56-56l0,0l0,0
-							c30.9,0,56,25.1,56,56v6.2c5.7,1,10,5.9,10,11.8v14c0,6.1-4.5,11.1-10.3,11.9C153.6,119.7,141.2,136.4,124,144.6z"/>
-					</g>
-					<defs>
-						<filter id="Adobe_OpacityMaskFilter_2_" filterUnits="userSpaceOnUse" x="-32" y="0" width="264" height="244">
-							<feColorMatrix  type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
-						</filter>
-					</defs>
-					<mask maskUnits="userSpaceOnUse" x="-32" y="0" width="264" height="244" id="mask-6_1_">
-						<g class="st8">
-							<path id="path-5_1_" class="st2" d="M124,144.6V163h4l0,0c39.8,0,72,32.2,72,72v9H0v-9c0-39.8,32.2-72,72-72l0,0h4v-18.4
-								c-17.2-8.2-29.6-24.9-31.7-44.7C38.5,99.1,34,94.1,34,88V74c0-5.9,4.3-10.9,10-11.8V56l0,0c0-30.9,25.1-56,56-56l0,0l0,0
-								c30.9,0,56,25.1,56,56v6.2c5.7,1,10,5.9,10,11.8v14c0,6.1-4.5,11.1-10.3,11.9C153.6,119.7,141.2,136.4,124,144.6z"/>
-						</g>
-					</mask>
-					<g class="st9">
-						<g id="Color" transform="translate(-32.000000, 0.000000)">
-							<rect class="st10" width="264" height="244"/>
-						</g>
-					</g>
-					<defs>
-						<filter id="Adobe_OpacityMaskFilter_3_" filterUnits="userSpaceOnUse" x="44" y="79" width="112" height="79">
-							<feColorMatrix  type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
-						</filter>
-					</defs>
-					<mask maskUnits="userSpaceOnUse" x="44" y="79" width="112" height="79" id="mask-6_2_">
-						<g class="st11">
-							<path id="path-5_2_" class="st2" d="M124,144.6V163h4l0,0c39.8,0,72,32.2,72,72v9H0v-9c0-39.8,32.2-72,72-72l0,0h4v-18.4
-								c-17.2-8.2-29.6-24.9-31.7-44.7C38.5,99.1,34,94.1,34,88V74c0-5.9,4.3-10.9,10-11.8V56l0,0c0-30.9,25.1-56,56-56l0,0l0,0
-								c30.9,0,56,25.1,56,56v6.2c5.7,1,10,5.9,10,11.8v14c0,6.1-4.5,11.1-10.3,11.9C153.6,119.7,141.2,136.4,124,144.6z"/>
-						</g>
-					</mask>
-					<path id="Neck-Shadow" class="st12" d="M156,79v23c0,30.9-25.1,56-56,56s-56-25.1-56-56V79v15c0,30.9,25.1,56,56,56
-						s56-25.1,56-56V79z"/>
-				</g>
-				<g transform="translate(0.000000, 170.000000)">
-					<g id="Clothes">
-						<path class="st0" d="M166,29.3c37,3,66,34,66,71.8v8.9H32v-8.9C32,63,61.6,31.8,99,29.2c0,0.4,0,0.7,0,1.1
-							c0,11.9,15,21.5,33.5,21.5S166,42.2,166,30.3C166,30,166,29.6,166,29.3z"/>
-					</g>
-					<defs>
-						<filter id="Adobe_OpacityMaskFilter_4_" filterUnits="userSpaceOnUse" x="0" y="0" width="264" height="110">
-							<feColorMatrix  type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
-						</filter>
-					</defs>
-					<mask maskUnits="userSpaceOnUse" x="0" y="0" width="264" height="110" id="react-mask-952_1_">
-						<g class="st13">
-							<path id="react-path-951_1_" class="st2" d="M166,29.3c37,3,66,34,66,71.8v8.9H32v-8.9C32,63,61.6,31.8,99,29.2
-								c0,0.4,0,0.7,0,1.1c0,11.9,15,21.5,33.5,21.5S166,42.2,166,30.3C166,30,166,29.6,166,29.3z"/>
-						</g>
-					</mask>
-					<g class="st14">
-						<rect class="st2" width="264" height="110"/>
-					</g>
-					<defs>
-						<filter id="Adobe_OpacityMaskFilter_5_" filterUnits="userSpaceOnUse" x="92.9" y="4.9" width="79.3" height="53.8">
-							<feColorMatrix  type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
-						</filter>
-					</defs>
-					<mask maskUnits="userSpaceOnUse" x="92.9" y="4.9" width="79.3" height="53.8" id="react-mask-952_2_">
-						<g class="st15">
-							<path id="react-path-951_2_" class="st2" d="M166,29.3c37,3,66,34,66,71.8v8.9H32v-8.9C32,63,61.6,31.8,99,29.2
-								c0,0.4,0,0.7,0,1.1c0,11.9,15,21.5,33.5,21.5S166,42.2,166,30.3C166,30,166,29.6,166,29.3z"/>
-						</g>
-					</mask>
-					<g id="Shadowy" class="st16">
-						<g transform="translate(92.000000, 4.000000)">
-							<ellipse class="st17" cx="40.5" cy="27.8" rx="39.6" ry="26.9"/>
-						</g>
-					</g>
-				</g>
-				<g id="Face" transform="translate(76.000000, 82.000000)">
-					<g transform="translate(2.000000, 52.000000)">
-						<g id="Mouth">
-							<path class="st18" d="M35.1,15.1C36.2,24.6,44.2,32,54,32c9.8,0,17.9-7.4,18.9-17c0.1-0.8-0.8-2-1.8-2c-14.9,0-26.3,0-34,0
-								C36,13,35,14.2,35.1,15.1z"/>
-						</g>
-						<defs>
-							<filter id="Adobe_OpacityMaskFilter_6_" filterUnits="userSpaceOnUse" x="39" y="2" width="31" height="16">
-								<feColorMatrix  type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
-							</filter>
-						</defs>
-						<mask maskUnits="userSpaceOnUse" x="39" y="2" width="31" height="16" id="react-mask-934_1_">
-							<g class="st19">
-								<path id="react-path-933_1_" class="st2" d="M35.1,15.1C36.2,24.6,44.2,32,54,32c9.8,0,17.9-7.4,18.9-17
-									c0.1-0.8-0.8-2-1.8-2c-14.9,0-26.3,0-34,0C36,13,35,14.2,35.1,15.1z"/>
-							</g>
-						</mask>
-						<path id="Teeth" class="st20" d="M44,2h21c2.8,0,5,2.2,5,5v6c0,2.8-2.2,5-5,5H44c-2.8,0-5-2.2-5-5V7C39,4.2,41.2,2,44,2z"/>
-						<defs>
-							<filter id="Adobe_OpacityMaskFilter_7_" filterUnits="userSpaceOnUse" x="38" y="24" width="32" height="22">
-								<feColorMatrix  type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
-							</filter>
-						</defs>
-						<mask maskUnits="userSpaceOnUse" x="38" y="24" width="32" height="22" id="react-mask-934_2_">
-							<g class="st21">
-								<path id="react-path-933_2_" class="st2" d="M35.1,15.1C36.2,24.6,44.2,32,54,32c9.8,0,17.9-7.4,18.9-17
-									c0.1-0.8-0.8-2-1.8-2c-14.9,0-26.3,0-34,0C36,13,35,14.2,35.1,15.1z"/>
-							</g>
-						</mask>
-						<g id="Tongue" class="st22">
-							<g transform="translate(38.000000, 24.000000)">
-								<circle class="st23" cx="11" cy="11" r="11"/>
-								<circle class="st23" cx="21" cy="11" r="11"/>
-							</g>
-						</g>
-					</g>
-					<g transform="translate(28.000000, 40.000000)">
-						<path id="Nose" class="st17" d="M16,8c0,4.4,5.4,8,12,8l0,0c6.6,0,12-3.6,12-8"/>
-					</g>
-					<g transform="translate(0.000000, 8.000000)">
-						<path id="Squint" class="st24" d="M16.2,22.4C18,18.6,22.2,16,27,16c4.8,0,9,2.6,10.8,6.4c0.6,1.1-0.2,2-1,1.4
-							c-2.5-2.1-5.9-3.4-9.8-3.4c-3.7,0-7.1,1.2-9.6,3.2C16.5,24.3,15.6,23.6,16.2,22.4z"/>
-						<path class="st24" d="M74.2,22.4C76,18.6,80.2,16,85,16c4.8,0,9,2.6,10.8,6.4c0.6,1.1-0.2,2-1,1.4c-2.5-2.1-5.9-3.4-9.8-3.4
-							c-3.7,0-7.1,1.2-9.6,3.2C74.5,24.3,73.6,23.6,74.2,22.4z"/>
-					</g>
-					<g>
-						<path id="Eyebrow" class="st24" d="M26.5,6.1c-5.8,0.3-15.2,4.5-15,10.3c0,0.2,0.3,0.3,0.4,0.1c2.8-3,22.3-5.9,29.2-4.4
-							c0.6,0.1,1.1-0.5,0.7-0.9C38.5,7.5,31.7,5.9,26.5,6.1"/>
-						<path class="st24" d="M86.5,6.1c5.8,0.3,15.2,4.5,15,10.3c0,0.2-0.3,0.3-0.4,0.1c-2.8-3-22.3-5.9-29.2-4.4
-							c-0.6,0.1-1.1-0.5-0.7-0.9C74.5,7.5,81.3,5.9,86.5,6.1"/>
-					</g>
-				</g>
-				<g id="Top">
-					<defs>
-						<filter id="Adobe_OpacityMaskFilter_8_" filterUnits="userSpaceOnUse" x="-1" y="0" width="264" height="280">
-							<feColorMatrix  type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
-						</filter>
-					</defs>
-					<mask maskUnits="userSpaceOnUse" x="-1" y="0" width="264" height="280" id="react-mask-925_1_">
-						<g class="st25">
-							<rect id="react-path-927_1_" class="st2" width="264" height="280"/>
-						</g>
-					</mask>
-					<g class="st26">
-						<g transform="translate(-1.000000, 0.000000)">
-							<g id="Short-Hair">
-								<path class="st27" d="M183.7,38.9c5.4-5,6.7-15,3.6-21.5c-3.8-8-11.4-9-18.7-5.5c-6.9,3.3-13.1,4.4-20.6,2.8
-									c-7.3-1.5-14.1-4.3-21.6-4.7C114,9.3,102,13.9,93.6,23.1c-1.6,1.8-2.9,3.8-4.1,5.8c-1,1.6-2.1,3.4-2.5,5.3
-									c-0.2,0.9,0.2,3.1-0.3,3.8c-0.5,0.8-2.3,1.5-3.1,2.1c-1.6,1.2-2.9,2.5-4.2,4c-2.7,3.2-4.1,6.6-5.4,10.6
-									c-4.1,13.2-4.5,29,0.9,42c0.7,1.7,2.9,5.4,4.2,1.6c0.3-0.7-0.3-3.2-0.3-3.9c0-2.7,1.5-20.7,8-30.8c2.1-3.3,12-15.6,14-15.7
-									c1.1,1.7,11.9,12.5,39.9,11.2c12.7-0.6,22.4-6.3,24.7-8.7c1,5.5,13,13.8,14.8,17.2c5.3,9.8,6.4,30.3,8.4,30.3
-									s3.5-5.2,3.9-6.2c3.1-7.4,3.6-16.6,3.3-24.6C195.5,57,191.3,45.9,183.7,38.9z"/>
-							</g>
-							<defs>
-								<filter id="Adobe_OpacityMaskFilter_9_" filterUnits="userSpaceOnUse" x="0" y="0" width="264" height="280">
-									<feColorMatrix  type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
-								</filter>
-							</defs>
-							<mask maskUnits="userSpaceOnUse" x="0" y="0" width="264" height="280" id="react-mask-924_1_">
-								<g class="st28">
-									<path id="react-path-926_1_" class="st2" d="M183.7,38.9c5.4-5,6.7-15,3.6-21.5c-3.8-8-11.4-9-18.7-5.5
-										c-6.9,3.3-13.1,4.4-20.6,2.8c-7.3-1.5-14.1-4.3-21.6-4.7C114,9.3,102,13.9,93.6,23.1c-1.6,1.8-2.9,3.8-4.1,5.8
-										c-1,1.6-2.1,3.4-2.5,5.3c-0.2,0.9,0.2,3.1-0.3,3.8c-0.5,0.8-2.3,1.5-3.1,2.1c-1.6,1.2-2.9,2.5-4.2,4
-										c-2.7,3.2-4.1,6.6-5.4,10.6c-4.1,13.2-4.5,29,0.9,42c0.7,1.7,2.9,5.4,4.2,1.6c0.3-0.7-0.3-3.2-0.3-3.9
-										c0-2.7,1.5-20.7,8-30.8c2.1-3.3,12-15.6,14-15.7c1.1,1.7,11.9,12.5,39.9,11.2c12.7-0.6,22.4-6.3,24.7-8.7
-										c1,5.5,13,13.8,14.8,17.2c5.3,9.8,6.4,30.3,8.4,30.3s3.5-5.2,3.9-6.2c3.1-7.4,3.6-16.6,3.3-24.6
-										C195.5,57,191.3,45.9,183.7,38.9z"/>
-								</g>
-							</mask>
-							<g class="st29">
-								<g transform="translate(0.000000, 0.000000) ">
-									<rect class="st30" width="264" height="280"/>
-								</g>
-							</g>
-						</g>
-					</g>
-				</g>
-			</g>
-		</g>
-	</g>
+	<rect x="215.521" y="40.145" style="fill:#FCBB3B;" width="79.82" height="95.786"/>
+	<polyline style="fill:#FCBB3B;" points="144.196,232.49 144.196,136.359 366.759,136.359 366.759,232.49 	"/>
+</g>
+<rect x="143.684" y="135.931" style="fill:#75C0C7;" width="223.504" height="39.915"/>
+<rect x="175.616" y="159.88" style="fill:#FFFFFF;" width="159.65" height="31.929"/>
+<path style="fill:#FCBB3B;" d="M383.478,279.613v15.965c0,29.162-9.96,56.143-26.411,77.642l2.138,2.421h119.735
+	C478.94,322.351,436.767,279.613,383.478,279.613z"/>
+<rect y="375.4" style="fill:#75C0C7;" width="510.871" height="127.718"/>
+<path style="fill:#E0DCCD;" d="M191.492,406.229c-38.195-22.078-64.015-63.364-64.015-110.652v-55.876l128-63.859l128,63.859v55.876
+	c0,47.273-25.906,88.548-64.08,110.631"/>
+<path style="fill:#A8A59A;" d="M255.315,175.843l-127.837,63.859v55.876c0,47.288,25.819,88.574,64.015,110.652l96.396-0.016
+	c-38.181-22.083-63.235-63.358-63.235-110.636v-55.876l31.295-15.964"/>
+<polygon style="fill:#4BAF78;" points="255.478,175.843 127.478,239.702 127.478,287.596 255.478,223.737 383.478,287.596 
+	383.478,239.702 "/>
+<polygon style="fill:#1E834E;" points="127.718,287.596 223.506,239.702 223.506,191.808 127.718,239.702 "/>
+<polygon points="374.073,80.98 135.837,80.98 135.837,96.653 151.51,96.653 151.51,119.641 167.184,119.641 167.184,96.653 
+	183.902,96.653 183.902,119.641 199.576,119.641 199.576,96.653 215.249,96.653 215.249,119.641 230.922,119.641 230.922,96.653 
+	246.596,96.653 246.596,119.641 262.269,119.641 262.269,96.653 280.033,96.653 280.033,119.641 295.706,119.641 295.706,96.653 
+	311.38,96.653 311.38,119.641 327.053,119.641 327.053,96.653 342.727,96.653 342.727,119.641 358.4,119.641 358.4,96.653 
+	374.073,96.653 "/>
+<polygon points="303.02,71.576 287.347,71.576 287.347,48.588 223.608,48.588 223.608,71.576 207.935,71.576 207.935,32.914 
+	303.02,32.914 "/>
+<rect x="207.935" y="8.882" width="95.086" height="15.673"/>
+<g>
+	<rect x="246.596" y="55.902" style="fill:#FFFFFF;" width="15.673" height="15.673"/>
+	<rect x="24.033" y="415.347" style="fill:#FFFFFF;" width="24.033" height="15.673"/>
+	<rect x="48.065" y="432.065" style="fill:#FFFFFF;" width="55.38" height="15.673"/>
+	<rect x="111.804" y="456.098" style="fill:#FFFFFF;" width="144.196" height="15.673"/>
+	<rect x="256" y="472.816" style="fill:#FFFFFF;" width="48.065" height="15.673"/>
+	<rect x="350.041" y="432.065" style="fill:#FFFFFF;" width="104.49" height="15.673"/>
+	<rect x="454.531" y="415.347" style="fill:#FFFFFF;" width="24.033" height="15.673"/>
+	<rect x="478.563" y="472.816" style="fill:#FFFFFF;" width="16.718" height="15.673"/>
+	<rect y="487.445" style="fill:#FFFFFF;" width="16.718" height="15.673"/>
+	<rect x="335.412" y="448.784" style="fill:#FFFFFF;" width="14.629" height="15.673"/>
+</g>
+<path d="M486.515,368.327c-3.628-51.935-45.567-93.212-96.768-96.35v-37.115l-14.629-7.328V128H134.792v99.009l-15.673,7.851v60.716
+	c0,26.107,7.703,51.286,21.454,72.749H0v15.673h152.265c9.843,11.394,21.628,21.259,35.044,29.015l7.843-13.569
+	c-27.662-15.989-47.527-42.072-55.918-71.869h12.277v-15.673h-15.571c-0.753-5.374-1.147-10.825-1.147-16.324v-2.759l120.643-60.321
+	l118.639,59.319v3.761c0,5.484-0.373,10.938-1.099,16.324h-13.529v15.673h10.356c-2.746,10.086-6.786,19.783-12.057,28.813
+	c-10.411,17.833-25.345,32.716-43.186,43.036l7.849,13.567c13.187-7.629,24.956-17.469,34.826-28.992H512v-15.673L486.515,368.327
+	L486.515,368.327z M150.465,184.424h9.404v-15.673h-9.404v-25.078h208.98v25.078h-9.404v15.673h9.404v35.257l-37.009-18.539h19.246
+	v-49.11H167.184v49.11h19.246l-35.964,18.015V184.424z M291.147,185.469l-35.461-17.763h70.322v17.763H291.147z M253.178,167.706
+	l-35.461,17.763h-34.86v-17.763H253.178z M255.435,214.974l-120.643,60.322v-30.756l86.634-43.398h3.228v-1.616l21.943-10.992
+	v10.519h15.673v-10.519l25.078,12.563v0.047h0.093l86.634,43.397v29.753L255.435,214.974z M368.821,368.327
+	c0.841-1.33,1.663-2.674,2.459-4.035c12.082-20.695,18.468-44.456,18.468-68.714V287.7c42.811,3.056,77.504,37.118,81.034,80.626
+	H368.821z"/>
+<rect x="144.196" y="399.673" style="fill:#FFFFFF;" width="222.563" height="15.673"/>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
 </g>
 </svg>
