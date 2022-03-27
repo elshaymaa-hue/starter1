@@ -134,8 +134,8 @@
         </div>
         <!-- About Section Content-->
         <div class="row">
-            <div class="col-lg-4 ms-auto"><p class="lead">Freelancer is a free bootstrap theme created by Start Bootstrap. The download includes the complete source files including HTML, CSS, and JavaScript as well as optional SASS stylesheets for easy customization.</p></div>
-            <div class="col-lg-4 me-auto"><p class="lead">You can create your own custom avatar for the masthead, change the icon in the dividers, and add your email address to the contact form to make it fully functional!</p></div>
+            <div class="col-lg-4 ms-auto"><p class="lead">monitorin VTMS sections and following activities displaying dashboards to know bottleneck issues or paused projects.</p></div>
+            <div class="col-lg-4 me-auto"><p class="lead">Document Management Systems (DMS) gathers all sections documents to  track effects between sections </p></div>
         </div>
         <!-- About Section Button-->
         <div class="text-center mt-4">
@@ -225,9 +225,9 @@
             <div class="col-lg-4 mb-5 mb-lg-0">
                 <h4 class="text-uppercase mb-4">Location</h4>
                 <p class="lead mb-0">
-                    2215 John Daniel Drive
+                  Loran Building By Irshad Building Ismailia
                     <br />
-                    Clark, MO 65243
+                   Eng Elshaymaa Nassar 33667
                 </p>
             </div>
             <!-- Footer Social Icons-->
@@ -240,10 +240,10 @@
             </div>
             <!-- Footer About Text-->
             <div class="col-lg-4">
-                <h4 class="text-uppercase mb-4">About Freelancer</h4>
+                <h4 class="text-uppercase mb-4">About VTMS</h4>
                 <p class="lead mb-0">
-                    Freelance is a free to use, MIT licensed Bootstrap theme created by
-                    <a href="http://startbootstrap.com">Start Bootstrap</a>
+                   Vessel Traffic Management System responssible for Suez Canal Navigation safe
+                    <a href="http://startbootstrap.com">Check Project Schedules</a>
                     .
                 </p>
             </div>
@@ -252,7 +252,7 @@
 </footer>
 <!-- Copyright Section-->
 <div class="copyright py-4 text-center text-white">
-    <div class="container"><small>Copyright &copy; Your Website 2022</small></div>
+    <div class="container"><small>Copyright &copy; VTMS 2022</small></div>
 </div>
 <!-- Portfolio Modals-->
 <!-- Portfolio Modal 1-->
