@@ -100,7 +100,17 @@
 
         </ul>
         <form class="form-inline my-2 my-lg-0"  method="GET" action="{{route('offers.filter')}}" enctype="multipart/form-data" >
-            <input class="form-control mr-sm-2"  type="search" name="search_" placeholder="Search" aria-label="Search">
+{{--            <input class="form-control mr-sm-2"  type="search" name="search_" placeholder="Search" aria-label="Search">--}}
+            <select name ="search_">
+                <option value="all"> </option>
+                <option value="vtms">vtms</option>
+                <option value="security">security</option>
+                <option value="radars">radars</option>
+                <option value="tawkitat">tawkitat</option>
+                <option value="power">power</option>
+                <option value="hospital_centers">hospital_centers</option>
+                <option value="technical_office">technical_office</option>
+            </select>
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </form>
 
@@ -148,8 +158,8 @@
             <td>{{$offer -> details_en}}</td>
             <td>{{$offer -> details_ar}}</td>
             @if($offer->photo)
-{{--            <td><img  style="width: 90px; height: 90px;" src="{{asset('images/offers/'.$offer->photo)}}"></td>--}}
-            <td><embed src="{{asset('images/offers/'.$offer->photo)}}" width="300px" height ="300px"></td>
+                {{--            <td><img  style="width: 90px; height: 90px;" src="{{asset('images/offers/'.$offer->photo)}}"></td>--}}
+            <td><embed src="{{asset('images/'.$offer->directory.'/'.$offer->photo)}}" width="300px" height ="300px"></td>
             @else
                 <td></td>
             @endif

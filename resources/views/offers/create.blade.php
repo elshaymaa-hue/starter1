@@ -150,6 +150,8 @@
                         <option value="radars">radars</option>
                         <option value="tawkitat">tawkitat</option>
                         <option value="power">power</option>
+                        <option value="hospital_centers">hospital_centers</option>
+                        <option value="technical_office">technical_office</option>
                     </select>
                         <label for="exampleInputEmail1">تحديد القطاع</label>
                     </div>
