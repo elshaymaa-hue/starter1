@@ -167,7 +167,7 @@
                 <!-- To make this form functional, sign up at-->
                 <!-- https://startbootstrap.com/solution/contact-forms-->
                 <!-- to get an API token!-->
-                <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+                <form id="contactForm" method="get" action ="{{route('mails.send')}}" enctype="multipart/form-data" data-sb-form-api-token="API_TOKEN">
                     <!-- Name input-->
                     <div class="form-floating mb-3">
                         <input class="form-control" id="name" type="text" placeholder="Enter your name..." data-sb-validations="required" />
@@ -189,7 +189,7 @@
                     </div>
                     <!-- Message input-->
                     <div class="form-floating mb-3">
-                        <textarea class="form-control" id="message" type="text" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required"></textarea>
+                        <textarea class="form-control" id="message" name="message" type="text" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required"></textarea>
                         <label for="message">Message</label>
                         <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
                     </div>
@@ -225,9 +225,9 @@
             <div class="col-lg-4 mb-5 mb-lg-0">
                 <h4 class="text-uppercase mb-4">Location</h4>
                 <p class="lead mb-0">
-                  Loran Building By Irshad Building Ismailia
+                    Loran Building By Irshad Building Ismailia
                     <br />
-                   Eng Elshaymaa Nassar 33667
+                    Eng Elshaymaa Nassar 33667
                 </p>
             </div>
             <!-- Footer Social Icons-->
@@ -242,7 +242,7 @@
             <div class="col-lg-4">
                 <h4 class="text-uppercase mb-4">About VTMS</h4>
                 <p class="lead mb-0">
-                   Vessel Traffic Management System responssible for Suez Canal Navigation safe
+                    Vessel Traffic Management System responssible for Suez Canal Navigation safe
                     <a href="http://startbootstrap.com">Check Project Schedules</a>
                     .
                 </p>
@@ -310,7 +310,7 @@
                             <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
                             <button class="btn btn-primary" data-bs-dismiss="modal">
                                 <i class="fas fa-xmark fa-fw"></i>
-                                <a href="{{ url('radars/all') }}">Display Stations</a>
+                                <a href="{{ url('power_stations/all') }}">Display Stations</a>
                             </button>
                         </div>
                     </div>
@@ -439,7 +439,7 @@
 
                             <button class="btn btn-primary" data-bs-dismiss="modal">
                                 <i class="fas fa-xmark fa-fw"></i>
-                                <a href="{{ url('radars/all') }}">Display Stations</a>
+                                <a href="{{ url('contact') }}">Display Stations</a>
                             </button>
                         </div>
                     </div>

@@ -123,8 +123,17 @@
         <form method="POST" action="{{route('offers.update',$offer->id)}}" enctype="multipart/form-data">
             @csrf
             {{-- <input name="_token" value="{{csrf_token()}}"> --}}
+            <div class="form-group">
 
-
+                <select name ="dir">
+                    <option value="vtms">vtms</option>
+                    <option value="security">security</option>
+                    <option value="radars">radars</option>
+                    <option value="tawkitat">tawkitat</option>
+                    <option value="power">power</option>
+                </select>
+                <label for="exampleInputEmail1">تحديد القطاع</label>
+            </div>
             <div class="form-group">
                 <label for="exampleInputEmail1">أختر صوره المستند</label>
                 <input type="file" class="form-control" name="photo" placeholder="{{__('messages.photo')}}" value="{{$offer->photo}}">
