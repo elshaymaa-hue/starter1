@@ -46,7 +46,8 @@ class CrudController extends Controller
             'name_ar' ,
             'name_en',
             'details_ar',
-            'details_en'
+            'details_en',
+            'directory'
         )->get();
 
 
@@ -95,6 +96,7 @@ class CrudController extends Controller
             'price'=>$request->price,
             'details_ar'=>$request->details_ar,
             'details_en'=>$request->details_en,
+            'directory'=>$request->dir,
 
         ]);
 
@@ -105,7 +107,7 @@ class CrudController extends Controller
         $name =$request->get('search_');
 
       //  return $name;
-        $offers = Offer::where('name_ar','=',$name)->orderBy('id')->paginate(6);
+        $offers = Offer::where('directory','=',$name)->orderBy('id')->paginate(6);
         return view('offers.all',['offers' => $offers]);
         $categories=Offer::get();
         $categories= collect($categories);
@@ -163,6 +165,7 @@ class CrudController extends Controller
            'details_ar' => $request->details_ar,
            'details_en' => $request->details_en,
            'photo'=>  $file_name,
+           'directory'=>$request->dir,
         ]);
 //
         return redirect()->back()->with(['success' => $file_name.'-'.' تم التحديث بنجاح ']);
