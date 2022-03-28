@@ -1,4 +1,5 @@
 <?php
+
 define('PAGINATION_COUNT',3);
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +25,16 @@ Route::get('/', function () {
     return view('welcome');//
     //(['string'=>'Elshaymaa Nassar','age'=>'47']);
     //return view ('welcome',compact('obj'));
+
+});
+Route::get('/contact', function () {
+
+    return view('contact');//
+
+});
+Route::get('/text', function () {
+
+    return view('text');//
 
 });
 Route::get('/landing', function () {
@@ -94,3 +105,11 @@ Route::group (['prefix'=>'documents'],function (){
         Route::post('store','DocumentsController@store')->name('documents.store');
 
 });
+Route::post('/emailusers/{data}', function () {
+    Mail::to('nassarelshaymaa@gmail')->send(new notifyEmail());
+    return 'A message has been sent to Mailtrap!';
+});
+Route::get('sendbasicemail','MailController@basic_email');
+Route::get('sendhtmlemail','MailController@html_email')->name('mails.send');
+Route::get('sendattachmentemail','MailController@attachment_email');
+Route::get('send-mail','MailController@html_email');

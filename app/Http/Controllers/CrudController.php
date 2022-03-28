@@ -71,8 +71,11 @@ class CrudController extends Controller
         if ($request->photo) {
 
         $file_extension = $request->photo->getClientOriginalExtension();
-        $file_name = time() . '.' . $file_extension;
-        $path = 'images/offers';
+        $dir=$request->dir;
+        $date = date('Y-m-d', time());
+       $file_name = $dir.'-'.$date .'.' . $file_extension;
+
+        $path = 'images/'.$dir;
 
             $request->photo->move($path, $file_name);
 
@@ -134,8 +137,12 @@ class CrudController extends Controller
         //validtion
         if ($request->photo) {
             $file_extension = $request->photo->getClientOriginalExtension();
-            $file_name = time() . '.' . $file_extension;
-            $path = 'images/offers';
+
+            $dir=$request->dir;
+            $date = date('Y-m-d', time());
+            $file_name = $dir.'-'.$date .'.' . $file_extension;
+            $path = 'images/'.$dir;
+//            $path = 'images/offers';
             $request->photo->move($path, $file_name);
         }
         // chek if offer exists
