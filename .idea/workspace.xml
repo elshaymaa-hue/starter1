@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="04332bee-8904-44dc-9f5b-0ad54cafa314" name="Default Changelist" comment="update power_station3">
-      <change afterPath="$PROJECT_DIR$/resources/views/report.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CrudController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CrudController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/Models/offer.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/Models/offer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/ar/messages.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/ar/messages.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/en/messages.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/messages.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/offers/all.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/offers/all.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/offers/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/offers/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/offers/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/offers/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-    </list>
+    <list default="true" id="04332bee-8904-44dc-9f5b-0ad54cafa314" name="Default Changelist" comment="update power_station3" />
     <ignored path="$PROJECT_DIR$/vendor/composer/" />
     <ignored path="$PROJECT_DIR$/vendor/doctrine/inflector/" />
     <ignored path="$PROJECT_DIR$/vendor/doctrine/instantiator/" />
@@ -155,7 +144,7 @@
         <entry file="file://$PROJECT_DIR$/resources/views/offers/create.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="215">
-              <caret line="241" column="98" lean-forward="true" selection-start-line="241" selection-start-column="35" selection-end-line="241" selection-end-column="111" />
+              <caret line="241" column="98" selection-start-line="241" selection-start-column="35" selection-end-line="241" selection-end-column="111" />
               <folding>
                 <element signature="n#tr#0;n#thead#0;n#table#0;n#form#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" />
                 <element signature="n#div#1;n#form#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" />
@@ -184,7 +173,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.env">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
+            <state relative-caret-position="-17">
               <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
             </state>
           </provider>
@@ -471,191 +460,6 @@
               <item name="starter2" type="b2602c69:ProjectViewProjectNode" />
               <item name="starter2" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="starter2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="starter2" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="starter2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="starter2" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="starter2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="starter2" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="starter2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="starter2" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Mail" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="starter2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="starter2" type="462c0819:PsiDirectoryNode" />
-              <item name="bootstrap" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="starter2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="starter2" type="462c0819:PsiDirectoryNode" />
-              <item name="bootstrap" type="462c0819:PsiDirectoryNode" />
-              <item name="cache" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="starter2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="starter2" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="starter2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="starter2" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-              <item name="Models" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="starter2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="starter2" type="462c0819:PsiDirectoryNode" />
-              <item name="database" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="starter2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="starter2" type="462c0819:PsiDirectoryNode" />
-              <item name="database" type="462c0819:PsiDirectoryNode" />
-              <item name="migrations" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="starter2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="starter2" type="462c0819:PsiDirectoryNode" />
-              <item name="database" type="462c0819:PsiDirectoryNode" />
-              <item name="migrations" type="462c0819:PsiDirectoryNode" />
-              <item name="radar" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="starter2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="starter2" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="starter2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="starter2" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="starter2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="starter2" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="img" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="starter2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="starter2" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="starter2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="starter2" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="images" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="starter2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="starter2" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="images" type="462c0819:PsiDirectoryNode" />
-              <item name="2" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="starter2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="starter2" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="images" type="462c0819:PsiDirectoryNode" />
-              <item name="security" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="starter2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="starter2" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="starter2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="starter2" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="starter2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="starter2" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="lang" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="starter2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="starter2" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="lang" type="462c0819:PsiDirectoryNode" />
-              <item name="ar" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="starter2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="starter2" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="lang" type="462c0819:PsiDirectoryNode" />
-              <item name="en" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="starter2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="starter2" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="starter2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="starter2" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="emails" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="starter2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="starter2" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="layouts1" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="starter2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="starter2" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="offers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="starter2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="starter2" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="power_stations" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="starter2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="starter2" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="radars" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="starter2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="starter2" type="462c0819:PsiDirectoryNode" />
-              <item name="routes" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -751,7 +555,7 @@
       <workItem from="1647936182645" duration="379000" />
       <workItem from="1647936957204" duration="730000" />
       <workItem from="1647937903614" duration="43440000" />
-      <workItem from="1648451382860" duration="16226000" />
+      <workItem from="1648451382860" duration="16662000" />
     </task>
     <task id="LOCAL-00001" summary="powee">
       <created>1647865291576</created>
@@ -918,7 +722,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="232295000" />
+    <option name="totallyTimeSpent" value="232731000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -931,9 +735,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.91451615" visible="true" weight="0.21908316" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.91451615" visible="true" weight="0.21908316" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" sideWeight="0.08548387" side_tool="true" visible="true" weight="0.21908316" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -948,7 +751,7 @@
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.117803834" side_tool="true" visible="true" weight="0.32827735" />
       <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.49626866" weight="0.32936078" />
-      <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.8821962" visible="true" weight="0.32827735" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="12" sideWeight="0.8821962" visible="true" weight="0.32827735" />
       <window_info anchor="bottom" id="Messages" order="13" weight="0.32936078" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -1611,7 +1414,7 @@
     <entry file="file://$PROJECT_DIR$/resources/views/offers/create.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="215">
-          <caret line="241" column="98" lean-forward="true" selection-start-line="241" selection-start-column="35" selection-end-line="241" selection-end-column="111" />
+          <caret line="241" column="98" selection-start-line="241" selection-start-column="35" selection-end-line="241" selection-end-column="111" />
           <folding>
             <element signature="n#tr#0;n#thead#0;n#table#0;n#form#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" />
             <element signature="n#div#1;n#form#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" />
@@ -1636,7 +1439,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.env">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
+        <state relative-caret-position="-17">
           <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
         </state>
       </provider>
