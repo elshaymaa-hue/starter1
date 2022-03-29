@@ -89,6 +89,9 @@
             <li class="nav-item">
                 <a class="nav-link" href="{{ url('offers/all') }}">Display Documents</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url('/report') }}">Reports</a>
+            </li>
             @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
                 <li class="nav-item active">
                     <a class="nav-link"
@@ -99,8 +102,18 @@
 
 
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <form class="form-inline my-2 my-lg-0"  method="GET" action="{{route('offers.filter')}}" enctype="multipart/form-data" >
+            {{--            <input class="form-control mr-sm-2"  type="search" name="search_" placeholder="Search" aria-label="Search">--}}
+            <select name ="search_">
+                <option value="all"> </option>
+                <option value="vtms">vtms</option>
+                <option value="security">security</option>
+                <option value="radars">radars</option>
+                <option value="tawkitat">tawkitat</option>
+                <option value="power">power</option>
+                <option value="hospital_centers">hospital_centers</option>
+                <option value="technical_office">technical_office</option>
+            </select>
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </form>
     </div>
@@ -143,17 +156,50 @@
                 <small class="form-text text-danger">{{$message}}</small>
                 @enderror
             </div>
+            <table class="table">
+           <tr>
+            <td>
 {{--                <p>{{'offers.update'.$offer->id}}</p>--}}
-
-                       <div class="form-group">
+            <div class="form-group">
+                <label for="exampleInputEmail1">{{__('messages.input')}}</label>
+                <input type="text" class="form-control" name ="input"  aria-describedby="emailHelp" placeholder="{{__('messages.input')}}" value="{{$offer->input}}">
+                @error('input')
+                <small class="form-text text-danger">{{$message}}</small>
+                @enderror
+            </div>
+            </td>
+            <td>
+            <div class="form-group">
+                <label for="exampleInputEmail1">{{__('messages.output')}}</label>
+                <input type="text" class="form-control" name ="output"  aria-describedby="emailHelp" placeholder="{{__('messages.output')}}" value="{{$offer->output}}">
+                @error('output')
+                <small class="form-text text-danger">{{$message}}</small>
+                @enderror
+            </div>
+            </td>
+            </tr>
+            <tr>
+            <td>
+            <div class="form-group">
+                <label for="exampleInputEmail1">{{__('messages.type')}}</label>
+                <input type="text" class="form-control" name ="type"  aria-describedby="emailHelp" placeholder="{{__('messages.type')}}" value="{{$offer->type}}">
+                @error('type')
+                <small class="form-text text-danger">{{$message}}</small>
+                @enderror
+            </div>
+            </td>
+            <td>
+            <div class="form-group">
                 <label for="exampleInputEmail1">{{__('messages.Offer Name ar')}}</label>
                 <input type="text" class="form-control" name="name_ar" placeholder="{{__('messages.Offer Name ar')}}" value="{{$offer->name_ar}}">
                 @error('name_ar')
                 <small class="form-text text-danger">{{$message}}</small>
                 @enderror
             </div>
-
-
+            </td>
+            </tr>
+            <tr>
+            <td>
             <div class="form-group">
                 <label for="exampleInputEmail1">{{__('messages.Offer Name en')}}</label>
                 <input type="text" class="form-control" name="name_en" placeholder="{{__('messages.Offer Name en')}}" value="{{$offer->name_en}}">
@@ -161,7 +207,8 @@
                 <small class="form-text text-danger">{{$message}}</small>
                 @enderror
             </div>
-
+            </td>
+            <td>
             <div class="form-group">
                 <label for="exampleInputPassword1">{{__('messages.Offer Price')}}</label>
                 <input type="text" class="form-control" name="price" placeholder="{{__('messages.Offer Price')}}" value="{{$offer->price}}">
@@ -169,7 +216,10 @@
                 <small class="form-text text-danger">{{$message}}</small>
                 @enderror
             </div>
-
+            </td>
+            </tr>
+            <tr>
+            <td>
             <div class="form-group">
                 <label for="exampleInputPassword1">{{__('messages.Offer details ar')}}</label>
                 <input type="text" class="form-control" name="details_ar"
@@ -178,7 +228,8 @@
                 <small class="form-text text-danger">{{$message}}</small>
                 @enderror
             </div>
-
+            </td>
+            <td>
             <div class="form-group">
                 <label for="exampleInputPassword1">{{__('messages.Offer details en')}}</label>
                 <input type="text" class="form-control" name="details_en"
@@ -187,8 +238,14 @@
                 <small class="form-text text-danger">{{$message}}</small>
                 @enderror
             </div>
+            </td>
 
+            </tr>
+            <tr>
             <button type="submit" class="btn btn-primary">{{__('messages.update Offer')}}</button>
+            </tr>
+
+        </table>
         </form>
 
 
