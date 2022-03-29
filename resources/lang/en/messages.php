@@ -43,5 +43,8 @@ return[
     'price'=>'price_ar',
    'details'=>'details_ar',
     'station_name.required'=>'اسم المحطة مطلوب',
-
+    'input'=>'وارد',
+    'output'=>'صادر',
+    'type'=>'نوع مكاتبة',
+    'directory'=>'قطاع',
 ];

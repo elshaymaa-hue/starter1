@@ -89,6 +89,9 @@
             <li class="nav-item">
                 <a class="nav-link" href="{{ url('offers/all') }}">Display Documents</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url('/report') }}">Reports</a>
+            </li>
             @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
                 <li class="nav-item active">
                     <a class="nav-link"
@@ -136,6 +139,9 @@
     <thead>
     <tr>
         <th scope="col">#</th>
+        <th scope="col">{{__('messages.input')}}</th>
+        <th scope="col">{{__('messages.output')}}</th>
+        <th scope="col">{{__('messages.type')}}</th>
         <th scope="col">{{__('messages.Offer Name en')}}</th>
         <th scope="col">{{__('messages.Offer Name ar')}}</th>
         <th scope="col">{{__('messages.Offer Price')}}</th>
@@ -152,6 +158,9 @@
     @foreach($offers as $offer)
         <tr>
             <th scope="row">{{$offer -> id}}</th>
+            <td>{{$offer -> input}}</td>
+            <td>{{$offer -> output}}</td>
+            <td>{{$offer -> type}}</td>
             <td>{{$offer -> name_en}}</td>
             <td>{{$offer -> name_ar}}</td>
             <td>{{$offer -> price}}</td>

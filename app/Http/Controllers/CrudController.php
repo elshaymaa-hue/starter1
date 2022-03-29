@@ -47,7 +47,10 @@ class CrudController extends Controller
             'name_en',
             'details_ar',
             'details_en',
-            'directory'
+            'directory',
+            'input',
+            'output',
+            'type'
         )->get();
 
 
@@ -97,6 +100,9 @@ class CrudController extends Controller
             'details_ar'=>$request->details_ar,
             'details_en'=>$request->details_en,
             'directory'=>$request->dir,
+            'input'=>$request->input,
+            'output'=>$request->output,
+            'type'=>$request->type,
 
         ]);
 
@@ -166,6 +172,9 @@ class CrudController extends Controller
            'details_en' => $request->details_en,
            'photo'=>  $file_name,
            'directory'=>$request->dir,
+           'input'=>$request->input,
+           'output'=>$request->output,
+           'type'=>$request->type,
         ]);
 //
         return redirect()->back()->with(['success' => $file_name.'-'.' تم التحديث بنجاح ']);

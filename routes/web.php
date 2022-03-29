@@ -32,6 +32,7 @@ Route::get('/contact', function () {
     return view('contact');//
 
 });
+
 Route::get('/text', function () {
 
     return view('text');//
@@ -56,7 +57,11 @@ Route::get('index','Front\UserController@getIndex');
 Auth::routes(['verify' => true]);
 
 Route::get('/home', 'HomeController@index')->name('home')->middleware('verified');
+Route::get('report', function () {
 
+    return view('report');//
+
+});
 
 Route::get('fillable','CrudController@getOffers');
 Route::group(['prefix'=>LaravelLocalization::setLocale(),'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]],function() {
@@ -67,6 +72,7 @@ Route::group(['prefix'=>LaravelLocalization::setLocale(),'middleware' => [ 'loca
         Route::get('filter', 'CrudController@complexFilter')->name('offers.filter');
         Route::get('edit/{offer_id}','CrudController@editOffer');
         Route::post('update/{offer_id}','CrudController@UpdateOffer')->name('offers.update');
+
 
     });
 });
