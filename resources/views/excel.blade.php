@@ -139,7 +139,7 @@
 
                 </div>
 
-                <form class="form-group"  method="GET" action="{{route('offers.filter')}}" action="{{route('offers.export')}}" enctype="multipart/form-data" >
+                <form class="form-group"  method="GET" action="{{route('offers.export')}}" enctype="multipart/form-data" >
                     {{--            <input class="form-control mr-sm-2"  type="search" name="search_" placeholder="Search" aria-label="Search">--}}
 
 
@@ -149,7 +149,7 @@
 
                     <br/>
                     <select name ="search_">
-                        <option value="all"> </option>
+                        <option value=" "> </option>
                         <option value="vtms">vtms</option>
                         <option value="security">security</option>
                         <option value="radars">radars</option>
@@ -180,11 +180,11 @@
                         <small class="form-text text-danger">{{$message}}</small>
                         @enderror
                     </div>
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+{{--                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>--}}
 
                      {{--            <input class="form-control mr-sm-2"  type="search" name="search_" placeholder="Search" aria-label="Search">--}}
 
-{{--                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Export to Excel </button>--}}
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Export to Excel </button>
                 </form>
                 </div>
             </div>

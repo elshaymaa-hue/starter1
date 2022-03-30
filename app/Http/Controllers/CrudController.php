@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use LaravelLocalization;
 use Illuminate\Http\Exceptions\PostTooLargeException;
+use App\Exports\OffersExport;
+use App\Imports\OffersImport;
+use Maatwebsite\Excel\Facades\Excel;
 class CrudController extends Controller
 {
     //
@@ -221,4 +224,21 @@ class CrudController extends Controller
 //            'details'=>'required',
 //        ];
 //    }
+    public function importExportView()
+    {
+
+        return view('import');
+    }
+//
+    public function export(Request $request){
+
+        return Excel::download(new OffersExport, 'documents.xlsx');
+    }
+
+    public function import()
+    {
+        Excel::import(new OffersImport,request()->file('file'));
+
+        return redirect()->back();
+    }
 }

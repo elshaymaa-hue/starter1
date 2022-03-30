@@ -62,7 +62,11 @@ Route::get('report', function () {
     return view('report');//
 
 });
+Route::get('excel', function () {
 
+    return view('excel');//
+
+});
 Route::get('fillable','CrudController@getOffers');
 Route::group(['prefix'=>LaravelLocalization::setLocale(),'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]],function() {
     Route::group(['prefix' => 'offers'], function () {
@@ -72,10 +76,14 @@ Route::group(['prefix'=>LaravelLocalization::setLocale(),'middleware' => [ 'loca
         Route::get('filter', 'CrudController@complexFilter')->name('offers.filter');
         Route::get('edit/{offer_id}','CrudController@editOffer');
         Route::post('update/{offer_id}','CrudController@UpdateOffer')->name('offers.update');
-
+        Route::get('export', 'CrudController@export')->name('offers.export');
+        Route::get('importExportView', 'CrudController@importExportView');
+        Route::post('import', 'CrudController@import')->name('offers.import');
 
     });
 });
+
+
 Route::get('fillable','RadarController@getRadars');
 Route::group(['prefix'=>LaravelLocalization::setLocale(),'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]],function() {
     Route::group(['prefix' => 'radars'], function () {
