@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+{{--<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">--}}
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -32,7 +33,7 @@
         .flex-center {
             align-items: center;
             display: flex;
-            justify-content: center;
+            justify-content: right;
         }
 
         .position-ref {
@@ -70,12 +71,16 @@
         .m-b-md {
             margin-bottom: 30px;
         }
+        table, th, td {
+            align:right;
+
+        }
     </style>
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="{{ url('/') }}">WELCOME</a>
+<nav class="navbar navbar-inverse navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="{{ url('/') }}">الصفحة الرئيسية</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -158,17 +163,17 @@
     @foreach($offers as $offer)
         <tr>
             <th scope="row">{{$offer -> id}}</th>
-            <td>{{$offer -> input}}</td>
-            <td>{{$offer -> output}}</td>
-            <td>{{$offer -> type}}</td>
-            <td>{{$offer -> name_en}}</td>
-            <td>{{$offer -> name_ar}}</td>
-            <td>{{$offer -> price}}</td>
-            <td>{{$offer -> details_en}}</td>
-            <td>{{$offer -> details_ar}}</td>
+            <td align="right">{{$offer -> input}}</td>
+            <td align="right">{{$offer -> output}}</td>
+            <td align="right">{{$offer -> type}}</td>
+            <td align="right">{{$offer -> name_en}}</td>
+            <td align="right">{{$offer -> name_ar}}</td>
+            <td align="right">{{$offer -> price}}</td>
+            <td align="right">{{$offer -> details_en}}</td>
+            <td align="right">{{$offer -> details_ar}}</td>
             @if($offer->photo)
                 {{--            <td><img  style="width: 90px; height: 90px;" src="{{asset('images/offers/'.$offer->photo)}}"></td>--}}
-            <td><embed src="{{asset('images/'.$offer->directory.'/'.$offer->photo)}}" width="300px" height ="300px"></td>
+            <td align="right"><embed src="{{asset('images/'.$offer->directory.'/'.$offer->photo)}}" width="300px" height ="300px"></td>
             @else
                 <td></td>
             @endif

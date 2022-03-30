@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:LaravelLocalization="http://www.w3.org/1999/xhtml">
+<<html lang="ar" dir="rtl">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">

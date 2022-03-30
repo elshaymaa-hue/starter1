@@ -75,10 +75,14 @@ class CrudController extends Controller
         if ($request->photo) {
 
         $file_extension = $request->photo->getClientOriginalExtension();
-        $dir=$request->dir;
-        $date = date('Y-m-d', time());
-       $file_name = $dir.'-'.$date .'.' . $file_extension;
 
+            $dir=$request->dir;
+            $in=$request->input;
+            $out=$request->output;
+            $date = $request->name_en;
+            $file_name = $dir.'-'.$date .'.' . $file_extension;
+            if($in)  $file_name = $dir.'-'.$in.'-'.$date .'.' . $file_extension;
+            if($out)  $file_name = $dir.'-'.$out.'-'.$date .'.' . $file_extension;
         $path = 'images/'.$dir;
 
             $request->photo->move($path, $file_name);
@@ -111,9 +115,25 @@ class CrudController extends Controller
     public function complexFilter(Request $request){
 
         $name =$request->get('search_');
+        $input=$request->get('input');
+        $output=$request->get('output');
+        $type=$request->get('type');
 
+        if ($name)
+            $offers = Offer::where(  'directory','=',$name)->orderBy('id')->paginate(6);
+           // $filters="'directory','=',".$name;
+       // return $filters;
+        if ($input)
+            $offers = Offer::where(  'input','=',$input)->orderBy('id')->paginate(6);
+          // $filters="'input'".','."'='".",".$input;
+        if($output)
+            $offers = Offer::where(  'output','=',$output)->orderBy('id')->paginate(6);
+        if($type)
+            $offers = Offer::where(  'type','=',$type)->orderBy('id')->paginate(6);
+       //    $filters= "'output'".","."'='".",".$output;
+        //  return $name;
       //  return $name;
-        $offers = Offer::where('directory','=',$name)->orderBy('id')->paginate(6);
+     //   $offers = Offer::where(  'directory','=',$name)->orderBy('id')->paginate(6);
         return view('offers.all',['offers' => $offers]);
         $categories=Offer::get();
         $categories= collect($categories);
@@ -135,7 +155,7 @@ class CrudController extends Controller
       $offer=  Offer::find($offer_id);
       if(!$offer)
       return redirect()->back();
-      $offer=Offer::select ('id','name_ar','name_en','details_ar','details_en','price','photo')->find($offer_id);
+      $offer=Offer::select ('id','name_ar','name_en','details_ar','details_en','price','photo','input','output','type')->find($offer_id);
       return view('offers.edit',compact('offer'));
 //      return $offer_id;
     }
@@ -147,8 +167,14 @@ class CrudController extends Controller
             $file_extension = $request->photo->getClientOriginalExtension();
 
             $dir=$request->dir;
-            $date = date('Y-m-d', time());
+            $in=$request->input;
+            $out=$request->output;
+            $date = $request->name_en;
             $file_name = $dir.'-'.$date .'.' . $file_extension;
+            if($in)  $file_name = $dir.'-'.$in.'-'.$date .'.' . $file_extension;
+            if($out)  $file_name = $dir.'-'.$out.'-'.$date .'.' . $file_extension;
+
+
             $path = 'images/'.$dir;
 //            $path = 'images/offers';
             $request->photo->move($path, $file_name);
