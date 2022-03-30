@@ -97,6 +97,9 @@
             <li class="nav-item">
                 <a class="nav-link" href="{{ url('/report') }}">Reports</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url('/excel') }}">Export to Excel </a>
+            </li>
             @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
                 <li class="nav-item active">
                     <a class="nav-link"
@@ -121,6 +124,7 @@
             </select>
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </form>
+
 
     </div>
 </nav>
