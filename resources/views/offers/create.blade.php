@@ -5,11 +5,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>Laravel</title>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-              integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+{{--        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"--}}
+{{--              integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">--}}
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+              integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
         <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
-
+{{--        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">--}}
+        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
         <!-- Styles -->
         <style>
             html, body {
@@ -19,6 +21,7 @@
                 font-weight: 200;
                 height: 100vh;
                 margin: 0;
+                width: auto;
             }
 
             .full-height {
@@ -152,7 +155,7 @@
                       {{ Session :: get('success') }}
                 </div>
                 @endif
-                <form method="POST" action="{{route('offers.store')}}" enctype="multipart/form-data">
+                <form  style="width: 100%" method="POST" action="{{route('offers.store')}}" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
 
@@ -236,26 +239,26 @@
                             </td>
                         </tr>
                         <tr>
-                            <td>
+
                                  <div class="form-group ">
 
                                     <label for="exampleInputEmail1">{{__('messages.Offer details ar')}}</label>
-                                    <input type="text" class="form-control" name="details_ar"  placeholder="{{__('messages.Offer details ar')}}">
+                                    <input type="textarea" class="form-control" name="details_ar"  placeholder="{{__('messages.Offer details ar')}}">
                                     @error('details')
                                     <small class="form-text text-danger">{{$message}}</small>
                                     @enderror
                                  </div>
-                            </td>
-                            <td>
+                        </tr>
+                        <tr></tr>
                                    <div class="form-group ">
                                         <label for="exampleInputEmail1">{{__('messages.Offer details en')}}</label>
-                                        <input type="text" class="form-control" name="details_en" placeholder="{{__('messages.Offer details en')}}">
+                                        <input type="textarea" class="form-control" name="details_en" placeholder="{{__('messages.Offer details en')}}">
                                         @error('details')
                                         <small class="form-text text-danger">{{$message}}</small>
                                         @enderror
                                     </div>
 
-                            </td>
+
                         </tr>
                         <tr>
                             <td>

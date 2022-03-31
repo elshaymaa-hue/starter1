@@ -415,7 +415,7 @@ legend {
     font-size: 1.5rem;
   }
 }
-legend + * {
+legend  {
   clear: left;
 }
 
