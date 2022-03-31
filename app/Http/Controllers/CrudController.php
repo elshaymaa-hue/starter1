@@ -10,6 +10,7 @@ use Illuminate\Http\Exceptions\PostTooLargeException;
 use App\Exports\OffersExport;
 use App\Imports\OffersImport;
 use Maatwebsite\Excel\Facades\Excel;
+use PDF;
 class CrudController extends Controller
 {
     //
@@ -53,7 +54,8 @@ class CrudController extends Controller
             'directory',
             'input',
             'output',
-            'type'
+            'type',
+            'status'
         )->get();
 
 
@@ -110,6 +112,7 @@ class CrudController extends Controller
             'input'=>$request->input,
             'output'=>$request->output,
             'type'=>$request->type,
+            'status'=>$request->status,
 
         ]);
 
@@ -121,7 +124,7 @@ class CrudController extends Controller
         $input=$request->get('input');
         $output=$request->get('output');
         $type=$request->get('type');
-
+        $status=$request->get('status');
         if ($name)
             $offers = Offer::where(  'directory','=',$name)->orderBy('id')->paginate(6);
            // $filters="'directory','=',".$name;
@@ -133,6 +136,8 @@ class CrudController extends Controller
             $offers = Offer::where(  'output','=',$output)->orderBy('id')->paginate(6);
         if($type)
             $offers = Offer::where(  'type','=',$type)->orderBy('id')->paginate(6);
+        if($status)
+            $offers = Offer::where(  'status','=',$status)->orderBy('id')->paginate(6);
        //    $filters= "'output'".","."'='".",".$output;
         //  return $name;
       //  return $name;
@@ -158,7 +163,7 @@ class CrudController extends Controller
       $offer=  Offer::find($offer_id);
       if(!$offer)
       return redirect()->back();
-      $offer=Offer::select ('id','name_ar','name_en','details_ar','details_en','price','photo','input','output','type')->find($offer_id);
+      $offer=Offer::select ('id','name_ar','name_en','details_ar','details_en','price','photo','input','output','type','status')->find($offer_id);
       return view('offers.edit',compact('offer'));
 //      return $offer_id;
     }
@@ -204,6 +209,7 @@ class CrudController extends Controller
            'input'=>$request->input,
            'output'=>$request->output,
            'type'=>$request->type,
+           'status'=>$request->status,
         ]);
 //
         return redirect()->back()->with(['success' => $file_name.'-'.' تم التحديث بنجاح ']);
@@ -234,7 +240,24 @@ class CrudController extends Controller
 
         return Excel::download(new OffersExport, 'documents.xlsx');
     }
+    public function exportPDF() {
 
+      //  $offer = Offer::get();
+        $categories=Offer::get();
+        $categories= collect($categories);
+
+        $resultOfFilter = $categories->filter(function ($value, $key){
+
+            return $value['name_en']= '23/11/2021';
+        });
+
+        $offers=array_values($resultOfFilter->all());
+        view()->share('offer', $offers);
+        $pdf_doc = PDF::loadView('export_pdf', $offers);
+
+        return $pdf_doc->download('pdf.pdf');
+
+    }
     public function import()
     {
         Excel::import(new OffersImport,request()->file('file'));

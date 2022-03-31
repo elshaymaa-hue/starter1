@@ -79,6 +79,7 @@ Route::group(['prefix'=>LaravelLocalization::setLocale(),'middleware' => [ 'loca
         Route::get('export', 'CrudController@export')->name('offers.export');
         Route::get('importExportView', 'CrudController@importExportView');
         Route::post('import', 'CrudController@import')->name('offers.import');
+        Route::get('create-pdf', 'CrudController@exportPDF')->name('offers.exportpdf');
 
     });
 });
