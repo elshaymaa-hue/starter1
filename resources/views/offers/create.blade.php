@@ -254,6 +254,31 @@
                                         <small class="form-text text-danger">{{$message}}</small>
                                         @enderror
                                     </div>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="form-group ">
+
+                                    <label for="exampleInputEmail1">{{__('messages.status')}}</label>
+                                    <select name ="status">
+                                        <option value="done">إنتهى</option>
+                                        <option value="progress">قيد التنفيذ</option>
+                                        <option value="start">تخطيط</option>
+                                        <option value="canceled">إلغاء</option>
+                                        <option value="waiting">انتظار</option>
+                                        <option value="paused">معلق</option>
+                                        <option value="transferred">محول</option>
+                                    </select>
+                                    @error('status')
+                                    <small class="form-text text-danger">{{$message}}</small>
+                                    @enderror
+                                </div>
+                            </td>
+                            <td>
+
+
                             </td>
                         </tr>
                         <tr>

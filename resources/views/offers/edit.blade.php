@@ -241,6 +241,30 @@
             </td>
 
             </tr>
+                <tr>
+                    <td>
+                        <div class="form-group ">
+
+                            <label for="exampleInputEmail1">{{__('messages.status')}}</label>
+                            <select name ="status"  placeholder="{{__('messages.status')}}" value="{{$offer->status}}">
+                                <option value="done">إنتهى</option>
+                                <option value="progress">قيد التنفيذ</option>
+                                <option value="start">تخطيط</option>
+                                <option value="canceled">إلغاء</option>
+                                <option value="waiting">انتظار</option>
+                                <option value="paused">معلق</option>
+                                <option value="transferred">محول</option>
+                            </select>
+                            @error('status')
+                            <small class="form-text text-danger">{{$message}}</small>
+                            @enderror
+                        </div>
+                    </td>
+                    <td>
+
+
+                    </td>
+                </tr>
             <tr>
             <button type="submit" class="btn btn-primary">{{__('messages.update Offer')}}</button>
             </tr>
