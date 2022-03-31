@@ -709,7 +709,7 @@
       <workItem from="1647937903614" duration="43440000" />
       <workItem from="1648451382860" duration="23070000" />
       <workItem from="1648547399576" duration="24953000" />
-      <workItem from="1648717316608" duration="1935000" />
+      <workItem from="1648717316608" duration="2573000" />
     </task>
     <task id="LOCAL-00001" summary="powee">
       <created>1647865291576</created>
@@ -890,7 +890,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="266027000" />
+    <option name="totallyTimeSpent" value="266665000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -903,9 +903,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.91129035" visible="true" weight="0.21908316" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.91129035" visible="true" weight="0.21908316" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" sideWeight="0.088709675" side_tool="true" visible="true" weight="0.21908316" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -920,7 +919,7 @@
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.2739872" side_tool="true" visible="true" weight="0.32827735" />
       <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.49626866" weight="0.32936078" />
-      <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.72601277" visible="true" weight="0.32827735" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="12" sideWeight="0.72601277" visible="true" weight="0.32827735" />
       <window_info anchor="bottom" id="Messages" order="13" weight="0.32936078" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
