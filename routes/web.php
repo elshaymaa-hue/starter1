@@ -64,7 +64,7 @@ Route::get('report', function () {
 });
 Route::get('excel', function () {
 
-    return view('excel');//
+    return view('check/page');//
 
 });
 Route::get('fillable','CrudController@getOffers');
