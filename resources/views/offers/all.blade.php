@@ -98,7 +98,7 @@
                 <a class="nav-link" href="{{ url('/report') }}">Reports</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ url('/excel') }}">Export to Excel </a>
+                <a class="nav-link" href="{{ url('/exportpdf') }}">downloadpdf </a>
             </li>
             @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
                 <li class="nav-item active">
@@ -216,5 +216,24 @@
 
 
 </table>
+<script>
+    const export2Pdf = async () => {
+
+        let printHideClass = document.querySelectorAll('.print-hide');
+        printHideClass.forEach(item => item.style.display = 'none');
+        await fetch('http://localhost:8000/export-pdf', {
+            method: 'GET'
+        }).then(response => {
+            if (response.ok) {
+                response.json().then(response => {
+                    var link = document.createElement('a');
+                    link.href = response;
+                    link.click();
+                    printHideClass.forEach(item => item.style.display='');
+                });
+            }
+        }).catch(error => console.log(error));
+    }
+</script>
 </body>
 </html>

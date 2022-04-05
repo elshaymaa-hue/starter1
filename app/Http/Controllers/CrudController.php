@@ -10,7 +10,8 @@ use Illuminate\Http\Exceptions\PostTooLargeException;
 use App\Exports\OffersExport;
 use App\Imports\OffersImport;
 use Maatwebsite\Excel\Facades\Excel;
-use PDF;
+use Barryvdh\DomPDF\Facade as PDF;
+
 class CrudController extends Controller
 {
     //
@@ -240,23 +241,13 @@ class CrudController extends Controller
 
         return Excel::download(new OffersExport, 'documents.xlsx');
     }
-    public function exportPDF() {
-
-      //  $offer = Offer::get();
-        $categories=Offer::get();
-        $categories= collect($categories);
-
-        $resultOfFilter = $categories->filter(function ($value, $key){
-
-            return $value['name_en']= '23/11/2021';
-        });
-
-        $offers=array_values($resultOfFilter->all());
-        view()->share('offer', $offers);
-        $pdf_doc = PDF::loadView('export_pdf', $offers);
-
-        return $pdf_doc->download('pdf.pdf');
-
+    public function exportPdf() {
+        $pdf = \Barryvdh\DomPDF\Facade::loadView('welcome'); // <--- load your view into theDOM wrapper;
+        $path = public_path('pdf_docs/'); // <--- folder to store the pdf documents into the server;
+        $fileName =  time().'.'. 'pdf' ; // <--giving the random filename,
+        $pdf->save($path . '/' . $fileName);
+        $generated_pdf_link = url('pdf_docs/'.$fileName);
+        return response()->json($generated_pdf_link);
     }
     public function import()
     {
