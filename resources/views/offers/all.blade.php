@@ -97,9 +97,9 @@
             <li class="nav-item">
                 <a class="nav-link" href="{{ url('/report') }}">Reports</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{ url('/exportpdf') }}">downloadpdf </a>
-            </li>
+{{--            <li class="nav-item">--}}
+{{--                <a class="nav-link" href="{{ url('/exportpdf') }}">downloadpdf </a>--}}
+{{--            </li>--}}
             @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
                 <li class="nav-item active">
                     <a class="nav-link"
