@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 04, 2022 at 10:45 AM
+-- Generation Time: Apr 05, 2022 at 09:36 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.2.34
 
@@ -20,8 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `monitor`
 --
-CREATE DATABASE IF NOT EXISTS `monitor` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `monitor`;
 
 -- --------------------------------------------------------
 
@@ -29,7 +27,6 @@ USE `monitor`;
 -- Table structure for table `bussinessaffairs`
 --
 
-DROP TABLE IF EXISTS `bussinessaffairs`;
 CREATE TABLE `bussinessaffairs` (
   `ID` int(11) NOT NULL,
   `SubjectID` int(11) DEFAULT NULL,
@@ -65,7 +62,6 @@ INSERT INTO `bussinessaffairs` (`ID`, `SubjectID`, `SectionID`, `bussinessid`, `
 -- Table structure for table `departments`
 --
 
-DROP TABLE IF EXISTS `departments`;
 CREATE TABLE `departments` (
   `id` int(11) NOT NULL,
   `name` varchar(100) NOT NULL,
@@ -89,7 +85,6 @@ INSERT INTO `departments` (`id`, `name`, `task`, `manager`, `created_at`, `updat
 -- Table structure for table `documents`
 --
 
-DROP TABLE IF EXISTS `documents`;
 CREATE TABLE `documents` (
   `id` int(11) NOT NULL,
   `name` varchar(100) DEFAULT NULL,
@@ -118,7 +113,6 @@ INSERT INTO `documents` (`id`, `name`, `contents`, `geha`, `created_at`, `update
 -- Table structure for table `failed_jobs`
 --
 
-DROP TABLE IF EXISTS `failed_jobs`;
 CREATE TABLE `failed_jobs` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `connection` text COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -134,7 +128,6 @@ CREATE TABLE `failed_jobs` (
 -- Table structure for table `migrations`
 --
 
-DROP TABLE IF EXISTS `migrations`;
 CREATE TABLE `migrations` (
   `id` int(10) UNSIGNED NOT NULL,
   `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -156,7 +149,6 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 -- Table structure for table `offers`
 --
 
-DROP TABLE IF EXISTS `offers`;
 CREATE TABLE `offers` (
   `id` int(11) NOT NULL,
   `name_en` varchar(255) DEFAULT NULL,
@@ -180,13 +172,13 @@ CREATE TABLE `offers` (
 
 INSERT INTO `offers` (`id`, `name_en`, `price`, `photo`, `created_at`, `updated_at`, `details_en`, `name_ar`, `details_ar`, `directory`, `input`, `output`, `type`, `status`) VALUES
 (1, '2017', 'عدد/5 محطات (راس العش - البلاح - شرق الفردان - طوسون - الشلوفة)', 'vtms-2017.pdf', '2022-04-03 12:14:58', '2022-03-01 08:09:53', 'طباقا لمحضر فحص ظاهري', 'تشوينات  محطات الرادرار ( مخزن المواصلات)', 'مرفق ب التعاقد بين هيئة قناة السويس و مجلس الدفاع الوطني إتفاق 28/6/2009 إتفاق 15/3/2016 ملحق إتفاق 7/3/2019', 'vtms', NULL, NULL, NULL, 'done'),
-(2, 'يوليو - أغسطس (2017)', 'تركيب عدد 3 محطات رادار(البلاج - طوسون - الشلوفة)', '', '2022-03-29 09:21:40', '2022-03-01 06:24:45', NULL, 'تركيبات  محطات الرادار', NULL, 'radars', NULL, NULL, NULL, NULL),
+(2, 'يوليو - أغسطس (2017)', 'تركيب عدد 3 محطات رادار(البلاج - طوسون - الشلوفة)', 'vtms-يوليو - أغسطس (2017).pdf', '2022-04-04 11:44:19', '2022-03-01 06:24:45', NULL, 'تركيبات  محطات الرادار', NULL, 'vtms', NULL, NULL, NULL, 'done'),
 (3, 'فبراير 2020', 'تركيب عدد 3 محطات  ( فنارة - رأس العش - شرق الفردان)', '', '2022-03-08 08:30:09', '2022-03-01 08:29:16', NULL, 'تركيبات  محطات الرادار', NULL, 'offers', '', '', '', NULL),
 (4, 'ابريل - مايو - يونيو (2015)', 'لا توجد ملاحظات عند التركيب المحطات (بورفؤاد - القبة - الكاب - الارسال - جنيفة - بورتوفيق-القنطرة) وبداية التشغيل تعمل بكفاءة 100%', '', '2022-03-15 07:50:37', '2022-03-01 08:49:09', NULL, 'المشاكل الفنية للرادار', NULL, 'offers', '', '', '', NULL),
-(5, 'أغسطس 2011', 'عدد/7 محطات (بورفؤاد - القبة - الكاب -القنطرة -الإرسال - جنيفة - بورتوفيق)', 'radars-2022-03-28.pdf', '2022-03-28 12:11:21', '2022-03-01 08:49:44', 'طباقا لمحضر فحص ظاهري', 'تشوينات  محطات الرادرار ( مخزن المواصلات)', 'مرفق ب التعاقد بين هيئة قناة السويس و مجلس الدفاع الوطني إتفاق 28/6/2009 إتفاق 15/3/2016 ملحق إتفاق 7/3/2019', 'radars', '', '', '', NULL),
+(5, 'أغسطس 2011', 'عدد/7 محطات (بورفؤاد - القبة - الكاب -القنطرة -الإرسال - جنيفة - بورتوفيق)', 'vtms-أغسطس 2011.pdf', '2022-04-05 07:27:06', '2022-03-01 08:49:44', 'طباقا لمحضر فحص ظاهري', 'تشوينات  محطات الرادرار ( مخزن المواصلات)', 'مرفق ب التعاقد بين هيئة قناة السويس و مجلس الدفاع الوطني إتفاق 28/6/2009 إتفاق 15/3/2016 ملحق إتفاق 7/3/2019', 'vtms', NULL, NULL, NULL, 'done'),
 (6, 'فبراير 2022', 'عدد 5 محطات تعمل بنسبة 50% (بورفؤاد - الكاب - البلاح - الارسال - جنيفة )', 'vtms-فبراير 2022.pdf', '2022-04-03 12:21:37', '2022-03-01 08:49:51', 'أخر مخاطبة الهيئة الإقتصادية  للمشروعات رقم883/ج بتاريخ 9/12/2021', 'المشاكل الفنية للرادار', 'رقم 433/ج بتاريخ 12/7/2016', 'vtms', NULL, NULL, NULL, 'done'),
-(7, '06-02-2020', 'أمر توريد رقم 26-1026/1106 بخصوص ماجنترونات محطات رادار موديل terma', 'radars-06-02-2020.pdf', '2022-03-29 11:58:24', '2022-03-01 09:26:17', NULL, 'أوامر التوريد', NULL, 'radars', NULL, NULL, 'أمر توريد', NULL),
-(8, '17-11-2021', 'أمر توريد رقم 26-1088/824 بخصوص قطع غيار رادار من نوع sperry marine', 'radars-3683-17-11-2021.pdf', '2022-03-29 12:01:14', '2022-03-01 11:14:26', NULL, 'أوامر التوريد', NULL, 'radars', '3683', NULL, 'أمر توريد', NULL),
+(7, '06-02-2020', 'أمر توريد رقم 26-1026/1106 بخصوص ماجنترونات محطات رادار موديل terma', 'vtms-06-02-2020.pdf', '2022-04-05 07:30:05', '2022-03-01 09:26:17', NULL, 'أوامر التوريد', NULL, 'vtms', NULL, NULL, 'أمر توريد', 'done'),
+(8, '17-11-2021', 'أمر توريد رقم 26-1088/824 بخصوص قطع غيار رادار من نوع sperry marine', 'vtms-3683-17-11-2021.pdf', '2022-04-05 07:31:59', '2022-03-01 11:14:26', NULL, 'أوامر التوريد', NULL, 'vtms', '3683', NULL, 'أمر توريد', 'done'),
 (9, '23/11/2020', 'أمر توريد رقم 26-1016/706 بخصوص مواتير  لهوائي رادار CHL', '1647330499.pdf', '2022-03-15 07:48:19', '2022-03-01 11:15:49', NULL, 'أوامر التوريد', NULL, 'offers', '', '', '', NULL),
 (10, '17/11/2021', 'أمر توريد رقم 26-1088/823 بخصوص توفير قطع غيار ciberd', '1647330330.pdf', '2022-03-15 07:45:30', '2022-03-01 11:21:01', NULL, 'أوامر التوريد', NULL, 'offers', '', '', '', NULL),
 (11, '23/11/2020', 'أمر توريد رقم 26-1016/08 بخصوص قطع غيار هوائي رادار من نوع chl', '1647330524.pdf', '2022-03-15 07:48:44', '2022-03-01 11:27:35', NULL, 'أوامر التوريد', NULL, 'offers', '', '', '', NULL),
@@ -210,7 +202,7 @@ INSERT INTO `offers` (`id`, `name_en`, `price`, `photo`, `created_at`, `updated_
 (29, '23/5/2017', 'أفادات الشئون الفنية بإدارة التحركات لقسم المراقبة الإلكترونية بموافقة علي بند مصعد كل  من برجي رادار بورفؤاد و بورتوفيق بمشروع الموازنة الإستثمارييية 2017/2018', '1647333641.pdf', '2022-03-15 08:40:41', '2022-03-15 08:40:41', NULL, 'مصاعد الابراج', NULL, 'offers', '', '', '', NULL),
 (30, '09-07-2017', 'أفادات الشئون الفنية بإدارة التحركات لقسم المراقبة الإلكترونية بموافقة علي بند مصعد كل  من برجي رادار بورفؤاد و بورتوفيق بمشروع الموازنة الإستثمارييية 2017/2018', '1647333712.pdf', '2022-03-15 08:41:52', '2022-03-15 08:41:52', NULL, 'مصاعد الابراج', NULL, 'offers', '', '', '', NULL),
 (31, '25-02-2018', 'أفادات إدارة التموين بأن تم تحويل طلب توفير المصاعد  إلي الإدارة الأشغال و الهندسية  برقم 299 بتاريخ 25/2/2018', '1647334753.pdf', '2022-03-15 08:59:13', '2022-03-15 08:43:23', NULL, 'مصاعد الابراج', NULL, 'offers', '', '', '', NULL),
-(32, '09-07-2017', 'إفادة إلي إدارة التموين بالمواصفات الفنية للمصعدين المطلوبة و أسماء مندوبين قسم المراقبة الإلكترونية  للإنضمام لجنة الدراسة والبت رقم 1496/ب بتاريخ 7/9/2017', 'radars-4329-09-07-2017.pdf', '2022-03-29 11:48:42', '2022-03-15 08:45:26', NULL, 'مصاعد الابراج', NULL, 'radars', '4329', NULL, 'مذكرة فريق', NULL),
+(32, '09-07-2017', 'إفادة إلي إدارة التموين بالمواصفات الفنية للمصعدين المطلوبة و أسماء مندوبين قسم المراقبة الإلكترونية  للإنضمام لجنة الدراسة والبت رقم 1496/ب بتاريخ 7/9/2017', 'vtms-4329-09-07-2017.pdf', '2022-04-05 07:35:05', '2022-03-15 08:45:26', NULL, 'مصاعد الابراج', NULL, 'vtms', '4329', NULL, 'مذكرة فريق', 'done'),
 (33, '25/2/2018', 'أفادات إدارة التموين بأن تم تحويل طلب توفير المصاعد  إلي الإدارة الأشغال و الهندسية  برقم 299 بتاريخ 25/2/2018', '1647335172.pdf', '2022-03-15 09:06:12', '2022-03-15 08:50:29', NULL, 'مصاعد الابراج', NULL, 'offers', '', '', '', NULL),
 (34, '18/4/2018', 'أفادة إلي الإدارة الهندسية بإشارة رقم رقم 652 بناريخ 18/4/2018  بالمواصفات الفنية للمصاعد و أسماء المندوبين للتنسيق', '1647334850.pdf', '2022-03-15 09:00:50', '2022-03-15 08:51:42', NULL, 'مصاعد الابراج', NULL, 'offers', '', '', '', NULL),
 (35, '02-11-2020', 'تشكيل أمر إداري رقم 18 لسنة 2020 بتاريخ 11/2/2020 لممارسة شركة قناة السويس للاستثمار', '1647335008.pdf', '2022-03-15 09:03:28', '2022-03-15 08:53:05', NULL, 'مصاعد الابراج', NULL, 'offers', '', '', '', NULL),
@@ -238,7 +230,6 @@ INSERT INTO `offers` (`id`, `name_en`, `price`, `photo`, `created_at`, `updated_
 -- Table structure for table `password_resets`
 --
 
-DROP TABLE IF EXISTS `password_resets`;
 CREATE TABLE `password_resets` (
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `token` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -259,7 +250,6 @@ INSERT INTO `password_resets` (`email`, `token`, `created_at`) VALUES
 -- Table structure for table `power_stations`
 --
 
-DROP TABLE IF EXISTS `power_stations`;
 CREATE TABLE `power_stations` (
   `id` int(11) NOT NULL,
   `station_name` varchar(100) DEFAULT NULL,
@@ -318,7 +308,6 @@ INSERT INTO `power_stations` (`id`, `station_name`, `UpsSttp`, `UpsRadar`, `Cont
 -- Table structure for table `problemstate`
 --
 
-DROP TABLE IF EXISTS `problemstate`;
 CREATE TABLE `problemstate` (
   `ID` int(11) NOT NULL,
   `SubjectID` int(11) DEFAULT NULL,
@@ -351,7 +340,6 @@ INSERT INTO `problemstate` (`ID`, `SubjectID`, `SectionID`, `ProblemID`, `Descri
 -- Table structure for table `radars`
 --
 
-DROP TABLE IF EXISTS `radars`;
 CREATE TABLE `radars` (
   `id` int(11) NOT NULL,
   `station_name` varchar(200) DEFAULT NULL,
@@ -390,7 +378,6 @@ INSERT INTO `radars` (`id`, `station_name`, `location`, `photo`, `supply_date`, 
 -- Table structure for table `sectionsubjects`
 --
 
-DROP TABLE IF EXISTS `sectionsubjects`;
 CREATE TABLE `sectionsubjects` (
   `ID` int(11) NOT NULL,
   `SectionID` int(11) DEFAULT NULL,
@@ -416,7 +403,6 @@ INSERT INTO `sectionsubjects` (`ID`, `SectionID`, `Subjects`, `summary`, `Object
 -- Table structure for table `users`
 --
 
-DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -443,7 +429,6 @@ INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `re
 -- Table structure for table `vtms_sections`
 --
 
-DROP TABLE IF EXISTS `vtms_sections`;
 CREATE TABLE `vtms_sections` (
   `ID` int(11) NOT NULL,
   `SectionName` char(100) CHARACTER SET utf8mb4 DEFAULT NULL,
