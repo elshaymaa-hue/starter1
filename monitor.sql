@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 05, 2022 at 09:36 AM
+-- Generation Time: Apr 05, 2022 at 09:40 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.2.34
 
@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `monitor`
 --
+CREATE DATABASE IF NOT EXISTS `monitor` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `monitor`;
 
 -- --------------------------------------------------------
 
@@ -27,6 +29,7 @@ SET time_zone = "+00:00";
 -- Table structure for table `bussinessaffairs`
 --
 
+DROP TABLE IF EXISTS `bussinessaffairs`;
 CREATE TABLE `bussinessaffairs` (
   `ID` int(11) NOT NULL,
   `SubjectID` int(11) DEFAULT NULL,
@@ -62,6 +65,7 @@ INSERT INTO `bussinessaffairs` (`ID`, `SubjectID`, `SectionID`, `bussinessid`, `
 -- Table structure for table `departments`
 --
 
+DROP TABLE IF EXISTS `departments`;
 CREATE TABLE `departments` (
   `id` int(11) NOT NULL,
   `name` varchar(100) NOT NULL,
@@ -85,6 +89,7 @@ INSERT INTO `departments` (`id`, `name`, `task`, `manager`, `created_at`, `updat
 -- Table structure for table `documents`
 --
 
+DROP TABLE IF EXISTS `documents`;
 CREATE TABLE `documents` (
   `id` int(11) NOT NULL,
   `name` varchar(100) DEFAULT NULL,
@@ -113,6 +118,7 @@ INSERT INTO `documents` (`id`, `name`, `contents`, `geha`, `created_at`, `update
 -- Table structure for table `failed_jobs`
 --
 
+DROP TABLE IF EXISTS `failed_jobs`;
 CREATE TABLE `failed_jobs` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `connection` text COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -128,6 +134,7 @@ CREATE TABLE `failed_jobs` (
 -- Table structure for table `migrations`
 --
 
+DROP TABLE IF EXISTS `migrations`;
 CREATE TABLE `migrations` (
   `id` int(10) UNSIGNED NOT NULL,
   `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -149,6 +156,7 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 -- Table structure for table `offers`
 --
 
+DROP TABLE IF EXISTS `offers`;
 CREATE TABLE `offers` (
   `id` int(11) NOT NULL,
   `name_en` varchar(255) DEFAULT NULL,
@@ -230,6 +238,7 @@ INSERT INTO `offers` (`id`, `name_en`, `price`, `photo`, `created_at`, `updated_
 -- Table structure for table `password_resets`
 --
 
+DROP TABLE IF EXISTS `password_resets`;
 CREATE TABLE `password_resets` (
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `token` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -250,6 +259,7 @@ INSERT INTO `password_resets` (`email`, `token`, `created_at`) VALUES
 -- Table structure for table `power_stations`
 --
 
+DROP TABLE IF EXISTS `power_stations`;
 CREATE TABLE `power_stations` (
   `id` int(11) NOT NULL,
   `station_name` varchar(100) DEFAULT NULL,
@@ -308,6 +318,7 @@ INSERT INTO `power_stations` (`id`, `station_name`, `UpsSttp`, `UpsRadar`, `Cont
 -- Table structure for table `problemstate`
 --
 
+DROP TABLE IF EXISTS `problemstate`;
 CREATE TABLE `problemstate` (
   `ID` int(11) NOT NULL,
   `SubjectID` int(11) DEFAULT NULL,
@@ -340,6 +351,7 @@ INSERT INTO `problemstate` (`ID`, `SubjectID`, `SectionID`, `ProblemID`, `Descri
 -- Table structure for table `radars`
 --
 
+DROP TABLE IF EXISTS `radars`;
 CREATE TABLE `radars` (
   `id` int(11) NOT NULL,
   `station_name` varchar(200) DEFAULT NULL,
@@ -378,6 +390,7 @@ INSERT INTO `radars` (`id`, `station_name`, `location`, `photo`, `supply_date`, 
 -- Table structure for table `sectionsubjects`
 --
 
+DROP TABLE IF EXISTS `sectionsubjects`;
 CREATE TABLE `sectionsubjects` (
   `ID` int(11) NOT NULL,
   `SectionID` int(11) DEFAULT NULL,
@@ -403,6 +416,7 @@ INSERT INTO `sectionsubjects` (`ID`, `SectionID`, `Subjects`, `summary`, `Object
 -- Table structure for table `users`
 --
 
+DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -429,6 +443,7 @@ INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `re
 -- Table structure for table `vtms_sections`
 --
 
+DROP TABLE IF EXISTS `vtms_sections`;
 CREATE TABLE `vtms_sections` (
   `ID` int(11) NOT NULL,
   `SectionName` char(100) CHARACTER SET utf8mb4 DEFAULT NULL,
