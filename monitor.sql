@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.3
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Apr 05, 2022 at 09:40 AM
+-- Host: 127.0.0.1:3306
+-- Generation Time: Apr 06, 2022 at 09:46 AM
 -- Server version: 10.4.14-MariaDB
--- PHP Version: 7.2.34
+-- PHP Version: 7.4.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -20,8 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `monitor`
 --
-CREATE DATABASE IF NOT EXISTS `monitor` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `monitor`;
 
 -- --------------------------------------------------------
 
@@ -30,15 +28,16 @@ USE `monitor`;
 --
 
 DROP TABLE IF EXISTS `bussinessaffairs`;
-CREATE TABLE `bussinessaffairs` (
-  `ID` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `bussinessaffairs` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
   `SubjectID` int(11) DEFAULT NULL,
   `SectionID` int(11) DEFAULT NULL,
   `bussinessid` int(11) DEFAULT NULL,
   `date` varchar(45) DEFAULT NULL,
   `Actions` char(100) DEFAULT NULL,
-  `remarks` char(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `remarks` char(255) DEFAULT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `bussinessaffairs`
@@ -66,14 +65,15 @@ INSERT INTO `bussinessaffairs` (`ID`, `SubjectID`, `SectionID`, `bussinessid`, `
 --
 
 DROP TABLE IF EXISTS `departments`;
-CREATE TABLE `departments` (
-  `id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `departments` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(100) NOT NULL,
   `task` varchar(100) NOT NULL,
   `manager` varchar(100) NOT NULL,
   `created_at` datetime DEFAULT current_timestamp(),
-  `updated_at` datetime DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `updated_at` datetime DEFAULT current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `departments`
@@ -90,15 +90,16 @@ INSERT INTO `departments` (`id`, `name`, `task`, `manager`, `created_at`, `updat
 --
 
 DROP TABLE IF EXISTS `documents`;
-CREATE TABLE `documents` (
-  `id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `documents` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(100) DEFAULT NULL,
   `contents` varchar(100) NOT NULL,
   `geha` varchar(100) DEFAULT NULL,
   `created_at` datetime NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp(),
-  `photo` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `photo` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `documents`
@@ -119,13 +120,14 @@ INSERT INTO `documents` (`id`, `name`, `contents`, `geha`, `created_at`, `update
 --
 
 DROP TABLE IF EXISTS `failed_jobs`;
-CREATE TABLE `failed_jobs` (
-  `id` bigint(20) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `failed_jobs` (
+  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
   `connection` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `queue` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `payload` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `exception` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
-  `failed_at` timestamp NOT NULL DEFAULT current_timestamp()
+  `failed_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -135,11 +137,12 @@ CREATE TABLE `failed_jobs` (
 --
 
 DROP TABLE IF EXISTS `migrations`;
-CREATE TABLE `migrations` (
-  `id` int(10) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `migrations` (
+  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `batch` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `batch` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `migrations`
@@ -157,8 +160,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 --
 
 DROP TABLE IF EXISTS `offers`;
-CREATE TABLE `offers` (
-  `id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `offers` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name_en` varchar(255) DEFAULT NULL,
   `price` varchar(255) DEFAULT NULL,
   `photo` varchar(100) DEFAULT NULL,
@@ -171,8 +174,9 @@ CREATE TABLE `offers` (
   `input` varchar(100) DEFAULT NULL,
   `output` varchar(100) DEFAULT NULL,
   `type` varchar(100) DEFAULT NULL,
-  `status` varchar(100) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `status` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=69 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `offers`
@@ -185,21 +189,21 @@ INSERT INTO `offers` (`id`, `name_en`, `price`, `photo`, `created_at`, `updated_
 (4, 'ابريل - مايو - يونيو (2015)', 'لا توجد ملاحظات عند التركيب المحطات (بورفؤاد - القبة - الكاب - الارسال - جنيفة - بورتوفيق-القنطرة) وبداية التشغيل تعمل بكفاءة 100%', '', '2022-03-15 07:50:37', '2022-03-01 08:49:09', NULL, 'المشاكل الفنية للرادار', NULL, 'offers', '', '', '', NULL),
 (5, 'أغسطس 2011', 'عدد/7 محطات (بورفؤاد - القبة - الكاب -القنطرة -الإرسال - جنيفة - بورتوفيق)', 'vtms-أغسطس 2011.pdf', '2022-04-05 07:27:06', '2022-03-01 08:49:44', 'طباقا لمحضر فحص ظاهري', 'تشوينات  محطات الرادرار ( مخزن المواصلات)', 'مرفق ب التعاقد بين هيئة قناة السويس و مجلس الدفاع الوطني إتفاق 28/6/2009 إتفاق 15/3/2016 ملحق إتفاق 7/3/2019', 'vtms', NULL, NULL, NULL, 'done'),
 (6, 'فبراير 2022', 'عدد 5 محطات تعمل بنسبة 50% (بورفؤاد - الكاب - البلاح - الارسال - جنيفة )', 'vtms-فبراير 2022.pdf', '2022-04-03 12:21:37', '2022-03-01 08:49:51', 'أخر مخاطبة الهيئة الإقتصادية  للمشروعات رقم883/ج بتاريخ 9/12/2021', 'المشاكل الفنية للرادار', 'رقم 433/ج بتاريخ 12/7/2016', 'vtms', NULL, NULL, NULL, 'done'),
-(7, '06-02-2020', 'أمر توريد رقم 26-1026/1106 بخصوص ماجنترونات محطات رادار موديل terma', 'vtms-06-02-2020.pdf', '2022-04-05 07:30:05', '2022-03-01 09:26:17', NULL, 'أوامر التوريد', NULL, 'vtms', NULL, NULL, 'أمر توريد', 'done'),
-(8, '17-11-2021', 'أمر توريد رقم 26-1088/824 بخصوص قطع غيار رادار من نوع sperry marine', 'vtms-3683-17-11-2021.pdf', '2022-04-05 07:31:59', '2022-03-01 11:14:26', NULL, 'أوامر التوريد', NULL, 'vtms', '3683', NULL, 'أمر توريد', 'done'),
+(7, '06-02-2020', 'أمر توريد رقم 26-1026/1106 بخصوص ماجنترونات محطات رادار موديل terma', 'vtms-06-02-2020.pdf', '2022-04-05 11:57:32', '2022-03-01 09:26:17', NULL, 'أوامر التوريد', NULL, 'vtms', NULL, NULL, 'أمر توريد', 'done'),
+(8, '17-11-2021', 'أمر توريد رقم 26-1088/824 بخصوص قطع غيار رادار من نوع sperry marine', 'vtms-3683-17-11-2021.pdf', '2022-04-05 11:57:59', '2022-03-01 11:14:26', NULL, 'أوامر التوريد', NULL, 'vtms', '3683', NULL, 'أمر توريد', 'done'),
 (9, '23/11/2020', 'أمر توريد رقم 26-1016/706 بخصوص مواتير  لهوائي رادار CHL', '1647330499.pdf', '2022-03-15 07:48:19', '2022-03-01 11:15:49', NULL, 'أوامر التوريد', NULL, 'offers', '', '', '', NULL),
-(10, '17/11/2021', 'أمر توريد رقم 26-1088/823 بخصوص توفير قطع غيار ciberd', '1647330330.pdf', '2022-03-15 07:45:30', '2022-03-01 11:21:01', NULL, 'أوامر التوريد', NULL, 'offers', '', '', '', NULL),
+(10, '17-11-2021', 'أمر توريد رقم 26-1088/823 بخصوص توفير قطع غيار ciberd', 'vtms-17-11-2021.pdf', '2022-04-05 12:20:37', '2022-03-01 11:21:01', NULL, 'أوامر التوريد', NULL, 'vtms', NULL, NULL, NULL, 'done'),
 (11, '23/11/2020', 'أمر توريد رقم 26-1016/08 بخصوص قطع غيار هوائي رادار من نوع chl', '1647330524.pdf', '2022-03-15 07:48:44', '2022-03-01 11:27:35', NULL, 'أوامر التوريد', NULL, 'offers', '', '', '', NULL),
 (12, '05-09-2010', 'أمر توريد رقم 1528/670-26 بخصوص توفير قطع غيار بخصوص كبائن GEM', '1647331891.pdf', '2022-03-15 08:11:32', '2022-03-07 10:40:07', NULL, 'أوامر التوريد', NULL, 'offers', '', '', '', NULL),
 (13, 'فبراير 2022', 'عدد 6 محطات متوقفة لأسباب فنية (القبة - رأس العش - القنطرة - شرق الفردان - فنارة -بورتوفيق)', '1647331572.png', '2022-03-15 08:06:12', '2022-03-07 10:47:40', 'أخر مخاطبة الهيئة الإقتصادية  للمشروعات رقم883/ج بتاريخ 9/12/2021', 'المشاكل الفنية للرادار', 'أول مخاطبة لهيئة الدفاع الوطني', 'offers', '', '', '', NULL),
 (14, '05-09-2010', 'أمر توريد رقم 1529/670-26 بخصوص توفير قطع غيار بخصوص كبائن GEM', '1647331714.pdf', '2022-03-15 08:08:34', '2022-03-07 10:53:06', NULL, 'أوامر التوريد', NULL, 'offers', '', '', '', NULL),
 (15, '16/4/2013', 'أمر توريد رقم 26-670/1398 بخصوص توفير قطع غيار بخصوص كبائن GEM', '', '2022-03-15 08:15:00', '2022-03-07 12:42:57', NULL, 'أوامر التوريد', NULL, 'offers', '', '', '', NULL),
-(16, '02-05-2020', 'أمر توريد رقم 26-1026/1106 بخصوص ماجنترونات محطات رادار موديل terma', '1647330056.pdf', '2022-03-15 07:40:56', '2022-03-15 07:37:13', NULL, 'أوامر التوريد', NULL, 'offers', '', '', '', NULL),
-(17, '09-01-2014', 'أمر توريد رقم 263/870-26 بخصوص توفير قطع غيار بخصوص كبائن GEM', '', '2022-03-15 08:16:15', '2022-03-15 08:16:15', 'غير متوفر', 'أوامر التوريد', NULL, 'offers', '', '', '', NULL),
+(16, '02-05-2020', 'أمر توريد رقم 26-1026/1106 بخصوص ماجنترونات محطات رادار موديل terma', 'vtms-02-05-2020.pdf', '2022-04-05 12:03:07', '2022-03-15 07:37:13', NULL, 'أوامر التوريد', NULL, 'vtms', NULL, NULL, NULL, 'done'),
+(17, '09-01-2014', 'أمر توريد رقم 263/870-26 بخصوص توفير قطع غيار بخصوص كبائن GEM', '', '2022-04-05 12:20:53', '2022-03-15 08:16:15', 'غير متوفر', 'أوامر التوريد', NULL, 'vtms', NULL, NULL, NULL, 'done'),
 (18, '02-12-2017', 'أمر توريد رقم 997/945-26 بخصوص توفير قطع غيار بخصوص كبائن GEM', '', '2022-03-15 08:17:03', '2022-03-15 08:17:03', 'غير متوفر', 'أوامر التوريد', NULL, 'offers', '', '', '', NULL),
 (19, '22/11/2020', 'أمر توريد رقم 708/1016-26 بخصوص توفير قطع غيار بخصوص كبائن GEM', '1647332289.pdf', '2022-03-15 08:18:09', '2022-03-15 08:18:09', NULL, 'أوامر التوريد', NULL, 'offers', '', '', '', NULL),
 (20, '14/7/2020', 'أمر توريد رقم997/945-26 بخصوص توفير قطع غيار بخصوص كبائن GEM', '', '2022-03-15 08:21:31', '2022-03-15 08:21:31', NULL, 'أوامر التوريد', NULL, 'offers', '', '', '', NULL),
-(21, '23/11/2020', 'أمر توريد رقم 26-1016/707 بخصوص توفير قطع غيار هوائي لمحطات رادار chl', '', '2022-03-15 08:22:25', '2022-03-15 08:22:25', NULL, 'أوامر التوريد', NULL, 'offers', '', '', '', NULL),
+(21, '23-11-2020', 'أمر توريد رقم 26-1016/707 بخصوص توفير قطع غيار هوائي لمحطات رادار chl', 'vtms-23-11-2020.pdf', '2022-04-05 12:21:25', '2022-03-15 08:22:25', NULL, 'أوامر التوريد', NULL, 'vtms', NULL, NULL, NULL, 'done'),
 (22, '25/8/2019', 'أمر توريد 26-927/213 بخصوص توفير زيوت جير بوكس للهوائيات', '', '2022-03-15 08:23:21', '2022-03-15 08:23:21', NULL, 'أوامر التوريد', NULL, 'offers', '', '', '', NULL),
 (23, 'بدون', 'عدم إمكانية الشبكة الرادارية الحالية من عند تغطية قناة السويس الجديدة من 65 حتي 90 كم بسبب إرتفاعات التلال الردم علي ضفتي قناة السويس و قد تصل إرتفاعها إلي منسوب 40 متر', '', '2022-03-15 08:29:58', '2022-03-15 08:28:01', 'بعد إجراءات إستلام مشروع الـVTMS الحالي من الهيئة الإقتصادية  للمشروعات بالمخابرات العامة', 'الرؤية المستقبلية', 'يجب أن تقوم الشركة المكلف لها رسميا بتحديث مشروع الـ VTMS  بعمل دراسة ميدانيا للتغطية الرادارية للقناة الجديدة لتحدد عدد و أحداثيات  لمواقع الرادار الجديدة المقُترحة من طرفهم طبقا لنوعية الموصفات الفنية  للرادارات حتي تنفذ التغطية الرادارية بالكامل وهو الهدف الأساسي من التحديث.', 'offers', '', '', '', NULL),
 (24, 'بدون', 'رفع كفاءة التغطية الرادارية للمنطقة الشمالية للقناة بمنطقة شرق التفريعة', '', '2022-03-15 08:29:42', '2022-03-15 08:29:42', 'بعد إجراءات إستلام مشروع الـVTMS الحالي من الهيئة الإقتصادية  للمشروعات بالمخابرات العامة', 'الرؤية المستقبلية', 'يجب أن تقوم الشركة المكلف لها رسميا بتحديث مشروع الـ VTMS  بعمل دراسة ميدانيا للتغطية الرادارية للمنطقة الشمالية لتحدد مدي فاعلية  تركيب محطة رادار جديدة بالبرج الجديد بمحطة الجونة البحرية طبقا لنوعية  الموصفات الفنية للرادارحتي تنفذ التغطية الرادارية بالكامل وهو الهدف الأساسب من التحديث وعدم الإعتماد الكلي علي رادار بورفؤاد.', 'offers', '', '', '', NULL),
@@ -230,7 +234,22 @@ INSERT INTO `offers` (`id`, `name_en`, `price`, `photo`, `created_at`, `updated_
 (49, '23/03/22', 'مخاطبه ادارة الخدمات للتامين الشامل على السياره طبقا لاشارتهم رقم 768 بتاريخ 13/3/2022', 'security-2022-03-29.png', '2022-03-29 06:21:24', '2022-03-29 06:21:24', NULL, 'تامين سيارات', NULL, 'security', '', '', '', NULL),
 (50, '13-9-2021', 'أمر توريد رقم 384/1911-455', 'power-2981-13-9-2021.png', '2022-03-31 09:45:01', '2022-03-31 08:43:21', NULL, 'أمر توريد', 'توريد وتركيب 3kva ups', 'power', '2981', NULL, 'أمر توريد', 'canceled'),
 (51, '28-2-2022', 'توريد وتركيب', 'power-1993-28-2-2022.png', '2022-03-31 09:44:19', '2022-03-31 08:50:18', NULL, 'أوامر التوريد', '912/1860-55 توريد عدد/18 كارتة ريموت لزوم شبكات UPS', 'power', '1993', NULL, 'أمر توريد', 'progress'),
-(52, '6-3-22', 'امر توريد رقم 1890-55-1428', 'power-706-6-3-22.png', '2022-03-31 09:51:56', '2022-03-31 09:51:56', NULL, 'أوامر التوريد', 'امر توري', 'power', '706', NULL, 'أمر توريد', 'transferred');
+(52, '6-3-22', 'امر توريد رقم 1890-55-1428', 'power-706-6-3-22.png', '2022-03-31 09:51:56', '2022-03-31 09:51:56', NULL, 'أوامر التوريد', 'امر توري', 'power', '706', NULL, 'أمر توريد', 'transferred'),
+(53, '20-03-22', NULL, 'security-2022250-20-03-22.pdf', '2022-04-05 09:57:44', '2022-04-05 09:57:44', NULL, 'تركيب كاميرات محطات الماية', 'التنبيه بعمل ما يلزم نحو الرد على إستفسارات من الشركات (جيزة للأنظمة - إنتركوم - إنتراكت - NETC - ساميت) بخصوص المناقصة رقم 109-3572/501 جلسة يوم الأربعاء 2022/4/6 لتوريد وتركيب وتشغيل كاميرات مراقبة لمحطات المياه بمدن القناة الثلاث', 'security', NULL, '2022250', 'تحويل مستندات', 'done'),
+(55, '28-03-22', NULL, 'power-2022531-28-03-22.pdf', '2022-04-05 10:27:23', '2022-04-05 10:27:23', NULL, 'فحص واستلام', 'إيفاد مندوبينا لفحص وإستلام عدد/ 1 جهاز Lab DC Power Supply الخاص بأمر توريد رقم 55-952/1898 بتاريخ 2021/12/7 الصادر لشركة سينا للمشروعات الهندسية', 'power', '2022531', NULL, 'إشاره كتابيه', 'progress'),
+(56, '29-03-22', NULL, 'vtms-2022539-29-03-22.pdf', '2022-04-05 10:28:40', '2022-04-05 10:28:40', NULL, 'تعليمات داخلية', 'الإلتزام بما جاء بكتاب إدارة الخدمات رقم 850 بتاريخ 2022/3/21 بضرورة عدم مخالفة القواعد والتعليمات المتبعة أثناء التردد على المستشفيات والمراكز الطبية التابعة للهيئة', 'vtms', '2022539', NULL, 'إشاره كتابيه', 'progress'),
+(57, '29-03-22', NULL, 'security-2022539-29-03-22.pdf', '2022-04-05 10:29:52', '2022-04-05 10:29:52', NULL, 'تعليمات داخلية', 'الإلتزام بما جاء بكتاب إدارة الخدمات رقم 850 بتاريخ 2022/3/21 بضرورة عدم مخالفة القواعد والتعليمات المتبعة أثناء التردد على المستشفيات والمراكز الطبية التابعة للهيئة', 'security', '2022539', NULL, 'أمر توريد', 'done'),
+(58, '31-03-22', NULL, 'vtms-2022244-31-03-22.pdf', '2022-04-05 11:20:48', '2022-04-05 11:20:48', NULL, 'تركيبات  محطات الرادار', 'موافاتنا بموعد قدوم الشركة الفرنسية لإستكمال أعمال التركيبات لعدد/ 13 محطة رادار وإنهاء التسليم لمنظومة (VTMS)', 'vtms', NULL, '2022244', 'إشاره كتابيه', 'progress'),
+(59, '31-03-22', NULL, 'vtms-2022521-31-03-22.pdf', '2022-04-05 11:23:54', '2022-04-05 11:23:54', NULL, 'توسيع طريق مرشدين', 'بشأن أعمال تطوير وتوسعة طريق المرشدين القطاع الرابع (جبل مريم - الدفرسوار) ودراسة التعارض مع كابلات هيئة قناة السويس.', 'vtms', NULL, '2022521', 'إشاره كتابيه', 'done'),
+(60, '28-03-22', NULL, 'power-2022531-28-03-22.pdf', '2022-04-05 11:25:20', '2022-04-05 11:25:20', NULL, 'فحص أجهزة', 'إيفاد مندوبينا لفحص وإستلام عدد/ 1 جهاز Lab DC Power Supply الخاص بأمر توريد رقم 55-952/1898 بتاريخ 2021/12/7 الصادر لشركة سينا للمشروعات الهندسية', 'power', '2022531', NULL, 'إشاره كتابيه', 'progress'),
+(61, '4-04-22', NULL, 'security-2022250-4-04-22.pdf', '2022-04-05 11:28:13', '2022-04-05 11:28:13', NULL, 'رد على استفسار التموين', 'رد على استفسارات الشركات فى المناقصة رقم109 -3572/501 جلسة الاربعاء 6/4/2022 لتوريد وتركيب كاميرات مراقبه لمحطات المياه بمدن القناه', 'security', NULL, '2022250', 'إشاره كتابيه', 'done'),
+(62, '30-03-22', NULL, 'security-2022542-30-03-22.pdf', '2022-04-05 11:30:51', '2022-04-05 11:30:51', NULL, 'استلام تطوير الاستاد ابتدائى', 'الأمر الإدارى رقم 152 لسنة 2022 بخصوص الإستلام الإبتدائى لعملية تطوير وإنشاء استاد هيئة قناة السويس الجديد والحضور يوم الاربعاء من كل اسبوع ولحين نهو إجراءات اللجنة المذكورة', 'security', '2022542', NULL, 'أمر ادارى', 'done'),
+(63, '3-04-22', NULL, 'security-2022553-3-04-22.pdf', '2022-04-05 11:33:01', '2022-04-05 11:33:01', NULL, 'تطوير كبرى الفردان', 'اعمال تطوير انشاء كوبرى الفردان الحديد', 'security', '2022553', NULL, 'إشاره كتابيه', 'done'),
+(64, '30-03-22', NULL, 'vtms-2022548-30-03-22.pdf', '2022-04-05 11:34:52', '2022-04-05 11:34:52', NULL, 'قطع كابل فايبر', 'الإحاطة بأنه تم قطع كابل الفيبر بكل من القطاع الشمالى والقطاع الجنوبى', 'vtms', '2022548', NULL, 'إشاره كتابيه', 'done'),
+(65, '29-03-22', NULL, 'security-2022545-29-03-22.pdf', '2022-04-05 11:43:47', '2022-04-05 11:43:47', NULL, 'مواصفات كاميرات', 'وارد رئاسه 1551 بتاريخ 29/3/2022 بخصوص وضع المواصفات الفنيه لكاميرات مراقبة اجهزة تسجيل الحضور والانصراف من قبل ادارة التحركات وقيام ادارة الاتصالات ونظم المعلومات باتخاذ اجراءات الفحص والاستلام', 'security', '2022545', NULL, 'إشاره كتابيه', 'done'),
+(66, '22-03-22', NULL, 'hospital_centers-2022539-22-03-22.pdf', '2022-04-06 08:38:29', '2022-04-06 08:38:29', NULL, 'تامين مستشفيات', 'الإلتزام بما جاء بكتاب إدارة الخدمات رقم 850 بتاريخ 2022/3/21 بضرورة عدم مخالفة القواعد والتعليمات المتبعة أثناء التردد على المستشفيات والمراكز الطبية التابعة للهيئة', 'hospital_centers', '2022539', NULL, 'إشاره كتابيه', 'done'),
+(67, '24-03-22', NULL, 'vtms-2022213-24-03-22.pdf', '2022-04-06 08:41:01', '2022-04-06 08:40:18', NULL, 'مد كابلات فايبر', 'تنفيذ المسارات المطلوبة حتى يتسنى سحب ومد الكابلات الخاصة بالنظام عند الحاجه دون إتلاف المسطح الأخضر بمحطة الفردان', 'vtms', NULL, '2022213', 'إشاره كتابيه', 'done'),
+(68, '24-03-22', NULL, 'power-2022212-24-03-22.pdf', '2022-04-06 09:08:16', '2022-04-06 08:45:39', NULL, 'الطاقة المتجددة', 'تجهيز المواقع للبدء فى تركيب أنظمة الطاقة المتجددة(الرياح+ الشمس) بمحطات القطاع الشمالى وعمل مسار عبارة عن عدد/3 ماسوره 4 بوصة من غرفة الفيبر أسفل البرج إلى موقع برج التربينة', 'power', NULL, '2022212', 'إشاره كتابيه', 'done');
 
 -- --------------------------------------------------------
 
@@ -239,10 +258,11 @@ INSERT INTO `offers` (`id`, `name_en`, `price`, `photo`, `created_at`, `updated_
 --
 
 DROP TABLE IF EXISTS `password_resets`;
-CREATE TABLE `password_resets` (
+CREATE TABLE IF NOT EXISTS `password_resets` (
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `token` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL
+  `created_at` timestamp NULL DEFAULT NULL,
+  KEY `password_resets_email_index` (`email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -260,11 +280,11 @@ INSERT INTO `password_resets` (`email`, `token`, `created_at`) VALUES
 --
 
 DROP TABLE IF EXISTS `power_stations`;
-CREATE TABLE `power_stations` (
-  `id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `power_stations` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `station_name` varchar(100) DEFAULT NULL,
-  `UpsSttp` tinyint(1) DEFAULT NULL,
-  `UpsRadar` tinyint(1) DEFAULT NULL,
+  `UpsSttp` varchar(100) DEFAULT NULL,
+  `UpsRadar` varchar(100) DEFAULT NULL,
   `ContractUPS` varchar(100) DEFAULT NULL,
   `UpslInstallation` varchar(100) DEFAULT NULL,
   `PreDeliveryUPS` varchar(100) DEFAULT NULL,
@@ -283,34 +303,35 @@ CREATE TABLE `power_stations` (
   `AvrRadar` varchar(100) DEFAULT NULL,
   `SurgeRadar` varchar(100) DEFAULT NULL,
   `TawkitatSurgeProtect` varchar(100) DEFAULT NULL,
-  `RadarSurgeProtect` varchar(100) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `RadarSurgeProtect` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `power_stations`
 --
 
 INSERT INTO `power_stations` (`id`, `station_name`, `UpsSttp`, `UpsRadar`, `ContractUPS`, `UpslInstallation`, `PreDeliveryUPS`, `FinalDeliveryUPS`, `StatusRatioRadar`, `StatusRatioSTTB`, `LastMessage`, `Desil`, `DeisilInstallation`, `ContractDesil`, `PreDeliveryDesil`, `FinalDeliveryDesil`, `ATS1Transit`, `IsolationTransformer`, `ATS2VTMS`, `AvrRadar`, `SurgeRadar`, `TawkitatSurgeProtect`, `RadarSurgeProtect`) VALUES
-(1, 'الجونة', 0, 0, '−', '−', 'لم يتم', 'لم يتم', 'لم يتم', '-', '-', '30 KVA', '2014', '2019', 'لم يتم', '2016', 'لايوجد', '2022', '2019', 'لايوجد', 'لايوجد', 'قيد التوريد', ''),
-(2, 'القبة', 0, 0, '−', '−', 'لم يتم', 'لم يتم', 'لدى شركة جيت للإصلاح', '−', '−', '100 KVA', '2014', '2019', 'لم يتم', '2016', 'لايوجد', '2022', '2019', 'لايوجد', 'تم الاستلام  وجارى التركيب)', 'لم يتم', 'لم يتم'),
-(3, 'الرسوة', 0, 0, '√', '√', '√', '√', '√', '√', '√', 'قيد التوريد (امر توريد بتاريخ 3-3-2022)مدة التوريد 5 شخور)', '−', '−', '−', '−', 'لايوجد', 'تم استلامه ولكن يركب بعد توريد المولد', 'جاى التوريد', 'لايوجد', 'لايوجد', 'جارى التوريد', 'جارى التركيب'),
-(4, 'راس العش', 0, 0, '−', '−', 'لم يتم', 'لم يتم', 'لدى شركة جيت للإصلاح', '−', '−', '30 KVA', '2014', '2015', 'لم يتم', '2016', '2020', 'تم التركيب', '2015', '2021', '2022', 'جارى التوريد', 'جارى التركيب'),
-(5, 'التينة', 0, 0, '−', '−', 'لم يتم', 'لم يتم', 'لم يتم', '−', '−', '30 KVA', '2014', '2015', 'لم يتم', '2015', '2020', 'جارى التركيب', '2015', '2021', '2022', 'تم التركيب', 'جارى التركيب'),
-(6, 'الكاب', 0, 0, '−', '−', 'لم يتم', 'لم يتم', 'لم يتم', '−', '−', '30 KVA', '2012', '2012', 'لم يتم', '2013', '2020', 'تم التركيب', '2012', '2021', '2022', 'جارى التوريد', 'جارى التركيب'),
-(7, 'القنطرة', 0, 0, '−', '−', 'لم يتم', 'لم يتم', 'لدى شركة جيت للإصلاح', '−', '−', '(تم طلب تغيره في اللميزانية30 KVA', '1994', '1994', 'لم يتم', '1995', '2020', 'تم التركيب', '1994', '2021', '2021', 'جارى التوريد', 'جارى التركيب'),
-(8, 'البلاح', 0, 0, '−', '−', 'لم يتم', 'لم يتم', 'لدى شركة جيت للإصلاح', '−', '−', '30 KVA', '2014', '2015', 'لم يتم', '2016', '2020', 'تم التركيب', '2015', '2021', '2021', 'جارى التوريد', 'جارى التركيب'),
-(9, 'الفردان', 0, 0, '−', '−', 'لم يتم', 'لم يتم', 'لم يتم', '−', '−', '30 KVA', '2014', '2015', 'لم يتم', '2016', '2020', 'جارى التركيب', '2015', '−', '−', 'جارى التوريد', 'جارى التركيب'),
-(10, 'المارينا', 0, 0, '−', '−', 'لم يتم', 'لم يتم', 'لم يتم', '−', '−', '−', '−', '−', 'لم يتم', '−', '2020', 'تم التركيب', '−', '−', '−', 'جارى التوريد', 'جارى التركيب'),
-(11, 'طوسون', 0, 0, '−', '−', 'لم يتم', 'لم يتم', 'لم يتم', '−', '−', '30 KVA', '2014', '2015', 'لم يتم', '2016', '2020', 'تم التركيب', '2015', '2021', '2022', 'جارى التوريد', 'جارى التركيب'),
-(12, 'الدفرسوار', 0, 0, '−', '−', 'لم يتم', 'لم يتم', 'لم يتم', '−', '−', '30 KVA', '2014', '2015', 'لم يتم', '2016', '2020', 'جارى التركيب', '2015', '−', '−', 'جارى التوريد', 'جارى التركيب'),
-(13, 'كبريت', 0, 0, '−', '−', 'لم يتم', 'لم يتم', 'لم يتم', '−', '−', '30 KVA', '2014', '2015', 'لم يتم', '2016', '2020', 'جارى التركيب', '2015', '−', '−', 'جارى التوريد', 'جارى التركيب'),
-(14, 'جنيفة', 0, 0, '−', '−', 'لم يتم', 'لم يتم', 'لم يتم', '−', '−', '30 KVA', '2012', '2012', 'لم يتم', '2013', '2020', 'تم التركيب', '2013', '2021', '2022', 'تم التركيب', 'جارى التركيب'),
-(15, 'الشلوفة', 0, 0, '−', '−', 'لم يتم', 'لم يتم', 'لم يتم', '−', '−', '30 KVA', '2014', '2015', 'لم يتم', '2016', '2020', 'تم التركيب', '2015', '2021', '2021', 'جارى التوريد', 'جارى التركيب'),
-(16, 'بورتوفيق', 0, 0, '−', '−', 'لم يتم', 'لم يتم', 'لايعمل', '−', '−', '30 KVA', '2012', '2012', 'لم يتم', '2013', 'لايوجد', 'تم التركيب', '2013', '2021', '2021', '−', '−'),
-(17, 'فنارة', 0, 0, '−', '−', 'لم يتم', 'لم يتم', 'لدى شركة جيت للإصلاح', '−', '−', '100 KVA', '2016', '2018', 'لم يتم', '2019', 'لايوجد', 'تم التركيب', '2018', '2021', '2021', 'لايوجد', 'لايوجد'),
-(18, 'شرق الفردان', 0, 0, '−', '−', 'لم يتم', 'لم يتم', 'لم يتم', '−', '−', '100 KVA', '2016', '2018', 'لم يتم', '2019', 'لايوجد', 'تم التركيب', '2018', 'لايحتاج تم تريب نظام الطاقة المتجددة', 'جارى التركيب', 'لايوجد', 'لايوجد'),
-(19, 'الارسال', 0, 0, '−', '−', 'لم يتم', 'لم يتم', 'لم يتم', '−', '−', '30 KVA', '1996 مطلوب تغييره', '1996', 'لم يتم', '1996', 'لايوجد', 'تم التركيب', '1996', '2021', '2022', 'لايوجد', 'لايوجد'),
-(20, 'بورفؤاد', 0, 0, '−', '−', 'لم يتم', 'لم يتم', 'لم يتم', '−', '−', '30 KVA', '2012', '2012', 'لم يتم', '2013', 'لايوجد', 'تم التركيب', '2012', '2022', '2021', 'لايوجد', 'لايوجد');
+(1, 'الجونة', '√', '-', '−', '−', '-', '-', '-', '-', '-', '30 KVA', '2014', '2019', 'لم يتم', '2016', 'لايوجد', '2022', '2019', 'لايوجد', 'لايوجد', 'قيد التوريد', ''),
+(2, 'القبة', '-', '√', '−', '−', '-', '-', 'لدى شركة جيت للإصلاح', '−', '−', '100 KVA', '2014', '2019', 'لم يتم', '2016', 'لايوجد', '2022', '2019', 'لايوجد', 'تم الاستلام  وجارى التركيب)', 'لم يتم', 'لم يتم'),
+(3, 'الرسوة', '√', '-', '√', '√', '√', '√', '√', '√', '√', 'قيد التوريد (امر توريد بتاريخ 3-3-2022)مدة التوريد 5 شخور)', '−', '−', '−', '−', 'لايوجد', 'تم استلامه ولكن يركب بعد توريد المولد', 'جاى التوريد', 'لايوجد', 'لايوجد', 'جارى التوريد', 'جارى التركيب'),
+(4, 'راس العش', '√', '√', '−', '−', '-', '-', 'لدى شركة جيت للإصلاح', '−', '−', '30 KVA', '2014', '2015', 'لم يتم', '2016', '2020', 'تم التركيب', '2015', '2021', '2022', 'جارى التوريد', 'جارى التركيب'),
+(5, 'التينة', '√', '√', '−', '−', '-', '-', '-', '−', '−', '30 KVA', '2014', '2015', 'لم يتم', '2015', '2020', 'جارى التركيب', '2015', '2021', '2022', 'تم التركيب', 'جارى التركيب'),
+(6, 'الكاب', '√', '√', '−', '−', '-', '-', '-', '−', '−', '30 KVA', '2012', '2012', 'لم يتم', '2013', '2020', 'تم التركيب', '2012', '2021', '2022', 'جارى التوريد', 'جارى التركيب'),
+(7, 'القنطرة', '√', '√', '−', '−', '-', '-', 'لدى شركة جيت للإصلاح', '−', '−', '(تم طلب تغيره في اللميزانية30 KVA', '1994', '1994', 'لم يتم', '1995', '2020', 'تم التركيب', '1994', '2021', '2021', 'جارى التوريد', 'جارى التركيب'),
+(8, 'البلاح', '√', '√', '−', '−', '-', '-', 'لدى شركة جيت للإصلاح', '−', '−', '30 KVA', '2014', '2015', 'لم يتم', '2016', '2020', 'تم التركيب', '2015', '2021', '2021', 'جارى التوريد', 'جارى التركيب'),
+(9, 'الفردان', '√', '-', '−', '−', '-', '-', '-', '−', '−', '30 KVA', '2014', '2015', 'لم يتم', '2016', '2020', 'جارى التركيب', '2015', '−', '−', 'جارى التوريد', 'جارى التركيب'),
+(10, 'المارينا', '√', '-', '−', '−', '-', '-', '-', '−', '−', '−', '−', '−', 'لم يتم', '−', '2020', 'تم التركيب', '−', '−', '−', 'جارى التوريد', 'جارى التركيب'),
+(11, 'طوسون', '√', '√', '−', '−', '-', '-', '-', '−', '−', '30 KVA', '2014', '2015', 'لم يتم', '2016', '2020', 'تم التركيب', '2015', '2021', '2022', 'جارى التوريد', 'جارى التركيب'),
+(12, 'الدفرسوار', '√', '-', '−', '−', '-', '-', '-', '−', '−', '30 KVA', '2014', '2015', 'لم يتم', '2016', '2020', 'جارى التركيب', '2015', '−', '−', 'جارى التوريد', 'جارى التركيب'),
+(13, 'كبريت', '√', '-', '−', '−', '-', '-', '-', '−', '−', '30 KVA', '2014', '2015', 'لم يتم', '2016', '2020', 'جارى التركيب', '2015', '−', '−', 'جارى التوريد', 'جارى التركيب'),
+(14, 'جنيفة', '√', '√', '−', '−', '-', '-', '-', '−', '−', '30 KVA', '2012', '2012', 'لم يتم', '2013', '2020', 'تم التركيب', '2013', '2021', '2022', 'تم التركيب', 'جارى التركيب'),
+(15, 'الشلوفة', '√', '√', '−', '−', '-', '-', '-', '−', '−', '30 KVA', '2014', '2015', 'لم يتم', '2016', '2020', 'تم التركيب', '2015', '2021', '2021', 'جارى التوريد', 'جارى التركيب'),
+(16, 'بورتوفيق', '√', '√', '−', '−', '-', '-', '-', '−', '−', '30 KVA', '2012', '2012', 'لم يتم', '2013', 'لايوجد', 'تم التركيب', '2013', '2021', '2021', '−', '−'),
+(17, 'فنارة', '√', '√', '−', '−', '-', '-', 'لدى شركة جيت للإصلاح', '−', '−', '100 KVA', '2016', '2018', 'لم يتم', '2019', 'لايوجد', 'تم التركيب', '2018', '2021', '2021', 'لايوجد', 'لايوجد'),
+(18, 'شرق الفردان', '-', '√', '−', '−', '-', '-', '-', '−', '−', '100 KVA', '2016', '2018', 'لم يتم', '2019', 'لايوجد', 'تم التركيب', '2018', 'لايحتاج تم تريب نظام الطاقة المتجددة', 'جارى التركيب', 'لايوجد', 'لايوجد'),
+(19, 'الارسال', '-', '√', '−', '−', '-', '-', '-', '−', '−', '30 KVA', '1996 مطلوب تغييره', '1996', 'لم يتم', '1996', 'لايوجد', 'تم التركيب', '1996', '2021', '2022', 'لايوجد', 'لايوجد'),
+(20, 'بورفؤاد', '-', '√', '−', '−', '-', '-', '-', '−', '−', '30 KVA', '2012', '2012', 'لم يتم', '2013', 'لايوجد', 'تم التركيب', '2012', '2022', '2021', 'لايوجد', 'لايوجد');
 
 -- --------------------------------------------------------
 
@@ -319,13 +340,14 @@ INSERT INTO `power_stations` (`id`, `station_name`, `UpsSttp`, `UpsRadar`, `Cont
 --
 
 DROP TABLE IF EXISTS `problemstate`;
-CREATE TABLE `problemstate` (
-  `ID` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `problemstate` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
   `SubjectID` int(11) DEFAULT NULL,
   `SectionID` int(11) DEFAULT NULL,
   `ProblemID` int(11) DEFAULT NULL,
-  `Description` char(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `Description` char(255) DEFAULT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `problemstate`
@@ -352,8 +374,8 @@ INSERT INTO `problemstate` (`ID`, `SubjectID`, `SectionID`, `ProblemID`, `Descri
 --
 
 DROP TABLE IF EXISTS `radars`;
-CREATE TABLE `radars` (
-  `id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `radars` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `station_name` varchar(200) DEFAULT NULL,
   `location` varchar(6) DEFAULT NULL,
   `photo` varchar(100) NOT NULL,
@@ -365,8 +387,9 @@ CREATE TABLE `radars` (
   `LetterDate` varchar(255) DEFAULT NULL,
   `Remarks` varchar(255) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `radars`
@@ -391,13 +414,14 @@ INSERT INTO `radars` (`id`, `station_name`, `location`, `photo`, `supply_date`, 
 --
 
 DROP TABLE IF EXISTS `sectionsubjects`;
-CREATE TABLE `sectionsubjects` (
-  `ID` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `sectionsubjects` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
   `SectionID` int(11) DEFAULT NULL,
   `Subjects` char(255) DEFAULT NULL,
   `summary` char(255) DEFAULT NULL,
-  `Objectives` char(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `Objectives` char(255) DEFAULT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `sectionsubjects`
@@ -417,8 +441,8 @@ INSERT INTO `sectionsubjects` (`ID`, `SectionID`, `Subjects`, `summary`, `Object
 --
 
 DROP TABLE IF EXISTS `users`;
-CREATE TABLE `users` (
-  `id` bigint(20) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `users` (
+  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
@@ -426,8 +450,10 @@ CREATE TABLE `users` (
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
-  `mobile` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `mobile` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `users_email_unique` (`email`)
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `users`
@@ -444,13 +470,15 @@ INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `re
 --
 
 DROP TABLE IF EXISTS `vtms_sections`;
-CREATE TABLE `vtms_sections` (
-  `ID` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `vtms_sections` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
   `SectionName` char(100) CHARACTER SET utf8mb4 DEFAULT NULL,
   `SectionManagerName` char(100) CHARACTER SET utf8mb4 DEFAULT NULL,
   `RepresentativePerson` char(100) CHARACTER SET utf8mb4 DEFAULT NULL,
-  `CountOfProjects` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=cp1257;
+  `CountOfProjects` int(11) DEFAULT NULL,
+  PRIMARY KEY (`ID`),
+  UNIQUE KEY `ID_UNIQUE` (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=cp1257;
 
 --
 -- Dumping data for table `vtms_sections`
@@ -458,166 +486,6 @@ CREATE TABLE `vtms_sections` (
 
 INSERT INTO `vtms_sections` (`ID`, `SectionName`, `SectionManagerName`, `RepresentativePerson`, `CountOfProjects`) VALUES
 (1, 'قطاع الرادارات', 'دكتور مهندس أيمن موسى', 'مهندس أحمد عمر', 13);
-
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `bussinessaffairs`
---
-ALTER TABLE `bussinessaffairs`
-  ADD PRIMARY KEY (`ID`);
-
---
--- Indexes for table `departments`
---
-ALTER TABLE `departments`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `documents`
---
-ALTER TABLE `documents`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `failed_jobs`
---
-ALTER TABLE `failed_jobs`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `migrations`
---
-ALTER TABLE `migrations`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `offers`
---
-ALTER TABLE `offers`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `password_resets`
---
-ALTER TABLE `password_resets`
-  ADD KEY `password_resets_email_index` (`email`);
-
---
--- Indexes for table `power_stations`
---
-ALTER TABLE `power_stations`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `problemstate`
---
-ALTER TABLE `problemstate`
-  ADD PRIMARY KEY (`ID`);
-
---
--- Indexes for table `radars`
---
-ALTER TABLE `radars`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `sectionsubjects`
---
-ALTER TABLE `sectionsubjects`
-  ADD PRIMARY KEY (`ID`);
-
---
--- Indexes for table `users`
---
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `users_email_unique` (`email`);
-
---
--- Indexes for table `vtms_sections`
---
-ALTER TABLE `vtms_sections`
-  ADD PRIMARY KEY (`ID`),
-  ADD UNIQUE KEY `ID_UNIQUE` (`ID`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `bussinessaffairs`
---
-ALTER TABLE `bussinessaffairs`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
-
---
--- AUTO_INCREMENT for table `departments`
---
-ALTER TABLE `departments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT for table `documents`
---
-ALTER TABLE `documents`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
---
--- AUTO_INCREMENT for table `failed_jobs`
---
-ALTER TABLE `failed_jobs`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `migrations`
---
-ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- AUTO_INCREMENT for table `offers`
---
-ALTER TABLE `offers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
-
---
--- AUTO_INCREMENT for table `power_stations`
---
-ALTER TABLE `power_stations`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
-
---
--- AUTO_INCREMENT for table `problemstate`
---
-ALTER TABLE `problemstate`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
-
---
--- AUTO_INCREMENT for table `radars`
---
-ALTER TABLE `radars`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
-
---
--- AUTO_INCREMENT for table `sectionsubjects`
---
-ALTER TABLE `sectionsubjects`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
---
--- AUTO_INCREMENT for table `users`
---
-ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
-
---
--- AUTO_INCREMENT for table `vtms_sections`
---
-ALTER TABLE `vtms_sections`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
