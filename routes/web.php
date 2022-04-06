@@ -80,7 +80,7 @@ Route::group(['prefix'=>LaravelLocalization::setLocale(),'middleware' => [ 'loca
         Route::get('export', 'CrudController@export')->name('offers.export');
         Route::get('importExportView', 'CrudController@importExportView');
         Route::post('import', 'CrudController@import')->name('offers.import');
-        Route::get('create-pdf', 'CrudController@exportPDF')->name('offers.exportpdf');
+        Route::get('exportpdf', 'CrudController@exportPDF')->name('offers.exportpdf');
 
     });
 });
@@ -129,3 +129,7 @@ Route::get('sendbasicemail','MailController@basic_email');
 Route::get('sendhtmlemail','MailController@html_email')->name('mails.send');
 Route::get('sendattachmentemail','MailController@attachment_email');
 Route::get('send-mail','MailController@html_email');
+
+Route::get('/index',  [App\Http\Controllers\PdfController::class, 'index']);
+Route::get('/export-pdf', [App\Http\Controllers\PdfController::class, 'exportPdf']);
+
