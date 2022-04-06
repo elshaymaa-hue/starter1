@@ -307,7 +307,7 @@
                             <!-- Portfolio Modal - Image-->
                             <img class="img-fluid rounded mb-5" src="assets/img/portfolio/cake.png" alt="..." />
                             <!-- Portfolio Modal - Text-->
-                            <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
+                            <p class="mb-4"></p>
                             <button class="btn btn-primary" data-bs-dismiss="modal">
                                 <i class="fas fa-xmark fa-fw"></i>
                                 <a href="{{ url('power_stations/all') }}">Display Stations</a>
@@ -339,7 +339,7 @@
                             <!-- Portfolio Modal - Image-->
                             <img class="img-fluid rounded mb-5" src="assets/img/portfolio/circus.png" alt="..." />
                             <!-- Portfolio Modal - Text-->
-                            <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
+                            <p class="mb-4"></p>
                             <button class="btn btn-primary" data-bs-dismiss="modal">
                                 <i class="fas fa-xmark fa-fw"></i>
                                 <a href="{{ url('offers/all') }}">Display Documents</a>
@@ -371,7 +371,7 @@
                             <!-- Portfolio Modal - Image-->
                             <img class="img-fluid rounded mb-5" src="assets/img/portfolio/game.png" alt="..." />
                             <!-- Portfolio Modal - Text-->
-                            <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
+                            <p class="mb-4"></p>
                             <button class="btn btn-primary" data-bs-dismiss="modal">
                                 <i class="fas fa-xmark fa-fw"></i>
                                 Close Window

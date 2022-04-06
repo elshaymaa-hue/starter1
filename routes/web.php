@@ -64,7 +64,7 @@ Route::get('report', function () {
 });
 Route::get('excel', function () {
 
-    return view('excel');//
+    return view('check/page');//
 
 });
 Route::get('fillable','CrudController@getOffers');
@@ -76,6 +76,7 @@ Route::group(['prefix'=>LaravelLocalization::setLocale(),'middleware' => [ 'loca
         Route::get('filter', 'CrudController@complexFilter')->name('offers.filter');
         Route::get('edit/{offer_id}','CrudController@editOffer');
         Route::post('update/{offer_id}','CrudController@UpdateOffer')->name('offers.update');
+        Route::get('delete/{offer_id}','CrudController@delete')->name('offers.delete');
         Route::get('export', 'CrudController@export')->name('offers.export');
         Route::get('importExportView', 'CrudController@importExportView');
         Route::post('import', 'CrudController@import')->name('offers.import');

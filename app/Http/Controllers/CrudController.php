@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Http\Requests\OfferRequest;
 use App\Models\Offer;
+use App\Models\Power_Station;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use LaravelLocalization;
@@ -126,18 +127,18 @@ class CrudController extends Controller
         $type=$request->get('type');
         $status=$request->get('status');
         if ($name)
-            $offers = Offer::where(  'directory','=',$name)->orderBy('id')->paginate(6);
+            $offers = Offer::where(  'directory','=',$name)->orderBy('id')->get();
            // $filters="'directory','=',".$name;
        // return $filters;
         if ($input)
-            $offers = Offer::where(  'input','=',$input)->orderBy('id')->paginate(6);
+            $offers = Offer::where(  'input','=',$input)->orderBy('id')->get();
           // $filters="'input'".','."'='".",".$input;
         if($output)
-            $offers = Offer::where(  'output','=',$output)->orderBy('id')->paginate(6);
+            $offers = Offer::where(  'output','=',$output)->orderBy('id')->get();
         if($type)
-            $offers = Offer::where(  'type','=',$type)->orderBy('id')->paginate(6);
+            $offers = Offer::where(  'type','=',$type)->orderBy('id')->get();
         if($status)
-            $offers = Offer::where(  'status','=',$status)->orderBy('id')->paginate(6);
+            $offers = Offer::where(  'status','=',$status)->orderBy('id')->get();
        //    $filters= "'output'".","."'='".",".$output;
         //  return $name;
       //  return $name;
@@ -263,5 +264,14 @@ class CrudController extends Controller
         Excel::import(new OffersImport,request()->file('file'));
 
         return redirect()->back();
+    }
+    public function delete($offer_id){
+        $offer=  Offer::find($offer_id);
+
+        if (!$offer){
+            return redirect()->back()->with(['error'=>"المستند غير موجودة"]);
+        }
+        $offer->delete();
+        return redirect()->back()->with(['error'=>"تم المسحح بنجاح"]);
     }
 }

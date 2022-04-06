@@ -25,14 +25,15 @@ class OfferRequest extends FormRequest
         return [
             'name_ar.required' =>__('messages.offer name ar'),
             'details_ar.required' =>__('messages.details ar required'),
-             'name_en.required' =>__('messages.offer name ar'),
+             'name_en.required' =>__('messages.date required'),
             'details_en.required' =>__('messages.details ar required'),
-            'name_en.unique'=>__('messages.name unique'),
+            'name_en.format'=>__('messages.Offer Name en format'),
         ];
     }
     public function rules(){
         return [
             'name_ar' =>'required',
+            'name_en' =>'format',
             'name_en' =>'required',
 
         ];

@@ -212,8 +212,8 @@
                              <div class="form-group">
                         <label for="exampleInputEmail1">{{__('messages.Offer Name ar')}}</label>
                         <input type="text" class="form-control" name ="name_ar"  aria-describedby="emailHelp" placeholder="{{__('messages.Offer Name ar')}}">
-                        @error('name')
-                        <small class="form-text text-danger">{{$message}}</small>
+                        @error('name_ar')
+                        <small class="form-text text-danger">{{__('messages.Offer Name ar required')}}</small>
                         @enderror
                     </div>
                           </td>
@@ -223,8 +223,9 @@
                               <div class="form-group">
                         <label for="exampleInputEmail1">{{__('messages.Offer Name en')}}</label>
                         <input type="text" class="form-control" name ="name_en" aria-describedby="emailHelp" placeholder="{{__('messages.Offer Name en')}}">
-                        @error('name')
-                        <small class="form-text text-danger">{{$message}}</small>
+                        @error('name_en')
+                        <small class="form-text text-danger">{{__('messages.date required')}}</small>
+                        <small class="form-text text-danger">{{__('messages.Offer Name en format')}}</small>
                         @enderror
                     </div>
                             </td>
@@ -244,7 +245,7 @@
 
                                     <label for="exampleInputEmail1">{{__('messages.Offer details ar')}}</label>
                                     <input type="textarea" class="form-control" name="details_ar"  placeholder="{{__('messages.Offer details ar')}}">
-                                    @error('details')
+                                    @error('details_ar')
                                     <small class="form-text text-danger">{{$message}}</small>
                                     @enderror
                                  </div>
@@ -253,7 +254,7 @@
                                    <div class="form-group ">
                                         <label for="exampleInputEmail1">{{__('messages.Offer details en')}}</label>
                                         <input type="textarea" class="form-control" name="details_en" placeholder="{{__('messages.Offer details en')}}">
-                                        @error('details')
+                                        @error('details_en')
                                         <small class="form-text text-danger">{{$message}}</small>
                                         @enderror
                                     </div>
