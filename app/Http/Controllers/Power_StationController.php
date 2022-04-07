@@ -39,7 +39,29 @@ class Power_StationController extends Controller
 //            'details_' . LaravelLocalization::getCurrentLocale() . ' as details'
 //        )->get();
 //
-        $power_stations = Power_Station::select('id','station_name',  'UpsSttp' ,  'UpsRadar' ,  'ContractUPS' ,  'UpslInstallation',  'PreDeliveryUPS' ,  'FinalDeliveryUPS' ,  'StatusRatioRadar' ,  'StatusRatioSTTB'
+        $power_stations = Power_Station::select(
+            'id',
+            'station_name',
+            'UpsSttp' ,
+            'UpsRadar' ,
+            'ContractUPS' ,
+            'UpslInstallation',
+            'PreDeliveryUPS' ,
+            'FinalDeliveryUPS' ,
+            'StatusRatioRadar' ,
+            'StatusRatioSTTB',
+            'LastMessage',
+            'Desil' ,
+            'DeisilInstallation',
+            'ContractDesil' ,
+            'PreDeliveryDesil' ,
+            'FinalDeliveryDesil',
+            'ATS1Transit' ,
+            'IsolationTransformer' ,
+            'ATS2VTMS' ,
+            'AvrRadar' ,
+            'SurgeRadar' ,
+            'TawkitatSurgeProtect'
             )->get();
 
 
@@ -98,6 +120,18 @@ class Power_StationController extends Controller
             'FinalDeliveryUPS' =>$request->FinalDeliveryUPS,
             'StatusRatioRadar' =>$request->StatusRatioRadar,
             'StatusRatioSTTB'=>$request->StatusRatioSTTB,
+            'LastMessage'=>$request->LastMessage,
+            'Desil'=>$request->Desil ,
+            'DeisilInstallation'=>$request->DeisilInstallation,
+            'ContractDesil'=>$request->ContractDesil,
+            'PreDeliveryDesil'=>$request->PreDeliveryDesil ,
+            'FinalDeliveryDesil'=>$request->FinalDeliveryDesil,
+            'ATS1Transit' =>$request->ATS1Transit,
+            'IsolationTransformer'=>$request-> IsolationTransformer,
+            'ATS2VTMS'=>$request-> ATS2VTMS,
+            'AvrRadar' =>$request->AvrRadar,
+            'SurgeRadar' =>$request->SurgeRadar,
+            'TawkitatSurgeProtect'=>$request->TawkitatSurgeProtect,
         ]);
 
        return redirect()->back()->with(['success'=>'تم اضافة العرض بنجاج']);
@@ -109,7 +143,7 @@ class Power_StationController extends Controller
       $power_station=  Power_Station::find($power_station_id);
       if(!$power_station)
       return redirect()->back();
-      $power_station=Power_Station::select ('id','station_name',  'UpsSttp' ,  'UpsRadar' ,  'ContractUPS' ,  'UpslInstallation',  'PreDeliveryUPS' ,  'FinalDeliveryUPS' ,  'StatusRatioRadar' ,  'StatusRatioSTTB')->find($power_station_id);
+      $power_station=Power_Station::select ('id','station_name',  'UpsSttp' ,  'UpsRadar' ,  'ContractUPS' ,  'UpslInstallation',  'PreDeliveryUPS' ,  'FinalDeliveryUPS' ,  'StatusRatioRadar' ,  'StatusRatioSTTB','LastMessage',  'Desil' ,'DeisilInstallation',  'ContractDesil' ,  'PreDeliveryDesil' ,  'FinalDeliveryDesil',  'ATS1Transit' ,  'IsolationTransformer' ,  'ATS2VTMS' ,  'AvrRadar' ,  'SurgeRadar' ,  'TawkitatSurgeProtect')->find($power_station_id);
       return view('power_stations.edit',compact('power_station'));
 //      return $Power_Station_id;
     }
@@ -145,6 +179,18 @@ class Power_StationController extends Controller
            'FinalDeliveryUPS' =>$request->FinalDeliveryUPS,
            'StatusRatioRadar' =>$request->StatusRatioRadar,
            'StatusRatioSTTB'=>$request->StatusRatioSTTB,
+           'LastMessage'=>$request->LastMessage,
+           'Desil'=>$request->Desil ,
+           'DeisilInstallation'=>$request->DeisilInstallation,
+           'ContractDesil'=>$request->ContractDesil,
+           'PreDeliveryDesil'=>$request->PreDeliveryDesil ,
+           'FinalDeliveryDesil'=>$request->FinalDeliveryDesil,
+           'ATS1Transit' =>$request->ATS1Transit,
+           'IsolationTransformer'=>$request-> IsolationTransformer,
+           'ATS2VTMS'=>$request-> ATS2VTMS,
+           'AvrRadar' =>$request->AvrRadar,
+           'SurgeRadar' =>$request->SurgeRadar,
+           'TawkitatSurgeProtect'=>$request->TawkitatSurgeProtect
        ]);
 //
         return redirect()->back()->with(['success' => ' تم التحديث بنجاح ']);

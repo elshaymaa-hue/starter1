@@ -18,8 +18,8 @@ return[
     'details required'=>'التفاصيل مطلوبة',
     'name unique'=>'الاسم لا يتكرر',
     'operation'=>'العمليات',
-    'update'=>'تحديث',
-    'delete'=>'حذف',
+    'update'=> 'تحديث',
+    'delete'=> ' حذف ',
     'photo'=>'اختر ملف',
     'station name'=>'اسم المحطة',
     'location'=>'الموقع بالكيلو',
@@ -51,6 +51,18 @@ return[
     'output'=>'صادر',
     'type'=>'نوع مكاتبة',
     'status'=>'حالة المكاتبة',
+    'LastMessage'=>'أخرمكاتبة',
+    'Desil' =>'ديزل',
+    'DeisilInstallation'=>'تركيب ديزل',
+    'ContractDesil'=>'تعاقد ديزل' ,
+    'PreDeliveryDesil'=>'استلام ابتدائى ديزل' ,
+    'FinalDeliveryDesil'=>'استلام نهائى ديزل',
+    'ATS1Transit' =>'ATS1 Transit',
+    'IsolationTransformer' =>'محول عزل',
+    'ATS2VTMS' =>'ATS2 VTMS',
+    'AvrRadar'=>'AVR Radar' ,
+    'SurgeRadar'=>'Surege Protect Radar' ,
+    'TawkitatSurgeProtect'=>'Surge Protect STTP'
 
 
 ];

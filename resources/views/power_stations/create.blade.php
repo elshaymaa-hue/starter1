@@ -225,6 +225,92 @@
                         <small class="form-text text-danger">{{$message}}</small>
                         @enderror
                     </div>
+
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">{{__('messages.LastMessage')}}</label>
+                        <input type="text" class="form-control" name ="LastMessage" placeholder="{{__('messages.LastMessage')}}">
+                        @error('LastMessage')
+                        <small class="form-text text-danger">{{$message}}</small>
+                        @enderror
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">{{__('messages.Desil')}}</label>
+                        <input type="text" class="form-control" name ="Desil" placeholder="{{__('messages.Desil')}}">
+                        @error('Desil')
+                        <small class="form-text text-danger">{{$message}}</small>
+                        @enderror
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">{{__('messages.DeisilInstallation')}}</label>
+                        <input type="text" class="form-control" name ="DeisilInstallation" placeholder="{{__('messages.DeisilInstallation')}}">
+                        @error('DeisilInstallation')
+                        <small class="form-text text-danger">{{$message}}</small>
+                        @enderror
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">{{__('messages.ContractDesil')}}</label>
+                        <input type="text" class="form-control" name ="ContractDesil" placeholder="{{__('messages.ContractDesil')}}">
+                        @error('ContractDesil')
+                        <small class="form-text text-danger">{{$message}}</small>
+                        @enderror
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">{{__('messages.PreDeliveryDesil')}}</label>
+                        <input type="text" class="form-control" name ="PreDeliveryDesil" placeholder="{{__('messages.PreDeliveryDesil')}}">
+                        @error('PreDeliveryDesil')
+                        <small class="form-text text-danger">{{$message}}</small>
+                        @enderror
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">{{__('messages.FinalDeliveryDesil')}}</label>
+                        <input type="text" class="form-control" name ="FinalDeliveryDesil" placeholder="{{__('messages.FinalDeliveryDesil')}}">
+                        @error('FinalDeliveryDesil')
+                        <small class="form-text text-danger">{{$message}}</small>
+                        @enderror
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">{{__('messages.ATS1Transit')}}</label>
+                        <input type="text" class="form-control" name ="ATS1Transit" placeholder="{{__('messages.ATS1Transit')}}">
+                        @error('ATS1Transit')
+                        <small class="form-text text-danger">{{$message}}</small>
+                        @enderror
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">{{__('messages.IsolationTransformer')}}</label>
+                        <input type="text" class="form-control" name ="IsolationTransformer" placeholder="{{__('messages.IsolationTransformer')}}">
+                        @error('ATS1Transit')
+                        <small class="form-text text-danger">{{$message}}</small>
+                        @enderror
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">{{__('messages.ATS2VTMS')}}</label>
+                        <input type="text" class="form-control" name ="ATS1Transit" placeholder="{{__('messages.ATS2VTMS')}}">
+                        @error('ATS2VTMS')
+                        <small class="form-text text-danger">{{$message}}</small>
+                        @enderror
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">{{__('messages.AvrRadar')}}</label>
+                        <input type="text" class="form-control" name ="AvrRadar" placeholder="{{__('messages.AvrRadar')}}">
+                        @error('AvrRadar')
+                        <small class="form-text text-danger">{{$message}}</small>
+                        @enderror
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">{{__('messages.SurgeRadar')}}</label>
+                        <input type="text" class="form-control" name ="SurgeRadar" placeholder="{{__('messages.SurgeRadar')}}">
+                        @error('SurgeRadar')
+                        <small class="form-text text-danger">{{$message}}</small>
+                        @enderror
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">{{__('messages.TawkitatSurgeProtect')}}</label>
+                        <input type="text" class="form-control" name ="TawkitatSurgeProtect" placeholder="{{__('messages.TawkitatSurgeProtect')}}">
+                        @error('TawkitatSurgeProtect')
+                        <small class="form-text text-danger">{{$message}}</small>
+                        @enderror
+                    </div>
 {{--                    'Remarks'=>$request->Remarks,--}}
 
 {{--                    <div class="form-group ">--}}

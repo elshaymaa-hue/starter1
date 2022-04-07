@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -135,6 +135,18 @@
         <th scope="col">{{__('messages.FinalDeliveryUPS')}}</th>
         <th scope="col">{{__('messages.StatusRatioRadar')}}</th>
         <th scope="col">{{__('messages.StatusRatioSTTB')}}</th>
+        <th scope="col">{{__('messages.LastMessage')}}</th>
+        <th scope="col">{{__('messages.Desil' )}}</th>
+        <th scope="col">{{__('messages.DeisilInstallation')}}</th>
+        <th scope="col">{{__('messages.ContractDesil' )}}</th>
+        <th scope="col">{{__('messages.PreDeliveryDesil' )}}</th>
+        <th scope="col">{{__('messages.FinalDeliveryDesil')}}</th>
+        <th scope="col">{{__('messages.ATS1Transit' )}}</th>
+        <th scope="col">{{__('messages.IsolationTransformer' )}}</th>
+        <th scope="col">{{__('messages.ATS2VTMS' )}}</th>
+        <th scope="col">{{__('messages.AvrRadar' )}}</th>
+        <th scope="col">{{__('messages.SurgeRadar' )}}</th>
+        <th scope="col">{{__('messages.TawkitatSurgeProtect')}}</th>
         <th scope="col">صوره المحطة</th>
         <th scope="col">{{__('messages.operation')}}</th>
 
@@ -157,6 +169,18 @@
             <td>{{$power_station->FinalDeliveryUPS}}</td>
             <td>{{$power_station->StatusRatioRadar}}</td>
             <td>{{$power_station->StatusRatioSTTB}}</td>
+            <td>{{$power_station->LastMessage}}</td>
+            <td>{{$power_station->Desil}}</td>
+            <td>{{$power_station->DeisilInstallation}}</td>
+            <td>{{$power_station->ContractDesil}}</td>
+            <td>{{$power_station->PreDeliveryDesil}}</td>
+            <td>{{$power_station->FinalDeliveryDesil}}</td>
+            <td>{{$power_station->ATS1Transit}}</td>
+            <td>{{$power_station->IsolationTransformer}}</td>
+            <td>{{$power_station->ATS2VTMS}}</td>
+            <td>{{$power_station->AvrRadar}}</td>
+            <td>{{$power_station->SurgeRadar}}</td>
+            <td>{{$power_station->TawkitatSurgeProtect}}</td>
 
             @if($power_station->photo)
 {{--            <td><img  style="width: 90px; height: 90px;" src="{{asset('images/offers/'.$offer->photo)}}"></td>--}}

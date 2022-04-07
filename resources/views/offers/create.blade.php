@@ -125,6 +125,7 @@
                     <option value="power">power</option>
                     <option value="hospital_centers">hospital_centers</option>
                     <option value="technical_office">technical_office</option>
+                    <option value="Electorinc_Archive">Electorinc Archive</option>
                 </select>
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
             </form>
@@ -158,7 +159,7 @@
                 <form  style="width: 100%" method="POST" action="{{route('offers.store')}}" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
-
+                        <label for="exampleInputEmail1">تحديد القطاع</label>
                     <select name ="dir">
                         <option value="vtms">vtms</option>
                         <option value="security">security</option>
@@ -167,8 +168,9 @@
                         <option value="power">power</option>
                         <option value="hospital_centers">hospital_centers</option>
                         <option value="technical_office">technical_office</option>
+                        <option value="Electorinc_Archive">Electorinc Archive</option>
                     </select>
-                        <label for="exampleInputEmail1">تحديد القطاع</label>
+
                     </div>
                     <label for="exampleInputEmail1">أختر صوره المستند</label>
                     <input type="file" class="form-control" placeholder="{{__('messages.photo')}}"  name="photo">

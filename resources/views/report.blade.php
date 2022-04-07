@@ -125,6 +125,7 @@
                     <option value="power">power</option>
                     <option value="hospital_centers">hospital_centers</option>
                     <option value="technical_office">technical_office</option>
+                    <option value="Electorinc_Archive">Electorinc Archive</option>
                 </select>
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
             </form>
@@ -157,6 +158,7 @@
                         <option value="power">power</option>
                         <option value="hospital_centers">hospital_centers</option>
                         <option value="technical_office">technical_office</option>
+                        <option value="Electorinc Archive">Electorinc Archive</option>
                     </select>
 
                     <div class="form-group">

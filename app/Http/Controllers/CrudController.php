@@ -116,6 +116,7 @@ class CrudController extends Controller
             'type'=>$request->type,
             'status'=>$request->status,
 
+
         ]);
 
        return redirect()->back()->with(['success'=> $file_name.'-'.'تم اضافة العرض بنجاج']);
@@ -264,5 +265,11 @@ class CrudController extends Controller
         }
         $offer->delete();
         return redirect()->back()->with(['error'=>"تم المسحح بنجاح"]);
+    }
+    public function indexPaging()
+    {
+        $offers = Offer::paginate(5);
+
+        return view('offers.index-paging')->with('offers', $offers);
     }
 }
