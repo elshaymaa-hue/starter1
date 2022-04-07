@@ -158,6 +158,11 @@ class CrudController extends Controller
         return view('offers.all', compact('offers'));
 
     }
+    public function report() {
+
+        return view('offers.report');//
+
+    }
 
     public function create(){
         return view('offers.create');
