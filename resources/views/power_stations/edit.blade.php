@@ -192,7 +192,7 @@
             {{--                    'StatusRatiopower_station'=>$request->StatusRatiopower_station,--}}
             <div class="form-group">
                 <label for="exampleInputPassword1">{{__('messages.StatusRatioRadar')}}</label>
-                <input type="text" class="form-control" name ="SStatusRatioRadar" placeholder="{{__('messages.StatusRatioRadar')}}" value="{{$power_station->StatusRatioRadar}}">
+                <input type="text" class="form-control" name ="StatusRatioRadar" placeholder="{{__('messages.StatusRatioRadar')}}" value="{{$power_station->StatusRatioRadar}}">
                 @error('StatusRatioRadar')
                 <small class="form-text text-danger">{{$message}}</small>
                 @enderror
