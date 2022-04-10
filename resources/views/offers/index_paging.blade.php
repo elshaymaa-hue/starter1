@@ -163,7 +163,7 @@
     </tr>
     </thead>
     <tbody>
-    @if ($offers->count() == 0)
+
 
     @foreach($offers as $offer)
         <tr>
