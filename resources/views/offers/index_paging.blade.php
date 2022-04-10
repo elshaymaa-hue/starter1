@@ -92,11 +92,14 @@
                 <a class="nav-link" href="{{ url('offers/create') }}">Add Document</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ url('offers/all') }}">Display Documents</a>
+                <a class="nav-link" href="{{ route('offers.index-paging') }}">Display Documents</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{ url('/report') }}">Reports</a>
             </li>
+            {{-- <li class="nav-item">
+                <a class="nav-link" href="{{route('offers.next_page') }}">next page</a>
+            </li> --}}
 {{--            <li class="nav-item">--}}
 {{--                <a class="nav-link" href="{{ url('/exportpdf') }}">downloadpdf </a>--}}
 {{--            </li>--}}
@@ -213,7 +216,7 @@
             {{ Session::get('success') }}
         </div>
     @endif
-
+        {{$offers->onEachSide(5)->links()}}
 
 </table>
 <script>

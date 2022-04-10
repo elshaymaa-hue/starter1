@@ -87,7 +87,7 @@
                 <a class="nav-link" href="{{ url('power_stations/create') }}">Add Station</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ url('power_stations/all') }}">Display Stations</a>
+                <a class="nav-link" href="{{ route('power_stations.index-paging') }}">Display stations</a>
             </li>
             @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
                 <li class="nav-item active">

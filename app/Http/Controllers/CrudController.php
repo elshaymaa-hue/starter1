@@ -271,10 +271,13 @@ class CrudController extends Controller
         $offer->delete();
         return redirect()->back()->with(['error'=>"تم المسحح بنجاح"]);
     }
-    public function indexPaging()
+    public function index_Paging()
     {
-        $offers = Offer::paginate(5);
+        $perPage=5;
+        
+       $offers = Offer::paginate(5)->fragment('offers');
 
-        return view('offers.index-paging')->with('offers', $offers);
+        return view('offers.index_paging')->with('offers', $offers);
     }
+    
 }

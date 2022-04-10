@@ -220,4 +220,12 @@ class Power_StationController extends Controller
         $power_station->delete();
         return redirect()->back()->with(['error'=>"تم المسحح بنجاح"]);
     }
+    public function index_Paging()
+    {
+        $perPage=5;
+        
+       $power_stations = Power_Station::paginate($perPage);
+
+        return view('power_stations.index_paging')->with('power_stations', $power_stations);
+    }
 }

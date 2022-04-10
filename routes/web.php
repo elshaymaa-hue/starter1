@@ -82,6 +82,8 @@ Route::group(['prefix'=>LaravelLocalization::setLocale(),'middleware' => [ 'loca
         Route::post('import', 'CrudController@import')->name('offers.import');
         Route::get('exportpdf', 'CrudController@exportPDF')->name('offers.exportpdf');
         Route::get('report', 'CrudController@report')->name('offers.report');
+        Route::get('index', 'CrudController@index_Paging')->name('offers.index-paging');
+        
 
     });
 });
@@ -109,6 +111,7 @@ Route::group(['prefix'=>LaravelLocalization::setLocale(),'middleware' => [ 'loca
         Route::get('edit/{power_station_id}','Power_StationController@editPower_Station');
         Route::post('update/{power_station_id}','Power_StationController@UpdatePower_Station')->name('power_stations.update');
         Route::get('delete/{power_station_id}','Power_StationController@delete')->name('power_stations.delete');
+        Route::get('index', 'Power_StationController@index_Paging')->name('power_stations.index-paging');
 
     });
 });
