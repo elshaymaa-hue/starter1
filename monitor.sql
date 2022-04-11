@@ -401,7 +401,7 @@ CREATE TABLE IF NOT EXISTS `radars` (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4;
-
+--new
 --
 -- Dumping data for table `radars`
 --
