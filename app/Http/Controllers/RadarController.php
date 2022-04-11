@@ -79,12 +79,9 @@ class RadarController extends Controller
         $file_extension = $request->photo->getClientOriginalExtension();
         $file_name = time() . '.' . $file_extension;
         $path = 'images/radars';
-        if(Exception instanceof Illuminate\Http\Exceptions\PostTooLargeException){
-            return redirect()->back()->withErrors(['File size is too large']);
-        }
-        else {
+        
             $request->photo->move($path, $file_name);
-        }
+        
         }
         //insert
 //        offer::create([
@@ -157,6 +154,15 @@ class RadarController extends Controller
         return redirect()->back()->with(['success' => ' تم التحديث بنجاح ']);
 
     }
+    public function index_Paging()
+    {
+        $perPage=5;
+        
+       $radars = Radar::paginate(5)->fragment('radars');
+
+        return view('radars.index_paging')->with('radars', $radars);
+    }
+    
 //    public function getMessages(){
 //        return [
 //            'name.required' =>__('messages.offer name'),

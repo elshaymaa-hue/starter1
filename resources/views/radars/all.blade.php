@@ -158,7 +158,7 @@
             <td>{{$radar->Remarks}}</td>
 
             @if($radar->photo)
-{{--            <td><img  style="width: 90px; height: 90px;" src="{{asset('images/offers/'.$offer->photo)}}"></td>--}}
+
             <td><embed src="{{asset('images/radars/'.$radar->photo)}}" width="300px" height ="300px"></td>
             @else
                 <td></td>

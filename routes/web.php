@@ -72,7 +72,7 @@ Route::group(['prefix'=>LaravelLocalization::setLocale(),'middleware' => [ 'loca
     Route::group(['prefix' => 'offers'], function () {
         Route::post('store', 'CrudController@store')->name('offers.store');
         Route::get('create', 'CrudController@create');
-        Route::get('all', 'CrudController@getAllOffers');
+        //Route::get('all', 'CrudController@getAllOffers');
         Route::get('filter', 'CrudController@complexFilter')->name('offers.filter');
         Route::get('edit/{offer_id}','CrudController@editOffer');
         Route::post('update/{offer_id}','CrudController@UpdateOffer')->name('offers.update');
@@ -82,7 +82,7 @@ Route::group(['prefix'=>LaravelLocalization::setLocale(),'middleware' => [ 'loca
         Route::post('import', 'CrudController@import')->name('offers.import');
         Route::get('exportpdf', 'CrudController@exportPDF')->name('offers.exportpdf');
         Route::get('report', 'CrudController@report')->name('offers.report');
-        Route::get('index', 'CrudController@index_Paging')->name('offers.index-paging');
+        Route::get('all', 'CrudController@index_Paging')->name('offers.index-paging');
         
 
     });
@@ -94,11 +94,12 @@ Route::group(['prefix'=>LaravelLocalization::setLocale(),'middleware' => [ 'loca
     Route::group(['prefix' => 'radars'], function () {
         Route::post('store', 'RadarController@store')->name('radars.store');
         Route::get('create', 'RadarController@create');
-        Route::get('all', 'RadarController@getAllRadars');
+        //Route::get('all', 'RadarController@getAllRadars');
         Route::get('filter', 'RadarController@complexFilter')->name('radars.filter');
         Route::get('edit/{radar_id}','RadarController@editRadar');
         Route::post('update/{radar_id}','RadarController@UpdateRadar')->name('radars.update');
-
+        Route::get('all', 'RadarController@index_Paging')->name('radars.index-paging');
+        
     });
 });
 Route::get('fillable','Power_StationController@getPower_Stations');
@@ -106,12 +107,12 @@ Route::group(['prefix'=>LaravelLocalization::setLocale(),'middleware' => [ 'loca
     Route::group(['prefix' => 'power_stations'], function () {
         Route::post('store', 'Power_StationController@store')->name('power_stations.store');
         Route::get('create', 'Power_StationController@create');
-        Route::get('all', 'Power_StationController@getAllPower_Stations');
+      //  Route::get('all', 'Power_StationController@getAllPower_Stations');
         Route::get('filter', 'Power_StationController@complexFilter')->name('power_stations.filter');
         Route::get('edit/{power_station_id}','Power_StationController@editPower_Station');
         Route::post('update/{power_station_id}','Power_StationController@UpdatePower_Station')->name('power_stations.update');
         Route::get('delete/{power_station_id}','Power_StationController@delete')->name('power_stations.delete');
-        Route::get('index', 'Power_StationController@index_Paging')->name('power_stations.index-paging');
+        Route::get('all', 'Power_StationController@index_Paging')->name('power_stations.index-paging');
 
     });
 });

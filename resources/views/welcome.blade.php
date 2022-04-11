@@ -134,7 +134,7 @@
         </div>
         <!-- About Section Content-->
         <div class="row">
-            <div class="col-lg-4 ms-auto"><p class="lead">monitorin VTMS sections and following activities displaying dashboards to know bottleneck issues or paused projects.</p></div>
+            <div class="col-lg-4 ms-auto"><p class="lead">monitoring VTMS sections and following activities displaying dashboards to know bottleneck issues or paused projects.</p></div>
             <div class="col-lg-4 me-auto"><p class="lead">Document Management Systems (DMS) gathers all sections documents to  track effects between sections </p></div>
         </div>
         <!-- About Section Button-->
@@ -374,7 +374,7 @@
                             <p class="mb-4"></p>
                             <button class="btn btn-primary" data-bs-dismiss="modal">
                                 <i class="fas fa-xmark fa-fw"></i>
-                                Close Window
+                                <a href="{{ url('offers/filter?search_=Electorinc+Archive') }}">software dev</a>
                             </button>
                         </div>
                     </div>
@@ -406,7 +406,7 @@
                             <p class="mb-4"></p>
                             <button class="btn btn-primary" data-bs-dismiss="modal">
                                 <i class="fas fa-xmark fa-fw"></i>
-                                Close Window
+                                <a href="{{ url('offers/filter?search_=Maintenance') }}">Maintenance</a>
                             </button>
                         </div>
                     </div>
@@ -439,7 +439,7 @@
 
                             <button class="btn btn-primary" data-bs-dismiss="modal">
                                 <i class="fas fa-xmark fa-fw"></i>
-                                <a href="{{ url('contact') }}">Display Stations</a>
+                                <a href="{{ url('offers/filter?search_=technical_office') }}">technical_office</a>
                             </button>
                         </div>
                     </div>
