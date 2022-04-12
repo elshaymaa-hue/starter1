@@ -22,15 +22,37 @@ namespace Monolog\Attribute;
 #[\Attribute(\Attribute::TARGET_CLASS | \Attribute::TARGET_METHOD | \Attribute::IS_REPEATABLE)]
 class AsMonologProcessor
 {
+<<<<<<< HEAD
+    /** @var string|null */
+    public $channel = null;
+    /** @var string|null */
+    public $handler = null;
+    /** @var string|null */
+    public $method = null;
+    
+=======
+>>>>>>> be5876c7e87d44b34fc4ae622e46da1d373fd232
     /**
      * @param string|null $channel  The logging channel the processor should be pushed to.
      * @param string|null $handler  The handler the processor should be pushed to.
      * @param string|null $method   The method that processes the records (if the attribute is used at the class level).
      */
     public function __construct(
+<<<<<<< HEAD
+        ?string $channel = null,
+        ?string $handler = null,
+        ?string $method = null
+    ) {
+        $this->channel = $channel;
+        $this->handler = $handler;
+        $this->method = $method;
+    }
+} 
+=======
         public ?string $channel = null,
         public ?string $handler = null,
         public ?string $method = null,
     ) {
     }
 } 
+>>>>>>> be5876c7e87d44b34fc4ae622e46da1d373fd232

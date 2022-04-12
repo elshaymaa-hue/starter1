@@ -10,4 +10,8 @@ return array(
     'Mcamara\\LaravelLocalization' => array($vendorDir . '/mcamara/laravel-localization/src'),
     'Highlight\\' => array($vendorDir . '/scrivo/highlight.php'),
     'HighlightUtilities\\' => array($vendorDir . '/scrivo/highlight.php'),
+<<<<<<< HEAD
+    'HTMLPurifier' => array($vendorDir . '/ezyang/htmlpurifier/library'),
+=======
+>>>>>>> be5876c7e87d44b34fc4ae622e46da1d373fd232
 );
