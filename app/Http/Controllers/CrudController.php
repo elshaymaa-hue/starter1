@@ -12,6 +12,7 @@ use App\Exports\OffersExport;
 use App\Imports\OffersImport;
 use Maatwebsite\Excel\Facades\Excel;
 use Barryvdh\DomPDF\Facade as PDF;
+use EloquentFilter\ModelFilter;
 
 class CrudController extends Controller
 {
@@ -122,40 +123,63 @@ class CrudController extends Controller
        return redirect()->back()->with(['success'=> $file_name.'-'.'تم اضافة العرض بنجاج']);
     }
     public function complexFilter(Request $request){
+      
+        // return Offer::filter($request->all())->get();
 
         $name =$request->get('search_');
         $input=$request->get('input');
         $output=$request->get('output');
         $type=$request->get('type');
         $status=$request->get('status');
-        if ($name)
-            $offers = Offer::where(  'directory','=',$name)->orderBy('id')->get();
-           // $filters="'directory','=',".$name;
-       // return $filters;
-        if ($input)
-            $offers = Offer::where(  'input','=',$input)->orderBy('id')->get();
+       // $offers = Offer::select('*')->paginate(5);
+        // $offers = $users->appends(['keyword'=>'value']);
+      
+        if (request()->has('search_')){
+            $filter = $request->query('filter');
+        $offers =  Offer::where( 'directory',request('search_'))->paginate(5)
+                        ->appends('search_',request('search_'));
+        return view('offers.index_paging')->with('offers', $offers);
+        }
+        if ($input){
+        $filter = $request->query('filter');
+        $offers = Offer::where(  'input','=',$input)->orderBy('id')->simplepaginate(5);
+        return view('offers.index_paging')->with('offers', $offers);
+    }
           // $filters="'input'".','."'='".",".$input;
-        if($output)
-            $offers = Offer::where(  'output','=',$output)->orderBy('id')->get();
-        if($type)
-            $offers = Offer::where(  'type','=',$type)->orderBy('id')->get();
-        if($status)
-            $offers = Offer::where(  'status','=',$status)->orderBy('id')->get();
+        if($output){
+        $filter = $request->query('filter');
+        $offers = Offer::where(  'output','=',$output)->orderBy('id')->paginate(5)->fragment('offers');
+        return view('offers.index_paging')->with('offers', $offers)->with('filter',$filter);
+        }
+        if($type){
+        $filter = $request->query('filter');
+        $offers = Offer::where(  'type','=',$type)->orderBy('id')->paginate(5)->fragment('offers');
+        return view('offers.index_paging')->with('offers', $offers)->with('filter',$filter);
+        }
+        if($status){
+        $filter = $request->query('filter');
+        $offers = Offer::where(  'status','=',$status)->orderBy('id')->paginate(5)->fragment('offers');
+        return view('offers.index_paging')->with('offers', $offers)->with('filter',$filter);
+        }
        //    $filters= "'output'".","."'='".",".$output;
         //  return $name;
       //  return $name;
      //   $offers = Offer::where(  'directory','=',$name)->orderBy('id')->paginate(6);
-        return view('offers.all',['offers' => $offers]);
-        $categories=Offer::get();
-        $categories= collect($categories);
+     //$offers=array_values($resultOfFilter->all());
+        
+    //  return view('offers.index_paging', ['offers' =>$offers]);
+ 
+        // return view('offers.index_paging',compact('offers'));
+        // $categories=Offer::get();
+        // $categories= collect($categories);
 
-        $resultOfFilter = $categories->filter(function ($value, $key){
+        // $resultOfFilter = $categories->filter(function ($value, $key){
 
-            return $value['name_en']= '23/11/2021';
-        });
+        //     return $value['name_en']= '23/11/2021';
+        // });
 
-        $offers=array_values($resultOfFilter->all());
-        return view('offers.all', compact('offers'));
+        // $offers=array_values($resultOfFilter->all());
+        // return view('offers.index_paging', compact('offers'));
 
     }
     public function report() {

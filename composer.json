@@ -11,13 +11,16 @@
         "php": "^7.2.5|^8.0",
         "barryvdh/laravel-dompdf": "^1.0",
         "fideloper/proxy": "^4.4",
+        "kyslik/column-sortable": "^6.4",
         "laravel/framework": "^6.20.26",
         "laravel/socialite": "^5.5",
         "laravel/tinker": "^2.5",
         "laravel/ui": "^1.2",
         "livewire/livewire": "1.0",
         "maatwebsite/excel": "^3.1",
-        "mcamara/laravel-localization": "^1.7"
+        "mcamara/laravel-localization": "^1.7",
+        "mehradsadeghi/laravel-filter-querystring": "^1.1",
+        "tucker-eric/eloquentfilter": "^3.1"
     },
     "require-dev": {
         "facade/ignition": "^1.16.15",

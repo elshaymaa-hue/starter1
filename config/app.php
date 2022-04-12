@@ -163,6 +163,8 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         Maatwebsite\Excel\ExcelServiceProvider::class,
         Barryvdh\DomPDF\ServiceProvider::class,
+        EloquentFilter\ServiceProvider::class,
+        // KyslikColumnSortableColumnSortableServiceProvider::class,
         /*
          * Package Service Providers...
          */
