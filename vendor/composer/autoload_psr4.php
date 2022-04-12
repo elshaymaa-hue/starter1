@@ -7,7 +7,10 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'phpDocumentor\\Reflection\\' => array($vendorDir . '/phpdocumentor/reflection-common/src', $vendorDir . '/phpdocumentor/reflection-docblock/src', $vendorDir . '/phpdocumentor/type-resolver/src'),
+<<<<<<< HEAD
     'ZipStream\\' => array($vendorDir . '/maennchen/zipstream-php/src'),
+=======
+>>>>>>> be5876c7e87d44b34fc4ae622e46da1d373fd232
     'Whoops\\' => array($vendorDir . '/filp/whoops/src/Whoops'),
     'Webmozart\\Assert\\' => array($vendorDir . '/webmozart/assert/src'),
     'TijsVerkoyen\\CssToInlineStyles\\' => array($vendorDir . '/tijsverkoyen/css-to-inline-styles/src'),
@@ -37,8 +40,11 @@ return array(
     'Symfony\\Component\\Debug\\' => array($vendorDir . '/symfony/debug'),
     'Symfony\\Component\\CssSelector\\' => array($vendorDir . '/symfony/css-selector'),
     'Symfony\\Component\\Console\\' => array($vendorDir . '/symfony/console'),
+<<<<<<< HEAD
     'Svg\\' => array($vendorDir . '/phenx/php-svg-lib/src/Svg'),
     'Sabberworm\\CSS\\' => array($vendorDir . '/sabberworm/php-css-parser/src'),
+=======
+>>>>>>> be5876c7e87d44b34fc4ae622e46da1d373fd232
     'Ramsey\\Uuid\\' => array($vendorDir . '/ramsey/uuid/src'),
     'Psy\\' => array($vendorDir . '/psy/psysh/src'),
     'Psr\\SimpleCache\\' => array($vendorDir . '/psr/simple-cache/src'),
@@ -49,6 +55,7 @@ return array(
     'Prophecy\\' => array($vendorDir . '/phpspec/prophecy/src/Prophecy'),
     'PhpParser\\' => array($vendorDir . '/nikic/php-parser/lib/PhpParser'),
     'PhpOption\\' => array($vendorDir . '/phpoption/phpoption/src/PhpOption'),
+<<<<<<< HEAD
     'PhpOffice\\PhpSpreadsheet\\' => array($vendorDir . '/phpoffice/phpspreadsheet/src/PhpSpreadsheet'),
     'Opis\\Closure\\' => array($vendorDir . '/opis/closure/src'),
     'NunoMaduro\\Collision\\' => array($vendorDir . '/nunomaduro/collision/src'),
@@ -58,6 +65,11 @@ return array(
     'Matrix\\' => array($vendorDir . '/markbaker/matrix/classes/src'),
     'Maatwebsite\\Excel\\' => array($vendorDir . '/maatwebsite/excel/src'),
     'Livewire\\' => array($vendorDir . '/livewire/livewire/src'),
+=======
+    'Opis\\Closure\\' => array($vendorDir . '/opis/closure/src'),
+    'NunoMaduro\\Collision\\' => array($vendorDir . '/nunomaduro/collision/src'),
+    'Monolog\\' => array($vendorDir . '/monolog/monolog/src/Monolog'),
+>>>>>>> be5876c7e87d44b34fc4ae622e46da1d373fd232
     'League\\OAuth1\\Client\\' => array($vendorDir . '/league/oauth1-client/src'),
     'League\\MimeTypeDetection\\' => array($vendorDir . '/league/mime-type-detection/src'),
     'League\\Flysystem\\' => array($vendorDir . '/league/flysystem/src'),
@@ -65,30 +77,45 @@ return array(
     'Laravel\\Ui\\' => array($vendorDir . '/laravel/ui/src'),
     'Laravel\\Tinker\\' => array($vendorDir . '/laravel/tinker/src'),
     'Laravel\\Socialite\\' => array($vendorDir . '/laravel/socialite/src'),
+<<<<<<< HEAD
     'Kyslik\\ColumnSortable\\' => array($vendorDir . '/kyslik/column-sortable/src/ColumnSortable'),
+=======
+>>>>>>> be5876c7e87d44b34fc4ae622e46da1d373fd232
     'JakubOnderka\\PhpConsoleHighlighter\\' => array($vendorDir . '/php-parallel-lint/php-console-highlighter/src'),
     'JakubOnderka\\PhpConsoleColor\\' => array($vendorDir . '/php-parallel-lint/php-console-color/src'),
     'Illuminate\\' => array($vendorDir . '/laravel/framework/src/Illuminate'),
     'GuzzleHttp\\Psr7\\' => array($vendorDir . '/guzzlehttp/psr7/src'),
     'GuzzleHttp\\Promise\\' => array($vendorDir . '/guzzlehttp/promises/src'),
     'GuzzleHttp\\' => array($vendorDir . '/guzzlehttp/guzzle/src'),
+<<<<<<< HEAD
     'FontLib\\' => array($vendorDir . '/phenx/php-font-lib/src/FontLib'),
+=======
+>>>>>>> be5876c7e87d44b34fc4ae622e46da1d373fd232
     'Fideloper\\Proxy\\' => array($vendorDir . '/fideloper/proxy/src'),
     'Faker\\' => array($vendorDir . '/fakerphp/faker/src/Faker'),
     'Facade\\Ignition\\' => array($vendorDir . '/facade/ignition/src'),
     'Facade\\IgnitionContracts\\' => array($vendorDir . '/facade/ignition-contracts/src'),
     'Facade\\FlareClient\\' => array($vendorDir . '/facade/flare-client-php/src'),
+<<<<<<< HEAD
     'EloquentFilter\\' => array($vendorDir . '/tucker-eric/eloquentfilter/src'),
     'Egulias\\EmailValidator\\' => array($vendorDir . '/egulias/email-validator/src'),
     'Dotenv\\' => array($vendorDir . '/vlucas/phpdotenv/src'),
     'Dompdf\\' => array($vendorDir . '/dompdf/dompdf/src'),
+=======
+    'Egulias\\EmailValidator\\' => array($vendorDir . '/egulias/email-validator/src'),
+    'Dotenv\\' => array($vendorDir . '/vlucas/phpdotenv/src'),
+>>>>>>> be5876c7e87d44b34fc4ae622e46da1d373fd232
     'Doctrine\\Instantiator\\' => array($vendorDir . '/doctrine/instantiator/src/Doctrine/Instantiator'),
     'Doctrine\\Inflector\\' => array($vendorDir . '/doctrine/inflector/lib/Doctrine/Inflector'),
     'Doctrine\\Common\\Lexer\\' => array($vendorDir . '/doctrine/lexer/lib/Doctrine/Common/Lexer'),
     'DeepCopy\\' => array($vendorDir . '/myclabs/deep-copy/src/DeepCopy'),
     'Cron\\' => array($vendorDir . '/dragonmantank/cron-expression/src/Cron'),
+<<<<<<< HEAD
     'Complex\\' => array($vendorDir . '/markbaker/complex/classes/src'),
     'Carbon\\' => array($vendorDir . '/nesbot/carbon/src/Carbon'),
     'Barryvdh\\DomPDF\\' => array($vendorDir . '/barryvdh/laravel-dompdf/src'),
+=======
+    'Carbon\\' => array($vendorDir . '/nesbot/carbon/src/Carbon'),
+>>>>>>> be5876c7e87d44b34fc4ae622e46da1d373fd232
     'App\\' => array($baseDir . '/app'),
 );

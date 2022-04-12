@@ -1,6 +1,10 @@
 sebastian/environment
 
+<<<<<<< HEAD
 Copyright (c) 2014-2022, Sebastian Bergmann <sebastian@phpunit.de>.
+=======
+Copyright (c) 2014-2020, Sebastian Bergmann <sebastian@phpunit.de>.
+>>>>>>> be5876c7e87d44b34fc4ae622e46da1d373fd232
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without

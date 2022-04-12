@@ -150,8 +150,12 @@ final class Test
         // If there is no @covers annotation but a @coversNothing annotation on
         // the test method then code coverage data does not need to be collected
         if (isset($annotations['method']['coversNothing'])) {
+<<<<<<< HEAD
             // @see https://github.com/sebastianbergmann/phpunit/issues/4947#issuecomment-1084480950
             // return false;
+=======
+            return false;
+>>>>>>> be5876c7e87d44b34fc4ae622e46da1d373fd232
         }
 
         // If there is at least one @covers annotation then
@@ -163,8 +167,12 @@ final class Test
         // If there is no @covers annotation but a @coversNothing annotation
         // then code coverage data does not need to be collected
         if (isset($annotations['class']['coversNothing'])) {
+<<<<<<< HEAD
             // @see https://github.com/sebastianbergmann/phpunit/issues/4947#issuecomment-1084480950
             // return false;
+=======
+            return false;
+>>>>>>> be5876c7e87d44b34fc4ae622e46da1d373fd232
         }
 
         // If there is no @coversNothing annotation then
