@@ -342,7 +342,7 @@
                             <p class="mb-4"></p>
                             <button class="btn btn-primary" data-bs-dismiss="modal">
                                 <i class="fas fa-xmark fa-fw"></i>
-                                <a href="{{ url('offers/all') }}">Display Documents</a>
+                                <a href="{{ url('report ') }}">Display Documents</a>
                             </button>
                         </div>
                     </div>
