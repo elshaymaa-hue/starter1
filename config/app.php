@@ -161,15 +161,8 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
-<<<<<<< HEAD
 //        Maatwebsite\Excel\ExcelServiceProvider::class,
 //        Barryvdh\DomPDF\ServiceProvider::class,
-=======
-        Maatwebsite\Excel\ExcelServiceProvider::class,
-        Barryvdh\DomPDF\ServiceProvider::class,
-        EloquentFilter\ServiceProvider::class,
-        // KyslikColumnSortableColumnSortableServiceProvider::class,
->>>>>>> e0bb1a4e0db21bb9d5154d2defa8987bf19b6148
         /*
          * Package Service Providers...
          */
