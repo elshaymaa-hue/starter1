@@ -804,15 +804,9 @@ class Table
         $compact = new TableStyle();
         $compact
             ->setHorizontalBorderChars('')
-<<<<<<< HEAD
             ->setVerticalBorderChars('')
             ->setDefaultCrossingChar('')
             ->setCellRowContentFormat('%s ')
-=======
-            ->setVerticalBorderChars(' ')
-            ->setDefaultCrossingChar('')
-            ->setCellRowContentFormat('%s')
->>>>>>> be5876c7e87d44b34fc4ae622e46da1d373fd232
         ;
 
         $styleGuide = new TableStyle();

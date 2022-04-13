@@ -60,7 +60,6 @@ use Traversable;
  */
 final class Generator
 {
-<<<<<<< HEAD
     private const MOCKED_CLONE_METHOD_WITH_VOID_RETURN_TYPE_TRAIT = <<<'EOT'
 namespace PHPUnit\Framework\MockObject;
 
@@ -113,8 +112,6 @@ trait UnmockedCloneMethodWithoutReturnType
 }
 EOT;
 
-=======
->>>>>>> be5876c7e87d44b34fc4ae622e46da1d373fd232
     /**
      * @var array
      */
@@ -968,19 +965,11 @@ EOT;
         $cloneTrait = '';
 
         if ($mockedCloneMethod) {
-<<<<<<< HEAD
             $cloneTrait = $this->mockedCloneMethod();
         }
 
         if ($unmockedCloneMethod) {
             $cloneTrait = $this->unmockedCloneMethod();
-=======
-            $cloneTrait = PHP_EOL . '    use \PHPUnit\Framework\MockObject\MockedCloneMethod;';
-        }
-
-        if ($unmockedCloneMethod) {
-            $cloneTrait = PHP_EOL . '    use \PHPUnit\Framework\MockObject\UnmockedCloneMethod;';
->>>>>>> be5876c7e87d44b34fc4ae622e46da1d373fd232
         }
 
         $classTemplate->setVar(
@@ -1125,7 +1114,6 @@ EOT;
 
         return $methodName === $className;
     }
-<<<<<<< HEAD
 
     private function mockedCloneMethod(): string
     {
@@ -1160,6 +1148,4 @@ EOT;
 
         return PHP_EOL . '    use \PHPUnit\Framework\MockObject\UnmockedCloneMethodWithoutReturnType;';
     }
-=======
->>>>>>> be5876c7e87d44b34fc4ae622e46da1d373fd232
 }

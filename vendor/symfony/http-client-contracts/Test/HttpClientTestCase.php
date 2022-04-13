@@ -835,7 +835,6 @@ abstract class HttpClientTestCase extends TestCase
         }
     }
 
-<<<<<<< HEAD
     public function testTimeoutOnInitialize()
     {
         $p1 = TestHttpServer::start(8067);
@@ -869,8 +868,6 @@ abstract class HttpClientTestCase extends TestCase
         }
     }
 
-=======
->>>>>>> be5876c7e87d44b34fc4ae622e46da1d373fd232
     public function testTimeoutOnDestruct()
     {
         $p1 = TestHttpServer::start(8067);
@@ -957,7 +954,6 @@ abstract class HttpClientTestCase extends TestCase
 
         $body = $response->toArray();
         $this->assertSame('Basic Zm9vOmI9YXI=', $body['HTTP_PROXY_AUTHORIZATION']);
-<<<<<<< HEAD
 
         $_SERVER['http_proxy'] = 'http://localhost:8057';
         try {
@@ -968,8 +964,6 @@ abstract class HttpClientTestCase extends TestCase
         } finally {
             unset($_SERVER['http_proxy']);
         }
-=======
->>>>>>> be5876c7e87d44b34fc4ae622e46da1d373fd232
     }
 
     public function testNoProxy()

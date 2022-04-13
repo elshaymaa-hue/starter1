@@ -157,11 +157,7 @@ class Application implements ResetInterface
             $exitCode = $e->getCode();
             if (is_numeric($exitCode)) {
                 $exitCode = (int) $exitCode;
-<<<<<<< HEAD
                 if ($exitCode <= 0) {
-=======
-                if (0 === $exitCode) {
->>>>>>> be5876c7e87d44b34fc4ae622e46da1d373fd232
                     $exitCode = 1;
                 }
             } else {

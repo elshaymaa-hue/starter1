@@ -9,10 +9,7 @@ return array(
     'App\\Console\\Commands\\notify' => $baseDir . '/app/Console/Commands/notify.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
-<<<<<<< HEAD
     'App\\Exports\\OffersExport' => $baseDir . '/app/Exports/OffersExport.php',
-=======
->>>>>>> be5876c7e87d44b34fc4ae622e46da1d373fd232
     'App\\Http\\Controllers\\Admin\\SecondController' => $baseDir . '/app/Http/Controllers/Admin/SecondController.php',
     'App\\Http\\Controllers\\Auth\\ConfirmPasswordController' => $baseDir . '/app/Http/Controllers/Auth/ConfirmPasswordController.php',
     'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => $baseDir . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
@@ -27,10 +24,7 @@ return array(
     'App\\Http\\Controllers\\Front\\FirstController' => $baseDir . '/app/Http/Controllers/Front/FirstController.php',
     'App\\Http\\Controllers\\Front\\UserController' => $baseDir . '/app/Http/Controllers/Front/UserController.php',
     'App\\Http\\Controllers\\HomeController' => $baseDir . '/app/Http/Controllers/HomeController.php',
-<<<<<<< HEAD
     'App\\Http\\Controllers\\MailController' => $baseDir . '/app/Http/Controllers/MailController.php',
-=======
->>>>>>> be5876c7e87d44b34fc4ae622e46da1d373fd232
     'App\\Http\\Controllers\\NewsController' => $baseDir . '/app/Http/Controllers/NewsController.php',
     'App\\Http\\Controllers\\Power_StationController' => $baseDir . '/app/Http/Controllers/Power_StationController.php',
     'App\\Http\\Controllers\\RadarController' => $baseDir . '/app/Http/Controllers/RadarController.php',
@@ -45,13 +39,9 @@ return array(
     'App\\Http\\Requests\\OfferRequest' => $baseDir . '/app/Http/Requests/OfferRequest.php',
     'App\\Http\\Requests\\Power_StationRequest' => $baseDir . '/app/Http/Requests/Power_StationRequest.php',
     'App\\Http\\Requests\\RadarRequest' => $baseDir . '/app/Http/Requests/RadarRequest.php',
-<<<<<<< HEAD
     'App\\Imports\\OffersImport' => $baseDir . '/app/Imports/OffersImport.php',
     'App\\Mail\\notifyEmail' => $baseDir . '/app/Mail/notifyEmail.php',
     'App\\ModelFilters\\OfferFilter' => $baseDir . '/app/ModelFilters/OfferFilter.php',
-=======
-    'App\\Mail\\notifyEmail' => $baseDir . '/app/Mail/notifyEmail.php',
->>>>>>> be5876c7e87d44b34fc4ae622e46da1d373fd232
     'App\\Providers\\AppServiceProvider' => $baseDir . '/app/Providers/AppServiceProvider.php',
     'App\\Providers\\AuthServiceProvider' => $baseDir . '/app/Providers/AuthServiceProvider.php',
     'App\\Providers\\BroadcastServiceProvider' => $baseDir . '/app/Providers/BroadcastServiceProvider.php',
@@ -60,13 +50,10 @@ return array(
     'App\\Traits\\DocumentTrait' => $baseDir . '/app/Traits/DocumentTrait.php',
     'App\\User' => $baseDir . '/app/User.php',
     'Attribute' => $vendorDir . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
-<<<<<<< HEAD
     'Barryvdh\\DomPDF\\Facade' => $vendorDir . '/barryvdh/laravel-dompdf/src/Facade.php',
     'Barryvdh\\DomPDF\\Facade\\Pdf' => $vendorDir . '/barryvdh/laravel-dompdf/src/Facade/Pdf.php',
     'Barryvdh\\DomPDF\\PDF' => $vendorDir . '/barryvdh/laravel-dompdf/src/PDF.php',
     'Barryvdh\\DomPDF\\ServiceProvider' => $vendorDir . '/barryvdh/laravel-dompdf/src/ServiceProvider.php',
-=======
->>>>>>> be5876c7e87d44b34fc4ae622e46da1d373fd232
     'Carbon\\AbstractTranslator' => $vendorDir . '/nesbot/carbon/src/Carbon/AbstractTranslator.php',
     'Carbon\\Carbon' => $vendorDir . '/nesbot/carbon/src/Carbon/Carbon.php',
     'Carbon\\CarbonConverterInterface' => $vendorDir . '/nesbot/carbon/src/Carbon/CarbonConverterInterface.php',
@@ -145,13 +132,10 @@ return array(
     'Carbon\\Translator' => $vendorDir . '/nesbot/carbon/src/Carbon/Translator.php',
     'Carbon\\TranslatorImmutable' => $vendorDir . '/nesbot/carbon/src/Carbon/TranslatorImmutable.php',
     'Carbon\\TranslatorStrongTypeInterface' => $vendorDir . '/nesbot/carbon/src/Carbon/TranslatorStrongTypeInterface.php',
-<<<<<<< HEAD
     'Complex\\Complex' => $vendorDir . '/markbaker/complex/classes/src/Complex.php',
     'Complex\\Exception' => $vendorDir . '/markbaker/complex/classes/src/Exception.php',
     'Complex\\Functions' => $vendorDir . '/markbaker/complex/classes/src/Functions.php',
     'Complex\\Operations' => $vendorDir . '/markbaker/complex/classes/src/Operations.php',
-=======
->>>>>>> be5876c7e87d44b34fc4ae622e46da1d373fd232
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
     'Cron\\AbstractField' => $vendorDir . '/dragonmantank/cron-expression/src/Cron/AbstractField.php',
     'Cron\\CronExpression' => $vendorDir . '/dragonmantank/cron-expression/src/Cron/CronExpression.php',
@@ -234,7 +218,6 @@ return array(
     'Doctrine\\Instantiator\\Exception\\UnexpectedValueException' => $vendorDir . '/doctrine/instantiator/src/Doctrine/Instantiator/Exception/UnexpectedValueException.php',
     'Doctrine\\Instantiator\\Instantiator' => $vendorDir . '/doctrine/instantiator/src/Doctrine/Instantiator/Instantiator.php',
     'Doctrine\\Instantiator\\InstantiatorInterface' => $vendorDir . '/doctrine/instantiator/src/Doctrine/Instantiator/InstantiatorInterface.php',
-<<<<<<< HEAD
     'Dompdf\\Adapter\\CPDF' => $vendorDir . '/dompdf/dompdf/src/Adapter/CPDF.php',
     'Dompdf\\Adapter\\GD' => $vendorDir . '/dompdf/dompdf/src/Adapter/GD.php',
     'Dompdf\\Adapter\\PDFLib' => $vendorDir . '/dompdf/dompdf/src/Adapter/PDFLib.php',
@@ -307,8 +290,6 @@ return array(
     'Dompdf\\Renderer\\TableCell' => $vendorDir . '/dompdf/dompdf/src/Renderer/TableCell.php',
     'Dompdf\\Renderer\\TableRowGroup' => $vendorDir . '/dompdf/dompdf/src/Renderer/TableRowGroup.php',
     'Dompdf\\Renderer\\Text' => $vendorDir . '/dompdf/dompdf/src/Renderer/Text.php',
-=======
->>>>>>> be5876c7e87d44b34fc4ae622e46da1d373fd232
     'Dotenv\\Dotenv' => $vendorDir . '/vlucas/phpdotenv/src/Dotenv.php',
     'Dotenv\\Environment\\AbstractVariables' => $vendorDir . '/vlucas/phpdotenv/src/Environment/AbstractVariables.php',
     'Dotenv\\Environment\\Adapter\\AdapterInterface' => $vendorDir . '/vlucas/phpdotenv/src/Environment/Adapter/AdapterInterface.php',
@@ -398,14 +379,11 @@ return array(
     'Egulias\\EmailValidator\\Warning\\QuotedString' => $vendorDir . '/egulias/email-validator/src/Warning/QuotedString.php',
     'Egulias\\EmailValidator\\Warning\\TLD' => $vendorDir . '/egulias/email-validator/src/Warning/TLD.php',
     'Egulias\\EmailValidator\\Warning\\Warning' => $vendorDir . '/egulias/email-validator/src/Warning/Warning.php',
-<<<<<<< HEAD
     'EloquentFilter\\Commands\\MakeEloquentFilter' => $vendorDir . '/tucker-eric/eloquentfilter/src/Commands/MakeEloquentFilter.php',
     'EloquentFilter\\Filterable' => $vendorDir . '/tucker-eric/eloquentfilter/src/Filterable.php',
     'EloquentFilter\\LumenServiceProvider' => $vendorDir . '/tucker-eric/eloquentfilter/src/LumenServiceProvider.php',
     'EloquentFilter\\ModelFilter' => $vendorDir . '/tucker-eric/eloquentfilter/src/ModelFilter.php',
     'EloquentFilter\\ServiceProvider' => $vendorDir . '/tucker-eric/eloquentfilter/src/ServiceProvider.php',
-=======
->>>>>>> be5876c7e87d44b34fc4ae622e46da1d373fd232
     'Facade\\FlareClient\\Api' => $vendorDir . '/facade/flare-client-php/src/Api.php',
     'Facade\\FlareClient\\Concerns\\HasContext' => $vendorDir . '/facade/flare-client-php/src/Concerns/HasContext.php',
     'Facade\\FlareClient\\Concerns\\UsesTime' => $vendorDir . '/facade/flare-client-php/src/Concerns/UsesTime.php',
@@ -1031,7 +1009,6 @@ return array(
     'Faker\\ValidGenerator' => $vendorDir . '/fakerphp/faker/src/Faker/ValidGenerator.php',
     'Fideloper\\Proxy\\TrustProxies' => $vendorDir . '/fideloper/proxy/src/TrustProxies.php',
     'Fideloper\\Proxy\\TrustedProxyServiceProvider' => $vendorDir . '/fideloper/proxy/src/TrustedProxyServiceProvider.php',
-<<<<<<< HEAD
     'FontLib\\AdobeFontMetrics' => $vendorDir . '/phenx/php-font-lib/src/FontLib/AdobeFontMetrics.php',
     'FontLib\\Autoloader' => $vendorDir . '/phenx/php-font-lib/src/FontLib/Autoloader.php',
     'FontLib\\BinaryStream' => $vendorDir . '/phenx/php-font-lib/src/FontLib/BinaryStream.php',
@@ -1068,8 +1045,6 @@ return array(
     'FontLib\\WOFF\\File' => $vendorDir . '/phenx/php-font-lib/src/FontLib/WOFF/File.php',
     'FontLib\\WOFF\\Header' => $vendorDir . '/phenx/php-font-lib/src/FontLib/WOFF/Header.php',
     'FontLib\\WOFF\\TableDirectoryEntry' => $vendorDir . '/phenx/php-font-lib/src/FontLib/WOFF/TableDirectoryEntry.php',
-=======
->>>>>>> be5876c7e87d44b34fc4ae622e46da1d373fd232
     'GuzzleHttp\\BodySummarizer' => $vendorDir . '/guzzlehttp/guzzle/src/BodySummarizer.php',
     'GuzzleHttp\\BodySummarizerInterface' => $vendorDir . '/guzzlehttp/guzzle/src/BodySummarizerInterface.php',
     'GuzzleHttp\\Client' => $vendorDir . '/guzzlehttp/guzzle/src/Client.php',
@@ -1155,7 +1130,6 @@ return array(
     'GuzzleHttp\\RetryMiddleware' => $vendorDir . '/guzzlehttp/guzzle/src/RetryMiddleware.php',
     'GuzzleHttp\\TransferStats' => $vendorDir . '/guzzlehttp/guzzle/src/TransferStats.php',
     'GuzzleHttp\\Utils' => $vendorDir . '/guzzlehttp/guzzle/src/Utils.php',
-<<<<<<< HEAD
     'HTML5_Data' => $vendorDir . '/dompdf/dompdf/lib/html5lib/Data.php',
     'HTML5_InputStream' => $vendorDir . '/dompdf/dompdf/lib/html5lib/InputStream.php',
     'HTML5_Parser' => $vendorDir . '/dompdf/dompdf/lib/html5lib/Parser.php',
@@ -1391,8 +1365,6 @@ return array(
     'HTMLPurifier_VarParser_Flexible' => $vendorDir . '/ezyang/htmlpurifier/library/HTMLPurifier/VarParser/Flexible.php',
     'HTMLPurifier_VarParser_Native' => $vendorDir . '/ezyang/htmlpurifier/library/HTMLPurifier/VarParser/Native.php',
     'HTMLPurifier_Zipper' => $vendorDir . '/ezyang/htmlpurifier/library/HTMLPurifier/Zipper.php',
-=======
->>>>>>> be5876c7e87d44b34fc4ae622e46da1d373fd232
     'Hamcrest\\Arrays\\IsArray' => $vendorDir . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Arrays/IsArray.php',
     'Hamcrest\\Arrays\\IsArrayContaining' => $vendorDir . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Arrays/IsArrayContaining.php',
     'Hamcrest\\Arrays\\IsArrayContainingInAnyOrder' => $vendorDir . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Arrays/IsArrayContainingInAnyOrder.php',
@@ -2325,13 +2297,10 @@ return array(
     'JakubOnderka\\PhpConsoleColor\\InvalidStyleException' => $vendorDir . '/php-parallel-lint/php-console-color/src/InvalidStyleException.php',
     'JakubOnderka\\PhpConsoleHighlighter\\Highlighter' => $vendorDir . '/php-parallel-lint/php-console-highlighter/src/Highlighter.php',
     'JsonException' => $vendorDir . '/symfony/polyfill-php73/Resources/stubs/JsonException.php',
-<<<<<<< HEAD
     'Kyslik\\ColumnSortable\\ColumnSortableServiceProvider' => $vendorDir . '/kyslik/column-sortable/src/ColumnSortable/ColumnSortableServiceProvider.php',
     'Kyslik\\ColumnSortable\\Exceptions\\ColumnSortableException' => $vendorDir . '/kyslik/column-sortable/src/ColumnSortable/Exceptions/ColumnSortableException.php',
     'Kyslik\\ColumnSortable\\Sortable' => $vendorDir . '/kyslik/column-sortable/src/ColumnSortable/Sortable.php',
     'Kyslik\\ColumnSortable\\SortableLink' => $vendorDir . '/kyslik/column-sortable/src/ColumnSortable/SortableLink.php',
-=======
->>>>>>> be5876c7e87d44b34fc4ae622e46da1d373fd232
     'Laravel\\Socialite\\AbstractUser' => $vendorDir . '/laravel/socialite/src/AbstractUser.php',
     'Laravel\\Socialite\\Contracts\\Factory' => $vendorDir . '/laravel/socialite/src/Contracts/Factory.php',
     'Laravel\\Socialite\\Contracts\\Provider' => $vendorDir . '/laravel/socialite/src/Contracts/Provider.php',
@@ -2657,7 +2626,6 @@ return array(
     'League\\OAuth1\\Client\\Signature\\RsaSha1Signature' => $vendorDir . '/league/oauth1-client/src/Signature/RsaSha1Signature.php',
     'League\\OAuth1\\Client\\Signature\\Signature' => $vendorDir . '/league/oauth1-client/src/Signature/Signature.php',
     'League\\OAuth1\\Client\\Signature\\SignatureInterface' => $vendorDir . '/league/oauth1-client/src/Signature/SignatureInterface.php',
-<<<<<<< HEAD
     'Livewire\\Castable' => $vendorDir . '/livewire/livewire/src/Castable.php',
     'Livewire\\Commands\\ComponentParser' => $vendorDir . '/livewire/livewire/src/Commands/ComponentParser.php',
     'Livewire\\Commands\\ComponentParserFromExistingComponent' => $vendorDir . '/livewire/livewire/src/Commands/ComponentParserFromExistingComponent.php',
@@ -2889,8 +2857,6 @@ return array(
     'Matrix\\Operators\\Multiplication' => $vendorDir . '/markbaker/matrix/classes/src/Operators/Multiplication.php',
     'Matrix\\Operators\\Operator' => $vendorDir . '/markbaker/matrix/classes/src/Operators/Operator.php',
     'Matrix\\Operators\\Subtraction' => $vendorDir . '/markbaker/matrix/classes/src/Operators/Subtraction.php',
-=======
->>>>>>> be5876c7e87d44b34fc4ae622e46da1d373fd232
     'Mcamara\\LaravelLocalization\\Commands\\RouteTranslationsCacheCommand' => $vendorDir . '/mcamara/laravel-localization/src/Mcamara/LaravelLocalization/Commands/RouteTranslationsCacheCommand.php',
     'Mcamara\\LaravelLocalization\\Commands\\RouteTranslationsClearCommand' => $vendorDir . '/mcamara/laravel-localization/src/Mcamara/LaravelLocalization/Commands/RouteTranslationsClearCommand.php',
     'Mcamara\\LaravelLocalization\\Commands\\RouteTranslationsListCommand' => $vendorDir . '/mcamara/laravel-localization/src/Mcamara/LaravelLocalization/Commands/RouteTranslationsListCommand.php',
@@ -2909,7 +2875,6 @@ return array(
     'Mcamara\\LaravelLocalization\\Middleware\\LocaleSessionRedirect' => $vendorDir . '/mcamara/laravel-localization/src/Mcamara/LaravelLocalization/Middleware/LocaleSessionRedirect.php',
     'Mcamara\\LaravelLocalization\\Traits\\LoadsTranslatedCachedRoutes' => $vendorDir . '/mcamara/laravel-localization/src/Mcamara/LaravelLocalization/Traits/LoadsTranslatedCachedRoutes.php',
     'Mcamara\\LaravelLocalization\\Traits\\TranslatedRouteCommandContext' => $vendorDir . '/mcamara/laravel-localization/src/Mcamara/LaravelLocalization/Traits/TranslatedRouteCommandContext.php',
-<<<<<<< HEAD
     'Mehradsadeghi\\FilterQueryString\\FilterQueryString' => $vendorDir . '/mehradsadeghi/laravel-filter-querystring/src/FilterQueryString.php',
     'Mehradsadeghi\\FilterQueryString\\Filters\\BaseClause' => $vendorDir . '/mehradsadeghi/laravel-filter-querystring/src/Filters/BaseClause.php',
     'Mehradsadeghi\\FilterQueryString\\Filters\\ComparisonClauses\\BaseComparison' => $vendorDir . '/mehradsadeghi/laravel-filter-querystring/src/Filters/ComparisonClauses/BaseComparison.php',
@@ -2925,8 +2890,6 @@ return array(
     'Mehradsadeghi\\FilterQueryString\\Filters\\WhereInClause' => $vendorDir . '/mehradsadeghi/laravel-filter-querystring/src/Filters/WhereInClause.php',
     'Mehradsadeghi\\FilterQueryString\\Filters\\WhereLikeClause' => $vendorDir . '/mehradsadeghi/laravel-filter-querystring/src/Filters/WhereLikeClause.php',
     'Mehradsadeghi\\FilterQueryString\\Resolvings' => $vendorDir . '/mehradsadeghi/laravel-filter-querystring/src/Resolvings.php',
-=======
->>>>>>> be5876c7e87d44b34fc4ae622e46da1d373fd232
     'Mockery' => $vendorDir . '/mockery/mockery/library/Mockery.php',
     'Mockery\\Adapter\\Phpunit\\MockeryPHPUnitIntegration' => $vendorDir . '/mockery/mockery/library/Mockery/Adapter/Phpunit/MockeryPHPUnitIntegration.php',
     'Mockery\\Adapter\\Phpunit\\MockeryPHPUnitIntegrationAssertPostConditions' => $vendorDir . '/mockery/mockery/library/Mockery/Adapter/Phpunit/MockeryPHPUnitIntegrationAssertPostConditions.php',
@@ -3127,11 +3090,8 @@ return array(
     'Monolog\\SignalHandler' => $vendorDir . '/monolog/monolog/src/Monolog/SignalHandler.php',
     'Monolog\\Test\\TestCase' => $vendorDir . '/monolog/monolog/src/Monolog/Test/TestCase.php',
     'Monolog\\Utils' => $vendorDir . '/monolog/monolog/src/Monolog/Utils.php',
-<<<<<<< HEAD
     'MyCLabs\\Enum\\Enum' => $vendorDir . '/myclabs/php-enum/src/Enum.php',
     'MyCLabs\\Enum\\PHPUnit\\Comparator' => $vendorDir . '/myclabs/php-enum/src/PHPUnit/Comparator.php',
-=======
->>>>>>> be5876c7e87d44b34fc4ae622e46da1d373fd232
     'Normalizer' => $vendorDir . '/symfony/polyfill-intl-normalizer/Resources/stubs/Normalizer.php',
     'NunoMaduro\\Collision\\Adapters\\Laravel\\CollisionServiceProvider' => $vendorDir . '/nunomaduro/collision/src/Adapters/Laravel/CollisionServiceProvider.php',
     'NunoMaduro\\Collision\\Adapters\\Laravel\\ExceptionHandler' => $vendorDir . '/nunomaduro/collision/src/Adapters/Laravel/ExceptionHandler.php',
@@ -3278,10 +3238,6 @@ return array(
     'PHPUnit\\Framework\\MockObject\\MockObject' => $vendorDir . '/phpunit/phpunit/src/Framework/MockObject/MockObject.php',
     'PHPUnit\\Framework\\MockObject\\MockTrait' => $vendorDir . '/phpunit/phpunit/src/Framework/MockObject/MockTrait.php',
     'PHPUnit\\Framework\\MockObject\\MockType' => $vendorDir . '/phpunit/phpunit/src/Framework/MockObject/MockType.php',
-<<<<<<< HEAD
-=======
-    'PHPUnit\\Framework\\MockObject\\MockedCloneMethod' => $vendorDir . '/phpunit/phpunit/src/Framework/MockObject/Api/MockedCloneMethod.php',
->>>>>>> be5876c7e87d44b34fc4ae622e46da1d373fd232
     'PHPUnit\\Framework\\MockObject\\OriginalConstructorInvocationRequiredException' => $vendorDir . '/phpunit/phpunit/src/Framework/MockObject/Exception/OriginalConstructorInvocationRequiredException.php',
     'PHPUnit\\Framework\\MockObject\\ReflectionException' => $vendorDir . '/phpunit/phpunit/src/Framework/MockObject/Exception/ReflectionException.php',
     'PHPUnit\\Framework\\MockObject\\ReturnValueNotConfiguredException' => $vendorDir . '/phpunit/phpunit/src/Framework/MockObject/Exception/ReturnValueNotConfiguredException.php',
@@ -3312,10 +3268,6 @@ return array(
     'PHPUnit\\Framework\\MockObject\\UnknownClassException' => $vendorDir . '/phpunit/phpunit/src/Framework/MockObject/Exception/UnknownClassException.php',
     'PHPUnit\\Framework\\MockObject\\UnknownTraitException' => $vendorDir . '/phpunit/phpunit/src/Framework/MockObject/Exception/UnknownTraitException.php',
     'PHPUnit\\Framework\\MockObject\\UnknownTypeException' => $vendorDir . '/phpunit/phpunit/src/Framework/MockObject/Exception/UnknownTypeException.php',
-<<<<<<< HEAD
-=======
-    'PHPUnit\\Framework\\MockObject\\UnmockedCloneMethod' => $vendorDir . '/phpunit/phpunit/src/Framework/MockObject/Api/UnmockedCloneMethod.php',
->>>>>>> be5876c7e87d44b34fc4ae622e46da1d373fd232
     'PHPUnit\\Framework\\MockObject\\Verifiable' => $vendorDir . '/phpunit/phpunit/src/Framework/MockObject/Verifiable.php',
     'PHPUnit\\Framework\\NoChildTestSuiteException' => $vendorDir . '/phpunit/phpunit/src/Framework/Exception/NoChildTestSuiteException.php',
     'PHPUnit\\Framework\\OutputError' => $vendorDir . '/phpunit/phpunit/src/Framework/Exception/OutputError.php',
@@ -3582,7 +3534,6 @@ return array(
     'PharIo\\Version\\VersionConstraintParser' => $vendorDir . '/phar-io/version/src/VersionConstraintParser.php',
     'PharIo\\Version\\VersionConstraintValue' => $vendorDir . '/phar-io/version/src/VersionConstraintValue.php',
     'PharIo\\Version\\VersionNumber' => $vendorDir . '/phar-io/version/src/VersionNumber.php',
-<<<<<<< HEAD
     'PhpOffice\\PhpSpreadsheet\\Calculation\\ArrayEnabled' => $vendorDir . '/phpoffice/phpspreadsheet/src/PhpSpreadsheet/Calculation/ArrayEnabled.php',
     'PhpOffice\\PhpSpreadsheet\\Calculation\\BinaryComparison' => $vendorDir . '/phpoffice/phpspreadsheet/src/PhpSpreadsheet/Calculation/BinaryComparison.php',
     'PhpOffice\\PhpSpreadsheet\\Calculation\\Calculation' => $vendorDir . '/phpoffice/phpspreadsheet/src/PhpSpreadsheet/Calculation/Calculation.php',
@@ -4035,8 +3986,6 @@ return array(
     'PhpOffice\\PhpSpreadsheet\\Writer\\Xlsx\\Worksheet' => $vendorDir . '/phpoffice/phpspreadsheet/src/PhpSpreadsheet/Writer/Xlsx/Worksheet.php',
     'PhpOffice\\PhpSpreadsheet\\Writer\\Xlsx\\WriterPart' => $vendorDir . '/phpoffice/phpspreadsheet/src/PhpSpreadsheet/Writer/Xlsx/WriterPart.php',
     'PhpOffice\\PhpSpreadsheet\\Writer\\Xlsx\\Xlfn' => $vendorDir . '/phpoffice/phpspreadsheet/src/PhpSpreadsheet/Writer/Xlsx/Xlfn.php',
-=======
->>>>>>> be5876c7e87d44b34fc4ae622e46da1d373fd232
     'PhpOption\\LazyOption' => $vendorDir . '/phpoption/phpoption/src/PhpOption/LazyOption.php',
     'PhpOption\\None' => $vendorDir . '/phpoption/phpoption/src/PhpOption/None.php',
     'PhpOption\\Option' => $vendorDir . '/phpoption/phpoption/src/PhpOption/Option.php',
@@ -4608,7 +4557,6 @@ return array(
     'Ramsey\\Uuid\\UuidFactory' => $vendorDir . '/ramsey/uuid/src/UuidFactory.php',
     'Ramsey\\Uuid\\UuidFactoryInterface' => $vendorDir . '/ramsey/uuid/src/UuidFactoryInterface.php',
     'Ramsey\\Uuid\\UuidInterface' => $vendorDir . '/ramsey/uuid/src/UuidInterface.php',
-<<<<<<< HEAD
     'Sabberworm\\CSS\\CSSList\\AtRuleBlockList' => $vendorDir . '/sabberworm/php-css-parser/src/CSSList/AtRuleBlockList.php',
     'Sabberworm\\CSS\\CSSList\\CSSBlockList' => $vendorDir . '/sabberworm/php-css-parser/src/CSSList/CSSBlockList.php',
     'Sabberworm\\CSS\\CSSList\\CSSList' => $vendorDir . '/sabberworm/php-css-parser/src/CSSList/CSSList.php',
@@ -4648,8 +4596,6 @@ return array(
     'Sabberworm\\CSS\\Value\\URL' => $vendorDir . '/sabberworm/php-css-parser/src/Value/URL.php',
     'Sabberworm\\CSS\\Value\\Value' => $vendorDir . '/sabberworm/php-css-parser/src/Value/Value.php',
     'Sabberworm\\CSS\\Value\\ValueList' => $vendorDir . '/sabberworm/php-css-parser/src/Value/ValueList.php',
-=======
->>>>>>> be5876c7e87d44b34fc4ae622e46da1d373fd232
     'SebastianBergmann\\CliParser\\AmbiguousOptionException' => $vendorDir . '/sebastian/cli-parser/src/exceptions/AmbiguousOptionException.php',
     'SebastianBergmann\\CliParser\\Exception' => $vendorDir . '/sebastian/cli-parser/src/exceptions/Exception.php',
     'SebastianBergmann\\CliParser\\OptionDoesNotAllowArgumentException' => $vendorDir . '/sebastian/cli-parser/src/exceptions/OptionDoesNotAllowArgumentException.php',
@@ -4849,7 +4795,6 @@ return array(
     'SebastianBergmann\\Type\\VoidType' => $vendorDir . '/sebastian/type/src/type/VoidType.php',
     'SebastianBergmann\\Version' => $vendorDir . '/sebastian/version/src/Version.php',
     'Stringable' => $vendorDir . '/symfony/polyfill-php80/Resources/stubs/Stringable.php',
-<<<<<<< HEAD
     'Svg\\DefaultStyle' => $vendorDir . '/phenx/php-svg-lib/src/Svg/DefaultStyle.php',
     'Svg\\Document' => $vendorDir . '/phenx/php-svg-lib/src/Svg/Document.php',
     'Svg\\Gradient\\Stop' => $vendorDir . '/phenx/php-svg-lib/src/Svg/Gradient/Stop.php',
@@ -4877,8 +4822,6 @@ return array(
     'Svg\\Tag\\StyleTag' => $vendorDir . '/phenx/php-svg-lib/src/Svg/Tag/StyleTag.php',
     'Svg\\Tag\\Text' => $vendorDir . '/phenx/php-svg-lib/src/Svg/Tag/Text.php',
     'Svg\\Tag\\UseTag' => $vendorDir . '/phenx/php-svg-lib/src/Svg/Tag/UseTag.php',
-=======
->>>>>>> be5876c7e87d44b34fc4ae622e46da1d373fd232
     'Symfony\\Component\\Console\\Application' => $vendorDir . '/symfony/console/Application.php',
     'Symfony\\Component\\Console\\CommandLoader\\CommandLoaderInterface' => $vendorDir . '/symfony/console/CommandLoader/CommandLoaderInterface.php',
     'Symfony\\Component\\Console\\CommandLoader\\ContainerCommandLoader' => $vendorDir . '/symfony/console/CommandLoader/ContainerCommandLoader.php',
@@ -5669,7 +5612,6 @@ return array(
     'Whoops\\Util\\Misc' => $vendorDir . '/filp/whoops/src/Whoops/Util/Misc.php',
     'Whoops\\Util\\SystemFacade' => $vendorDir . '/filp/whoops/src/Whoops/Util/SystemFacade.php',
     'Whoops\\Util\\TemplateHelper' => $vendorDir . '/filp/whoops/src/Whoops/Util/TemplateHelper.php',
-<<<<<<< HEAD
     'ZipStream\\Bigint' => $vendorDir . '/maennchen/zipstream-php/src/Bigint.php',
     'ZipStream\\DeflateStream' => $vendorDir . '/maennchen/zipstream-php/src/DeflateStream.php',
     'ZipStream\\Exception' => $vendorDir . '/maennchen/zipstream-php/src/Exception.php',
@@ -5686,8 +5628,6 @@ return array(
     'ZipStream\\Option\\Version' => $vendorDir . '/maennchen/zipstream-php/src/Option/Version.php',
     'ZipStream\\Stream' => $vendorDir . '/maennchen/zipstream-php/src/Stream.php',
     'ZipStream\\ZipStream' => $vendorDir . '/maennchen/zipstream-php/src/ZipStream.php',
-=======
->>>>>>> be5876c7e87d44b34fc4ae622e46da1d373fd232
     'phpDocumentor\\Reflection\\DocBlock' => $vendorDir . '/phpdocumentor/reflection-docblock/src/DocBlock.php',
     'phpDocumentor\\Reflection\\DocBlockFactory' => $vendorDir . '/phpdocumentor/reflection-docblock/src/DocBlockFactory.php',
     'phpDocumentor\\Reflection\\DocBlockFactoryInterface' => $vendorDir . '/phpdocumentor/reflection-docblock/src/DocBlockFactoryInterface.php',

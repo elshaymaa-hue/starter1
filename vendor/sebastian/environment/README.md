@@ -1,10 +1,6 @@
 # sebastian/environment
 
 [![Latest Stable Version](https://img.shields.io/packagist/v/sebastian/environment.svg?style=flat-square)](https://packagist.org/packages/sebastian/environment)
-<<<<<<< HEAD
-=======
-[![Minimum PHP Version](https://img.shields.io/badge/php-%3E%3D%207.1-8892BF.svg?style=flat-square)](https://php.net/)
->>>>>>> be5876c7e87d44b34fc4ae622e46da1d373fd232
 [![CI Status](https://github.com/sebastianbergmann/environment/workflows/CI/badge.svg)](https://github.com/sebastianbergmann/environment/actions)
 [![Type Coverage](https://shepherd.dev/github/sebastianbergmann/environment/coverage.svg)](https://shepherd.dev/github/sebastianbergmann/environment)
 
