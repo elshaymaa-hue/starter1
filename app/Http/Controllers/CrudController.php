@@ -138,29 +138,30 @@ class CrudController extends Controller
             $filter = $request->query('filter');
         $offers =  Offer::where( 'directory',request('search_'))->paginate(5)
                         ->appends('search_',request('search_'));
-        return view('offers.index_paging')->with('offers', $offers);
+        // return view('offers.index_paging')->with('offers', $offers);
         }
         if ($input){
         $filter = $request->query('filter');
         $offers = Offer::where(  'input','=',$input)->orderBy('id')->simplepaginate(5);
-        return view('offers.index_paging')->with('offers', $offers);
+        // return view('offers.index_paging')->with('offers', $offers);
     }
           // $filters="'input'".','."'='".",".$input;
         if($output){
-        $filter = $request->query('filter');
-        $offers = Offer::where(  'output','=',$output)->orderBy('id')->paginate(5)->fragment('offers');
-        return view('offers.index_paging')->with('offers', $offers)->with('filter',$filter);
+        
+        $offers = Offer::where(  'output','=',$output)->orderBy('id')->paginate(5);
+        // return view('offers.index_paging')->with('offers', $offers);
         }
         if($type){
         $filter = $request->query('filter');
         $offers = Offer::where(  'type','=',$type)->orderBy('id')->paginate(5)->fragment('offers');
-        return view('offers.index_paging')->with('offers', $offers)->with('filter',$filter);
+        // return view('offers.index_paging')->with('offers', $offers)->with('filter',$filter);
         }
         if($status){
         $filter = $request->query('filter');
         $offers = Offer::where(  'status','=',$status)->orderBy('id')->paginate(5)->fragment('offers');
-        return view('offers.index_paging')->with('offers', $offers)->with('filter',$filter);
+       
         }
+        return view('offers.index_paging')->with('offers', $offers);//->with('filter',$filter);
        //    $filters= "'output'".","."'='".",".$output;
         //  return $name;
       //  return $name;
