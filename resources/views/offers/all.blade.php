@@ -151,6 +151,7 @@
         <th scope="col">{{__('messages.input')}}</th>
         <th scope="col">{{__('messages.output')}}</th>
         <th scope="col">{{__('messages.type')}}</th>
+        <th scope="col">{{__('messages.directory')}}</th>
         <th scope="col">{{__('messages.Offer Name en')}}</th>
         <th scope="col">{{__('messages.Offer Name ar')}}</th>
         <th scope="col">{{__('messages.Offer Price')}}</th>
@@ -171,6 +172,7 @@
             <td align="right">{{$offer -> input}}</td>
             <td align="right">{{$offer -> output}}</td>
             <td align="right">{{$offer -> type}}</td>
+            <td align="right">{{$offer -> directory}}</td>
             <td align="right">{{$offer -> name_en}}</td>
             <td align="right">{{$offer -> name_ar}}</td>
             <td align="right">{{$offer -> price}}</td>
