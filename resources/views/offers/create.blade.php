@@ -245,7 +245,7 @@
                             <td>
                                 <div class="form-group">
                           <label for="exampleInputPassword1">{{__('messages.reply_on')}}</label>
-                          <input type="text" class="form-control" name ="price" placeholder="{{__('messages.reply_on')}}">
+                          <input type="text" class="form-control" name ="reply_on" placeholder="{{__('messages.reply_on')}}">
                           @error('reply_on')
                           <small class="form-text text-danger">{{$message}}</small>
                           @enderror
