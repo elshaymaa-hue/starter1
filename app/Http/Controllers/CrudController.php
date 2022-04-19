@@ -24,7 +24,7 @@ class CrudController extends Controller
 
     public function getOffers()
     {
-       return Offer::select('id', 'name_'.LaravelLocalization::getCurrentLocale().' as name','details_'.LaravelLocalization::getCurrentLocale().' as details','price')->get();
+       return Offer::select('id', 'name_'.LaravelLocalization::getCurrentLocale().' as name','details_'.LaravelLocalization::getCurrentLocale().' as details','price','reply_on')->get();
       //  return Offer::select('id', 'name_ar','name_en','details_ar', 'details_en','price')->get();
     }
 
@@ -58,7 +58,8 @@ class CrudController extends Controller
             'input',
             'output',
             'type',
-            'status'
+            'status',
+            'reply_on'
         )->get();
 
 
@@ -116,6 +117,7 @@ class CrudController extends Controller
             'output'=>$request->output,
             'type'=>$request->type,
             'status'=>$request->status,
+            'reply_on'=>$request->reply_on,
 
 
         ]);
@@ -196,7 +198,7 @@ class CrudController extends Controller
       $offer=  Offer::find($offer_id);
       if(!$offer)
       return redirect()->back();
-      $offer=Offer::select ('id','name_ar','name_en','details_ar','details_en','price','photo','input','output','type','status')->find($offer_id);
+      $offer=Offer::select ('id','name_ar','name_en','details_ar','details_en','price','photo','input','output','type','status','reply_on')->find($offer_id);
       return view('offers.edit',compact('offer'));
 //      return $offer_id;
     }
@@ -243,6 +245,7 @@ class CrudController extends Controller
            'output'=>$request->output,
            'type'=>$request->type,
            'status'=>$request->status,
+           'reply_on'=>$request->reply_on,
         ]);
 //
         return redirect()->back()->with(['success' => $file_name.'-'.' تم التحديث بنجاح ']);

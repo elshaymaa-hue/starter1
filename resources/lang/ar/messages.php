@@ -62,7 +62,8 @@ return[
     'ATS2VTMS' =>'ATS2 VTMS',
     'AvrRadar'=>'AVR Radar' ,
     'SurgeRadar'=>'Surege Protect Radar' ,
-    'TawkitatSurgeProtect'=>'Surge Protect STTP'
+    'TawkitatSurgeProtect'=>'Surge Protect STTP',
+    'reply_on'=>'ردا على'
 
 
 ];

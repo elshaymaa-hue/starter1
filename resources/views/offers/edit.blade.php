@@ -219,19 +219,28 @@
                 @enderror
             </div>
             </td>
+            <td>
+                <div class="form-group">
+          <label for="exampleInputPassword1">{{__('messages.reply_on')}}</label>
+          <input type="text" class="form-control" name ="price" placeholder="{{__('messages.reply_on')}}" value="{{$offer->reply_on}}">
+          @error('reply_on')
+          <small class="form-text text-danger">{{$message}}</small>
+          @enderror
+      </div>
+              </td>
             </tr>
             <tr>
-            <td>
+            
             <div class="form-group">
                 <label for="exampleInputPassword1">{{__('messages.Offer details ar')}}</label>
-                <input type="text" class="form-control" name="details_ar"
+                <input type="textarea"  class="form-control" name="details_ar"
                        placeholder="{{__('messages.Offer details ar')}}" value="{{$offer->details_ar}}">
                 @error('details_ar')
                 <small class="form-text text-danger">{{$message}}</small>
                 @enderror
             </div>
-            </td>
-            <td>
+            </tr>
+            <tr>
             <div class="form-group">
                 <label for="exampleInputPassword1">{{__('messages.Offer details en')}}</label>
                 <input type="text" class="form-control" name="details_en"
@@ -240,7 +249,7 @@
                 <small class="form-text text-danger">{{$message}}</small>
                 @enderror
             </div>
-            </td>
+            </tr>
 
             </tr>
                 <tr>

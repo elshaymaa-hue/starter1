@@ -5,7 +5,7 @@ use Illuminate\Database\Eloquent\Model;
 class Offer extends Model
 {
     protected $table = "offers";
-    protected $fillable = ['name_ar', 'price', 'details_ar', 'name_en', 'details_en', 'photo', 'directory', 'input', 'output', 'type', 'status'];
+    protected $fillable = ['name_ar', 'price', 'details_ar', 'name_en', 'details_en', 'photo', 'directory', 'input', 'output', 'type', 'status','reply_on'];
     protected $hidden = ['created_at', 'updated_at'];
     public $timestamps = false;
  //finally
