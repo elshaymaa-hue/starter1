@@ -149,7 +149,7 @@
 
 <table class="table">
     <thead>
-    <tr>
+    <tr  align="right" lang="ar">
         <th scope="col">#</th>
         <th scope="col">{{__('messages.input')}}</th>
         <th scope="col">{{__('messages.output')}}</th>
@@ -158,44 +158,50 @@
         <th scope="col">{{__('messages.Offer Name en')}}</th>
         <th scope="col">{{__('messages.Offer Name ar')}}</th>
         <th scope="col">{{__('messages.Offer Price')}}</th>
+    </tr>
+    <tr  align="right" lang="ar">
+        <td></td>
         <th scope="col">{{__('messages.Offer details en')}}</th>
         <th scope="col">{{__('messages.Offer details ar')}}</th>
         <th scope="col">{{__('messages.status')}}</th>
         <th scope="col">{{__('messages.reply_on')}}</th>
         <th scope="col">صوره العرض</th>
 
-        <th scope="col">{{__('messages.operation')}}</th>
+        {{-- <th scope="col">{{__('messages.operation')}}</th> --}}
     </tr>
     </thead>
     <tbody>
 
 
     @foreach($offers as $offer)
-        <tr>
+        <tr align="right" lang="ar">
             <th scope="row">{{$offer -> id}}</th>
-            <td align="right">{{$offer -> input}}</td>
-            <td align="right">{{$offer -> output}}</td>
-            <td align="right">{{$offer -> type}}</td>
-            <td align="right">{{$offer -> directory}}</td>
-            <td align="right">{{$offer -> name_en}}</td>
-            <td align="right">{{$offer -> name_ar}}</td>
-            <td align="right">{{$offer -> price}}</td>
-            <td align="right">{{$offer -> details_en}}</td>
-            <td align="right">{{$offer -> details_ar}}</td>
+            <td>{{$offer -> input}}</td>
+            <td>{{$offer -> output}}</td>
+            <td>{{$offer -> type}}</td>
+            <td>{{$offer -> directory}}</td>
+            <td>{{$offer -> name_en}}</td>
+            <td>{{$offer -> name_ar}}</td>
+            <td>{{$offer -> price}}</td>
+        </tr>
+        <tr  align="right" lang="ar">
+            <td></td>
+            <td>{{$offer -> details_en}}</td>
+            <td>{{$offer -> details_ar}}</td>
             @if($offer -> status=="paused"||$offer -> status=="canceled")
-            <td align="right" class="btn btn-danger">{{$offer -> status}}</td>
+            <td class="btn btn-danger">{{$offer -> status}}</td>
             @elseif($offer -> status=="waiting")
-                <td align="right" class="btn btn-warning">{{$offer -> status}}</td>
+                <td  class="btn btn-warning">{{$offer -> status}}</td>
             @elseif($offer -> status=="done"||$offer -> status=="transferred")
-                <td align="right" class="btn btn-success">{{$offer -> status}}</td>
+                <td  class="btn btn-success">{{$offer -> status}}</td>
             @elseif($offer -> status=="progress")
-                <td align="right" class="btn btn-secondary">{{$offer -> status}}</td>
+                <td  class="btn btn-secondary">{{$offer -> status}}</td>
             @elseif($offer -> status=="start")
-                <td align="right" class="btn btn-primary">{{$offer -> status}}</td>
+                <td  class="btn btn-primary">{{$offer -> status}}</td>
             @else
-                <td align="right">{{$offer -> status}}</td>
+                <td>{{$offer -> status}}</td>
             @endif
-            <td align="right">{{$offer -> reply_on}}</td>
+            <td>{{$offer -> reply_on}}</td>
             @if($offer->photo)
                 {{--            <td><img  style="width: 90px; height: 90px;" src="{{asset('images/offers/'.$offer->photo)}}"></td>--}}
             <td align="right"><embed src="{{asset('images/'.$offer->directory.'/'.$offer->photo)}}" width="300px" height ="300px"></td>
@@ -205,6 +211,8 @@
             
             <td>
                 <a href="{{url('offers/edit/'.$offer -> id)}}" class="btn btn-success"> {{__('messages.update')}}</a>
+            </td>
+            <td>
                 <a href="{{route('offers.delete',$offer -> id)}}" class="btn btn-danger"> {{__('messages.delete')}}</a>
              </td>
 
