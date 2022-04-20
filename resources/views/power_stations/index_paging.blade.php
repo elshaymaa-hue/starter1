@@ -111,8 +111,8 @@
 
 
         </ul>
-        <form class="form-inline my-2 my-lg-0"  method="GET" action="{{route('offers.filter')}}" enctype="multipart/form-data" >
-{{--            <input class="form-control mr-sm-2"  type="search" name="search_" placeholder="Search" aria-label="Search">--}}
+        {{-- <form class="form-inline my-2 my-lg-0"  method="GET" action="{{route('offers.filter')}}" enctype="multipart/form-data" >
+
             <select name ="search_">
                 <option value="all"> </option>
                 <option value="vtms">vtms</option>
@@ -124,7 +124,7 @@
                 <option value="technical_office">technical_office</option>
             </select>
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
+        </form> --}}
 
 
     </div>

@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html xmlns:LaravelLocalization="http://www.w3.org/1999/xhtml">
+<html lang="ar" dir="rtl">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>Laravel</title>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-              integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
         <!-- Styles -->
         <style>
@@ -65,55 +65,53 @@
         </style>
     </head>
     <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="{{ url('/') }}">WELCOME</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ url('power_stations/create') }}">ِAdd Stations</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ url('power_stations/all') }}">Display Stations</a>
-                </li>
-                @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">{{ $properties['native'] }}</a>
-                </li>
-                @endforeach
-{{--                @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)--}}
-{{--                    <li>--}}
-{{--                        <a rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">--}}
-{{--                            {{ $properties['native'] }}--}}
-{{--                        </a>--}}
-{{--                    </li>--}}
-{{--                @endforeach--}}
-
-{{--                <li class="nav-item dropdown">--}}
-{{--                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">--}}
-{{--                        choose action--}}
-{{--                    </a>--}}
-{{--                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">--}}
-{{--                        <a class="dropdown-item" href="{{ route('offers.create') }}">Add Document</a>--}}
-{{--                        <a class="dropdown-item" href="{{ route('offers.all') }}">Display Documents</a>--}}
-{{--                        <div class="dropdown-divider"></div>--}}
-{{--                        <a class="dropdown-item" href="#">Something else here</a>--}}
-{{--                    </div>--}}
-{{--                </li>--}}
-
-            </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
-        </div>
-    </nav>
+        <nav class="navbar navbar-inverse navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="{{ url('/') }}">الصفحة الرئيسية</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url('power_stations/create') }}">Add Station</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('power_stations.index-paging') }}">Display Stations</a>
+                    </li>
+                   
+        {{--            <li class="nav-item">--}}
+        {{--                <a class="nav-link" href="{{ url('/exportpdf') }}">downloadpdf </a>--}}
+        {{--            </li>--}}
+                    @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                        <li class="nav-item active">
+                            <a class="nav-link"
+                               href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}"> {{ $properties['native'] }}
+                                <span class="sr-only">(current)</span></a>
+                        </li>
+                    @endforeach
+        
+        
+                </ul>
+                {{-- <form class="form-inline my-2 my-lg-0"  method="GET" action="{{route('offers.filter')}}" enctype="multipart/form-data" >
+       
+                    <select name ="search_">
+                        <option value="all"> </option>
+                        <option value="vtms">vtms</option>
+                        <option value="security">security</option>
+                        <option value="radars">radars</option>
+                        <option value="tawkitat">tawkitat</option>
+                        <option value="power">power</option>
+                        <option value="hospital_centers">hospital_centers</option>
+                        <option value="technical_office">technical_office</option>
+                    </select>
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form> --}}
+        
+        
+            </div>
+        </nav>
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
@@ -150,185 +148,189 @@
                 @endif
                 <form method="POST" action="{{route('power_stations.store')}}" enctype="multipart/form-data">
                     @csrf
-                    <label for="exampleInputEmail1">أختر صوره المحطة</label>
-                    <input type="file" class="form-control" name="photo">
-                    @error('photo')
-                    <small class="form-text text-danger">{{$message}}</small>
-                    @enderror
-{{--                    <input name="_token" value="{{csrf_token()}}">--}}
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">{{__('messages.station name')}}</label>
-                        <input type="text" class="form-control" name ="station_name"  aria-describedby="emailHelp" placeholder="{{__('messages.station name')}}">
-                        @error('station_name')
-                        <small class="form-text text-danger">{{$message}}</small>
-                        @enderror
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">{{__('messages.UpsSttp')}}</label>
-                        <input type="text" class="form-control" name ="UpsSttp" aria-describedby="emailHelp" placeholder="{{__('messages.UpsSttp')}}">
-                        @error('UpsSttp')
-                        <small class="form-text text-danger">{{$message}}</small>
-                        @enderror
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputPassword1">{{__('messages.UpsRadar')}}</label>
-                        <input type="text" class="form-control" name ="UpsRadar" placeholder="{{__('messages.UpsRadar')}}">
-                        @error('UpsRadar')
-                        <small class="form-text text-danger">{{$message}}</small>
-                        @enderror
-                    </div>
+                 
+            <div class="form-group">
+                <label for="exampleInputEmail1">أختر صوره المحطة</label>
+                <input type="file" class="form-control" name="photo">
+                @error('photo')
+                <small class="form-text text-danger">{{$message}}</small>
+                @enderror
+            </div>
 
-{{--                    'ContractUPS'=>$request->ContractUPS,--}}
-                    <div class="form-group">
-                        <label for="exampleInputPassword1">{{__('messages.ContractUPS')}}</label>
-                        <input type="text" class="form-control" name ="ContractUPS" placeholder="{{__('messages.ContractUPS')}}">
-                        @error('ContractUPS')
-                        <small class="form-text text-danger">{{$message}}</small>
-                        @enderror
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputPassword1">{{__('messages.UpslInstallation')}}</label>
-                        <input type="text" class="form-control" name ="UpslInstallation" placeholder="{{__('messages.UpslInstallation')}}">
-                        @error('UpslInstallation')
-                        <small class="form-text text-danger">{{$message}}</small>
-                        @enderror
-                    </div>
-{{--                    'PreFinalDeliveryUPSUPS'=>$request->PreFinalDeliveryUPSUPS,--}}
-                    <div class="form-group">
-                        <label for="exampleInputPassword1">{{__('messages.PreDeliveryUPS')}}</label>
-                        <input type="text" class="form-control" name ="PreDeliveryUPS" placeholder="{{__('messages.PreDeliveryUPS')}}">
-                        @error('PreDeliveryUPS')
-                        <small class="form-text text-danger">{{$message}}</small>
-                        @enderror
-                    </div>
-{{--                    'FinalDeliveryUPS'=>$request->FinalDeliveryUPS,--}}
-                    <div class="form-group">
-                        <label for="exampleInputPassword1">{{__('messages.FinalDeliveryUPS')}}</label>
-                        <input type="text" class="form-control" name ="FinalDeliveryUPS" placeholder="{{__('messages.FinalDeliveryUPS')}}">
-                        @error('FinalDeliveryUPS')
-                        <small class="form-text text-danger">{{$message}}</small>
-                        @enderror
-                    </div>
-{{--                    'StatusRatiopower_station'=>$request->StatusRatiopower_station,--}}
-                    <div class="form-group">
-                        <label for="exampleInputPassword1">{{__('messages.StatusRatioRadar')}}</label>
-                        <input type="text" class="form-control" name ="SStatusRatioRadar" placeholder="{{__('messages.StatusRatioRadar')}}">
-                        @error('StatusRatioRadar')
-                        <small class="form-text text-danger">{{$message}}</small>
-                        @enderror
-                    </div>
-{{--                    'StatusRatioSTTB'=>$request->StatusRatioSTTB,--}}
-                    <div class="form-group">
-                        <label for="exampleInputPassword1">{{__('messages.StatusRatioSTTB')}}</label>
-                        <input type="text" class="form-control" name ="StatusRatioSTTB" placeholder="{{__('messages.StatusRatioSTTB')}}">
-                        @error('StatusRatioSTTB')
-                        <small class="form-text text-danger">{{$message}}</small>
-                        @enderror
-                    </div>
 
-                    <div class="form-group">
-                        <label for="exampleInputPassword1">{{__('messages.LastMessage')}}</label>
-                        <input type="text" class="form-control" name ="LastMessage" placeholder="{{__('messages.LastMessage')}}">
-                        @error('LastMessage')
-                        <small class="form-text text-danger">{{$message}}</small>
-                        @enderror
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputPassword1">{{__('messages.Desil')}}</label>
-                        <input type="text" class="form-control" name ="Desil" placeholder="{{__('messages.Desil')}}">
-                        @error('Desil')
-                        <small class="form-text text-danger">{{$message}}</small>
-                        @enderror
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputPassword1">{{__('messages.DeisilInstallation')}}</label>
-                        <input type="text" class="form-control" name ="DeisilInstallation" placeholder="{{__('messages.DeisilInstallation')}}">
-                        @error('DeisilInstallation')
-                        <small class="form-text text-danger">{{$message}}</small>
-                        @enderror
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputPassword1">{{__('messages.ContractDesil')}}</label>
-                        <input type="text" class="form-control" name ="ContractDesil" placeholder="{{__('messages.ContractDesil')}}">
-                        @error('ContractDesil')
-                        <small class="form-text text-danger">{{$message}}</small>
-                        @enderror
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputPassword1">{{__('messages.PreDeliveryDesil')}}</label>
-                        <input type="text" class="form-control" name ="PreDeliveryDesil" placeholder="{{__('messages.PreDeliveryDesil')}}">
-                        @error('PreDeliveryDesil')
-                        <small class="form-text text-danger">{{$message}}</small>
-                        @enderror
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputPassword1">{{__('messages.FinalDeliveryDesil')}}</label>
-                        <input type="text" class="form-control" name ="FinalDeliveryDesil" placeholder="{{__('messages.FinalDeliveryDesil')}}">
-                        @error('FinalDeliveryDesil')
-                        <small class="form-text text-danger">{{$message}}</small>
-                        @enderror
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputPassword1">{{__('messages.ATS1Transit')}}</label>
-                        <input type="text" class="form-control" name ="ATS1Transit" placeholder="{{__('messages.ATS1Transit')}}">
-                        @error('ATS1Transit')
-                        <small class="form-text text-danger">{{$message}}</small>
-                        @enderror
-                    </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">{{__('messages.station name')}}</label>
+                <input type="text" class="form-control" name="station_name" placeholder="{{__('messages.station name')}}" >
+                @error('station_name')
+                <small class="form-text text-danger">{{$message}}</small>
+                @enderror
+            </div>
+            <table>
+            <td>
+            <div class="form-group">
+                <label for="exampleInputEmail1">{{__('messages.UpsSttp')}}</label>
+                <input type="text" class="form-control" name ="UpsSttp" aria-describedby="emailHelp" placeholder="{{__('messages.UpsSttp')}}" >
+                @error('UpsSttp')
+                <small class="form-text text-danger">{{$message}}</small>
+                @enderror
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">{{__('messages.UpsRadar')}}</label>
+                <input type="text" class="form-control" name ="UpsRadar" placeholder="{{__('messages.UpsRadar')}}" >
+                @error('UpsRadar')
+                <small class="form-text text-danger">{{$message}}</small>
+                @enderror
+            </div>
 
-                    <div class="form-group">
-                        <label for="exampleInputPassword1">{{__('messages.IsolationTransformer')}}</label>
-                        <input type="text" class="form-control" name ="IsolationTransformer" placeholder="{{__('messages.IsolationTransformer')}}">
-                        @error('ATS1Transit')
-                        <small class="form-text text-danger">{{$message}}</small>
-                        @enderror
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputPassword1">{{__('messages.ATS2VTMS')}}</label>
-                        <input type="text" class="form-control" name ="ATS1Transit" placeholder="{{__('messages.ATS2VTMS')}}">
-                        @error('ATS2VTMS')
-                        <small class="form-text text-danger">{{$message}}</small>
-                        @enderror
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputPassword1">{{__('messages.AvrRadar')}}</label>
-                        <input type="text" class="form-control" name ="AvrRadar" placeholder="{{__('messages.AvrRadar')}}">
-                        @error('AvrRadar')
-                        <small class="form-text text-danger">{{$message}}</small>
-                        @enderror
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputPassword1">{{__('messages.SurgeRadar')}}</label>
-                        <input type="text" class="form-control" name ="SurgeRadar" placeholder="{{__('messages.SurgeRadar')}}">
-                        @error('SurgeRadar')
-                        <small class="form-text text-danger">{{$message}}</small>
-                        @enderror
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputPassword1">{{__('messages.TawkitatSurgeProtect')}}</label>
-                        <input type="text" class="form-control" name ="TawkitatSurgeProtect" placeholder="{{__('messages.TawkitatSurgeProtect')}}">
-                        @error('TawkitatSurgeProtect')
-                        <small class="form-text text-danger">{{$message}}</small>
-                        @enderror
-                    </div>
-{{--                    'Remarks'=>$request->Remarks,--}}
+           
+            <div class="form-group">
+                <label for="exampleInputPassword1">{{__('messages.ContractUPS')}}</label>
+                <input type="text" class="form-control" name ="ContractUPS" placeholder="{{__('messages.ContractUPS')}}" >
+                @error('ContractUPS')
+                <small class="form-text text-danger">{{$message}}</small>
+                @enderror
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">{{__('messages.UpslInstallation')}}</label>
+                <input type="text" class="form-control" name ="UpslInstallation" placeholder="{{__('messages.UpslInstallation')}}" >
+                @error('UpslInstallation')
+                <small class="form-text text-danger">{{$message}}</small>
+                @enderror
+            </div>
+           
+            <div class="form-group">
+                <label for="exampleInputPassword1">{{__('messages.PreDeliveryUPS')}}</label>
+                <input type="text" class="form-control" name ="PreDeliveryUPS" placeholder="{{__('messages.PreDeliveryUPS')}}" >
+                @error('PreDeliveryUPS')
+                <small class="form-text text-danger">{{$message}}</small>
+                @enderror
+            </div>
+        </td>
+        <td></td>
+        <td>
+           
+            <div class="form-group">
+                <label for="exampleInputPassword1">{{__('messages.FinalDeliveryUPS')}}</label>
+                <input type="text" class="form-control" name ="FinalDeliveryUPS" placeholder="{{__('messages.FinalDeliveryUPS')}}" >
+                @error('FinalDeliveryUPS')
+                <small class="form-text text-danger">{{$message}}</small>
+                @enderror
+            </div>
 
-{{--                    <div class="form-group ">--}}
+           
+                <label for="exampleInputPassword1">{{__('messages.StatusRatioRadar')}}</label>
+                <input type="text" class="form-control" name ="StatusRatioRadar" placeholder="{{__('messages.StatusRatioRadar')}}">
+                @error('StatusRatioRadar')
+                <small class="form-text text-danger">{{$message}}</small>
+                @enderror
+            </div>
 
-{{--                        <label for="exampleInputEmail1">{{__('messages.Offer details ar')}}</label>--}}
-{{--                        <input type="text" class="form-control" name="details_ar"  placeholder="{{__('messages.Offer details ar')}}">--}}
-{{--                        @error('details')--}}
-{{--                        <small class="form-text text-danger">{{$message}}</small>--}}
-{{--                        @enderror--}}
-{{--                    </div>--}}
-{{--                    <div class="form-group ">--}}
+           
+            <div class="form-group">
+                <label for="exampleInputPassword1">{{__('messages.StatusRatioSTTB')}}</label>
+                <input type="text" class="form-control" name ="StatusRatioSTTB" placeholder="{{__('messages.StatusRatioSTTB')}}" >
+                @error('StatusRatioSTTB')
+                <small class="form-text text-danger">{{$message}}</small>
+                @enderror
+            </div>
+          
+            <div class="form-group">
+                <label for="exampleInputPassword1">{{__('messages.LastMessage')}}</label>
+                <input type="text" class="form-control" name ="LastMessage" placeholder="{{__('messages.LastMessage')}}" >
+                @error('LastMessage')
+                <small class="form-text text-danger">{{$message}}</small>
+                @enderror
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">{{__('messages.Desil')}}</label>
+                <input type="textarea" class="form-control" name ="Desil" placeholder="{{__('messages.Desil')}}">
+                @error('Desil')
+                <small class="form-text text-danger">{{$message}}</small>
+                @enderror
+            </div>
+            </td>
+                <td></td>
+                <td>
+             <div class="form-group">
+                <label for="exampleInputPassword1">{{__('messages.DeisilInstallation')}}</label>
+                <input type="text" class="form-control" name ="DeisilInstallation" placeholder="{{__('messages.DeisilInstallation')}}">
+                @error('DeisilInstallation')
+                <small class="form-text text-danger">{{$message}}</small>
+                @enderror
+            </div>
 
-{{--                        <label for="exampleInputEmail1">{{__('messages.Offer details en')}}</label>--}}
-{{--                        <input type="text" class="form-control" name="details_en" placeholder="{{__('messages.Offer details en')}}">--}}
-{{--                        @error('details')--}}
-{{--                        <small class="form-text text-danger">{{$message}}</small>--}}
-{{--                        @enderror--}}
-{{--                    </div>--}}
+            <div class="form-group">
+                <label for="exampleInputPassword1">{{__('messages.ContractDesil')}}</label>
+                <input type="text" class="form-control" name ="ContractDesil" placeholder="{{__('messages.ContractDesil')}}" >
+                @error('ContractDesil')
+                <small class="form-text text-danger">{{$message}}</small>
+                @enderror
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">{{__('messages.PreDeliveryDesil')}}</label>
+                <input type="text" class="form-control" name ="PreDeliveryDesil" placeholder="{{__('messages.PreDeliveryDesil')}}" >
+                @error('PreDeliveryDesil')
+                <small class="form-text text-danger">{{$message}}</small>
+                @enderror
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">{{__('messages.FinalDeliveryDesil')}}</label>
+                <input type="text" class="form-control" name ="FinalDeliveryDesil" placeholder="{{__('messages.FinalDeliveryDesil')}}" >
+                @error('FinalDeliveryDesil')
+                <small class="form-text text-danger">{{$message}}</small>
+                @enderror
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">{{__('messages.ATS1Transit')}}</label>
+                <input type="text" class="form-control" name ="ATS1Transit" placeholder="{{__('messages.ATS1Transit')}}" >
+                @error('ATS1Transit')
+                <small class="form-text text-danger">{{$message}}</small>
+                @enderror
+            </div>
+            
+        </td>
+        <td></td>
+        <td>
+
+            <div class="form-group">
+                <label for="exampleInputPassword1">{{__('messages.ATS2VTMS')}}</label>
+                <input type="text" class="form-control" name ="ATS2VTMS" placeholder="{{__('messages.ATS2VTMS')}}" >
+                @error('ATS2VTMS')
+                <small class="form-text text-danger">{{$message}}</small>
+                @enderror
+            </div>
+            
+            <div class="form-group">
+                <label for="exampleInputPassword1">{{__('messages.AvrRadar')}}</label>
+                <input type="text" class="form-control" name ="AvrRadar" placeholder="{{__('messages.AvrRadar')}}">
+                @error('AvrRadar')
+                <small class="form-text text-danger">{{$message}}</small>
+                @enderror
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">{{__('messages.SurgeRadar')}}</label>
+                <input type="text" class="form-control" name ="SurgeRadar" placeholder="{{__('messages.SurgeRadar')}}" >
+                @error('SurgeRadar')
+                <small class="form-text text-danger">{{$message}}</small>
+                @enderror
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">{{__('messages.TawkitatSurgeProtect')}}</label>
+                <input type="text" class="form-control" name ="TawkitatSurgeProtect" placeholder="{{__('messages.TawkitatSurgeProtect')}}">
+                @error('TawkitatSurgeProtect')
+                <small class="form-text text-danger">{{$message}}</small>
+                @enderror
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">{{__('messages.IsolationTransformer')}}</label>
+                <input type="textarea" class="form-control" name ="IsolationTransformer" placeholder="{{__('messages.IsolationTransformer')}}" >
+                @error('ATS1Transit')
+                <small class="form-text text-danger">{{$message}}</small>
+                @enderror
+            </div>
+            </td>
+            </table>
+      
 
                     <button type="submit" class="btn btn-primary">{{__('messages.save station')}}</button>
                 </form>

@@ -68,70 +68,55 @@
         </style>
     </head>
     <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="{{ url('/') }}">WELCOME</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ url('offers/create') }}">Add Document</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ url('offers/all') }}">Display Documents</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/report') }}">Reports</a>
-                </li>
-                @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">{{ $properties['native'] }}</a>
-                </li>
-                @endforeach
-{{--                @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)--}}
-{{--                    <li>--}}
-{{--                        <a rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">--}}
-{{--                            {{ $properties['native'] }}--}}
-{{--                        </a>--}}
-{{--                    </li>--}}
-{{--                @endforeach--}}
-
-{{--                <li class="nav-item dropdown">--}}
-{{--                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">--}}
-{{--                        choose action--}}
-{{--                    </a>--}}
-{{--                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">--}}
-{{--                        <a class="dropdown-item" href="{{ route('offers.create') }}">Add Document</a>--}}
-{{--                        <a class="dropdown-item" href="{{ route('offers.all') }}">Display Documents</a>--}}
-{{--                        <div class="dropdown-divider"></div>--}}
-{{--                        <a class="dropdown-item" href="#">Something else here</a>--}}
-{{--                    </div>--}}
-{{--                </li>--}}
-
-            </ul>
-            <form class="form-inline my-2 my-lg-0"  method="GET" action="{{route('offers.filter')}}" enctype="multipart/form-data" >
-                {{--            <input class="form-control mr-sm-2"  type="search" name="search_" placeholder="Search" aria-label="Search">--}}
-                <select name ="search_">
-                    <option value="all"> </option>
-                    <option value="vtms">vtms</option>
-                    <option value="security">security</option>
-                    <option value="radars">radars</option>
-                    <option value="tawkitat">tawkitat</option>
-                    <option value="power">power</option>
-                    <option value="hospital_centers">hospital_centers</option>
-                    <option value="technical_office">technical_office</option>
-                    <option value="Electorinc_Archive">Electorinc Archive</option>
-                    <option value="Maintenance">Maintenance</option>
-                </select>
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
-        </div>
-    </nav>
+        <nav class="navbar navbar-inverse navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="{{ url('/') }}">الصفحة الرئيسية</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url('offers/create') }}">Add Document</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('offers.index-paging') }}">Display Documents</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url('offers/report') }}">Reports</a>
+                    </li>
+        {{--            <li class="nav-item">--}}
+        {{--                <a class="nav-link" href="{{ url('/exportpdf') }}">downloadpdf </a>--}}
+        {{--            </li>--}}
+                    @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                        <li class="nav-item active">
+                            <a class="nav-link"
+                               href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}"> {{ $properties['native'] }}
+                                <span class="sr-only">(current)</span></a>
+                        </li>
+                    @endforeach
+        
+        
+                </ul>
+                <form class="form-inline my-2 my-lg-0"  method="GET" action="{{route('offers.filter')}}" enctype="multipart/form-data" >
+        {{--            <input class="form-control mr-sm-2"  type="search" name="search_" placeholder="Search" aria-label="Search">--}}
+                    <select name ="search_">
+                        <option value="all"> </option>
+                        <option value="vtms">vtms</option>
+                        <option value="security">security</option>
+                        <option value="radars">radars</option>
+                        <option value="tawkitat">tawkitat</option>
+                        <option value="power">power</option>
+                        <option value="hospital_centers">hospital_centers</option>
+                        <option value="technical_office">technical_office</option>
+                    </select>
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
+        
+        
+            </div>
+        </nav>
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
