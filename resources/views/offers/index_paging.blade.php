@@ -161,8 +161,9 @@
     </tr>
     <tr  align="right" lang="ar">
         <td></td>
-        <th scope="col">{{__('messages.Offer details en')}}</th>
         <th scope="col">{{__('messages.Offer details ar')}}</th>
+        <th scope="col">{{__('messages.Offer details en')}}</th>
+       
         <th scope="col">{{__('messages.status')}}</th>
         <th scope="col">{{__('messages.reply_on')}}</th>
         <th scope="col">صوره العرض</th>
@@ -186,8 +187,9 @@
         </tr>
         <tr  align="right" lang="ar">
             <td></td>
-            <td>{{$offer -> details_en}}</td>
             <td>{{$offer -> details_ar}}</td>
+            <td>{{$offer -> details_en}}</td>
+          
             @if($offer -> status=="paused"||$offer -> status=="canceled")
             <td class="btn btn-danger">{{$offer -> status}}</td>
             @elseif($offer -> status=="waiting")
