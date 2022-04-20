@@ -169,6 +169,26 @@
                     <table class="table">
                         <tr>
                             <td>
+                                <div class="form-group">
+                          <label for="exampleInputEmail1">{{__('messages.type')}}</label>
+                          <input type="text" class="form-control" name ="type"  aria-describedby="emailHelp" placeholder="{{__('messages.type')}}">
+                          @error('type')
+                          <small class="form-text text-danger">{{$message}}</small>
+                          @enderror
+                      </div>
+                            </td>
+                            <td>
+                               <div class="form-group">
+                          <label for="exampleInputEmail1">{{__('messages.Offer Name ar')}}</label>
+                          <input type="text" class="form-control" name ="name_ar"  aria-describedby="emailHelp" placeholder="{{__('messages.Offer Name ar')}}">
+                          @error('name_ar')
+                          <small class="form-text text-danger">{{__('messages.Offer Name ar required')}}</small>
+                          @enderror
+                      </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
                                <div class="form-group">
                         <label for="exampleInputEmail1">{{__('messages.input')}}</label>
                         <input type="text" class="form-control" name ="input"  aria-describedby="emailHelp" placeholder="{{__('messages.input')}}">
@@ -186,27 +206,17 @@
                         @enderror
                     </div>
                             </td>
+                            <td>
+                                <div class="form-group">
+                          <label for="exampleInputPassword1">{{__('messages.reply_on')}}</label>
+                          <input type="text" class="form-control" name ="reply_on" placeholder="{{__('messages.reply_on')}}">
+                          @error('reply_on')
+                          <small class="form-text text-danger">{{$message}}</small>
+                          @enderror
+                      </div>
+                              </td>
                         </tr>
-                        <tr>
-                          <td>
-                              <div class="form-group">
-                        <label for="exampleInputEmail1">{{__('messages.type')}}</label>
-                        <input type="text" class="form-control" name ="type"  aria-describedby="emailHelp" placeholder="{{__('messages.type')}}">
-                        @error('type')
-                        <small class="form-text text-danger">{{$message}}</small>
-                        @enderror
-                    </div>
-                          </td>
-                          <td>
-                             <div class="form-group">
-                        <label for="exampleInputEmail1">{{__('messages.Offer Name ar')}}</label>
-                        <input type="text" class="form-control" name ="name_ar"  aria-describedby="emailHelp" placeholder="{{__('messages.Offer Name ar')}}">
-                        @error('name_ar')
-                        <small class="form-text text-danger">{{__('messages.Offer Name ar required')}}</small>
-                        @enderror
-                    </div>
-                          </td>
-                      </tr>
+                       
                         <tr>
                             <td>
                               <div class="form-group">
@@ -227,15 +237,7 @@
                         @enderror
                     </div>
                             </td>
-                            <td>
-                                <div class="form-group">
-                          <label for="exampleInputPassword1">{{__('messages.reply_on')}}</label>
-                          <input type="text" class="form-control" name ="reply_on" placeholder="{{__('messages.reply_on')}}">
-                          @error('reply_on')
-                          <small class="form-text text-danger">{{$message}}</small>
-                          @enderror
-                      </div>
-                              </td>
+                        
                         </tr>
                         <tr>
 
@@ -283,10 +285,11 @@
 
                             </td>
                         </tr>
-                        <tr>
-                            <button type="submit" class="btn btn-primary">{{__('messages.Save Offer')}}</button>
-                        </tr>
+                        
                     </table>
+                    <tr>
+                        <button type="submit" class="btn btn-primary">{{__('messages.Save Offer')}}</button>
+                    </tr>
                 </form>
             </div>
         </div>
