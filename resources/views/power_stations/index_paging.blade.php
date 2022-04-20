@@ -145,9 +145,9 @@
      </div>
 @endif
 
-<table class="table">
+<table class="table" >
     <thead>
-    <tr>
+    <tr   align="right" lang="ar">
         <th scope="col">#</th>
         <th scope="col">{{__('messages.station name')}}</th>
         <th scope="col">{{__('messages.UpsSttp')}}</th>
@@ -159,9 +159,17 @@
         <th scope="col">{{__('messages.StatusRatioRadar')}}</th>
         <th scope="col">{{__('messages.StatusRatioSTTB')}}</th>
         <th scope="col">{{__('messages.LastMessage')}}</th>
-        <th scope="col">{{__('messages.Desil' )}}</th>
+    
+        <th scope="col"  align="right" lang="ar">{{__('messages.Desil' )}}</th>
+  
         <th scope="col">{{__('messages.DeisilInstallation')}}</th>
+    
+        
         <th scope="col">{{__('messages.ContractDesil' )}}</th>
+    </tr>
+    <tr   align="right" lang="ar">
+        <th></th>
+        <th></th>
         <th scope="col">{{__('messages.PreDeliveryDesil' )}}</th>
         <th scope="col">{{__('messages.FinalDeliveryDesil')}}</th>
         <th scope="col">{{__('messages.ATS1Transit' )}}</th>
@@ -171,7 +179,7 @@
         <th scope="col">{{__('messages.SurgeRadar' )}}</th>
         <th scope="col">{{__('messages.TawkitatSurgeProtect')}}</th>
         <th scope="col">صوره المحطة</th>
-        <th scope="col">{{__('messages.operation')}}</th>
+      
 
 
     </tr>
@@ -181,7 +189,7 @@
 
     @foreach($power_stations as $power_station)
 
-        <tr>
+        <tr   align="right" lang="ar">
             <th scope="row">{{$power_station -> id}}</th>
             <td>{{$power_station -> station_name}}</td>
             <td>{{$power_station -> UpsSttp}}</td>
@@ -193,9 +201,16 @@
             <td>{{$power_station->StatusRatioRadar}}</td>
             <td>{{$power_station->StatusRatioSTTB}}</td>
             <td>{{$power_station->LastMessage}}</td>
-            <td>{{$power_station->Desil}}</td>
+       
+            <td >{{$power_station->Desil}}</td>
+        
             <td>{{$power_station->DeisilInstallation}}</td>
+       
             <td>{{$power_station->ContractDesil}}</td>
+        </tr>
+        <tr   align="right" lang="ar">
+            <td></td>
+            <td></td>
             <td>{{$power_station->PreDeliveryDesil}}</td>
             <td>{{$power_station->FinalDeliveryDesil}}</td>
             <td>{{$power_station->ATS1Transit}}</td>
@@ -214,6 +229,8 @@
 
             <td>
                 <a href="{{url('power_stations/edit/'.$power_station -> id)}}" class="btn btn-success"> {{__('messages.update')}}</a>
+            </td>
+                <td>
                 <a href="{{route('power_stations.delete',$power_station -> id)}}" class="btn btn-danger"> {{__('messages.delete')}}</a>
             </td>
 
