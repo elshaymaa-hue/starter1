@@ -138,29 +138,29 @@ class CrudController extends Controller
       
         if (request()->has('search_')){
             $filter = $request->query('filter');
-        $offers =  Offer::where( 'directory',request('search_'))->paginate(3)
+        $offers =  Offer::where( 'directory',request('search_'))->paginate(2)
                         ->appends('search_',request('search_'));
         // return view('offers.index_paging')->with('offers', $offers);
         }
         if ($input){
         $filter = $request->query('filter');
-        $offers = Offer::where(  'input','=',$input)->orderBy('id')->simplepaginate(3);
+        $offers = Offer::where(  'input','=',$input)->orderBy('id')->simplepaginate(2);
         // return view('offers.index_paging')->with('offers', $offers);
     }
           // $filters="'input'".','."'='".",".$input;
         if($output){
         
-        $offers = Offer::where(  'output','=',$output)->orderBy('id')->paginate(3);
+        $offers = Offer::where(  'output','=',$output)->orderBy('id')->paginate(2);
         // return view('offers.index_paging')->with('offers', $offers);
         }
         if($type){
         $filter = $request->query('filter');
-        $offers = Offer::where(  'type','=',$type)->orderBy('id')->paginate(3)->fragment('offers');
+        $offers = Offer::where(  'type','=',$type)->orderBy('id')->paginate(2)->fragment('offers');
         // return view('offers.index_paging')->with('offers', $offers)->with('filter',$filter);
         }
         if($status){
         $filter = $request->query('filter');
-        $offers = Offer::where(  'status','=',$status)->orderBy('id')->paginate(3)->fragment('offers');
+        $offers = Offer::where(  'status','=',$status)->orderBy('id')->paginate(2)->fragment('offers');
        
         }
         return view('offers.index_paging')->with('offers', $offers);//->with('filter',$filter);
