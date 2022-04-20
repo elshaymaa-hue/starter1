@@ -18,7 +18,18 @@ class Power_StationController extends Controller
 
     public function getPower_Stations()
     {
-       return Power_Station::select('id','station_name',  'UpsSttp' ,  'UpsRadar' ,  'ContractUPS' ,  'UpslInstallation',  'PreDeliveryUPS' ,  'FinalDeliveryUPS' ,  'StatusRatioRadar' ,  'StatusRatioSTTB')->get();
+       return Power_Station::select('id','station_name',  'UpsSttp' ,  'UpsRadar' ,  'ContractUPS' ,  'UpslInstallation',  'PreDeliveryUPS' ,  'FinalDeliveryUPS' ,  'StatusRatioRadar' ,  'StatusRatioSTTB',   'LastMessage',
+       'Desil' ,
+       'DeisilInstallation',
+       'ContractDesil' ,
+       'PreDeliveryDesil' ,
+       'FinalDeliveryDesil',
+       'ATS1Transit' ,
+       'IsolationTransformer' ,
+       'ATS2VTMS' ,
+       'AvrRadar' ,
+       'SurgeRadar' ,
+       'TawkitatSurgeProtect')->get();
       //  return Power_Station::select('id', 'name_ar','name_en','details_ar', 'details_en','price')->get();
     }
     public function getAllPower_Stations()

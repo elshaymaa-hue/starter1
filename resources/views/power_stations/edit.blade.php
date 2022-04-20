@@ -259,7 +259,7 @@
 
             <div class="form-group">
                 <label for="exampleInputPassword1">{{__('messages.ATS2VTMS')}}</label>
-                <input type="text" class="form-control" name ="ATS1Transit" placeholder="{{__('messages.ATS2VTMS')}}" value="{{__($power_station->ATS2VTMS)}}">
+                <input type="text" class="form-control" name ="ATS2VTMS" placeholder="{{__('messages.ATS2VTMS')}}" value="{{__($power_station->ATS2VTMS)}}">
                 @error('ATS2VTMS')
                 <small class="form-text text-danger">{{$message}}</small>
                 @enderror
