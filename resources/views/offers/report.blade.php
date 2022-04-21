@@ -190,9 +190,9 @@
                         @enderror
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputEmail1">{{__('messages.require_monitor')}}</label>
-                        <input type="checkbox" class="form-control" name ="require_monitor"  aria-describedby="emailHelp" placeholder="{{__('messages.require_monitor')}}">
-                        @error('require_monitor')
+                        <label for="exampleInputEmail1">{{__('messages.monitor_date')}}</label>
+                        <input type="text" class="form-control" name ="monitor_date"  aria-describedby="emailHelp" placeholder="{{__('messages.monitor_date')}}">
+                        @error('monitor_date')
                         <small class="form-text text-danger">{{$message}}</small>
                         @enderror
                     </div>

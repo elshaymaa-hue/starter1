@@ -7,11 +7,10 @@
         <title>Laravel</title>
 {{--        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"--}}
 {{--              integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">--}}
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-              integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-        <!-- Fonts -->
-{{--        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">--}}
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
         <!-- Styles -->
         <style>
             html, body {
@@ -237,6 +236,16 @@
                         @enderror
                     </div>
                             </td>
+                            <td>
+                                <div class="form-group ">
+                                    <label for="exampleInputEmail1">{{__('messages.monitor_date')}}</label>
+                                    <input type="text" class="form-control" name="monitor_date" placeholder="{{__('messages.monitor_date')}}">
+                                    @error('monitor_date')
+                                    <small class="form-text text-danger">{{$message}}</small>
+                                    @enderror
+                                </div>
+
+                            </td>
                         
                         </tr>
                         <tr>
@@ -280,7 +289,7 @@
                                     @enderror
                                 </div>
                             </td>
-                            <td>
+                            {{-- <td>
                                 <div class="form-group ">
                                     <label for="exampleInputEmail1">{{__('messages.require_monitor')}}</label>
                                     <input type="checkbox" class="form-control" name="require_monitor" placeholder="{{__('messages.require_monitor')}}">
@@ -289,17 +298,8 @@
                                     @enderror
                                 </div>
 
-                            </td>
-                            <td>
-                                <div class="form-group ">
-                                    <label for="exampleInputEmail1">{{__('messages.monitor_date')}}</label>
-                                    <input type="text" class="form-control" name="monitor_date" placeholder="{{__('messages.monitor_date')}}">
-                                    @error('monitor_date')
-                                    <small class="form-text text-danger">{{$message}}</small>
-                                    @enderror
-                                </div>
-
-                            </td>
+                            </td> --}}
+                           
                         </tr>
                         
                     </table>

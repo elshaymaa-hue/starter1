@@ -169,10 +169,10 @@ class CrudController extends Controller
                         ->appends('type',request('type'));
         // return view('offers.index_paging')->with('offers', $offers)->with('filter',$filter);
         }
-        if($monitor){
+        if(request('monitor_date')){
             $filter = $request->query('filter');
-            $offers = Offer::where(  'require_monitor',request('monitor'))->paginate(2)
-                            ->appends('require_monitor',request('monitor'));
+            $offers = Offer::where(  'monitor_date',request('monitor_date'))->paginate(2)
+                            ->appends('monitor_date',request('monitor_date'));
             // return view('offers.index_paging')->with('offers', $offers)->with('filter',$filter);
             }
         if($status){
