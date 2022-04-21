@@ -278,7 +278,23 @@
                         </div>
                     </td>
                     <td>
+                        <div class="form-group ">
+                            <label for="exampleInputEmail1">{{__('messages.require_monitor')}}</label>
+                            <input type="checkbox" class="form-control" name="require_monitor" placeholder="{{__('messages.require_monitor')}}"  value="{{$offer->require_monitor}}">
+                            @error('require_monitor')
+                            <small class="form-text text-danger">{{$message}}</small>
+                            @enderror
+                        </div>
 
+                    </td>
+                    <td>
+                        <div class="form-group ">
+                            <label for="exampleInputEmail1">{{__('messages.monitor_date')}}</label>
+                            <input type="text" class="form-control" name="monitor_date" placeholder="{{__('messages.monitor_date')}}"  value="{{$offer->monitor_date}}">
+                            @error('monitor_date')
+                            <small class="form-text text-danger">{{$message}}</small>
+                            @enderror
+                        </div>
 
                     </td>
                 </tr>

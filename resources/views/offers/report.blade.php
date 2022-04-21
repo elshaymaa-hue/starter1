@@ -172,6 +172,30 @@
                         <small class="form-text text-danger">{{$message}}</small>
                         @enderror
                     </div>
+                    <div class="form-group ">
+
+                        <label for="exampleInputEmail1">{{__('messages.status')}}</label>
+                        <select name ="status">
+                            <option value=""></option>
+                            <option value="done">إنتهى</option>
+                            <option value="progress">قيد التنفيذ</option>
+                            <option value="start">تخطيط</option>
+                            <option value="canceled">إلغاء</option>
+                            <option value="waiting">انتظار</option>
+                            <option value="paused">معلق</option>
+                            <option value="transferred">محول</option>
+                        </select>
+                        @error('status')
+                        <small class="form-text text-danger">{{$message}}</small>
+                        @enderror
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">{{__('messages.require_monitor')}}</label>
+                        <input type="checkbox" class="form-control" name ="require_monitor"  aria-describedby="emailHelp" placeholder="{{__('messages.require_monitor')}}">
+                        @error('require_monitor')
+                        <small class="form-text text-danger">{{$message}}</small>
+                        @enderror
+                    </div>
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
 
                      {{--            <input class="form-control mr-sm-2"  type="search" name="search_" placeholder="Search" aria-label="Search">--}}

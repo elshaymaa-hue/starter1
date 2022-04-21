@@ -159,6 +159,8 @@
         <th scope="col">{{__('messages.Offer details ar')}}</th>
         <th scope="col">{{__('messages.status')}}</th>
         <th scope="col">{{__('messages.reply_on')}}</th>
+        <th scope="col">{{__('messages.require_monitor')}}</th>
+        <th scope="col">{{__('messages.monitor_date')}}</th>
         <th scope="col">صوره العرض</th>
 
         <th scope="col">{{__('messages.operation')}}</th>
@@ -199,6 +201,8 @@
                 <td></td>
             @endif
             <td align="right">{{$offer -> reply_on}}</td>
+            <td align="right">{{$offer -> require_monitor}}</td>
+            <td align="right">{{$offer -> monitor_date}}</td>
             <td>
                 <a href="{{url('offers/edit/'.$offer -> id)}}" class="btn btn-success"> {{__('messages.update')}}</a>
                 <a href="{{route('offers.delete',$offer -> id)}}" class="btn btn-danger"> {{__('messages.delete')}}</a>

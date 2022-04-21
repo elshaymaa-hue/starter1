@@ -166,6 +166,8 @@
        
         <th scope="col">{{__('messages.status')}}</th>
         <th scope="col">{{__('messages.reply_on')}}</th>
+        <th scope="col">{{__('messages.require_monitor')}}</th>
+        <th scope="col">{{__('messages.monitor_date')}}</th>
         <th scope="col">صوره العرض</th>
 
         {{-- <th scope="col">{{__('messages.operation')}}</th> --}}
@@ -204,6 +206,8 @@
                 <td>{{$offer -> status}}</td>
             @endif
             <td>{{$offer -> reply_on}}</td>
+            <td>{{$offer -> require_monitor}}</td>
+            <td>{{$offer -> monitor_date}}</td>
             @if($offer->photo)
                 {{--            <td><img  style="width: 90px; height: 90px;" src="{{asset('images/offers/'.$offer->photo)}}"></td>--}}
             <td align="right"><embed src="{{asset('images/'.$offer->directory.'/'.$offer->photo)}}" width="300px" height ="300px"></td>

@@ -59,7 +59,9 @@ class CrudController extends Controller
             'output',
             'type',
             'status',
-            'reply_on'
+            'reply_on',
+            'require_monitor',
+            'monitor_date'
         )->get();
 
 
@@ -118,6 +120,8 @@ class CrudController extends Controller
             'type'=>$request->type,
             'status'=>$request->status,
             'reply_on'=>$request->reply_on,
+            'require_monitor'=>$request->require_monitor,
+            'monitor_date'=>$request->monitor_date
 
 
         ]);
@@ -133,13 +137,19 @@ class CrudController extends Controller
         $output=$request->get('output');
         $type=$request->get('type');
         $status=$request->get('status');
+        $monitor=$request->get('require_monitor');
        // $offers = Offer::select('*')->paginate(5);
         // $offers = $users->appends(['keyword'=>'value']);
       
         if (request()->has('search_')){
             $filter = $request->query('filter');
+            if (request('search_')=="radars"){
+                $offers =  Offer::where( 'directory',request('search_'))->paginate(5)
+                ->appends('search_',request('search_'));
+            }else{
         $offers =  Offer::where( 'directory',request('search_'))->paginate(2)
                         ->appends('search_',request('search_'));
+            }
         // return view('offers.index_paging')->with('offers', $offers);
         }
         if ($input){
@@ -155,13 +165,20 @@ class CrudController extends Controller
         }
         if($type){
         $filter = $request->query('filter');
-        $offers = Offer::where(  'type','=',$type)->orderBy('id')->paginate(2)->fragment('offers');
+        $offers = Offer::where(  'type',request('type'))->paginate(2)
+                        ->appends('type',request('type'));
         // return view('offers.index_paging')->with('offers', $offers)->with('filter',$filter);
         }
+        if($monitor){
+            $filter = $request->query('filter');
+            $offers = Offer::where(  'require_monitor',request('monitor'))->paginate(2)
+                            ->appends('require_monitor',request('monitor'));
+            // return view('offers.index_paging')->with('offers', $offers)->with('filter',$filter);
+            }
         if($status){
         $filter = $request->query('filter');
-        $offers = Offer::where(  'status','=',$status)->orderBy('id')->paginate(2)->fragment('offers');
-       
+        $offers = Offer::where(  'status','=',$status)->orderBy('id')->paginate(2)
+                          ->appends('status',request('status'));
         }
         return view('offers.index_paging')->with('offers', $offers);//->with('filter',$filter);
        //    $filters= "'output'".","."'='".",".$output;
@@ -198,7 +215,7 @@ class CrudController extends Controller
       $offer=  Offer::find($offer_id);
       if(!$offer)
       return redirect()->back();
-      $offer=Offer::select ('id','name_ar','name_en','details_ar','details_en','price','photo','input','output','type','status','reply_on')->find($offer_id);
+      $offer=Offer::select ('id','name_ar','name_en','details_ar','details_en','price','photo','input','output','type','status','reply_on', 'require_monitor', 'monitor_date')->find($offer_id);
       return view('offers.edit',compact('offer'));
 //      return $offer_id;
     }
@@ -246,6 +263,8 @@ class CrudController extends Controller
            'type'=>$request->type,
            'status'=>$request->status,
            'reply_on'=>$request->reply_on,
+           'require_monitor'=>$request->require_monitor,
+           'monitor_date'=>$request->monitor_date
         ]);
 //
         return redirect()->back()->with(['success' => $file_name.'-'.' تم التحديث بنجاح ']);
