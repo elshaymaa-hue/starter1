@@ -156,7 +156,8 @@
             </div>
             <div class="form-group">
                 <label for="exampleInputEmail1">أختر صوره المستند</label>
-                <input type="file" class="form-control" name="photo" placeholder="{{__('messages.photo')}}" value="{{$offer->photo}}">
+                <input type="file" class="form-control" name="photo" placeholder="{{$offer->photo}}" value="{{$offer->photo}}">
+                <input type="text" class="form-control" name="photo"  value="{{$offer->photo}}">
                 @error('photo')
                 <small class="form-text text-danger">{{$message}}</small>
                 @enderror
