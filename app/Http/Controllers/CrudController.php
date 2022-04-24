@@ -24,7 +24,7 @@ class CrudController extends Controller
 
     public function getOffers()
     {
-       return Offer::select('id', 'name_'.LaravelLocalization::getCurrentLocale().' as name','details_'.LaravelLocalization::getCurrentLocale().' as details','price','reply_on')->get();
+       return Offer::select('id', 'name_'.LaravelLocalization::getCurrentLocale().' as name','details_'.LaravelLocalization::getCurrentLocale().' as details','price','reply_on','additions')->get();
       //  return Offer::select('id', 'name_ar','name_en','details_ar', 'details_en','price')->get();
     }
 
@@ -61,7 +61,8 @@ class CrudController extends Controller
             'status',
             'reply_on',
             'require_monitor',
-            'monitor_date'
+            'monitor_date',
+            'additions'
         )->get();
 
 
@@ -83,6 +84,7 @@ class CrudController extends Controller
 //            return redirect()->back()->withErrors($validator)->withInput($request->all());
 //        }
         $file_name ="";
+        $additions="";
         if ($request->photo) {
 
         $file_extension = $request->photo->getClientOriginalExtension();
@@ -99,6 +101,22 @@ class CrudController extends Controller
             $request->photo->move($path, $file_name);
 
         }
+        if ($request->additions) {
+
+            $file_extension1 = $request->additions->getClientOriginalExtension();
+    
+                $dir=$request->dir;
+                $in=$request->input;
+                $out=$request->output;
+                $date = $request->name_en;
+                $additions = $dir.'-'.$date .'.' .'a'. $file_extension1;
+                if($in)  $additions = $dir.'-'.$in.'-'.$date .'.' .'a'. $file_extension1;
+                if($out)  $additions = $dir.'-'.$out.'-'.$date .'.' .'a'. $file_extension1;
+            $path = 'images/'.$dir;
+    
+                $request->additions->move($path, $additions);
+    
+            }
         //insert
 //        offer::create([
 //            'photo' => $file_name,
@@ -121,7 +139,8 @@ class CrudController extends Controller
             'status'=>$request->status,
             'reply_on'=>$request->reply_on,
             'require_monitor'=>$request->require_monitor,
-            'monitor_date'=>$request->monitor_date
+            'monitor_date'=>$request->monitor_date            ,
+            'additions'=>$additions
 
 
         ]);
@@ -215,13 +234,14 @@ class CrudController extends Controller
       $offer=  Offer::find($offer_id);
       if(!$offer)
       return redirect()->back();
-      $offer=Offer::select ('id','name_ar','name_en','details_ar','details_en','price','photo','input','output','type','status','reply_on', 'require_monitor', 'monitor_date')->find($offer_id);
+      $offer=Offer::select ('id','name_ar','name_en','details_ar','details_en','price','photo','input','output','type','status','reply_on', 'require_monitor', 'monitor_date','additions')->find($offer_id);
       return view('offers.edit',compact('offer'));
 //      return $offer_id;
     }
     public function UpdateOffer(OfferRequest $request, $offer_id)
     {
         $file_name ="";
+        $additions="";
         //validtion
         if ($request->photo) {
             $file_extension = $request->photo->getClientOriginalExtension();
@@ -239,6 +259,23 @@ class CrudController extends Controller
 //            $path = 'images/offers';
             $request->photo->move($path, $file_name);
         }
+        if ($request->additions) {
+
+            $file_extension1 = $request->additions->getClientOriginalExtension();
+    
+                $dir=$request->dir;
+                $in=$request->input;
+                $out=$request->output;
+                $date = $request->name_en;
+                $additions = $dir.'-'.$date .'.' .'a'. $file_extension1;
+                if($in)  $additions = $dir.'-'.$in.'-'.$date .'.' .'a'. $file_extension1;
+                if($out)  $additions = $dir.'-'.$out.'-'.$date .'.' .'a'. $file_extension1;
+            $path = 'images/'.$dir;
+    
+                $request->additions->move($path, $additions);
+    
+            }
+        
         // chek if offer exists
 
         $offer = Offer::find($offer_id);
@@ -264,7 +301,8 @@ class CrudController extends Controller
            'status'=>$request->status,
            'reply_on'=>$request->reply_on,
            'require_monitor'=>$request->require_monitor,
-           'monitor_date'=>$request->monitor_date
+           'monitor_date'=>$request->monitor_date,
+           'additions'=>$additions
         ]);
 //
         return redirect()->back()->with(['success' => $file_name.'-'.' تم التحديث بنجاح ']);

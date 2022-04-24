@@ -158,11 +158,21 @@ integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jI
                     </select>
 
                     </div>
+                    <div class="form-group">
                     <label for="exampleInputEmail1">أختر صوره المستند</label>
                     <input type="file" class="form-control" placeholder="{{__('messages.photo')}}"  name="photo">
                     @error('photo')
 
                     <small class="form-text text-danger">{{$message}}</small>
+                    @enderror
+                    </div>
+                    <div class="form-group">
+                    <label for="exampleInputEmail1">أضف مرفقات</label>
+                    <input type="file" class="form-control" placeholder="{{__('messages.additions')}}"  name="additions">
+                    @error('additions')
+
+                    <small class="form-text text-danger">{{$message}}</small>
+                    </div>
                     @enderror
 {{--                    <input name="_token" value="{{csrf_token()}}">--}}
                     <table class="table">

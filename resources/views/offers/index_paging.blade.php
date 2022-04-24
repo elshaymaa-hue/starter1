@@ -169,6 +169,7 @@
        
         <th scope="col">{{__('messages.monitor_date')}}</th>
         <th scope="col">صوره العرض</th>
+        <th scope="col">{{__('messages.additions')}}</th>
 
         {{-- <th scope="col">{{__('messages.operation')}}</th> --}}
     </tr>
@@ -214,7 +215,13 @@
             @else
                 <td></td>
             @endif
-            
+            @if($offer->additions)
+            {{--            <td><img  style="width: 90px; height: 90px;" src="{{asset('images/offers/'.$offer->photo)}}"></td>--}}
+        <td align="right"><embed src="{{asset('images/'.$offer->directory.'/'.$offer->additions)}}" width="300px" height ="300px"></td>
+        @else
+            <td></td>
+        @endif
+        
             <td>
                 <a href="{{url('offers/edit/'.$offer -> id)}}" class="btn btn-success"> {{__('messages.update')}}</a>
             </td>

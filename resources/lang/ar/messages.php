@@ -65,7 +65,8 @@ return[
     'TawkitatSurgeProtect'=>'Surge Protect STTP',
     'reply_on'=>'ردا على',
     'require_monitor'=>'يحتاج متابعة',
-    'monitor_date'=>'تاريخ متابعة'
+    'monitor_date'=>'تاريخ متابعة',
+    'additions'=>'مرفقات'
 
 
 ];

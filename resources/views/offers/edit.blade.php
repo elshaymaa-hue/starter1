@@ -162,6 +162,14 @@
                 <small class="form-text text-danger">{{$message}}</small>
                 @enderror
             </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">أضف مرفقات</label>
+                <input type="file" class="form-control" placeholder="{{__('messages.additions')}}"  name="additions">
+                @error('additions')
+
+                <small class="form-text text-danger">{{$message}}</small>
+                @enderror
+                </div>
             <table class="table">
                 <tr>
                     <td>
