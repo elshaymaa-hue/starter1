@@ -13,6 +13,7 @@ use App\Imports\OffersImport;
 use Maatwebsite\Excel\Facades\Excel;
 use Barryvdh\DomPDF\Facade as PDF;
 use EloquentFilter\ModelFilter;
+use Illuminate\Support\Facades\DB;
 
 class CrudController extends Controller
 {
@@ -157,6 +158,7 @@ class CrudController extends Controller
         $type=$request->get('type');
         $status=$request->get('status');
         $monitor=$request->get('require_monitor');
+        $details=$request->get('details_ar');
        // $offers = Offer::select('*')->paginate(5);
         // $offers = $users->appends(['keyword'=>'value']);
       
@@ -194,6 +196,18 @@ class CrudController extends Controller
                             ->appends('monitor_date',request('monitor_date'));
             // return view('offers.index_paging')->with('offers', $offers)->with('filter',$filter);
             }
+        if(request('details_ar')){
+                // $generatequery = "select * from offers where details_ar like '%$details%'";
+
+                // $offers = Offer::select($generatequery)->paginate(2);
+                // $filter = $request->query('filter');
+                $offers = Offer::where('details_ar','like','%'.request('details_ar').'%')->paginate(2)
+                                ->appends('details_ar','like','%'.request('details_ar').'%');
+                // return view('offers.index_paging')->with('offers', $offers)->with('filter',$filter);
+                if(!$offers){
+                return redirect()->back()->with('alert','%'.request('details_ar').'%');
+                }
+        }
         if($status){
         $filter = $request->query('filter');
         $offers = Offer::where(  'status','=',$status)->orderBy('id')->paginate(2)

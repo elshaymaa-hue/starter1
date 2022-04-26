@@ -66,7 +66,8 @@ return[
     'reply_on'=>'ردا على',
     'require_monitor'=>'يحتاج متابعة',
     'monitor_date'=>'تاريخ متابعة',
-    'additions'=>'مرفقات'
+    'additions'=>'مرفقات',
+    'search'=>'ابحث'
 
 
 ];

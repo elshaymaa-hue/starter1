@@ -128,7 +128,11 @@
 
 
                 </div>
-
+                @if(Session::has ('alert'))
+                <div class="alert alert-danger" role="alert">
+                      {{ Session :: get('alert') }}
+                </div>
+                @endif
                 <form class="form-group"  method="GET" action="{{route('offers.filter')}}" action="{{route('offers.export')}}" enctype="multipart/form-data" >
                     {{--            <input class="form-control mr-sm-2"  type="search" name="search_" placeholder="Search" aria-label="Search">--}}
 
@@ -197,7 +201,15 @@
                         <small class="form-text text-danger">{{$message}}</small>
                         @enderror
                     </div>
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    <div class="form-group ">
+
+                        <label for="exampleInputEmail1">{{__('messages.Offer details ar')}}</label>
+                        <input type="textarea" class="form-control" name="details_ar"  placeholder="{{__('messages.Offer details ar')}}">
+                        @error('details_ar')
+                        <small class="form-text text-danger">{{$message}}</small>
+                        @enderror
+                     </div>
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">{{__('messages.search')}}</button>
 
                      {{--            <input class="form-control mr-sm-2"  type="search" name="search_" placeholder="Search" aria-label="Search">--}}
 
