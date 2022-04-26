@@ -201,7 +201,7 @@ class CrudController extends Controller
 
                 // $offers = Offer::select($generatequery)->paginate(2);
                 // $filter = $request->query('filter');
-                $offers = Offer::where('details_ar','like','%'.request('details_ar').'%')->paginate(2)
+                $offers = Offer::where('details_ar','like','%'.request('details_ar').'%')->paginate(10)
                                 ->appends('details_ar','like','%'.request('details_ar').'%');
                 // return view('offers.index_paging')->with('offers', $offers)->with('filter',$filter);
                 if(!$offers){
