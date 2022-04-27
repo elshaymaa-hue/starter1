@@ -245,6 +245,7 @@
        
 
 </table>
+{{$offers->onEachSide(5)->links()}}
 <script>
     const export2Pdf = async () => {
 
