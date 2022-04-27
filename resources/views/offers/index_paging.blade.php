@@ -242,6 +242,7 @@
         </div>
     @endif
         {{$offers->onEachSide(5)->links()}}
+       
 
 </table>
 <script>
