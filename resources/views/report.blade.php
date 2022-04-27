@@ -125,7 +125,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-
+                    {{__('messages.search document')}}
 
                 </div>
                 @if(Session::has ('alert'))
@@ -138,10 +138,13 @@
 
 
 
-                    <br/>
+                    <table class="table">
+                    <tr>
+                        <td>
+                    <div class="form-group ">
                     <label for="exampleInputEmail1">{{__('messages.directory')}}</label>
 
-                    <br/>
+                    
                     <select name ="search_">
                         <option value="all"> </option>
                         <option value="vtms">vtms</option>
@@ -155,28 +158,9 @@
                         <option value="Maintenance">Maintenance</option>
                         <option value="offers">offers</option>
                     </select>
-
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">{{__('messages.input')}}</label>
-                        <input type="text" class="form-control" name ="input"  aria-describedby="emailHelp" placeholder="{{__('messages.input')}}">
-                        @error('input')
-                        <small class="form-text text-danger">{{$message}}</small>
-                        @enderror
                     </div>
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">{{__('messages.output')}}</label>
-                        <input type="text" class="form-control" name ="output"  aria-describedby="emailHelp" placeholder="{{__('messages.output')}}">
-                        @error('output')
-                        <small class="form-text text-danger">{{$message}}</small>
-                        @enderror
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">{{__('messages.type')}}</label>
-                        <input type="text" class="form-control" name ="type"  aria-describedby="emailHelp" placeholder="{{__('messages.type')}}">
-                        @error('type')
-                        <small class="form-text text-danger">{{$message}}</small>
-                        @enderror
-                    </div>
+                        </td>
+                        <td>
                     <div class="form-group ">
 
                         <label for="exampleInputEmail1">{{__('messages.status')}}</label>
@@ -194,6 +178,38 @@
                         <small class="form-text text-danger">{{$message}}</small>
                         @enderror
                     </div>
+                        </td>
+                    </tr>
+                    </table>
+                    <table class="table">
+                    <tr>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">{{__('messages.input')}}</label>
+                        <input type="text" class="form-control" name ="input"  aria-describedby="emailHelp" placeholder="{{__('messages.input')}}">
+                        @error('input')
+                        <small class="form-text text-danger">{{$message}}</small>
+                        @enderror
+                    </div>
+                    </tr>
+                    <tr>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">{{__('messages.output')}}</label>
+                        <input type="text" class="form-control" name ="output"  aria-describedby="emailHelp" placeholder="{{__('messages.output')}}">
+                        @error('output')
+                        <small class="form-text text-danger">{{$message}}</small>
+                        @enderror
+                    </div>
+                </tr>
+                <tr>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">{{__('messages.type')}}</label>
+                        <input type="text" class="form-control" name ="type"  aria-describedby="emailHelp" placeholder="{{__('messages.type')}}">
+                        @error('type')
+                        <small class="form-text text-danger">{{$message}}</small>
+                        @enderror
+                    </div>
+                </tr>
+                <tr>
                     <div class="form-group">
                         <label for="exampleInputEmail1">{{__('messages.monitor_date')}}</label>
                         <input type="text" class="form-control" name ="monitor_date"  aria-describedby="emailHelp" placeholder="{{__('messages.monitor_date')}}">
@@ -201,6 +217,8 @@
                         <small class="form-text text-danger">{{$message}}</small>
                         @enderror
                     </div>
+                </tr>
+                <tr>
                     <div class="form-group ">
 
                         <label for="exampleInputEmail1">{{__('messages.Offer details ar')}}</label>
@@ -209,11 +227,15 @@
                         <small class="form-text text-danger">{{$message}}</small>
                         @enderror
                      </div>
+                    </tr>
+                    <tr>
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">{{__('messages.search')}}</button>
 
                      {{--            <input class="form-control mr-sm-2"  type="search" name="search_" placeholder="Search" aria-label="Search">--}}
 
 {{--                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Export to Excel </button>--}}
+                    </tr>
+                    </table>
                 </form>
                 </div>
             </div>

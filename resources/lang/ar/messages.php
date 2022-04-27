@@ -67,7 +67,8 @@ return[
     'require_monitor'=>'يحتاج متابعة',
     'monitor_date'=>'تاريخ متابعة',
     'additions'=>'مرفقات',
-    'search'=>'ابحث'
+    'search'=>'ابحث',
+    'search document'=>'ابحث عن مستند'
 
 
 ];
