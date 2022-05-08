@@ -230,6 +230,7 @@
              </td>
 
         </tr>
+        
     @endforeach
 
     </tbody>
