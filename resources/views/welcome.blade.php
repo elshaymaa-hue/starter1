@@ -40,7 +40,7 @@
         <!-- Masthead Avatar Image-->
         <img class="masthead-avatar mb-5" src="assets/img/avataaars.svg" alt="..." />
         <!-- Masthead Heading-->
-        <h1 class="masthead-heading text-uppercase mb-0">select section</h1>
+        <h1 class="masthead-heading text-uppercase mb-0">select sectionp</h1>
         <!-- Icon Divider-->
         <div class="divider-custom divider-light">
             <div class="divider-custom-line"></div>
@@ -273,13 +273,18 @@
                                 <div class="divider-custom-line"></div>
                             </div>
                             <!-- Portfolio Modal - Image-->
+                            <a href="{{ url('radars/all') }}" >
                             <img class="img-fluid rounded mb-5" src="assets/img/portfolio/cabin.png" alt="..." />
                             <!-- Portfolio Modal - Text-->
-                            <p class="mb-4"> <a href="{{ url('radars/all') }}">Display Stations</a></p>
+                            <p class="mb-4"> 
+{{--                                 
                             <button class="btn btn-primary" data-bs-dismiss="modal">
                                 <i class="fas fa-xmark fa-fw"></i>
-                                <a href="{{ url('radars/all') }}" >Display Stations</a>
-                            </button>
+                                <a href="{{ url('radars/all') }}" >Display Stations</a> 
+                                  </button>
+                            --}}
+                            </a>
+                          
                         </div>
                     </div>
                 </div>
@@ -305,13 +310,15 @@
                                 <div class="divider-custom-line"></div>
                             </div>
                             <!-- Portfolio Modal - Image-->
+                            <a href="{{ url('power_stations/all') }}">
                             <img class="img-fluid rounded mb-5" src="assets/img/portfolio/cake.png" alt="..." />
+                            </a>
                             <!-- Portfolio Modal - Text-->
                             <p class="mb-4"></p>
-                            <button class="btn btn-primary" data-bs-dismiss="modal">
+                            {{-- <button class="btn btn-primary" data-bs-dismiss="modal">
                                 <i class="fas fa-xmark fa-fw"></i>
                                 <a href="{{ url('power_stations/all') }}">Display Stations</a>
-                            </button>
+                            </button> --}}
                         </div>
                     </div>
                 </div>
@@ -337,13 +344,15 @@
                                 <div class="divider-custom-line"></div>
                             </div>
                             <!-- Portfolio Modal - Image-->
+                            <a href="{{ url('report ') }}">
                             <img class="img-fluid rounded mb-5" src="assets/img/portfolio/circus.png" alt="..." />
+                            </a>
                             <!-- Portfolio Modal - Text-->
                             <p class="mb-4"></p>
-                            <button class="btn btn-primary" data-bs-dismiss="modal">
+                            {{-- <button class="btn btn-primary" data-bs-dismiss="modal">
                                 <i class="fas fa-xmark fa-fw"></i>
                                 <a href="{{ url('report ') }}">Display Documents</a>
-                            </button>
+                            </button> --}}
                         </div>
                     </div>
                 </div>
@@ -369,13 +378,15 @@
                                 <div class="divider-custom-line"></div>
                             </div>
                             <!-- Portfolio Modal - Image-->
+                            <a href="{{ url('offers/filter?search_=Electorinc+Archive') }}">
                             <img class="img-fluid rounded mb-5" src="assets/img/portfolio/game.png" alt="..." />
+                            </a>
                             <!-- Portfolio Modal - Text-->
                             <p class="mb-4"></p>
-                            <button class="btn btn-primary" data-bs-dismiss="modal">
+                            {{-- <button class="btn btn-primary" data-bs-dismiss="modal">
                                 <i class="fas fa-xmark fa-fw"></i>
                                 <a href="{{ url('offers/filter?search_=Electorinc+Archive') }}">software dev</a>
-                            </button>
+                            </button> --}}
                         </div>
                     </div>
                 </div>
@@ -401,13 +412,15 @@
                                 <div class="divider-custom-line"></div>
                             </div>
                             <!-- Portfolio Modal - Image-->
+                            <a href="{{ url('offers/filter?search_=Maintenance') }}">
                             <img class="img-fluid rounded mb-5" src="assets/img/portfolio/safe.png" alt="..." />
+                            </a>
                             <!-- Portfolio Modal - Text-->
                             <p class="mb-4"></p>
-                            <button class="btn btn-primary" data-bs-dismiss="modal">
+                            {{-- <button class="btn btn-primary" data-bs-dismiss="modal">
                                 <i class="fas fa-xmark fa-fw"></i>
                                 <a href="{{ url('offers/filter?search_=Maintenance') }}">Maintenance</a>
-                            </button>
+                            </button> --}}
                         </div>
                     </div>
                 </div>
@@ -433,14 +446,16 @@
                                 <div class="divider-custom-line"></div>
                             </div>
                             <!-- Portfolio Modal - Image-->
+                            <a href="{{ url('offers/filter?search_=technical_office') }}">
                             <img class="img-fluid rounded mb-5" src="assets/img/portfolio/submarine.png" alt="..." />
+                            </a>
                             <!-- Portfolio Modal - Text-->
                             <p class="mb-4"></p>
 
-                            <button class="btn btn-primary" data-bs-dismiss="modal">
+                            {{-- <button class="btn btn-primary" data-bs-dismiss="modal">
                                 <i class="fas fa-xmark fa-fw"></i>
                                 <a href="{{ url('offers/filter?search_=technical_office') }}">technical_office</a>
-                            </button>
+                            </button> --}}
                         </div>
                     </div>
                 </div>
