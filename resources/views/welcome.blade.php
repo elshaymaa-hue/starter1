@@ -344,7 +344,7 @@
                                 <div class="divider-custom-line"></div>
                             </div>
                             <!-- Portfolio Modal - Image-->
-                            <a href="{{ url('report ') }}">
+                            <a class="btn btn-xl btn-outline-light" href="{{ url('report ') }}">
                             <img class="img-fluid rounded mb-5" src="assets/img/portfolio/circus.png" alt="..." />
                             </a>
                             <!-- Portfolio Modal - Text-->
