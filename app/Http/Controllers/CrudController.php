@@ -14,6 +14,8 @@ use Maatwebsite\Excel\Facades\Excel;
 use Barryvdh\DomPDF\Facade as PDF;
 use EloquentFilter\ModelFilter;
 use Illuminate\Support\Facades\DB;
+use Redirect,Response;
+use Illuminate\Support\Facades\Storage;
 
 class CrudController extends Controller
 {
@@ -213,7 +215,32 @@ class CrudController extends Controller
         $offers = Offer::where(  'status','=',$status)->orderBy('id')->paginate(2)
                           ->appends('status',request('status'));
         }
-        return view('offers.index_paging')->with('offers', $offers);//->with('filter',$filter);
+        $offers=Offer::select('id',
+        'price',
+        'photo',
+        'name_ar' ,
+        'name_en',
+        'details_ar',
+        'details_en',
+        'directory',
+        'input',
+        'output',
+        'type',
+        'status',
+        'reply_on',
+        'require_monitor',
+        'monitor_date',
+        'additions'
+    )->get();
+    $contents=response()->json($offers, 202,
+    [
+        'Content-Type' => 'application/json',
+        'Charset' => 'utf-8'
+    ], JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+    Storage::put('offers.json', $contents, 'public');
+        return $contents;
+
+;//view('offers.index_paging')->with('offers', $offers);//->with('filter',$filter);
        //    $filters= "'output'".","."'='".",".$output;
         //  return $name;
       //  return $name;
