@@ -72,7 +72,7 @@ Route::group(['prefix'=>LaravelLocalization::setLocale(),'middleware' => [ 'loca
     Route::group(['prefix' => 'offers'], function () {
         Route::post('store', 'CrudController@store')->name('offers.store');
         Route::get('create', 'CrudController@create');
-        //Route::get('all', 'CrudController@getAllOffers');
+        Route::get('all1', 'CrudController@getAllOffers')->name('offers.all');
         Route::get('filter', 'CrudController@complexFilter')->name('offers.filter');
         Route::get('edit/{offer_id}','CrudController@editOffer');
         Route::post('update/{offer_id}','CrudController@UpdateOffer')->name('offers.update');

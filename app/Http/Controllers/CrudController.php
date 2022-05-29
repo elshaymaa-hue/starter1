@@ -50,7 +50,7 @@ class CrudController extends Controller
 //            'details_' . LaravelLocalization::getCurrentLocale() . ' as details'
 //        )->get();
 //
-        $offers = Offer::select('id',
+            $offers=Offer::select('id',
             'price',
             'photo',
             'name_ar' ,
@@ -66,11 +66,14 @@ class CrudController extends Controller
             'require_monitor',
             'monitor_date',
             'additions'
-        )->get();
-
-
-
-        return view('offers.all', compact('offers'));
+            )->get();
+            $contents=response()->json($offers, 202,
+            [
+            'Content-Type' => 'application/json',
+            'Charset' => 'utf-8'
+            ], JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+            Storage::put('offers.json', $contents, 'public');
+            return $contents;
 
 
         //return view('offers.paginations',compact('offers'));
@@ -163,8 +166,8 @@ class CrudController extends Controller
         $details=$request->get('details_ar');
        // $offers = Offer::select('*')->paginate(5);
         // $offers = $users->appends(['keyword'=>'value']);
-      
-        if (request()->has('search_')){
+      $offers=null;
+        if ($name){
             $filter = $request->query('filter');
             if (request('search_')=="radars"){
                 $offers =  Offer::where( 'directory',request('search_'))->paginate(5)
@@ -175,13 +178,13 @@ class CrudController extends Controller
             }
         // return view('offers.index_paging')->with('offers', $offers);
         }
-        if ($input){
+       if ($input){
         $filter = $request->query('filter');
         $offers = Offer::where(  'input','=',$input)->orderBy('id')->simplepaginate(2);
         // return view('offers.index_paging')->with('offers', $offers);
     }
           // $filters="'input'".','."'='".",".$input;
-        if($output){
+       if($output){
         
         $offers = Offer::where(  'output','=',$output)->orderBy('id')->paginate(2);
         // return view('offers.index_paging')->with('offers', $offers);
@@ -202,7 +205,7 @@ class CrudController extends Controller
                 // $generatequery = "select * from offers where details_ar like '%$details%'";
 
                 // $offers = Offer::select($generatequery)->paginate(2);
-                // $filter = $request->query('filter');
+                $filter = $request->query('filter');
                 $offers = Offer::where('details_ar','like','%'.request('details_ar').'%')->paginate(2)
                                    ->appends('details_ar',request('details_ar'));
                 // return view('offers.index_paging')->with('offers', $offers)->with('filter',$filter);
@@ -214,7 +217,12 @@ class CrudController extends Controller
         $filter = $request->query('filter');
         $offers = Offer::where(  'status','=',$status)->orderBy('id')->paginate(2)
                           ->appends('status',request('status'));
+                        //   return view('offers.index_paging')->with('offers', $offers)->with('filter',$filter);
         }
+        if($offers){
+        return view('offers.index_paging')->with('offers', $offers)->with('filter',$filter);
+        }
+        if(!$offers){
         $offers=Offer::select('id',
         'price',
         'photo',
@@ -239,7 +247,7 @@ class CrudController extends Controller
     ], JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
     Storage::put('offers.json', $contents, 'public');
         return $contents;
-
+}
 ;//view('offers.index_paging')->with('offers', $offers);//->with('filter',$filter);
        //    $filters= "'output'".","."'='".",".$output;
         //  return $name;
