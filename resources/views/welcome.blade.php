@@ -70,7 +70,9 @@
                     <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                         <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
                     </div>
+                
                     <img class="img-fluid" src="assets/img/portfolio/cabin.png" alt="..." />
+              
                 </div>
             </div>
             <!-- Portfolio Item 2-->
@@ -277,12 +279,12 @@
                             <img class="img-fluid rounded mb-5" src="assets/img/portfolio/cabin.png" alt="..." />
                             <!-- Portfolio Modal - Text-->
                             <p class="mb-4"> 
-                             
+{{--                                 
                             <button class="btn btn-primary" data-bs-dismiss="modal">
                                 <i class="fas fa-xmark fa-fw"></i>
                                 <a href="{{ url('radars/all') }}" >Display Stations</a> 
                                   </button>
-                           
+                            --}}
                             </a>
                           
                         </div>
@@ -315,10 +317,10 @@
                             </a>
                             <!-- Portfolio Modal - Text-->
                             <p class="mb-4"></p>
-                            <button class="btn btn-primary" data-bs-dismiss="modal">
+                            {{-- <button class="btn btn-primary" data-bs-dismiss="modal">
                                 <i class="fas fa-xmark fa-fw"></i>
                                 <a href="{{ url('power_stations/all') }}">Display Stations</a>
-                            </button>
+                            </button> --}}
                         </div>
                     </div>
                 </div>
@@ -349,10 +351,10 @@
                             </a>
                             <!-- Portfolio Modal - Text-->
                             <p class="mb-4"></p>
-                           <button class="btn btn-primary" data-bs-dismiss="modal">
+                            {{-- <button class="btn btn-primary" data-bs-dismiss="modal">
                                 <i class="fas fa-xmark fa-fw"></i>
                                 <a href="{{ url('report ') }}">Display Documents</a>
-                            </button> 
+                            </button> --}}
                         </div>
                     </div>
                 </div>
@@ -383,10 +385,10 @@
                             </a>
                             <!-- Portfolio Modal - Text-->
                             <p class="mb-4"></p>
-                            <button class="btn btn-primary" data-bs-dismiss="modal">
+                            {{-- <button class="btn btn-primary" data-bs-dismiss="modal">
                                 <i class="fas fa-xmark fa-fw"></i>
                                 <a href="{{ url('offers/filter?search_=Electorinc+Archive') }}">software dev</a>
-                            </button> 
+                            </button> --}}
                         </div>
                     </div>
                 </div>
@@ -417,10 +419,10 @@
                             </a>
                             <!-- Portfolio Modal - Text-->
                             <p class="mb-4"></p>
-                            <button class="btn btn-primary" data-bs-dismiss="modal">
+                            {{-- <button class="btn btn-primary" data-bs-dismiss="modal">
                                 <i class="fas fa-xmark fa-fw"></i>
                                 <a href="{{ url('offers/filter?search_=Maintenance') }}">Maintenance</a>
-                            </button>
+                            </button> --}}
                         </div>
                     </div>
                 </div>
@@ -452,10 +454,10 @@
                             <!-- Portfolio Modal - Text-->
                             <p class="mb-4"></p>
 
-                            <button class="btn btn-primary" data-bs-dismiss="modal">
+                            {{-- <button class="btn btn-primary" data-bs-dismiss="modal">
                                 <i class="fas fa-xmark fa-fw"></i>
                                 <a href="{{ url('offers/filter?search_=technical_office') }}">technical_office</a>
-                            </button> 
+                            </button> --}}
                         </div>
                     </div>
                 </div>
