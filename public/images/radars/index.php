@@ -17,9 +17,9 @@
 	    <thead>
 		<tr>
 			<th>Filename</th>
-			<th>Type</th>
+			<!-- <th>Type</th>
 			<th>Size</th>
-			<th>Date Modified</th>
+			<th>Date Modified</th> -->
 		</tr>
 	    </thead>
 	    <tbody><?php
@@ -147,13 +147,14 @@
 	 echo("
 		<tr class='$class'>
 			<td><a href='./$namehref'$favicon class='name'>$name</a></td>
-			<td><a href='./$namehref'>$extn</a></td>
-			<td sorttable_customkey='$sizekey'><a href='./$namehref'>$size</a></td>
-			<td sorttable_customkey='$timekey'><a href='./$namehref'>$modtime</a></td>
+			
 		</tr>");
 	   }
 	}
 	}
+	// <td><a href='./$namehref'>$extn</a></td>
+	// 		<td sorttable_customkey='$sizekey'><a href='./$namehref'>$size</a></td>
+	// 		<td sorttable_customkey='$timekey'><a href='./$namehref'>$modtime</a></td>
 	?>
 
 	    </tbody>
