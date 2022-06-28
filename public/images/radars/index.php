@@ -143,6 +143,7 @@
 		}
 
 	// Output
+	if ($extn=="PDF Document"){
 	 echo("
 		<tr class='$class'>
 			<td><a href='./$namehref'$favicon class='name'>$name</a></td>
@@ -151,6 +152,7 @@
 			<td sorttable_customkey='$timekey'><a href='./$namehref'>$modtime</a></td>
 		</tr>");
 	   }
+	}
 	}
 	?>
 
