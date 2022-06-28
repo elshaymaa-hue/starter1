@@ -147,7 +147,7 @@
 	 echo("
 		<tr class='$class'>
 			<td><a href='./$namehref'$favicon class='name'>$name</a></td>
-			<td><a href='./$namehref'>$extn</a></td>
+			
 			
 		</tr>");
 	   }
