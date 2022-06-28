@@ -143,13 +143,13 @@
 		}
 
 	// Output
-	if ($extn=="PDF Document"){
+	
 	 echo("
 		<tr class='$class'>
 			<td><a href='./$namehref'$favicon class='name'>$name</a></td>
 			
 		</tr>");
-	   }
+	   
 	}
 	}
 	// <td><a href='./$namehref'>$extn</a></td>
