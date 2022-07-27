@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Jul 21, 2022 at 08:25 AM
+-- Generation Time: Jul 27, 2022 at 06:46 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.9
 
@@ -180,7 +180,7 @@ CREATE TABLE IF NOT EXISTS `offers` (
   `monitor_date` varchar(100) DEFAULT NULL,
   `additions` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=162 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=163 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `offers`
@@ -339,6 +339,8 @@ INSERT INTO `offers` (`id`, `name_en`, `price`, `photo`, `created_at`, `updated_
 (159, '19-07-22', NULL, 'Electorinc_Archive-20221000-19-07-22.pdf', '2022-07-20 07:21:50', '2022-07-20 07:14:39', NULL, 'توريد نظام ارشيف اليكترونى', 'الامر الادارى رقم 263 لسنه 2022 بتشكيل لجنه الدراسات والبت فى عطاءات المناقصة المحدد لتوريد نظام ارشيف اليكترونى الحضور يومى الاربعاء والخميس الموافقان 20،21/7/2022 فى قاعة الاجتماعات بادارة التموين بالاسماعيليه', 'Electorinc Archive', '20221000', NULL, 'أمر ادارى', 'done', NULL, NULL, NULL, ''),
 (160, '19-07-22', NULL, 'security-2022999-19-07-22.pdf', '2022-07-20 07:15:38', '2022-07-20 07:15:38', NULL, 'فك مهمات الكاميرات', 'فاكس الى شركة الحاسبات المتقدمه ACT للموافقه على التكلفه المقترحه لفك مهمات الكاميرات لمبنى الارشاد ومستشفى نمره 6', 'security', '2022999', NULL, 'إشاره كتابيه', 'done', NULL, NULL, NULL, ''),
 (161, '20-07-22', NULL, 'technical_office-20221009-20-07-22.pdf', '2022-07-21 08:25:20', '2022-07-21 08:25:20', NULL, 'جهاز حاسب آلى', 'أمر توريد رقم 108- 14/1606 بمخاطبة شركة دار النظم والتكنولوجيا المتقدمة لتوريد عدد/ 1 جهاز حاسب الى', 'technical_office', '20221009', NULL, 'أمر توريد', 'done', NULL, NULL, NULL, '');
+INSERT INTO `offers` (`id`, `name_en`, `price`, `photo`, `created_at`, `updated_at`, `details_en`, `name_ar`, `details_ar`, `directory`, `input`, `output`, `type`, `status`, `reply_on`, `require_monitor`, `monitor_date`, `additions`) VALUES
+(162, '27-06-22', NULL, 'security-2022559-27-06-22.pdf', '2022-07-27 06:46:08', '2022-07-27 06:46:08', NULL, 'النقاط الخاصة بأعمال الصوتيات وكاميرات المراقبة', 'رد الإستشارى على النقاط الخاصة بأعمال الصوتيات وكاميرات المراقبة التى تم مناقشتها فى الإجتماع الذى انعقد بتاريخ 2022/7/5 بمقر إدارة الأشغال', 'security', NULL, '2022559', 'إشاره كتابيه', 'done', NULL, NULL, NULL, '');
 
 -- --------------------------------------------------------
 
