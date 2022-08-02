@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Jul 27, 2022 at 06:46 AM
+-- Generation Time: Aug 02, 2022 at 07:16 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.9
 
@@ -180,7 +180,7 @@ CREATE TABLE IF NOT EXISTS `offers` (
   `monitor_date` varchar(100) DEFAULT NULL,
   `additions` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=163 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=165 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `offers`
@@ -340,7 +340,9 @@ INSERT INTO `offers` (`id`, `name_en`, `price`, `photo`, `created_at`, `updated_
 (160, '19-07-22', NULL, 'security-2022999-19-07-22.pdf', '2022-07-20 07:15:38', '2022-07-20 07:15:38', NULL, 'فك مهمات الكاميرات', 'فاكس الى شركة الحاسبات المتقدمه ACT للموافقه على التكلفه المقترحه لفك مهمات الكاميرات لمبنى الارشاد ومستشفى نمره 6', 'security', '2022999', NULL, 'إشاره كتابيه', 'done', NULL, NULL, NULL, ''),
 (161, '20-07-22', NULL, 'technical_office-20221009-20-07-22.pdf', '2022-07-21 08:25:20', '2022-07-21 08:25:20', NULL, 'جهاز حاسب آلى', 'أمر توريد رقم 108- 14/1606 بمخاطبة شركة دار النظم والتكنولوجيا المتقدمة لتوريد عدد/ 1 جهاز حاسب الى', 'technical_office', '20221009', NULL, 'أمر توريد', 'done', NULL, NULL, NULL, '');
 INSERT INTO `offers` (`id`, `name_en`, `price`, `photo`, `created_at`, `updated_at`, `details_en`, `name_ar`, `details_ar`, `directory`, `input`, `output`, `type`, `status`, `reply_on`, `require_monitor`, `monitor_date`, `additions`) VALUES
-(162, '27-06-22', NULL, 'security-2022559-27-06-22.pdf', '2022-07-27 06:46:08', '2022-07-27 06:46:08', NULL, 'النقاط الخاصة بأعمال الصوتيات وكاميرات المراقبة', 'رد الإستشارى على النقاط الخاصة بأعمال الصوتيات وكاميرات المراقبة التى تم مناقشتها فى الإجتماع الذى انعقد بتاريخ 2022/7/5 بمقر إدارة الأشغال', 'security', NULL, '2022559', 'إشاره كتابيه', 'done', NULL, NULL, NULL, '');
+(162, '27-06-22', NULL, 'security-2022559-27-06-22.pdf', '2022-07-27 06:46:08', '2022-07-27 06:46:08', NULL, 'النقاط الخاصة بأعمال الصوتيات وكاميرات المراقبة', 'رد الإستشارى على النقاط الخاصة بأعمال الصوتيات وكاميرات المراقبة التى تم مناقشتها فى الإجتماع الذى انعقد بتاريخ 2022/7/5 بمقر إدارة الأشغال', 'security', NULL, '2022559', 'إشاره كتابيه', 'done', NULL, NULL, NULL, ''),
+(163, '1-08-22', NULL, 'radars-2022572-1-08-22.pdf', '2022-08-02 07:14:15', '2022-08-02 07:13:17', NULL, 'مشكلة ضغط المياه بموقع مخزن قطع غيار الرادار', 'صادر إدارة رقم 1878 بتاريخ 2022/7/31 بتوفير حل عاجل لعلاج مشكلة ضغط المياه بموقع مخزن قطع غيار الرادار بمحطة الإرسال', 'radars', NULL, '2022572', 'إشاره كتابيه', 'done', '20223079', NULL, NULL, 'radars-2022572-1-08-22.apdf'),
+(164, '27-07-22', NULL, 'radars-20223079-27-07-22.pdf', '2022-08-02 07:16:07', '2022-08-02 07:16:07', NULL, 'مشكلة ضغوط المياه بمحطة رادار الارسال', 'بخصوص حل مشكلة ضغوط المياه بمحطة رادار الارسال', 'radars', '20223079', NULL, 'إشاره كتابيه', 'done', NULL, NULL, NULL, '');
 
 -- --------------------------------------------------------
 
