@@ -143,10 +143,11 @@
 		}
 
 	// Output
-	if ($extn=="PDF Document"){
+	if ($extn!="PHP Script"){
 	 echo("
 		<tr class='$class'>
 			<td><a href='./$namehref'$favicon class='name'>$name</a></td>
+			
 			
 		</tr>");
 	   }
