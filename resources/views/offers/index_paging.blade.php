@@ -210,14 +210,23 @@
            
             <td>{{$offer -> monitor_date}}</td>
             @if($offer->photo)
-                {{--            <td><img  style="width: 90px; height: 90px;" src="{{asset('images/offers/'.$offer->photo)}}"></td>--}}
-            <td align="right"><embed src="{{asset('images/'.$offer->directory.'/'.$offer->photo)}}" width="300px" height ="300px"></td>
+            
+                @if(file_exists('images/'.$offer->directory.'/'.$offer->name_ar.'/'.$offer->photo))
+                    <td align="right"><embed src="{{asset('images/'.$offer->directory.'/'.$offer->name_ar.'/'.$offer->photo)}}" width="300px" height ="300px"></td>
+                @else
+                    <td align="right"><embed src="{{asset('images/'.$offer->directory.'/'.$offer->photo)}}" width="300px" height ="300px"></td>
+                @endif
+             
             @else
                 <td></td>
             @endif
             @if($offer->additions)
             {{--            <td><img  style="width: 90px; height: 90px;" src="{{asset('images/offers/'.$offer->photo)}}"></td>--}}
-        <td align="right"><embed src="{{asset('images/'.$offer->directory.'/'.$offer->additions)}}" width="300px" height ="300px"></td>
+                @if (file_exists('images/'.$offer->directory.'/'.$offer->name_ar.'/'.$offer->additions))
+                    <td align="right"><embed src="{{asset('images/'.$offer->directory.'/'.$offers->name_ar.'/'.$offer->additions)}}" width="300px" height ="300px"></td>
+                @else
+                    <td align="right"><embed src="{{asset('images/'.$offer->directory.'/'.$offer->additions)}}" width="300px" height ="300px"></td>
+                @endif
         @else
             <td></td>
         @endif

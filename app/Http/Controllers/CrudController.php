@@ -96,14 +96,16 @@ class CrudController extends Controller
         $file_extension = $request->photo->getClientOriginalExtension();
 
             $dir=$request->dir;
+            $sub_dir = $request->name_ar;
             $in=$request->input;
             $out=$request->output;
             $date = $request->name_en;
             $file_name = $dir.'-'.$date .'.' . $file_extension;
             if($in)  $file_name = $dir.'-'.$in.'-'.$date .'.' . $file_extension;
             if($out)  $file_name = $dir.'-'.$out.'-'.$date .'.' . $file_extension;
-        $path = 'images/'.$dir;
-
+            $path = 'images/'.$dir.'/'.$sub_dir;
+        
+        
             $request->photo->move($path, $file_name);
 
         }
@@ -115,10 +117,10 @@ class CrudController extends Controller
                 $in=$request->input;
                 $out=$request->output;
                 $date = $request->name_en;
-                $additions = $dir.'-'.$date .'.' .'a'. $file_extension1;
-                if($in)  $additions = $dir.'-'.$in.'-'.$date .'.' .'a'. $file_extension1;
-                if($out)  $additions = $dir.'-'.$out.'-'.$date .'.' .'a'. $file_extension1;
-            $path = 'images/'.$dir;
+                $additions = $dir.'-'.$date .'_' .'a.'. $file_extension1;
+                if($in)  $additions = $dir.'-'.$in.'-'.$date .'_' .'a.'. $file_extension1;
+                if($out)  $additions = $dir.'-'.$out.'-'.$date .'_' .'a.'. $file_extension1;
+            $path = 'images/'.$dir.'/'.$sub_dir;
     
                 $request->additions->move($path, $additions);
     
@@ -164,6 +166,7 @@ class CrudController extends Controller
         $status=$request->get('status');
         $monitor=$request->get('require_monitor');
         $details=$request->get('details_ar');
+        $details=$request->get('name_ar');
        // $offers = Offer::select('*')->paginate(5);
         // $offers = $users->appends(['keyword'=>'value']);
       $offers=null;
@@ -213,6 +216,18 @@ class CrudController extends Controller
                 return redirect()->back()->with('alert','%'.request('details_ar').'%');
                 }
         }
+        if(request('name_ar')){
+            // $generatequery = "select * from offers where details_ar like '%$details%'";
+
+            // $offers = Offer::select($generatequery)->paginate(2);
+            $filter = $request->query('filter');
+            $offers = Offer::where('name_ar','like','%'.request('name_ar').'%')->paginate(2)
+                               ->appends('name_ar',request('name_ar'));
+            // return view('offers.index_paging')->with('offers', $offers)->with('filter',$filter);
+            if(!$offers){
+            return redirect()->back()->with('alert','%'.request('name_ar').'%');
+            }
+    }
         if($status){
         $filter = $request->query('filter');
         $offers = Offer::where(  'status','=',$status)->orderBy('id')->paginate(2)
@@ -296,6 +311,7 @@ class CrudController extends Controller
             $file_extension = $request->photo->getClientOriginalExtension();
 
             $dir=$request->dir;
+            $sub_dir=$request->name_ar;
             $in=$request->input;
             $out=$request->output;
             $date = $request->name_en;
@@ -303,10 +319,15 @@ class CrudController extends Controller
             if($in)  $file_name = $dir.'-'.$in.'-'.$date .'.' . $file_extension;
             if($out)  $file_name = $dir.'-'.$out.'-'.$date .'.' . $file_extension;
 
-
-            $path = 'images/'.$dir;
+            //$path = 'images/'.$dir;
+            $path = 'images/'.$dir.'/'.$sub_dir;
 //            $path = 'images/offers';
             $request->photo->move($path, $file_name);
+           
+            $path1 = 'images/'.$dir;
+            //            $path = 'images/offers';
+             $request->photo->move($path1, $file_name);
+            //$request->photo->move($path1, $file_name);
         }
         if ($request->additions) {
 
@@ -316,10 +337,10 @@ class CrudController extends Controller
                 $in=$request->input;
                 $out=$request->output;
                 $date = $request->name_en;
-                $additions = $dir.'-'.$date .'.' .'a'. $file_extension1;
-                if($in)  $additions = $dir.'-'.$in.'-'.$date .'.' .'a'. $file_extension1;
-                if($out)  $additions = $dir.'-'.$out.'-'.$date .'.' .'a'. $file_extension1;
-            $path = 'images/'.$dir;
+                $additions = $dir.'-'.$date .'_' .'a.'. $file_extension1;
+                if($in)  $additions = $dir.'-'.$in.'-'.$date .'_' .'a.'. $file_extension1;
+                if($out)  $additions = $dir.'-'.$out.'-'.$date .'_' .'a.'. $file_extension1;
+            $path = 'images/'.$dir.'/'.$sub_dir;
     
                 $request->additions->move($path, $additions);
     

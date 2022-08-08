@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Aug 07, 2022 at 10:10 AM
+-- Generation Time: Aug 08, 2022 at 08:19 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.9
 
@@ -18,8 +18,886 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
+-- Database: `crm`
+--
+CREATE DATABASE IF NOT EXISTS `crm` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `crm`;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `anexos`
+--
+
+DROP TABLE IF EXISTS `anexos`;
+CREATE TABLE IF NOT EXISTS `anexos` (
+  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `path` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `mimeType` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `extension` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `size` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `processo_id` int(10) UNSIGNED DEFAULT NULL,
+  `documentotipo_id` int(10) UNSIGNED DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `anexos_processo_id_foreign` (`processo_id`),
+  KEY `anexos_documentotipo_id_foreign` (`documentotipo_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `clientes`
+--
+
+DROP TABLE IF EXISTS `clientes`;
+CREATE TABLE IF NOT EXISTS `clientes` (
+  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `nome` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `data_nascimento` date NOT NULL,
+  `rg` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `nome_empresarial` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `ie` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `im` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `personalidade` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `cpf_cnpj` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `telefone_1` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `telefone_2` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `telefone_3` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `telefone_4` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `telefone_5` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `site` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `endereco_id` int(10) UNSIGNED DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `clientes_endereco_id_foreign` (`endereco_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `documentos_tipos`
+--
+
+DROP TABLE IF EXISTS `documentos_tipos`;
+CREATE TABLE IF NOT EXISTS `documentos_tipos` (
+  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `nome` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `enderecos`
+--
+
+DROP TABLE IF EXISTS `enderecos`;
+CREATE TABLE IF NOT EXISTS `enderecos` (
+  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `logradouro` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `numero` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `complemento` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `cep` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `bairro` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `municipio` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `uf` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `migrations`
+--
+
+DROP TABLE IF EXISTS `migrations`;
+CREATE TABLE IF NOT EXISTS `migrations` (
+  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `batch` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `migrations`
+--
+
+INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
+(1, '2014_10_12_000000_create_users_table', 1),
+(2, '2014_10_12_100000_create_password_resets_table', 1),
+(3, '2017_06_20_190642_create_enderecos_table', 1),
+(4, '2017_06_20_190643_create_clientes_table', 1),
+(5, '2017_06_20_191318_create_documentos_tipos_table', 1),
+(6, '2017_06_20_192150_create_processos_table', 1),
+(7, '2017_06_20_192151_create_anexos_table', 1),
+(8, '2018_02_07_204120_add_fields_to_users_table', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `password_resets`
+--
+
+DROP TABLE IF EXISTS `password_resets`;
+CREATE TABLE IF NOT EXISTS `password_resets` (
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `token` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  KEY `password_resets_email_index` (`email`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `processos`
+--
+
+DROP TABLE IF EXISTS `processos`;
+CREATE TABLE IF NOT EXISTS `processos` (
+  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `num` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `cliente_id` int(10) UNSIGNED DEFAULT NULL,
+  `usuario_id` int(10) UNSIGNED DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `processos_cliente_id_foreign` (`cliente_id`),
+  KEY `processos_usuario_id_foreign` (`usuario_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE IF NOT EXISTS `users` (
+  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `tipo_usuario` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `path_foto` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `users_email_unique` (`email`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `name`, `email`, `password`, `remember_token`, `created_at`, `updated_at`, `tipo_usuario`, `path_foto`) VALUES
+(1, 'Elshaymaa Nassar', 'elshaymaa_nassar@yahoo.com', '$2y$10$J9pGK4WJdV95QOm95tWKQOkxSItTYk.XIPaCosVs7/rRIYqubpUkK', NULL, '2022-02-28 08:11:13', '2022-02-28 08:11:13', NULL, NULL);
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `anexos`
+--
+ALTER TABLE `anexos`
+  ADD CONSTRAINT `anexos_documentotipo_id_foreign` FOREIGN KEY (`documentotipo_id`) REFERENCES `documentos_tipos` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `anexos_processo_id_foreign` FOREIGN KEY (`processo_id`) REFERENCES `processos` (`id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `clientes`
+--
+ALTER TABLE `clientes`
+  ADD CONSTRAINT `clientes_endereco_id_foreign` FOREIGN KEY (`endereco_id`) REFERENCES `enderecos` (`id`);
+
+--
+-- Constraints for table `processos`
+--
+ALTER TABLE `processos`
+  ADD CONSTRAINT `processos_cliente_id_foreign` FOREIGN KEY (`cliente_id`) REFERENCES `clientes` (`id`),
+  ADD CONSTRAINT `processos_usuario_id_foreign` FOREIGN KEY (`usuario_id`) REFERENCES `users` (`id`) ON DELETE CASCADE;
+--
+-- Database: `dms`
+--
+CREATE DATABASE IF NOT EXISTS `dms` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `dms`;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `categories`
+--
+
+DROP TABLE IF EXISTS `categories`;
+CREATE TABLE IF NOT EXISTS `categories` (
+  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `parent_id` bigint(20) UNSIGNED DEFAULT NULL,
+  `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `categories_name_unique` (`name`),
+  KEY `categories_parent_id_foreign` (`parent_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `departments`
+--
+
+DROP TABLE IF EXISTS `departments`;
+CREATE TABLE IF NOT EXISTS `departments` (
+  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `departments_name_unique` (`name`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `departments`
+--
+
+INSERT INTO `departments` (`id`, `name`, `created_at`, `updated_at`) VALUES
+(1, 'Default', '2022-02-28 08:41:36', '2022-02-28 08:41:36'),
+(2, 'Instrument & Control', '2022-02-28 08:41:36', '2022-02-28 08:41:36'),
+(3, 'Electrical', '2022-02-28 08:41:36', '2022-02-28 08:41:36'),
+(4, 'Mechanical', '2022-02-28 08:41:36', '2022-02-28 08:41:36'),
+(5, 'Process', '2022-02-28 08:41:36', '2022-02-28 08:41:36'),
+(6, 'Inspection & Safety', '2022-02-28 08:41:36', '2022-02-28 08:41:36'),
+(7, 'Quality Control', '2022-02-28 08:41:36', '2022-02-28 08:41:36');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `documents`
+--
+
+DROP TABLE IF EXISTS `documents`;
+CREATE TABLE IF NOT EXISTS `documents` (
+  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `department_id` bigint(20) UNSIGNED NOT NULL,
+  `category_id` bigint(20) UNSIGNED NOT NULL,
+  `user_id` bigint(20) UNSIGNED NOT NULL,
+  `locker_id` bigint(20) UNSIGNED NOT NULL,
+  `plant_id` bigint(20) UNSIGNED NOT NULL,
+  `equipment_id` bigint(20) UNSIGNED NOT NULL,
+  `title` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `type` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `slug` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `documents_slug_unique` (`slug`),
+  KEY `documents_department_id_foreign` (`department_id`),
+  KEY `documents_category_id_foreign` (`category_id`),
+  KEY `documents_user_id_foreign` (`user_id`),
+  KEY `documents_locker_id_foreign` (`locker_id`),
+  KEY `documents_plant_id_foreign` (`plant_id`),
+  KEY `documents_equipment_id_foreign` (`equipment_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `equipment`
+--
+
+DROP TABLE IF EXISTS `equipment`;
+CREATE TABLE IF NOT EXISTS `equipment` (
+  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `plant_id` bigint(20) UNSIGNED NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `equipment_name_unique` (`name`),
+  KEY `equipment_plant_id_foreign` (`plant_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `failed_jobs`
+--
+
+DROP TABLE IF EXISTS `failed_jobs`;
+CREATE TABLE IF NOT EXISTS `failed_jobs` (
+  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `connection` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `queue` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `payload` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `exception` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `failed_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `lockers`
+--
+
+DROP TABLE IF EXISTS `lockers`;
+CREATE TABLE IF NOT EXISTS `lockers` (
+  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `lockers_name_unique` (`name`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `migrations`
+--
+
+DROP TABLE IF EXISTS `migrations`;
+CREATE TABLE IF NOT EXISTS `migrations` (
+  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `migration` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `batch` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `migrations`
+--
+
+INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
+(1, '2014_10_12_100000_create_password_resets_table', 1),
+(2, '2016_06_01_000001_create_oauth_auth_codes_table', 1),
+(3, '2016_06_01_000002_create_oauth_access_tokens_table', 1),
+(4, '2016_06_01_000003_create_oauth_refresh_tokens_table', 1),
+(5, '2016_06_01_000004_create_oauth_clients_table', 1),
+(6, '2016_06_01_000005_create_oauth_personal_access_clients_table', 1),
+(7, '2019_08_19_000000_create_failed_jobs_table', 1),
+(8, '2019_10_10_060336_create_roles_table', 1),
+(9, '2019_10_10_060830_create_departments_table', 1),
+(10, '2019_10_10_061201_create_lockers_table', 1),
+(11, '2019_10_10_061247_create_categories_table', 1),
+(12, '2019_10_30_161842_create_plants_table', 1),
+(13, '2019_10_30_162024_create_equipment_table', 1),
+(14, '2019_10_31_122039_create_users_table', 1),
+(15, '2019_10_31_122349_create_documents_table', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `oauth_access_tokens`
+--
+
+DROP TABLE IF EXISTS `oauth_access_tokens`;
+CREATE TABLE IF NOT EXISTS `oauth_access_tokens` (
+  `id` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `user_id` bigint(20) DEFAULT NULL,
+  `client_id` int(10) UNSIGNED NOT NULL,
+  `name` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `scopes` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `revoked` tinyint(1) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `expires_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `oauth_access_tokens_user_id_index` (`user_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `oauth_auth_codes`
+--
+
+DROP TABLE IF EXISTS `oauth_auth_codes`;
+CREATE TABLE IF NOT EXISTS `oauth_auth_codes` (
+  `id` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `user_id` bigint(20) NOT NULL,
+  `client_id` int(10) UNSIGNED NOT NULL,
+  `scopes` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `revoked` tinyint(1) NOT NULL,
+  `expires_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `oauth_clients`
+--
+
+DROP TABLE IF EXISTS `oauth_clients`;
+CREATE TABLE IF NOT EXISTS `oauth_clients` (
+  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `user_id` bigint(20) DEFAULT NULL,
+  `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `secret` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `redirect` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `personal_access_client` tinyint(1) NOT NULL,
+  `password_client` tinyint(1) NOT NULL,
+  `revoked` tinyint(1) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `oauth_clients_user_id_index` (`user_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `oauth_clients`
+--
+
+INSERT INTO `oauth_clients` (`id`, `user_id`, `name`, `secret`, `redirect`, `personal_access_client`, `password_client`, `revoked`, `created_at`, `updated_at`) VALUES
+(1, NULL, 'DMS Personal Access Client', 'stDpmjiemI4encFtL79MOwl3PypZis2olMMEnpGS', 'http://localhost', 1, 0, 0, '2022-02-28 08:42:01', '2022-02-28 08:42:01'),
+(2, NULL, 'DMS Password Grant Client', 'c1MjA0tCYphkpUDspO49pF15Sx9huINrmTBiCdTy', 'http://localhost', 0, 1, 0, '2022-02-28 08:42:01', '2022-02-28 08:42:01');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `oauth_personal_access_clients`
+--
+
+DROP TABLE IF EXISTS `oauth_personal_access_clients`;
+CREATE TABLE IF NOT EXISTS `oauth_personal_access_clients` (
+  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `client_id` int(10) UNSIGNED NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `oauth_personal_access_clients_client_id_index` (`client_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `oauth_personal_access_clients`
+--
+
+INSERT INTO `oauth_personal_access_clients` (`id`, `client_id`, `created_at`, `updated_at`) VALUES
+(1, 1, '2022-02-28 08:42:01', '2022-02-28 08:42:01');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `oauth_refresh_tokens`
+--
+
+DROP TABLE IF EXISTS `oauth_refresh_tokens`;
+CREATE TABLE IF NOT EXISTS `oauth_refresh_tokens` (
+  `id` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `access_token_id` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `revoked` tinyint(1) NOT NULL,
+  `expires_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `oauth_refresh_tokens_access_token_id_index` (`access_token_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `password_resets`
+--
+
+DROP TABLE IF EXISTS `password_resets`;
+CREATE TABLE IF NOT EXISTS `password_resets` (
+  `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `token` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  KEY `password_resets_email_index` (`email`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `plants`
+--
+
+DROP TABLE IF EXISTS `plants`;
+CREATE TABLE IF NOT EXISTS `plants` (
+  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `plants_name_unique` (`name`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `roles`
+--
+
+DROP TABLE IF EXISTS `roles`;
+CREATE TABLE IF NOT EXISTS `roles` (
+  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `roles_name_unique` (`name`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `roles`
+--
+
+INSERT INTO `roles` (`id`, `name`, `created_at`, `updated_at`) VALUES
+(1, 'Admin', '2022-02-28 08:41:36', '2022-02-28 08:41:36'),
+(2, 'User', '2022-02-28 08:41:36', '2022-02-28 08:41:36');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE IF NOT EXISTS `users` (
+  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `department_id` bigint(20) UNSIGNED NOT NULL,
+  `role_id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email_verified_at` timestamp NULL DEFAULT NULL,
+  `password` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `users_email_unique` (`email`),
+  KEY `users_department_id_foreign` (`department_id`),
+  KEY `users_role_id_foreign` (`role_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `department_id`, `role_id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 1, 1, 'Admin', 'nassarelshaymaa@gmail.com', '2022-02-28 08:41:36', 'Al@@2909', 'gs6GamvCcc', '2022-02-28 08:41:36', '2022-02-28 08:41:36'),
+(2, 1, 2, 'User', 'user@splerp.com', '2022-02-28 08:41:36', '$2y$10$QP/SwRlT9BtxVJSw2ZkuRuiFwHIC70X36QpKJMB0EbeknUu4hF7b.', 'Cvvewf99Pf', '2022-02-28 08:41:36', '2022-02-28 08:41:36');
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `categories`
+--
+ALTER TABLE `categories`
+  ADD CONSTRAINT `categories_parent_id_foreign` FOREIGN KEY (`parent_id`) REFERENCES `categories` (`id`);
+
+--
+-- Constraints for table `documents`
+--
+ALTER TABLE `documents`
+  ADD CONSTRAINT `documents_category_id_foreign` FOREIGN KEY (`category_id`) REFERENCES `categories` (`id`),
+  ADD CONSTRAINT `documents_department_id_foreign` FOREIGN KEY (`department_id`) REFERENCES `departments` (`id`),
+  ADD CONSTRAINT `documents_equipment_id_foreign` FOREIGN KEY (`equipment_id`) REFERENCES `equipment` (`id`),
+  ADD CONSTRAINT `documents_locker_id_foreign` FOREIGN KEY (`locker_id`) REFERENCES `lockers` (`id`),
+  ADD CONSTRAINT `documents_plant_id_foreign` FOREIGN KEY (`plant_id`) REFERENCES `plants` (`id`),
+  ADD CONSTRAINT `documents_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
+
+--
+-- Constraints for table `equipment`
+--
+ALTER TABLE `equipment`
+  ADD CONSTRAINT `equipment_plant_id_foreign` FOREIGN KEY (`plant_id`) REFERENCES `plants` (`id`);
+
+--
+-- Constraints for table `users`
+--
+ALTER TABLE `users`
+  ADD CONSTRAINT `users_department_id_foreign` FOREIGN KEY (`department_id`) REFERENCES `departments` (`id`),
+  ADD CONSTRAINT `users_role_id_foreign` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`);
+--
+-- Database: `laravel`
+--
+CREATE DATABASE IF NOT EXISTS `laravel` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `laravel`;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `departments`
+--
+
+DROP TABLE IF EXISTS `departments`;
+CREATE TABLE IF NOT EXISTS `departments` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) NOT NULL,
+  `task` varchar(100) NOT NULL,
+  `manager` varchar(100) NOT NULL,
+  `created_at` datetime DEFAULT current_timestamp(),
+  `updated_at` datetime DEFAULT current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `departments`
+--
+
+INSERT INTO `departments` (`id`, `name`, `task`, `manager`, `created_at`, `updated_at`) VALUES
+(1, 'vtms', 'vtms', 'waleed', '2022-03-01 12:16:43', '2022-03-01 12:16:43');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `documents`
+--
+
+DROP TABLE IF EXISTS `documents`;
+CREATE TABLE IF NOT EXISTS `documents` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) DEFAULT NULL,
+  `contents` varchar(100) NOT NULL,
+  `geha` varchar(100) DEFAULT NULL,
+  `created_at` datetime NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `documents`
+--
+
+INSERT INTO `documents` (`id`, `name`, `contents`, `geha`, `created_at`, `updated_at`) VALUES
+(1, '675', 'reply', NULL, '2022-03-01 12:30:30', '2022-03-01 10:30:30');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `failed_jobs`
+--
+
+DROP TABLE IF EXISTS `failed_jobs`;
+CREATE TABLE IF NOT EXISTS `failed_jobs` (
+  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `connection` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `queue` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `payload` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `exception` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `failed_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `migrations`
+--
+
+DROP TABLE IF EXISTS `migrations`;
+CREATE TABLE IF NOT EXISTS `migrations` (
+  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `migration` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `batch` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `migrations`
+--
+
+INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
+(1, '2014_10_12_000000_create_users_table', 1),
+(2, '2014_10_12_100000_create_password_resets_table', 1),
+(3, '2019_08_19_000000_create_failed_jobs_table', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `offers`
+--
+
+DROP TABLE IF EXISTS `offers`;
+CREATE TABLE IF NOT EXISTS `offers` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name_en` varchar(100) NOT NULL,
+  `price` varchar(100) NOT NULL,
+  `photo` varchar(100) NOT NULL,
+  `created_at` date NOT NULL DEFAULT current_timestamp(),
+  `updated_at` date NOT NULL DEFAULT current_timestamp(),
+  `status` varchar(4) DEFAULT NULL,
+  `name_ar` varchar(100) NOT NULL,
+  `details_ar` varchar(11) NOT NULL,
+  `details_en` varchar(110) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `offers`
+--
+
+INSERT INTO `offers` (`id`, `name_en`, `price`, `photo`, `created_at`, `updated_at`, `status`, `name_ar`, `details_ar`, `details_en`) VALUES
+(1, 'perfume', '100', '', '2022-03-01', '2022-03-01', 'a', 'عطر', '0', ''),
+(2, 'watch', '200', '', '2022-03-01', '2022-03-01', 'i', 'ساعة', '0', ''),
+(3, 'POWER', '1000', '1646118917.jpg', '2022-03-01', '2022-03-01', NULL, 'قوى', 'تخفيض', 'discount'),
+(4, 'POWER', '1000', '1646138695.jpg', '2022-03-01', '2022-03-01', NULL, 'قوى', 'تخفيض', 'discount'),
+(5, 'POWER', '1000', '1646205906.jpg', '2022-03-02', '2022-03-02', NULL, 'قوى', 'تخفيض', 'discount'),
+(6, 'POWER', '1000', '1646648527.jpg', '2022-03-07', '2022-03-07', NULL, 'قوى', 'تخفيض', '50% discount');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `password_resets`
+--
+
+DROP TABLE IF EXISTS `password_resets`;
+CREATE TABLE IF NOT EXISTS `password_resets` (
+  `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `token` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  KEY `password_resets_email_index` (`email`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE IF NOT EXISTS `users` (
+  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `mobile` int(11) NOT NULL,
+  `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email_verified_at` timestamp NULL DEFAULT NULL,
+  `password` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `users_email_unique` (`email`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `name`, `mobile`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'Elshaymaa Nassar', 1015685693, 'elshaymaa_nassar@yahoo.com', NULL, '$2y$10$0lh9tfJc8rh7kIa7ABsfVuOIhf1igk80QBS6ptPSMxsW3QRLwJXV.', NULL, '2022-03-01 04:55:00', '2022-03-01 04:55:00');
+--
+-- Database: `laravel1`
+--
+CREATE DATABASE IF NOT EXISTS `laravel1` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `laravel1`;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `failed_jobs`
+--
+
+DROP TABLE IF EXISTS `failed_jobs`;
+CREATE TABLE IF NOT EXISTS `failed_jobs` (
+  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `uuid` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `connection` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `queue` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `payload` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `exception` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `failed_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `migrations`
+--
+
+DROP TABLE IF EXISTS `migrations`;
+CREATE TABLE IF NOT EXISTS `migrations` (
+  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `batch` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `migrations`
+--
+
+INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
+(1, '2014_10_12_000000_create_users_table', 1),
+(2, '2014_10_12_100000_create_password_resets_table', 1),
+(3, '2019_08_19_000000_create_failed_jobs_table', 1),
+(4, '2019_12_14_000001_create_personal_access_tokens_table', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `password_resets`
+--
+
+DROP TABLE IF EXISTS `password_resets`;
+CREATE TABLE IF NOT EXISTS `password_resets` (
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `token` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  KEY `password_resets_email_index` (`email`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `personal_access_tokens`
+--
+
+DROP TABLE IF EXISTS `personal_access_tokens`;
+CREATE TABLE IF NOT EXISTS `personal_access_tokens` (
+  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `tokenable_type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `tokenable_id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `token` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `abilities` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `last_used_at` timestamp NULL DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `personal_access_tokens_token_unique` (`token`),
+  KEY `personal_access_tokens_tokenable_type_tokenable_id_index` (`tokenable_type`,`tokenable_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE IF NOT EXISTS `users` (
+  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email_verified_at` timestamp NULL DEFAULT NULL,
+  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `users_email_unique` (`email`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+--
 -- Database: `monitor`
 --
+CREATE DATABASE IF NOT EXISTS `monitor` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `monitor`;
 
 -- --------------------------------------------------------
 
@@ -180,7 +1058,7 @@ CREATE TABLE IF NOT EXISTS `offers` (
   `monitor_date` varchar(100) DEFAULT NULL,
   `additions` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=168 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=169 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `offers`
@@ -224,7 +1102,7 @@ INSERT INTO `offers` (`id`, `name_en`, `price`, `photo`, `created_at`, `updated_
 (37, '09-07-2021', 'مذكرة رقم 4329 بتاريخ 7/9/2021 بعادة طرح مناقصة توريد وتركيب المصاعد', '1647334596.pdf', '2022-03-15 08:56:36', '2022-03-15 08:56:36', 'حتي سعه و تاريخه لم يتم إتخاذ  أي إجراء', 'مصاعد الابراج', NULL, 'offers', '', '', '', NULL, '', NULL, NULL, ''),
 (38, '2/3/22', 'اصلاح عدد جهاز واحد', '1648452740.pdf', '2022-03-28 07:32:21', '2022-03-28 07:32:21', NULL, 'صيانة جهاز AIS ترسانة بورسعيد', 'اشارة بتلف الجهاز تماما وعدم صلاحيته للعمل', 'offers', '', '', '', NULL, '', NULL, NULL, ''),
 (39, '2-3-2022', 'صيانة ال ups خاص بجهاز ال ais بالترسانة', 'power-2-3-2022.pdf', '2022-05-08 09:01:09', '2022-03-28 07:41:26', NULL, 'صيانة وحدات كهربية', NULL, 'power', NULL, NULL, NULL, 'done', NULL, NULL, NULL, ''),
-(40, '15-3-2022', NULL, 'security-2022455-15-3-2022.pdf', '2022-03-30 12:11:57', '2022-03-28 07:48:38', NULL, 'مشروع البصمة', 'بخصوص نظام التوقيع بالبصمة كامل مشتملاتة ( كاميرات + سيرفر + كابلات )', 'security', '2022455', NULL, 'إشاره كتابيه', NULL, '', NULL, NULL, ''),
+(40, '15-3-2022', NULL, 'security-2022455-15-3-2022.pdf', '2022-08-07 11:42:19', '2022-03-28 07:48:38', NULL, 'مشروع البصمة', 'بخصوص نظام التوقيع بالبصمة كامل مشتملاتة ( كاميرات + سيرفر + كابلات )', 'security', '2022455', NULL, 'إشاره كتابيه', 'done', NULL, NULL, NULL, ''),
 (41, 'مارس-2022', NULL, 'security-2022457-مارس-2022.pdf', '2022-04-21 07:41:35', '2022-03-28 07:51:36', NULL, 'تعبئة للشئون الفنية', 'موافاتهم بخطة التعبئة العامة لعام 2023/2022 وكتابة البيانات على الحاسب الآلى على برنامج إكسيل (نسخة ورقية) + إسطوانة CD فى موعد أقصاه 2022/3/24', 'security', '2022457', NULL, 'إشاره كتابيه', 'done', NULL, NULL, NULL, ''),
 (42, '2022-03-17', 'شركة الانظمة ciss', 'hospital_centers-2022460-2022-03-17.pdf', '2022-04-18 12:04:53', '2022-03-28 07:55:35', 'بداية مشروع', 'أوامر التوريد', 'امر توريد رقم 109-474/1/1250 فى 26/1/2022 بخصوص تركيب وتوريد وتشغيل نظام مراقبة بالكاميرات للمراكز الطبية للهيئة ببورسعيد والسويس', 'hospital_centers', '2022460', NULL, 'إشاره كتابيه', 'done', '', NULL, NULL, ''),
 (43, '17-3-2022', NULL, 'tawkitat-2022466-17-3-2022.pdf', '2022-04-27 09:14:53', '2022-03-28 08:03:41', 'المحطات البحرية بقطاع الاسماعيليه(البلاح- الفردان- طوسون- الدفرسوار)', 'زيارة محطات', 'مطلوب متابعة الشاشات المعطلة بعد المرور وما تم بشأنها', 'tawkitat', '2022466', NULL, 'تقرير', 'done', NULL, NULL, NULL, ''),
@@ -243,7 +1121,7 @@ INSERT INTO `offers` (`id`, `name_en`, `price`, `photo`, `created_at`, `updated_
 (58, '31-03-22', NULL, 'vtms-2022244-31-03-22.pdf', '2022-04-05 11:20:48', '2022-04-05 11:20:48', NULL, 'تركيبات  محطات الرادار', 'موافاتنا بموعد قدوم الشركة الفرنسية لإستكمال أعمال التركيبات لعدد/ 13 محطة رادار وإنهاء التسليم لمنظومة (VTMS)', 'vtms', NULL, '2022244', 'إشاره كتابيه', 'progress', '', NULL, NULL, ''),
 (59, '31-03-22', NULL, 'vtms-2022521-31-03-22.pdf', '2022-04-05 11:23:54', '2022-04-05 11:23:54', NULL, 'توسيع طريق مرشدين', 'بشأن أعمال تطوير وتوسعة طريق المرشدين القطاع الرابع (جبل مريم - الدفرسوار) ودراسة التعارض مع كابلات هيئة قناة السويس.', 'vtms', NULL, '2022521', 'إشاره كتابيه', 'done', '', NULL, NULL, ''),
 (60, '28-03-22', NULL, 'power-2022531-28-03-22.pdf', '2022-04-05 11:25:20', '2022-04-05 11:25:20', NULL, 'فحص أجهزة', 'إيفاد مندوبينا لفحص وإستلام عدد/ 1 جهاز Lab DC Power Supply الخاص بأمر توريد رقم 55-952/1898 بتاريخ 2021/12/7 الصادر لشركة سينا للمشروعات الهندسية', 'power', '2022531', NULL, 'إشاره كتابيه', 'progress', '', NULL, NULL, ''),
-(62, '30-03-22', NULL, 'security-2022542-30-03-22.pdf', '2022-04-05 11:30:51', '2022-04-05 11:30:51', NULL, 'استلام تطوير الاستاد ابتدائى', 'الأمر الإدارى رقم 152 لسنة 2022 بخصوص الإستلام الإبتدائى لعملية تطوير وإنشاء استاد هيئة قناة السويس الجديد والحضور يوم الاربعاء من كل اسبوع ولحين نهو إجراءات اللجنة المذكورة', 'security', '2022542', NULL, 'أمر ادارى', 'done', '', NULL, NULL, ''),
+(62, '30-03-22', NULL, 'security-2022542-30-03-22.pdf', '2022-08-07 11:59:12', '2022-04-05 11:30:51', NULL, 'تأمين الاستاد', 'الأمر الإدارى رقم 152 لسنة 2022 بخصوص الإستلام الإبتدائى لعملية تطوير وإنشاء استاد هيئة قناة السويس الجديد والحضور يوم الاربعاء من كل اسبوع ولحين نهو إجراءات اللجنة المذكورة', 'security', '2022542', NULL, 'أمر ادارى', 'done', NULL, NULL, NULL, ''),
 (63, '3-04-22', NULL, 'security-2022553-3-04-22.pdf', '2022-04-05 11:33:01', '2022-04-05 11:33:01', NULL, 'تطوير كبرى الفردان', 'اعمال تطوير انشاء كوبرى الفردان الحديد', 'security', '2022553', NULL, 'إشاره كتابيه', 'done', '', NULL, NULL, ''),
 (64, '30-03-22', NULL, 'vtms-2022548-30-03-22.pdf', '2022-04-05 11:34:52', '2022-04-05 11:34:52', NULL, 'قطع كابل فايبر', 'الإحاطة بأنه تم قطع كابل الفيبر بكل من القطاع الشمالى والقطاع الجنوبى', 'vtms', '2022548', NULL, 'إشاره كتابيه', 'done', '', NULL, NULL, ''),
 (65, '29-03-22', NULL, 'security-2022545-29-03-22.pdf', '2022-04-05 11:43:47', '2022-04-05 11:43:47', NULL, 'مواصفات كاميرات', 'وارد رئاسه 1551 بتاريخ 29/3/2022 بخصوص وضع المواصفات الفنيه لكاميرات مراقبة اجهزة تسجيل الحضور والانصراف من قبل ادارة التحركات وقيام ادارة الاتصالات ونظم المعلومات باتخاذ اجراءات الفحص والاستلام', 'security', '2022545', NULL, 'إشاره كتابيه', 'done', '', NULL, NULL, ''),
@@ -328,7 +1206,7 @@ INSERT INTO `offers` (`id`, `name_en`, `price`, `photo`, `created_at`, `updated_
 (148, '26-06-22', NULL, 'security-2022921-26-06-22.pdf', '2022-06-27 07:39:57', '2022-06-27 07:39:57', NULL, 'أمر التوريد رقم 109-1024/400 فى 22020/1/20', 'إشارة إلى إدارة التموين بخصوص سرعة موافاتهم عن ماتم نحو مخاطبة شركة الحاسبات المتقدمة ACT لممارستها فى عملية الفك والإزالة لعدد/ 5 صارى وما عليها من الكاميرات الواقعة داخل حدود عملية إنشاء مبنى الجراحة والطوارىء الجديدة بمستشفى نمرة 6', 'security', '2022921', NULL, 'أمر توريد', 'done', NULL, NULL, NULL, ''),
 (149, '18-07-22', NULL, 'tawkitat-2022542-18-07-22.pdf', '2022-07-19 10:53:24', '2022-07-19 10:53:24', NULL, 'تنفيذ وتركيب واستلام منظومة مكافحة', 'اشاره رقم 1746 لموافاتنا ببيانات مندوبهم للاشتراك بلجنة الاشراف على تنفيذ وتركيب واستلام منظومة مكافحة الحريق المزمع تركيبها فى غرفة الراكات بسنتر التوقيتات والارصاد بمبنى المراقبة الالكترونية', 'tawkitat', NULL, '2022542', 'إشاره كتابيه', 'done', NULL, NULL, NULL, ''),
 (150, '18-07-22', NULL, 'power-2022547-18-07-22.pdf', '2022-07-19 10:54:39', '2022-07-19 10:54:39', NULL, 'مشروع تطوير التغذية الكهربية للأحمال الحرجة', 'بند خصم توفير ومد الكابلات الخاصة بمشروع تطوير التغذية الكهربية للأحمال الحرجة بالقطاع الشمالى بإستخدام الطاقة المتجددة (الرياح + الطاقة الشمسية)', 'power', NULL, '2022547', 'إشاره كتابيه', 'done', NULL, NULL, NULL, ''),
-(151, '18-07-22', NULL, 'security-2022986-18-07-22.pdf', '2022-07-19 10:56:19', '2022-07-19 10:56:19', NULL, 'كاميرات المراقبهمبنى هيئة قناه السويس بالعاصمه الاداريه', 'مرفق رد الاستشارى على النقاط الخاصة باعمال الصوتيات وكاميرات المراقبه الخاصة انشاء مبنى هيئة قناه السويس بالعاصمه الاداريه وذلك فى الاجتماع الذى تم بحضور مندوبينا بمقر ادارة الاشغال', 'security', '2022986', NULL, 'إشاره كتابيه', 'done', NULL, NULL, NULL, ''),
+(151, '18-07-22', NULL, 'security-2022986-18-07-22.pdf', '2022-08-07 11:31:37', '2022-07-19 10:56:19', NULL, 'تأمين مبنى ق.س العاصمه الاداريه', 'مرفق رد الاستشارى على النقاط الخاصة باعمال الصوتيات وكاميرات المراقبه الخاصة انشاء مبنى هيئة قناه السويس بالعاصمه الاداريه وذلك فى الاجتماع الذى تم بحضور مندوبينا بمقر ادارة الاشغال', 'security', '2022986', NULL, 'إشاره كتابيه', 'done', NULL, NULL, NULL, ''),
 (152, '18-07-22', NULL, 'security-2022980-18-07-22.pdf', '2022-07-19 10:58:04', '2022-07-19 10:58:04', NULL, 'الكاميرات التى تم تنفيذها بمشروع إستاد القناة الجديد', 'خطاب اللجنة القومية الدائمة للتنسيق الأمنى وحضور ممثل هيئة قناة السويس إجتماع اللجنة يوم 19/7/2022 لمناقشة موضوع الكاميرات التى تم تنفيذها بمشروع إستاد القناة الجديد', 'security', '2022980', NULL, 'إشاره كتابيه', 'done', NULL, NULL, NULL, ''),
 (153, '18-05-22', NULL, 'radars-2022543-18-05-22.pdf', '2022-08-07 10:05:28', '2022-07-19 11:00:03', NULL, 'ضغط المياه صندوق الحريق محطة رادار', 'سرعه مخاطبة الجهة المختصه لرفع ضغط المياه الى المستوى المناسب لتشغيل صندوق الحريق ورفع ضغط المياه داخل غرفة امين المخزن بمحطة رادار الارسال', 'radars', NULL, '2022543', 'إشاره كتابيه', 'done', NULL, NULL, NULL, ''),
 (154, '18-07-22', NULL, 'power-2022991-18-07-22.pdf', '2022-07-19 11:01:14', '2022-07-19 11:01:14', NULL, 'طوير التغذية الكهربية لاحمال الحرجة', 'موافاتهم ببند خصم تطوير التغذية الكهربية لاحمال الحرجة لعدد/9 محطات من القطاع الشمالى', 'power', '2022991', NULL, 'إشاره كتابيه', 'done', NULL, NULL, NULL, ''),
@@ -342,10 +1220,11 @@ INSERT INTO `offers` (`id`, `name_en`, `price`, `photo`, `created_at`, `updated_
 INSERT INTO `offers` (`id`, `name_en`, `price`, `photo`, `created_at`, `updated_at`, `details_en`, `name_ar`, `details_ar`, `directory`, `input`, `output`, `type`, `status`, `reply_on`, `require_monitor`, `monitor_date`, `additions`) VALUES
 (162, '27-06-22', NULL, 'security-2022559-27-06-22.pdf', '2022-07-27 06:46:08', '2022-07-27 06:46:08', NULL, 'النقاط الخاصة بأعمال الصوتيات وكاميرات المراقبة', 'رد الإستشارى على النقاط الخاصة بأعمال الصوتيات وكاميرات المراقبة التى تم مناقشتها فى الإجتماع الذى انعقد بتاريخ 2022/7/5 بمقر إدارة الأشغال', 'security', NULL, '2022559', 'إشاره كتابيه', 'done', NULL, NULL, NULL, ''),
 (163, '1-08-22', NULL, 'radars-2022572-1-08-22.pdf', '2022-08-02 07:14:15', '2022-08-02 07:13:17', NULL, 'مشكلة ضغط المياه بموقع مخزن قطع غيار الرادار', 'صادر إدارة رقم 1878 بتاريخ 2022/7/31 بتوفير حل عاجل لعلاج مشكلة ضغط المياه بموقع مخزن قطع غيار الرادار بمحطة الإرسال', 'radars', NULL, '2022572', 'إشاره كتابيه', 'done', '20223079', NULL, NULL, 'radars-2022572-1-08-22.apdf'),
-(164, '27-07-22', NULL, 'radars-20221035-27-07-22.pdf', '2022-08-07 10:10:28', '2022-08-02 07:16:07', NULL, 'مشكلة ضغط المياه بمحطة رادار الارسال', 'بخصوص حل مشكلة ضغوط المياه بمحطة رادار الارسال', 'radars', '20221035', NULL, 'إشاره كتابيه', 'done', NULL, NULL, NULL, ''),
+(164, '27-07-22', NULL, 'radars-20221035-27-07-22.pdf', '2022-08-07 10:13:47', '2022-08-02 07:16:07', NULL, 'مشكلة ضغط المياه بمحطة رادار الارسال', 'بخصوص حل مشكلة ضغط المياه بمحطة رادار الارسال', 'radars', '20221035', NULL, 'إشاره كتابيه', 'done', NULL, NULL, NULL, ''),
 (165, '4-08-22', NULL, 'radars-20221071-4-08-22.pdf', '2022-08-07 09:08:18', '2022-08-07 08:25:59', NULL, 'إحلال برج الكاب', 'الإفادة ببيانات مندوبينا (الإسم - الدرجة والرقم الوظيفى) ليتسنى لهم تشكيل لجنة برئاسة الإدارة الهندسية بخصوص المواصفات والمتطلبات الفنية للجهات المعنية لإحلال برج الكاب', 'radars', '20221071', NULL, 'إشاره كتابيه', 'done', NULL, NULL, NULL, ''),
 (166, '4-08-22', NULL, 'radars-20221072-4-08-22.pdf', '2022-08-07 08:28:52', '2022-08-07 08:28:52', NULL, 'إحلال برج محطة الكاب', 'إشارة إلى الإدارة الهندسية بالإحاطة بترشيح السيد المهندس/ أحمد حسن أحمد حسن الديب - للإشتراك فى أعمال لجنة برئاسة الإدارة الهندسية بخصوص المواصفات والمتطلبات الفنية للجهات المعنية لإحلال برج محطة الكاب', 'radars', '20221072', NULL, 'إشاره كتابيه', 'done', NULL, NULL, NULL, ''),
-(167, '4-08-22', NULL, 'radars-20221073-4-08-22.pdf', '2022-08-07 08:36:20', '2022-08-07 08:29:54', NULL, 'قطع غيار الرادار بمحطة الارسال', 'ارسال المندوب لاستلام عدد/4 طفاية ماتيك سعه 12 كجم وذلك لتركيبها بمخزن قطع غيار الرادار بمحطة الارسال', 'radars', '20221073', NULL, 'إشاره كتابيه', 'done', '2022572', NULL, NULL, 'radars-20221073-4-08-22.apdf');
+(167, '4-08-22', NULL, 'radars-20221073-4-08-22.pdf', '2022-08-07 08:36:20', '2022-08-07 08:29:54', NULL, 'قطع غيار الرادار بمحطة الارسال', 'ارسال المندوب لاستلام عدد/4 طفاية ماتيك سعه 12 كجم وذلك لتركيبها بمخزن قطع غيار الرادار بمحطة الارسال', 'radars', '20221073', NULL, 'إشاره كتابيه', 'done', '2022572', NULL, NULL, 'radars-20221073-4-08-22.apdf'),
+(168, '5-04-22', NULL, 'radars-2022545-5-04-22.pdf', '2022-08-07 11:08:59', '2022-08-07 11:08:59', 'discount', 'test', 'تخفيض', 'radars', '2022545', NULL, 'إشاره كتابيه', 'done', NULL, NULL, NULL, '');
 
 -- --------------------------------------------------------
 
@@ -587,6 +1466,670 @@ CREATE TABLE IF NOT EXISTS `vtms_sections` (
 
 INSERT INTO `vtms_sections` (`ID`, `SectionName`, `SectionManagerName`, `RepresentativePerson`, `CountOfProjects`) VALUES
 (1, 'قطاع الرادارات', 'دكتور مهندس أيمن موسى', 'مهندس أحمد عمر', 13);
+--
+-- Database: `monitor1`
+--
+CREATE DATABASE IF NOT EXISTS `monitor1` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `monitor1`;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `migrations`
+--
+
+DROP TABLE IF EXISTS `migrations`;
+CREATE TABLE IF NOT EXISTS `migrations` (
+  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `migration` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `batch` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `migrations`
+--
+
+INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
+(1, '2014_10_12_000000_create_users_table', 1),
+(2, '2014_10_12_100000_create_password_resets_table', 1),
+(3, '2017_06_02_182856_create_posts_table', 1),
+(4, '2017_06_03_144733_add_user_id_to_posts', 1),
+(5, '2017_06_03_211549_add_cover_image_to_posts', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `password_resets`
+--
+
+DROP TABLE IF EXISTS `password_resets`;
+CREATE TABLE IF NOT EXISTS `password_resets` (
+  `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `token` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  KEY `password_resets_email_index` (`email`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `posts`
+--
+
+DROP TABLE IF EXISTS `posts`;
+CREATE TABLE IF NOT EXISTS `posts` (
+  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `title` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `body` mediumtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `user_id` int(11) NOT NULL,
+  `cover_image` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE IF NOT EXISTS `users` (
+  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `password` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `users_email_unique` (`email`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+--
+-- Database: `phpmyadmin`
+--
+CREATE DATABASE IF NOT EXISTS `phpmyadmin` DEFAULT CHARACTER SET utf8 COLLATE utf8_bin;
+USE `phpmyadmin`;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pma__bookmark`
+--
+
+DROP TABLE IF EXISTS `pma__bookmark`;
+CREATE TABLE IF NOT EXISTS `pma__bookmark` (
+  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `dbase` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '',
+  `user` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '',
+  `label` varchar(255) CHARACTER SET utf8 NOT NULL DEFAULT '',
+  `query` text COLLATE utf8_bin NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Bookmarks';
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pma__central_columns`
+--
+
+DROP TABLE IF EXISTS `pma__central_columns`;
+CREATE TABLE IF NOT EXISTS `pma__central_columns` (
+  `db_name` varchar(64) COLLATE utf8_bin NOT NULL,
+  `col_name` varchar(64) COLLATE utf8_bin NOT NULL,
+  `col_type` varchar(64) COLLATE utf8_bin NOT NULL,
+  `col_length` text COLLATE utf8_bin DEFAULT NULL,
+  `col_collation` varchar(64) COLLATE utf8_bin NOT NULL,
+  `col_isNull` tinyint(1) NOT NULL,
+  `col_extra` varchar(255) COLLATE utf8_bin DEFAULT '',
+  `col_default` text COLLATE utf8_bin DEFAULT NULL,
+  PRIMARY KEY (`db_name`,`col_name`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Central list of columns';
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pma__column_info`
+--
+
+DROP TABLE IF EXISTS `pma__column_info`;
+CREATE TABLE IF NOT EXISTS `pma__column_info` (
+  `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `db_name` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
+  `table_name` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
+  `column_name` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
+  `comment` varchar(255) CHARACTER SET utf8 NOT NULL DEFAULT '',
+  `mimetype` varchar(255) CHARACTER SET utf8 NOT NULL DEFAULT '',
+  `transformation` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '',
+  `transformation_options` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '',
+  `input_transformation` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '',
+  `input_transformation_options` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `db_name` (`db_name`,`table_name`,`column_name`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Column information for phpMyAdmin';
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pma__designer_settings`
+--
+
+DROP TABLE IF EXISTS `pma__designer_settings`;
+CREATE TABLE IF NOT EXISTS `pma__designer_settings` (
+  `username` varchar(64) COLLATE utf8_bin NOT NULL,
+  `settings_data` text COLLATE utf8_bin NOT NULL,
+  PRIMARY KEY (`username`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Settings related to Designer';
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pma__export_templates`
+--
+
+DROP TABLE IF EXISTS `pma__export_templates`;
+CREATE TABLE IF NOT EXISTS `pma__export_templates` (
+  `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `username` varchar(64) COLLATE utf8_bin NOT NULL,
+  `export_type` varchar(10) COLLATE utf8_bin NOT NULL,
+  `template_name` varchar(64) COLLATE utf8_bin NOT NULL,
+  `template_data` text COLLATE utf8_bin NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `u_user_type_template` (`username`,`export_type`,`template_name`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Saved export templates';
+
+--
+-- Dumping data for table `pma__export_templates`
+--
+
+INSERT INTO `pma__export_templates` (`id`, `username`, `export_type`, `template_name`, `template_data`) VALUES
+(1, 'root', 'database', 'monitor', '{\"quick_or_custom\":\"quick\",\"what\":\"sql\",\"structure_or_data_forced\":\"0\",\"table_select[]\":[\"bussinessaffairs\",\"departments\",\"documents\",\"failed_jobs\",\"migrations\",\"offers\",\"password_resets\",\"problemstate\",\"radars\",\"sectionsubjects\",\"users\",\"vtms_sections\"],\"table_structure[]\":[\"bussinessaffairs\",\"departments\",\"documents\",\"failed_jobs\",\"migrations\",\"offers\",\"password_resets\",\"problemstate\",\"radars\",\"sectionsubjects\",\"users\",\"vtms_sections\"],\"table_data[]\":[\"bussinessaffairs\",\"departments\",\"documents\",\"failed_jobs\",\"migrations\",\"offers\",\"password_resets\",\"problemstate\",\"radars\",\"sectionsubjects\",\"users\",\"vtms_sections\"],\"aliases_new\":\"\",\"output_format\":\"sendit\",\"filename_template\":\"@DATABASE@\",\"remember_template\":\"on\",\"charset\":\"utf-8\",\"compression\":\"none\",\"maxsize\":\"\",\"codegen_structure_or_data\":\"data\",\"codegen_format\":\"0\",\"csv_separator\":\",\",\"csv_enclosed\":\"\\\"\",\"csv_escaped\":\"\\\"\",\"csv_terminated\":\"AUTO\",\"csv_null\":\"NULL\",\"csv_structure_or_data\":\"data\",\"excel_null\":\"NULL\",\"excel_columns\":\"something\",\"excel_edition\":\"win\",\"excel_structure_or_data\":\"data\",\"json_structure_or_data\":\"data\",\"json_unicode\":\"something\",\"latex_caption\":\"something\",\"latex_structure_or_data\":\"structure_and_data\",\"latex_structure_caption\":\"Structure of table @TABLE@\",\"latex_structure_continued_caption\":\"Structure of table @TABLE@ (continued)\",\"latex_structure_label\":\"tab:@TABLE@-structure\",\"latex_relation\":\"something\",\"latex_comments\":\"something\",\"latex_mime\":\"something\",\"latex_columns\":\"something\",\"latex_data_caption\":\"Content of table @TABLE@\",\"latex_data_continued_caption\":\"Content of table @TABLE@ (continued)\",\"latex_data_label\":\"tab:@TABLE@-data\",\"latex_null\":\"\\\\textit{NULL}\",\"mediawiki_structure_or_data\":\"structure_and_data\",\"mediawiki_caption\":\"something\",\"mediawiki_headers\":\"something\",\"htmlword_structure_or_data\":\"structure_and_data\",\"htmlword_null\":\"NULL\",\"ods_null\":\"NULL\",\"ods_structure_or_data\":\"data\",\"odt_structure_or_data\":\"structure_and_data\",\"odt_relation\":\"something\",\"odt_comments\":\"something\",\"odt_mime\":\"something\",\"odt_columns\":\"something\",\"odt_null\":\"NULL\",\"pdf_report_title\":\"\",\"pdf_structure_or_data\":\"structure_and_data\",\"phparray_structure_or_data\":\"data\",\"sql_include_comments\":\"something\",\"sql_header_comment\":\"\",\"sql_use_transaction\":\"something\",\"sql_compatibility\":\"NONE\",\"sql_structure_or_data\":\"structure_and_data\",\"sql_drop_table\":\"something\",\"sql_create_table\":\"something\",\"sql_if_not_exists\":\"something\",\"sql_auto_increment\":\"something\",\"sql_create_view\":\"something\",\"sql_procedure_function\":\"something\",\"sql_create_trigger\":\"something\",\"sql_backquotes\":\"something\",\"sql_type\":\"INSERT\",\"sql_insert_syntax\":\"both\",\"sql_max_query_size\":\"50000\",\"sql_hex_for_binary\":\"something\",\"sql_utc_time\":\"something\",\"texytext_structure_or_data\":\"structure_and_data\",\"texytext_null\":\"NULL\",\"xml_structure_or_data\":\"data\",\"xml_export_events\":\"something\",\"xml_export_functions\":\"something\",\"xml_export_procedures\":\"something\",\"xml_export_tables\":\"something\",\"xml_export_triggers\":\"something\",\"xml_export_views\":\"something\",\"xml_export_contents\":\"something\",\"yaml_structure_or_data\":\"data\",\"\":null,\"lock_tables\":null,\"as_separate_files\":null,\"csv_removeCRLF\":null,\"csv_columns\":null,\"excel_removeCRLF\":null,\"json_pretty_print\":null,\"htmlword_columns\":null,\"ods_columns\":null,\"sql_dates\":null,\"sql_relation\":null,\"sql_mime\":null,\"sql_disable_fk\":null,\"sql_views_as_tables\":null,\"sql_metadata\":null,\"sql_create_database\":null,\"sql_view_current_user\":null,\"sql_or_replace_view\":null,\"sql_truncate\":null,\"sql_delayed\":null,\"sql_ignore\":null,\"texytext_columns\":null}');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pma__favorite`
+--
+
+DROP TABLE IF EXISTS `pma__favorite`;
+CREATE TABLE IF NOT EXISTS `pma__favorite` (
+  `username` varchar(64) COLLATE utf8_bin NOT NULL,
+  `tables` text COLLATE utf8_bin NOT NULL,
+  PRIMARY KEY (`username`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Favorite tables';
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pma__history`
+--
+
+DROP TABLE IF EXISTS `pma__history`;
+CREATE TABLE IF NOT EXISTS `pma__history` (
+  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `username` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
+  `db` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
+  `table` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
+  `timevalue` timestamp NOT NULL DEFAULT current_timestamp(),
+  `sqlquery` text COLLATE utf8_bin NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `username` (`username`,`db`,`table`,`timevalue`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='SQL history for phpMyAdmin';
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pma__navigationhiding`
+--
+
+DROP TABLE IF EXISTS `pma__navigationhiding`;
+CREATE TABLE IF NOT EXISTS `pma__navigationhiding` (
+  `username` varchar(64) COLLATE utf8_bin NOT NULL,
+  `item_name` varchar(64) COLLATE utf8_bin NOT NULL,
+  `item_type` varchar(64) COLLATE utf8_bin NOT NULL,
+  `db_name` varchar(64) COLLATE utf8_bin NOT NULL,
+  `table_name` varchar(64) COLLATE utf8_bin NOT NULL,
+  PRIMARY KEY (`username`,`item_name`,`item_type`,`db_name`,`table_name`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Hidden items of navigation tree';
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pma__pdf_pages`
+--
+
+DROP TABLE IF EXISTS `pma__pdf_pages`;
+CREATE TABLE IF NOT EXISTS `pma__pdf_pages` (
+  `db_name` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
+  `page_nr` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `page_descr` varchar(50) CHARACTER SET utf8 NOT NULL DEFAULT '',
+  PRIMARY KEY (`page_nr`),
+  KEY `db_name` (`db_name`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='PDF relation pages for phpMyAdmin';
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pma__recent`
+--
+
+DROP TABLE IF EXISTS `pma__recent`;
+CREATE TABLE IF NOT EXISTS `pma__recent` (
+  `username` varchar(64) COLLATE utf8_bin NOT NULL,
+  `tables` text COLLATE utf8_bin NOT NULL,
+  PRIMARY KEY (`username`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Recently accessed tables';
+
+--
+-- Dumping data for table `pma__recent`
+--
+
+INSERT INTO `pma__recent` (`username`, `tables`) VALUES
+('', '[{\"db\":\"monitor\",\"table\":\"power_station\"},{\"db\":\"monitor\",\"table\":\"offers\"},{\"db\":\"monitor\",\"table\":\"users\"},{\"db\":\"laravel\",\"table\":\"offers\"},{\"db\":\"monitor\",\"table\":\"documents\"},{\"db\":\"dms\",\"table\":\"documents\"},{\"db\":\"dms\",\"table\":\"equipment\"},{\"db\":\"dms\",\"table\":\"departments\"},{\"db\":\"monitor\",\"table\":\"departments\"},{\"db\":\"laravel\",\"table\":\"users\"}]'),
+('root', '[{\"db\":\"monitor\",\"table\":\"offers\"},{\"db\":\"monitor\",\"table\":\"power_stations\"},{\"db\":\"monitor\",\"table\":\"radars\"},{\"db\":\"monitor\",\"table\":\"documents\"},{\"db\":\"monitor\",\"table\":\"departments\"},{\"db\":\"monitor\",\"table\":\"users\"},{\"db\":\"monitor\",\"table\":\"power_station\"},{\"db\":\"laravel\",\"table\":\"offers\"},{\"db\":\"dms\",\"table\":\"documents\"},{\"db\":\"dms\",\"table\":\"equipment\"}]');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pma__relation`
+--
+
+DROP TABLE IF EXISTS `pma__relation`;
+CREATE TABLE IF NOT EXISTS `pma__relation` (
+  `master_db` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
+  `master_table` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
+  `master_field` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
+  `foreign_db` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
+  `foreign_table` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
+  `foreign_field` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
+  PRIMARY KEY (`master_db`,`master_table`,`master_field`),
+  KEY `foreign_field` (`foreign_db`,`foreign_table`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Relation table';
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pma__savedsearches`
+--
+
+DROP TABLE IF EXISTS `pma__savedsearches`;
+CREATE TABLE IF NOT EXISTS `pma__savedsearches` (
+  `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `username` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
+  `db_name` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
+  `search_name` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
+  `search_data` text COLLATE utf8_bin NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `u_savedsearches_username_dbname` (`username`,`db_name`,`search_name`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Saved searches';
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pma__table_coords`
+--
+
+DROP TABLE IF EXISTS `pma__table_coords`;
+CREATE TABLE IF NOT EXISTS `pma__table_coords` (
+  `db_name` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
+  `table_name` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
+  `pdf_page_number` int(11) NOT NULL DEFAULT 0,
+  `x` float UNSIGNED NOT NULL DEFAULT 0,
+  `y` float UNSIGNED NOT NULL DEFAULT 0,
+  PRIMARY KEY (`db_name`,`table_name`,`pdf_page_number`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Table coordinates for phpMyAdmin PDF output';
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pma__table_info`
+--
+
+DROP TABLE IF EXISTS `pma__table_info`;
+CREATE TABLE IF NOT EXISTS `pma__table_info` (
+  `db_name` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
+  `table_name` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
+  `display_field` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
+  PRIMARY KEY (`db_name`,`table_name`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Table information for phpMyAdmin';
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pma__table_uiprefs`
+--
+
+DROP TABLE IF EXISTS `pma__table_uiprefs`;
+CREATE TABLE IF NOT EXISTS `pma__table_uiprefs` (
+  `username` varchar(64) COLLATE utf8_bin NOT NULL,
+  `db_name` varchar(64) COLLATE utf8_bin NOT NULL,
+  `table_name` varchar(64) COLLATE utf8_bin NOT NULL,
+  `prefs` text COLLATE utf8_bin NOT NULL,
+  `last_update` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`username`,`db_name`,`table_name`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Tables'' UI preferences';
+
+--
+-- Dumping data for table `pma__table_uiprefs`
+--
+
+INSERT INTO `pma__table_uiprefs` (`username`, `db_name`, `table_name`, `prefs`, `last_update`) VALUES
+('root', 'monitor', 'offers', '{\"sorted_col\":\"`offers`.`directory` ASC\"}', '2022-07-20 07:21:33');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pma__tracking`
+--
+
+DROP TABLE IF EXISTS `pma__tracking`;
+CREATE TABLE IF NOT EXISTS `pma__tracking` (
+  `db_name` varchar(64) COLLATE utf8_bin NOT NULL,
+  `table_name` varchar(64) COLLATE utf8_bin NOT NULL,
+  `version` int(10) UNSIGNED NOT NULL,
+  `date_created` datetime NOT NULL,
+  `date_updated` datetime NOT NULL,
+  `schema_snapshot` text COLLATE utf8_bin NOT NULL,
+  `schema_sql` text COLLATE utf8_bin DEFAULT NULL,
+  `data_sql` longtext COLLATE utf8_bin DEFAULT NULL,
+  `tracking` set('UPDATE','REPLACE','INSERT','DELETE','TRUNCATE','CREATE DATABASE','ALTER DATABASE','DROP DATABASE','CREATE TABLE','ALTER TABLE','RENAME TABLE','DROP TABLE','CREATE INDEX','DROP INDEX','CREATE VIEW','ALTER VIEW','DROP VIEW') COLLATE utf8_bin DEFAULT NULL,
+  `tracking_active` int(1) UNSIGNED NOT NULL DEFAULT 1,
+  PRIMARY KEY (`db_name`,`table_name`,`version`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Database changes tracking for phpMyAdmin';
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pma__userconfig`
+--
+
+DROP TABLE IF EXISTS `pma__userconfig`;
+CREATE TABLE IF NOT EXISTS `pma__userconfig` (
+  `username` varchar(64) COLLATE utf8_bin NOT NULL,
+  `timevalue` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `config_data` text COLLATE utf8_bin NOT NULL,
+  PRIMARY KEY (`username`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='User preferences storage for phpMyAdmin';
+
+--
+-- Dumping data for table `pma__userconfig`
+--
+
+INSERT INTO `pma__userconfig` (`username`, `timevalue`, `config_data`) VALUES
+('root', '2022-08-08 07:24:18', '{\"Console\\/Mode\":\"collapse\"}');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pma__usergroups`
+--
+
+DROP TABLE IF EXISTS `pma__usergroups`;
+CREATE TABLE IF NOT EXISTS `pma__usergroups` (
+  `usergroup` varchar(64) COLLATE utf8_bin NOT NULL,
+  `tab` varchar(64) COLLATE utf8_bin NOT NULL,
+  `allowed` enum('Y','N') COLLATE utf8_bin NOT NULL DEFAULT 'N',
+  PRIMARY KEY (`usergroup`,`tab`,`allowed`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='User groups with configured menu items';
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pma__users`
+--
+
+DROP TABLE IF EXISTS `pma__users`;
+CREATE TABLE IF NOT EXISTS `pma__users` (
+  `username` varchar(64) COLLATE utf8_bin NOT NULL,
+  `usergroup` varchar(64) COLLATE utf8_bin NOT NULL,
+  PRIMARY KEY (`username`,`usergroup`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Users and their assignments to user groups';
+--
+-- Database: `suezapp`
+--
+CREATE DATABASE IF NOT EXISTS `suezapp` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `suezapp`;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `groups`
+--
+
+DROP TABLE IF EXISTS `groups`;
+CREATE TABLE IF NOT EXISTS `groups` (
+  `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `name` varchar(20) NOT NULL,
+  `description` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `groups`
+--
+
+INSERT INTO `groups` (`id`, `name`, `description`) VALUES
+(1, 'admin', 'Administrator'),
+(2, 'members', 'General User');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `links`
+--
+
+DROP TABLE IF EXISTS `links`;
+CREATE TABLE IF NOT EXISTS `links` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `link` text CHARACTER SET utf8 NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `links`
+--
+
+INSERT INTO `links` (`id`, `link`) VALUES
+(1, 'https://www.eng-elshaymaa.com/');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `login_attempts`
+--
+
+DROP TABLE IF EXISTS `login_attempts`;
+CREATE TABLE IF NOT EXISTS `login_attempts` (
+  `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `ip_address` varchar(45) NOT NULL,
+  `login` varchar(100) NOT NULL,
+  `time` int(11) UNSIGNED DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pages_info`
+--
+
+DROP TABLE IF EXISTS `pages_info`;
+CREATE TABLE IF NOT EXISTS `pages_info` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `my_key` varchar(191) NOT NULL,
+  `my_value` text NOT NULL,
+  `value_ar` text DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `my_key` (`my_key`)
+) ENGINE=InnoDB AUTO_INCREMENT=55 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `pages_info`
+--
+
+INSERT INTO `pages_info` (`id`, `my_key`, `my_value`, `value_ar`) VALUES
+(1, 'ho_title', 'Hello', 'مرحبا بكم'),
+(2, 'ho_are', 'We Are', 'نحن'),
+(3, 'ho_choose', 'Why Choose Us', 'لماذا اخترت سوليد؟'),
+(4, 'company', 'Solid Solutions Software Company is a top provider of expert software products , We will\r\n        be glade to provide additional references upon request.', 'شركه سوليد للحلول البرمجيه اولى الشركات فى مجال برمجه تطبيقات الويب وهاتف المحمول والانظمه المدمجه '),
+(5, 'ho_web', 'Web Design', 'تصميم صفحات الويب'),
+(6, 'ho_mob', 'Mobile APPS', 'تطبيقات المحمول'),
+(7, 'ho_embedded', 'Embedded system', 'الانظمه المضمنه'),
+(8, 'ho_erp', 'Erp system', 'تخطيط موارد المؤسسه'),
+(9, 'ho_design', 'Graphic design', 'تصميم الجرافيك'),
+(10, 'ho_iot', 'IOT system', 'نظام انترنت الاشياء'),
+(11, 'ho_sta', 'strategy', 'استراتيجيه شركه سوليد'),
+(12, 'ho_tog', 'we get you , lets get together', 'نحن نبدء  من خلالك'),
+(13, 'ho_title1', 'We keep a pulse on the market so you don’t have to. We study markets, aggregate data, and synthesize\r\n            information to connect your brand to your users. By analyzing market behavior, we craft a presence for you\r\n            that wins customers and creates loyalty to keep you on top.', 'نحن نقوم فى البدايه بدراسه بيئه العمل أولا وتحديد سلوكه ومن خلال ذلك يبقى بالنسبه لنا العميل رقم واحد وذلك بالتعاون مع شركتنا تكون على القمه'),
+(14, 'ho_title2', 'Better online experience , happier customers', 'الخبره هى ما تميزنا'),
+(15, 'number1', '90%', '90%'),
+(16, 'ho_first2', 'Web Design', 'تصميم صفحات الويب'),
+(17, 'ho_content', 'Great design can change the way users interact. Let’s start with your web design. Our web design\r\n                            team focuses on user experience.', 'اتصميم هو اول من يجذب لك العميل ولذلك نحن نهتم باتصميم لذلك لنبدء بتصميم موقعك في البدايه '),
+(18, 'ho_number2', '95%', '95%'),
+(19, 'ho_app', 'Mobile Apps', 'تطبيقات المحمول'),
+(20, 'ho_title3', 'A complete integration between mobile app and online website can give your business the boost\r\n                            needed to go beyond reaching clients barriers.', 'عمل تطبيق المحمول له نفس الشكل العام للموقع الالكترونى ذلك يمنح لعميلك التعرف عليك بسهوله'),
+(23, 'ho_services', 'Our marketing services help you design, develop, and implement the right content on the best\r\n                            channels for your brand.', 'خطه التسويق الخاصه بنا تبدء من التصميم واتطوير ودراسه بيئه العمل ثم بعد ذلك كتابه المحتوى الخاص بك ونشره على وسائل التواصل المختلفه'),
+(24, 'ho_connect', 'Connect With Us', 'تواصل معنا'),
+(25, 'ho_content3', 'We are here for you , feel free to contact us', 'نحن هنا من اجلك , فى انتظار مكالمتك'),
+(26, 'ho_message', 'Send Message', 'ارسل رسالتك'),
+(27, 'f_contetnt', 'Solid Solutions Software Company is pleased to submit a proposal company regarding to your system.', 'شركه سوليد متخصصه لوضع الحلول المختلفه لنظامك وذلك من خلال وضع الخطه المناسبه والجدول الزمنى لتنفيذها '),
+(28, 'f_second_title', 'This proposal describes the program elements, services, terms, and schedule for it.', 'شركه سوليد هى شركه متخصصه فى مجال تطبيقات الويب والهاتف المحمول ولوجود حلول للانظمه المختلفه'),
+(29, 'f_post', 'latest posts', 'اخر الاخبار'),
+(30, 'ab_more', 'Know More', 'لمعرفه المزيد'),
+(31, 'ab_view', 'Overview', 'نظره عامه'),
+(32, 'ab_content_site', 'Solid Solutions Software Company is pleased to submit a proposal\r\n						for your company regarding to your system.\r\n						This proposal describes the program elements, services, terms, and schedule for it.', 'شركه سوليد متخصصه لوضع الحلول المختلفه لنظامك وذلك من خلال وضع الخطه المناسبه والجدول الزمنى لتنفيذها '),
+(33, 'ab_about_solid', 'Why Solid?', 'لماذا نحن؟'),
+(34, 'ab_content_page', 'Solid Solutions Software Company is a top provider of expert software products.\r\n						We will be glade to provide additional references upon request.', 'شركه سوليد للحلول البرمجيه اولى الشركات فى مجال برمجه تطبيقات الويب وهاتف المحمول والانظمه المدمجه '),
+(35, 'ab_solid', 'Who we are?', 'من نحن؟'),
+(36, 'ab_content_section', 'We understand that business is all about change and that the\r\n						competitive environment is always intense, so we work with you in a practical and flexible way to set the\r\n						right software systems, digital and branding strategies & software solutions that would provide the right\r\n						keys to your success, your glory is our glory.', 'نحن نتفهم أن العمل يدور حول التغيير وأن البيئة التنافسية مكثفة دائمًا ، لذلك نحن نعمل معك بطريقة عملية ومرنة لتعيين أنظمة البرمجيات المناسبة والاستراتيجيات الرقمية والعلامات التجارية وحلول البرمجيات التي من شأنها توفير المفاتيح المناسبة النجاح ، مجدك هو مجدنا.'),
+(39, 'ab_software_house', 'As a software house, Solid was established in 2017 and supported\r\n					by a wealth of knowledge and experience brought together by its team and founders making Solid the local\r\n					creative software house that speaks the language and understands the software market and its uniqueness.', 'تم تأسيس شركة Solid في عام 2017 كدعم برمجيات ودعمتها ثروة من المعرفة والخبرة التي جمعها فريقها ومؤسساها ، مما يجعل Solid من دار البرمجيات الإبداعية المحلية التي تتحدث اللغة وتفهم سوق البرمجيات وتفرده.\r\n'),
+(40, 'ab_experience', 'Since 2017, Solid has been growing and expanding to provide its multiple Software Products\r\n					in Whole Middle East & Indonesia & Turkey.', 'منذ عام 2017 ، بدأت Solid في النمو والتوسع لتوفير منتجات برامجها المتعددة في كل الشرق الأوسط وإندونيسيا وتركيا.\r\n'),
+(41, 'ab_design', 'Our skills coupled with expertise span the advertising space from UI/UX design & Graphic design through\r\n					branding and software solutions And business development & social media marketing. Our strategies combine\r\n					creative concepts,\r\n					media- knowledge along with in- depth industry understanding in order to achieve qualitative and quantitative\r\n					results.', 'تمتد مهاراتنا إلى جانب الخبرة المكتسبة في مساحة الإعلان من تصميم UI / UX وتصميم الجرافيك من خلال حلول العلامات التجارية والبرامج وتطوير الأعمال والتسويق عبر وسائل التواصل الاجتماعي. تجمع استراتيجياتنا بين المفاهيم الإبداعية والمعرفة الإعلامية إلى جانب فهم الصناعة المتعمق من أجل تحقيق النتائج النوعية والكمية.\r\n'),
+(42, 'ho_title4', 'DEGITAL MARKETING\r\n', 'التسويق الالكترونى'),
+(44, 'ab_history', 'Our History', 'تاريخنا'),
+(45, 'co_solid', 'About Us', 'عن الشركه'),
+(46, 'co_connect', 'Connect with us', 'تواص معنا'),
+(47, 'co_free', 'We are here for you , feel free to contact us', 'نحن هنا لخدمتك , لا تتردد فى التواصل معنا'),
+(48, 'co_message', 'Send Message', 'ارسل رسالتك'),
+(49, 'co_contact', 'contact us ', 'تواصل معنا'),
+(50, 'p_title', 'Our Work', 'سابقه الأعمال'),
+(51, 'p_content', 'We take user experience seriously, and our portfolio of work proves that it takes a lot of time, effort and creativity to create apps we are proud of.', 'نحن نتعامل عى الخبره السابقه لدى العميل وعلى ذلك تم بناء أعمالنا السابقه , ونحن فخورين بذلك'),
+(52, 'p_all', 'All', 'كل الأعمال'),
+(53, 'p_web', 'WEB Development', 'تطبيقات الويب'),
+(54, 'p_phone', 'Mobile APPS', 'تطبيقات الهاتف');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `permissions`
+--
+
+DROP TABLE IF EXISTS `permissions`;
+CREATE TABLE IF NOT EXISTS `permissions` (
+  `id` int(11) NOT NULL,
+  `perm_key` varchar(30) NOT NULL,
+  `perm_name` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `permKey` (`perm_key`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE IF NOT EXISTS `users` (
+  `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `ip_address` varchar(45) NOT NULL,
+  `mac` varchar(255) DEFAULT NULL,
+  `role` varchar(255) NOT NULL DEFAULT 'user',
+  `username` varchar(100) DEFAULT NULL,
+  `token` text DEFAULT NULL,
+  `link` text DEFAULT NULL,
+  `password` varchar(255) NOT NULL,
+  `salt` varchar(255) DEFAULT NULL,
+  `email` varchar(254) NOT NULL,
+  `activation_code` varchar(40) DEFAULT NULL,
+  `forgotten_password_code` varchar(40) DEFAULT NULL,
+  `forgotten_password_time` int(11) UNSIGNED DEFAULT NULL,
+  `remember_code` varchar(40) DEFAULT NULL,
+  `created_on` int(11) UNSIGNED NOT NULL,
+  `last_login` int(11) UNSIGNED DEFAULT NULL,
+  `active` tinyint(1) UNSIGNED DEFAULT NULL,
+  `first_name` varchar(50) DEFAULT NULL,
+  `last_name` varchar(50) DEFAULT NULL,
+  `company` varchar(100) DEFAULT NULL,
+  `phone` varchar(20) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=976 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `ip_address`, `mac`, `role`, `username`, `token`, `link`, `password`, `salt`, `email`, `activation_code`, `forgotten_password_code`, `forgotten_password_time`, `remember_code`, `created_on`, `last_login`, `active`, `first_name`, `last_name`, `company`, `phone`) VALUES
+(1, '127.0.0.1', NULL, 'admin', 'adminsuez', NULL, 'https://www.eng-elshaymaa.com/', '$2y$10$ZOSU9l4JuSAf8VN4bLANQO0WxeDtWSnvcYsmvyDPHDOQoodIvN/mW', '', 'adminsuez', '', NULL, NULL, 'IXeSIA1RDGllz.1F9PJNr.', 1268889823, 1633950916, 1, 'Admin', 'istrator', '1', '0'),
+(4, '127.1.1', '02:15:B2:00:00:00', 'user', 'Gamal', 'eZo18-64S3ykLHCxAeSS8l:APA91bFaCHooJT8YGkYu8SKqjZvVEwTXf-3ZMR8wa0Ru9tEQ99a8KqPdYnttM2a0ZKz0lJw6XfpCqn0buq8ii3y4NcThFHdU_mm2rK6ocUK457jf7dXcETtRlnBRoWpPlE0l3Yeb3Lu7', 'https://www.eng-elshaymaa.com/', '$2y$10$I71ax7z7X6mn/xiLLJz1JuXXriiFacw3R.pQMlrMw9Y.a1gos2.56', NULL, 'Gamal', NULL, NULL, NULL, NULL, 1607584718, 1608119964, 1, NULL, NULL, NULL, NULL),
+(6, '127.1.1', '02:15:B2:00:00:00', 'user', 'ahmed', NULL, 'https://www.eng-elshaymaa.com/uploads/6', '$2y$08$8naQUaTlPnXTrVMyA3.Jse6dv6M5gK7QNl/YNeIic8vkNrKnG8TO2', NULL, 'ahmed', NULL, NULL, NULL, NULL, 1608641189, NULL, 1, NULL, NULL, NULL, NULL),
+(8, '127.1.1', '02:15:B2:00:00:00', 'user', 'anas', 'eK_jb40mQci-Jdp5T28X37:APA91bGYSaodFzwT38eRVcYZSzkiRuue2kXgg9aii6nwNsLh-VxSoOwdCtQD313J0siJJbjS2Uu7_aql8xbHoMWf3JtyBFJAWOIbALhwtdfBVsiV6Mjlpu0rGuvN2Wm7x3b6Zjr2lKeg', 'https://www.engelshaymaa.com/8', '$2y$10$0EtBBwCMIB9eqUyKMQFfv.c2KfcmfEFw1gWJUxTIm9K.Ss9GDSHi2', NULL, 'anas', NULL, NULL, NULL, NULL, 1608635638, 1615361540, 1, NULL, NULL, NULL, NULL),
+(9, '127.1.1', '02:15:B2:00:00:00', 'user', 'test', 'eykRzesuSOy3Lad3acxY45:APA91bGJmGXDolBZpNgJADGS-QtLMFQehg45VRdNRKTm0_s2j4xcrxs75wTSDbHxVik_nGgQRDplKqxVhcz9-LCiAJtdV1GcSfb99eznqzcZkn8T305XJi8O1pw1atm6_h9UCyYh3dQn', 'https://www.engelshaymaa.com/9', '$2y$10$zQFnNTkO3.wWRXqyVa9BmepePd.DHo773GSRzpK2THTmfGjAgEkLK', NULL, 'test', NULL, NULL, NULL, NULL, 1608803951, 1613899801, 1, NULL, NULL, NULL, NULL),
+(141, '127.1.1', '04:D6:AA:1C:77:B8', 'user', 'EL RAFEI', NULL, 'https://www.engelshaymaa.com/141', '$2y$08$Akudy.4QVBXK2T.GnymDG.v3kWKJ8cwkEr8KjCOxrHdDOxigtq6sa', NULL, 'EL RAFEI', NULL, NULL, NULL, NULL, 1614772495, NULL, 1, NULL, NULL, NULL, NULL),
+(142, '127.1.1', '04:D6:AA:1C:77:B9', 'user', 'EL RASHIDY', NULL, 'https://www.engelshaymaa.com/142', '$2y$08$ZTZFe/XBJqfduzBMeHMzFO3XTO4jGAGutWBhRn6mUlDayu986XOW2', NULL, 'EL RASHIDY', NULL, NULL, NULL, NULL, 1614772568, NULL, 1, NULL, NULL, NULL, NULL),
+(201, '127.1.1', '04:D6:AA:1C:77:B9', 'user', 'WAHID', 'fRPNBz_eQCKUOVp9iaQGzA:APA91bHOlha4BMhgp8xUH9hfdasCU2prloXttj1nFtz91CWG1igls4MBbyj07mWV9jQbOEDbI3GxhYDZzL3putc5dLmaNuLjBlXPhbsQIm79Tr1XR64kvkzGYQk0Sm1yUi4u4AwZajXU', 'https://www.cmms-site.com.com/201/order_safer.html', '$2y$10$9blfCLQpu9NMR2jYSQH3ledTuYFC61bQTr76PwSXpI8Bzn.YOtDeq', NULL, 'WAHID', NULL, NULL, NULL, NULL, 1614852139, 1614857157, 1, NULL, NULL, NULL, NULL),
+(215, '127.1.1', '04:D6:AA:1C:77:B9', 'user', 'RAOF M', 'cHOgqtThT4ifN-bwM1ixPA:APA91bH5n36ecSLRYrrbG2TIXd_n61JKtPWUQ2GPrh4Ghbdbb1LLVLjfJtBQDHrWc_JuL-VTsGiU73SmHjxR_yl5XFjS8c7Ni7qqGWcKtTwNJiUMtPlUFJqx2sdIcRIBHhAd37drY1OX', 'https://www.cmms-site.com/215/order_safer.html', '$2y$10$fOqxq4AD4eGLmSHOsQMEm.80OsOIr4noArPvbuyfG2nOiL5RBWDdy', NULL, 'RAOF M', NULL, NULL, NULL, NULL, 1616312905, 1616418687, 1, NULL, NULL, NULL, NULL),
+(271, '127.1.1', '04:D6:AA:1C:77:B9', 'user', 'EL SAWAF', 'fRPNBz_eQCKUOVp9iaQGzA:APA91bHOlha4BMhgp8xUH9hfdasCU2prloXttj1nFtz91CWG1igls4MBbyj07mWV9jQbOEDbI3GxhYDZzL3putc5dLmaNuLjBlXPhbsQIm79Tr1XR64kvkzGYQk0Sm1yUi4u4AwZajXU', 'https://www.engelshaymaa.com/271/order_safer.html', '$2y$10$8Et3I4KwS5gcipvqbePCw.p0iib1WUsf1MxIq84xxzK9lx2RWKjg2', NULL, 'EL SAWAF', NULL, NULL, NULL, NULL, 1614852039, 1614857129, 1, NULL, NULL, NULL, NULL),
+(753, '127.1.1', '04:D6:AA:1C:77:B9', 'user', 'AHMED REDA', NULL, 'https://www.engelshaymaa.com/753', '$2y$08$vIc7XaMN09kPSIieniYXFuvXW0218b699p.fQONPd/L5hFHp7LWTO', NULL, 'AHMED REDA', NULL, NULL, NULL, NULL, 1615284033, NULL, 1, NULL, NULL, NULL, NULL),
+(832, '127.1.1', '04:D6:AA:1C:77:B9', 'user', 'EL GHANNAM', 'fRPNBz_eQCKUOVp9iaQGzA:APA91bHOlha4BMhgp8xUH9hfdasCU2prloXttj1nFtz91CWG1igls4MBbyj07mWV9jQbOEDbI3GxhYDZzL3putc5dLmaNuLjBlXPhbsQIm79Tr1XR64kvkzGYQk0Sm1yUi4u4AwZajXU', 'https://www.engelshaymaa.com/832/order_safer.html', '$2y$10$Yakrk6N0mne5oePbw56dRuU7.AY/GGxO5NmB5xZi4ZMxlRktjuUvC', NULL, 'EL GHANNAM', NULL, NULL, NULL, NULL, 1614838325, 1614851997, 1, NULL, NULL, NULL, NULL),
+(975, '127.1.1', '02:15:B2:00:00:00', 'user', 'AMR FAYEZ', 'eK_jb40mQci-Jdp5T28X37:APA91bGYSaodFzwT38eRVcYZSzkiRuue2kXgg9aii6nwNsLh-VxSoOwdCtQD313J0siJJbjS2Uu7_aql8xbHoMWf3JtyBFJAWOIbALhwtdfBVsiV6Mjlpu0rGuvN2Wm7x3b6Zjr2lKeg', 'https://www.engelshaymaa.com/975/order_safer.html', '$2y$10$qyQRnEUUM6uP7BN7Bztw5eDeyJyP7RKOYKr.lCAosTV.uG.1iB4uG', NULL, 'AMR FAYEZ', NULL, NULL, NULL, NULL, 1615207253, 1615365305, 1, NULL, NULL, NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users_groups`
+--
+
+DROP TABLE IF EXISTS `users_groups`;
+CREATE TABLE IF NOT EXISTS `users_groups` (
+  `id` int(11) UNSIGNED NOT NULL,
+  `user_id` int(11) UNSIGNED NOT NULL,
+  `group_id` mediumint(8) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `users_groups`
+--
+
+INSERT INTO `users_groups` (`id`, `user_id`, `group_id`) VALUES
+(1, 1, 1),
+(2, 1, 2),
+(0, 3, 2),
+(0, 4, 2),
+(0, 6, 2);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users_permissions`
+--
+
+DROP TABLE IF EXISTS `users_permissions`;
+CREATE TABLE IF NOT EXISTS `users_permissions` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `perm_id` int(11) NOT NULL,
+  `value` tinyint(1) NOT NULL DEFAULT 0,
+  `created_at` int(11) NOT NULL,
+  `updated_at` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+--
+-- Database: `test`
+--
+CREATE DATABASE IF NOT EXISTS `test` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `test`;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -221,13 +221,23 @@
                 <tr>
                     <div class="form-group ">
 
-                        <label for="exampleInputEmail1">{{__('messages.Offer details ar')}}</label>
-                        <input type="textarea" class="form-control" name="details_ar"  placeholder="{{__('messages.Offer details ar')}}">
-                        @error('details_ar')
+                        <label for="exampleInputEmail1">{{__('messages.Offer Name ar')}}</label>
+                        <input type="textarea" class="form-control" name="name_ar"  placeholder="{{__('messages.Offer Name ar')}}">
+                        @error('name_ar')
                         <small class="form-text text-danger">{{$message}}</small>
                         @enderror
                      </div>
                     </tr>
+                    <tr>
+                        <div class="form-group ">
+    
+                            <label for="exampleInputEmail1">{{__('messages.Offer details ar')}}</label>
+                            <input type="textarea" class="form-control" name="details_ar"  placeholder="{{__('messages.Offer details ar')}}">
+                            @error('details_ar')
+                            <small class="form-text text-danger">{{$message}}</small>
+                            @enderror
+                         </div>
+                        </tr>
                     <tr>
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">{{__('messages.search')}}</button>
 
