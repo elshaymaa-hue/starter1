@@ -68,7 +68,6 @@ return[
     'monitor_date'=>'تاريخ متابعة',
     'additions'=>'مرفقات',
     'search'=>'ابحث',
-    'search document'=>'ابحث عن مستند'
-
-
+    'search document'=>'ابحث عن مستند',
+    'created_at'=>'تاريخ الانشاء'
 ];
