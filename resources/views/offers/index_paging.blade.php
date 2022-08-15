@@ -100,10 +100,10 @@
             {{-- <li class="nav-item">
                 <a class="nav-link" href="{{route('offers.next_page') }}">next page</a>
             </li> --}}
-{{--            <li class="nav-item">--}}
-{{--                <a class="nav-link" href="{{ url('/exportpdf') }}">downloadpdf </a>--}}
-{{--            </li>--}}
-            @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+           <li class="nav-item">
+               <a class="nav-link" href="{{ url('/excel') }}">EXPORT EXCEL </a>
+            </li>
+         {{--   @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
                 <li class="nav-item active">
                     <a class="nav-link"
                        href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}"> {{ $properties['native'] }}

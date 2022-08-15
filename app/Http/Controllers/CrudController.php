@@ -27,7 +27,7 @@ class CrudController extends Controller
 
     public function getOffers()
     {
-       return Offer::select('id', 'name_'.LaravelLocalization::getCurrentLocale().' as name','details_'.LaravelLocalization::getCurrentLocale().' as details','price','reply_on','additions')->get();
+       return Offer::select('id', 'name_'.LaravelLocalization::getCurrentLocale().' as name','details_'.LaravelLocalization::getCurrentLocale().' as details','price','reply_on','additions','link')->get();
       //  return Offer::select('id', 'name_ar','name_en','details_ar', 'details_en','price')->get();
     }
 
@@ -65,7 +65,7 @@ class CrudController extends Controller
             'reply_on',
             'require_monitor',
             'monitor_date',
-            'additions'
+            'link'
             )->get();
             $contents=response()->json($offers, 202,
             [
@@ -104,7 +104,7 @@ class CrudController extends Controller
             if($in)  $file_name = $dir.'-'.$in.'-'.$date .'.' . $file_extension;
             if($out)  $file_name = $dir.'-'.$out.'-'.$date .'.' . $file_extension;
             $path = 'images/'.$dir.'/'.$sub_dir;
-        
+            $link = '=HYPERLINK("D:/wamp64/www/starter2/public/images/'.$dir.'/'.$sub_dir.'/'.$file_name.'","'.$file_name.'")';
         
             $request->photo->move($path, $file_name);
 
@@ -134,6 +134,7 @@ class CrudController extends Controller
 //            'details_'. LaravelLocalization::getCurrentLocale()=>$request->details_. LaravelLocalization::getCurrentLocale(),
 //
 //        ]);
+        
         offer::create([
             'photo' => $file_name,
             'name_ar'=>$request->name_ar,
@@ -148,8 +149,9 @@ class CrudController extends Controller
             'status'=>$request->status,
             'reply_on'=>$request->reply_on,
             'require_monitor'=>$request->require_monitor,
-            'monitor_date'=>$request->monitor_date            ,
-            'additions'=>$additions
+            'monitor_date'=>$request->monitor_date,
+            'additions'=>$additions,
+            'link'=>$link
 
 
         ]);
@@ -319,12 +321,13 @@ class CrudController extends Controller
             $file_name = $dir.'-'.$date .'.' . $file_extension;
             if($in)  $file_name = $dir.'-'.$in.'-'.$date .'.' . $file_extension;
             if($out)  $file_name = $dir.'-'.$out.'-'.$date .'.' . $file_extension;
-
+           
             //$path = 'images/'.$dir;
             $path = 'images/'.$dir.'/'.$sub_dir;
+           
 //            $path = 'images/offers';
             $request->photo->move($path, $file_name);
-           
+            $link = '=HYPERLINK("D:/wamp64/www/starter2/public/images/'.$dir.'/'.$sub_dir.'/'.$file_name.'","'.$file_name.'")';
             // $path1 = 'images/'.$dir;
             // //            $path = 'images/offers';
             //  $request->photo->move($path1, $file_name);
@@ -374,7 +377,8 @@ class CrudController extends Controller
            'reply_on'=>$request->reply_on,
            'require_monitor'=>$request->require_monitor,
            'monitor_date'=>$request->monitor_date,
-           'additions'=>$additions
+           'additions'=>$additions,
+           'link'=> $link
         ]);
 //
         return redirect()->back()->with(['success' => $file_name.'-'.' تم التحديث بنجاح ']);

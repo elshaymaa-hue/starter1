@@ -22,9 +22,11 @@ class OffersExport implements FromCollection
         $input=request()->input('input');
         $output=request()->input('output');
         $type=request()->input('type');
+
+       
         // return Offer::where('input','=',$input)->orderBy('id')->get();
         if ($name)
-            return Offer::where('directory','=',$name)->orderBy('id')->get();
+            return Offer::where('directory','=',$name)->orderBy('created_at')->get();
         if ($input)
             return Offer::where('input','=',$input)->orderBy('id')->get();
         if($output)
