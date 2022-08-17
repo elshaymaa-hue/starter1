@@ -239,11 +239,16 @@
                          </div>
                         </tr>
                     <tr>
+                    <td>
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">{{__('messages.search')}}</button>
 
                      {{--            <input class="form-control mr-sm-2"  type="search" name="search_" placeholder="Search" aria-label="Search">--}}
-
-                   <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Export to Excel </button>
+                    </td>
+                   {{-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit"> </button> --}}
+                   <td>
+                    <a href="{{route('offers.export')}}" class="btn btn-danger"> Export to Excel</a>
+                 </td>
+    
                     </tr>
                     </table>
                 </form>

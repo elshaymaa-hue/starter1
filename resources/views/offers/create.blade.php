@@ -314,7 +314,13 @@ integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jI
                         
                     </table>
                     <tr>
+                        <td>
                         <button type="submit" class="btn btn-primary">{{__('messages.Save Offer')}}</button>
+                        </td>
+                        <td>
+                            <a href="{{route('offers.export')}}" class="btn btn-danger"> Export to Excel</a>
+                         </td>
+            
                     </tr>
                 </form>
             </div>

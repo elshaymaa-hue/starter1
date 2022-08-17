@@ -310,7 +310,13 @@
 
         </table>
         <tr>
+            <td>
             <button type="submit" class="btn btn-primary">{{__('messages.update Offer')}}</button>
+            </td>
+            <td>
+                <a href="{{route('offers.export')}}" class="btn btn-danger"> Export to Excel</a>
+             </td>
+
             </tr>
         </form>
 
