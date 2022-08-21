@@ -148,7 +148,7 @@
 
                     <br/>
                     <select name ="search_">
-                        <option value=" "> </option>
+                        <option value=" ">  </option>
                         <option value="vtms">vtms</option>
                         <option value="security">security</option>
                         <option value="radars">radars</option>
@@ -162,6 +162,23 @@
                         <label for="exampleInputEmail1">{{__('messages.input')}}</label>
                         <input type="text" class="form-control" name ="input"  aria-describedby="emailHelp" placeholder="{{__('messages.input')}}">
                         @error('input')
+                        <small class="form-text text-danger">{{$message}}</small>
+                        @enderror
+                    </div>
+                    <div class="form-group ">
+
+                        <label for="exampleInputEmail1">{{__('messages.status')}}</label>
+                        <select name ="status">
+                            <option value=""></option>
+                            <option value="done">إنتهى</option>
+                            <option value="progress">قيد التنفيذ</option>
+                            <option value="start">تخطيط</option>
+                            <option value="canceled">إلغاء</option>
+                            <option value="waiting">انتظار</option>
+                            <option value="paused">معلق</option>
+                            <option value="transferred">محول</option>
+                        </select>
+                        @error('status')
                         <small class="form-text text-danger">{{$message}}</small>
                         @enderror
                     </div>
