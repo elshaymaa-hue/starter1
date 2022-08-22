@@ -17,7 +17,7 @@ class OffersExport implements FromCollection
     public function collection()
     {
 
-
+        return Offer::get();
         $name =request()->input('search_');
         $input=request()->input('input');
         $output=request()->input('output');

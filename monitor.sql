@@ -3,8 +3,8 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Aug 21, 2022 at 07:02 AM
--- Server version: 5.7.31
+-- Generation Time: Aug 22, 2022 at 07:37 AM
+-- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -24,17 +24,151 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `bussinessaffairs`
+--
+
+DROP TABLE IF EXISTS `bussinessaffairs`;
+CREATE TABLE IF NOT EXISTS `bussinessaffairs` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `SubjectID` int(11) DEFAULT NULL,
+  `SectionID` int(11) DEFAULT NULL,
+  `bussinessid` int(11) DEFAULT NULL,
+  `date` varchar(45) DEFAULT NULL,
+  `Actions` char(100) DEFAULT NULL,
+  `remarks` char(255) DEFAULT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `bussinessaffairs`
+--
+
+INSERT INTO `bussinessaffairs` (`ID`, `SubjectID`, `SectionID`, `bussinessid`, `date`, `Actions`, `remarks`) VALUES
+(1, 1, 1, 1, 'أغسطس 2011', 'توريد عدد 7 محطات رادار(بورفؤاد - القبة - الكاب - الارسال - فنارة - جنيفة -بورتوفيق)', 'تواريخ التوريد و التركيب لكل محطةواسم الشركة الموردة وشروط التوريد بنود التوريد'),
+(2, 1, 1, 1, 'أغسطس 2014', 'توريد عدد 7 محطات رادار(بورفؤاد - القبة - الكاب - الارسال - فنارة - جنيفة -بورتوفيق)', 'تواريخ التوريد و التركيب لكل محطةواسم الشركة الموردة وشروط التوريد بنود التوريد'),
+(3, 1, 1, 1, 'أغسطس 2015', 'توريد عدد 7 محطات رادار(بورفؤاد - القبة - الكاب - الارسال - فنارة - جنيفة -بورتوفيق)', 'تواريخ التوريد و التركيب لكل محطةواسم الشركة الموردة وشروط التوريد بنود التوريد'),
+(4, 1, 1, 2, 'ابريل 2015', 'تركيب عدد 6 محطات (بورفؤاد - القبة - الكاب - الارسال - جنيفة - بورتوفيق)', 'تواريخ التوريد و التركيب لكل محطةواسم الشركة الموردة وشروط التوريد بنود التوريد'),
+(5, 1, 1, 3, 'يوليو 2017', 'توريد عدد 5 محطات رادار (راس العش - البلاح - شرق الفردان - طوسون - الشلوفة )', 'تواريخ التوريد و التركيب لكل محطةواسم الشركة الموردة وشروط التوريد بنود التوريد'),
+(6, 1, 1, 4, 'أغسطس 2017', 'تركيب عدد 3 محطات رادار(البلاج - طوسون - الشلوفة)', 'تواريخ التوريد و التركيب لكل محطةواسم الشركة الموردة وشروط التوريد بنود التوريد'),
+(7, 1, 1, 5, 'فبراير 2020', 'تركيب رادار  ( فنارة - رأس العش - شرق الفردان)', 'تواريخ التوريد و التركيب لكل محطةواسم الشركة الموردة وشروط التوريد بنود التوريد'),
+(8, 1, 1, 6, 'خلال 2020/2021', 'مع مندوب GET  وكيل الهيئة الاقتصادية للمشروعات تم عمل اختبارات (فنارة - شرق الفردان -راس العش) باقى', 'إشارة للشركة رقم 883 بتاريخ /9/12/2021'),
+(9, 1, 1, 7, 'نوفمبر 2021', 'عدد 2 امر توريد من شركات (TERMA- SPERRY MARINE) و في انتظار توريدهم هي قطع غيار مطلوبة لعمل الصيانات', 'استثناء كارتة CPRD تعمل التموين على توفيرها'),
+(10, 2, 1, 1, 'أغسطس 2012', 'قامت الشركة الفرنسية (الهيئة الاقتصادية للمشروعات بالمخابرات العامة) بعمل :', 'المحطات الأساسية والمضافة وتاريخ التعاقد على ال 5 محطات'),
+(11, 2, 1, 1, 'أغسطس 2012', '1- مسح ودراسة ميدانية للتغطية الردارية لقناة السوسي بالكامل', 'المحطات الأساسية والمضافة وتاريخ التعاقد على ال 5 محطات'),
+(12, 2, 1, 1, 'أغسطس 2012', '2- نتج عنها 5 مناطق عمياء للشبكة الردارية المكونة من :', 'المحطات الأساسية والمضافة وتاريخ التعاقد على ال 5 محطات'),
+(13, 2, 1, 1, 'أغسطس 2012', 'عدد 8 محطات رادار وبالتالي تم تعديل التعاقد بإضافة عدد  5 محطات ردارية إضافية وأصبحت عدد المحطات 13', 'المحطات الأساسية والمضافة وتاريخ التعاقد على ال 5 محطات');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `departments`
+--
+
+DROP TABLE IF EXISTS `departments`;
+CREATE TABLE IF NOT EXISTS `departments` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) NOT NULL,
+  `task` varchar(100) NOT NULL,
+  `manager` varchar(100) NOT NULL,
+  `created_at` datetime DEFAULT current_timestamp(),
+  `updated_at` datetime DEFAULT current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `departments`
+--
+
+INSERT INTO `departments` (`id`, `name`, `task`, `manager`, `created_at`, `updated_at`) VALUES
+(1, 'vtms', 'vtms', 'waleed', '2022-03-01 12:16:43', '2022-03-01 12:16:43'),
+(2, 'vtms', 'vtms', 'waleed', '2022-03-02 08:53:18', '2022-03-02 08:53:18');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `documents`
+--
+
+DROP TABLE IF EXISTS `documents`;
+CREATE TABLE IF NOT EXISTS `documents` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) DEFAULT NULL,
+  `contents` varchar(100) NOT NULL,
+  `geha` varchar(100) DEFAULT NULL,
+  `created_at` datetime NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `photo` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `documents`
+--
+
+INSERT INTO `documents` (`id`, `name`, `contents`, `geha`, `created_at`, `updated_at`, `photo`) VALUES
+(1, '675', 'reply', NULL, '2022-03-01 12:30:30', '2022-03-01 10:30:30', ''),
+(2, '657', 'reply', NULL, '2022-03-02 06:53:39', '2022-03-02 04:53:39', ''),
+(3, '658', 'store', NULL, '2022-03-02 07:00:45', '2022-03-02 05:00:45', ''),
+(4, '659', 'store2', NULL, '2022-03-02 07:02:51', '2022-03-02 05:02:51', ''),
+(5, '660', 'store3', NULL, '2022-03-02 07:03:26', '2022-03-02 05:03:26', ''),
+(6, '660', 'store3', NULL, '2022-03-02 07:05:43', '2022-03-02 05:05:43', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `failed_jobs`
+--
+
+DROP TABLE IF EXISTS `failed_jobs`;
+CREATE TABLE IF NOT EXISTS `failed_jobs` (
+  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `connection` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `queue` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `payload` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `exception` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `failed_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `migrations`
+--
+
+DROP TABLE IF EXISTS `migrations`;
+CREATE TABLE IF NOT EXISTS `migrations` (
+  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `migration` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `batch` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `migrations`
+--
+
+INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
+(1, '2014_10_12_000000_create_users_table', 1),
+(2, '2014_10_12_100000_create_password_resets_table', 1),
+(3, '2017_06_02_182856_create_posts_table', 1),
+(4, '2017_06_03_144733_add_user_id_to_posts', 1),
+(5, '2017_06_03_211549_add_cover_image_to_posts', 1);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `offers`
 --
 
 DROP TABLE IF EXISTS `offers`;
 CREATE TABLE IF NOT EXISTS `offers` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name_en` varchar(255) DEFAULT NULL,
   `price` varchar(255) DEFAULT NULL,
   `photo` varchar(100) DEFAULT NULL,
-  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `created_at` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `updated_at` timestamp NULL DEFAULT current_timestamp(),
   `details_en` varchar(1000) DEFAULT NULL,
   `name_ar` varchar(255) DEFAULT NULL,
   `details_ar` varchar(1000) DEFAULT NULL,
@@ -49,7 +183,7 @@ CREATE TABLE IF NOT EXISTS `offers` (
   `additions` varchar(100) NOT NULL,
   `link` varchar(1000) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=181 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `offers`
@@ -220,7 +354,311 @@ INSERT INTO `offers` (`id`, `name_en`, `price`, `photo`, `created_at`, `updated_
 (174, '9-8-22', NULL, 'security-20221088-9-8-22.pdf', '2022-08-09 11:50:12', '2022-08-09 11:50:12', NULL, 'تأمين المستشفى', 'موافاتهم بتكلفة إصلاح التلفيات بسبب قيام مندوب شركة الشروق بعمل صيانة للتكييف المركزى والتى نتج عنها تعطل إحدى كاميرات مبنى الإستقبال والطوارىء بمستشفى نمرة 6 لخصمها من مستحقات الشركة', 'security', '20221088', NULL, 'إشاره كتابيه', 'done', '2022573', NULL, NULL, 'security-20221088-9-8-22_a.pdf', NULL),
 (175, '7-04-22', NULL, 'security-2022572-7-04-22.pdf', '2022-08-09 12:19:43', '2022-08-09 12:19:43', NULL, 'تأمين المستشفى', 'بخصوص توريد وتركيب وتشغيل منظومة مراقبة للمراكز الطبيه ببورسعيد والسويس وللموافقة على توفير عدد/ 29 كاميرا Outdoor وعدد/21 كاميرا indoor', 'security', '2022572', NULL, 'إشاره كتابيه', 'done', NULL, NULL, NULL, '', NULL),
 (176, '10-08-22', NULL, 'radars-20221097-10-08-22.pdf', '2022-08-11 08:54:41', '2022-08-11 07:11:28', NULL, 'صيانة برج القنطرة', 'تأكل بقواعد الإضاءة التحذيرية المثبتة على البرج بمحطة القنطرة', 'radars', '20221097', NULL, 'إشاره كتابيه', 'done', '2022251', NULL, NULL, 'radars-20221097-10-08-22_a.pdf', NULL),
-(177, '4-04-22', NULL, 'radars-202251-4-04-22.pdf', '2022-04-04 08:53:45', '2022-08-11 08:53:45', NULL, 'صيانة برج القنطرة', 'التنبيه بوجود صدأ وتآكل شديد بقواعد الإضاءة التحذيرية المثبتة أعلى بلكونة الكاميرا الملاحية أعلى برج الإشارة بمحطة القنطرة', 'radars', NULL, '202251', 'إشاره كتابيه', 'done', NULL, NULL, NULL, '', NULL);
+(177, '4-04-22', NULL, 'radars-202251-4-04-22.pdf', '2022-04-04 08:53:45', '2022-08-11 08:53:45', NULL, 'صيانة برج القنطرة', 'التنبيه بوجود صدأ وتآكل شديد بقواعد الإضاءة التحذيرية المثبتة أعلى بلكونة الكاميرا الملاحية أعلى برج الإشارة بمحطة القنطرة', 'radars', NULL, '202251', 'إشاره كتابيه', 'done', NULL, NULL, NULL, '', NULL),
+(178, '21-08-22', NULL, 'technical_office-20221137-21-08-22.pdf', '2022-08-22 07:33:37', '2022-08-22 07:33:37', NULL, 'تركيب هواتف', 'تم التنسيق مع مندوب قسم السنترالات والتراسل ومندوب قسم الشبكات ومندوبكم السيد/ محمد السيد حمدون وانتهت المعاينه لعمل مسار للربط بين غرفة الكشف اسفل الرادار وغرفه الكشف فى مدخل المبنى', 'technical_office', '20221137', NULL, 'إشاره كتابيه', 'done', NULL, NULL, NULL, '', '=HYPERLINK(\"D:/wamp64/www/starter2/public/images/technical_office/تركيب هواتف/technical_office-20221137-21-08-22.pdf\",\"technical_office-20221137-21-08-22.pdf\")'),
+(179, '21-08-22', NULL, 'vtms-20221139-21-08-22.pdf', '2022-08-22 07:36:05', '2022-08-22 07:36:05', NULL, 'تطوير مركز الحركة', 'نقل خط الربط مع مجلس الوزراء والموجود حالياً بالدور التاسع بمبنى الإرشاد الى المركز الجديد التنسيق مع المراقبة الإلكترونية لتجهيز خطوط الربط اللأزمة توصيل أحد أجهزة الكمبيوتر بالمركز الجديد بشبكة ECM الحاصة بالهيئة', 'vtms', '20221139', NULL, 'إشاره كتابيه', 'done', NULL, NULL, NULL, '', '=HYPERLINK(\"D:/wamp64/www/starter2/public/images/vtms/تطوير مركز الحركة/vtms-20221139-21-08-22.pdf\",\"vtms-20221139-21-08-22.pdf\")'),
+(180, '21-08-22', NULL, 'power-20221138-21-08-22.pdf', '2022-08-22 07:37:14', '2022-08-22 07:37:14', NULL, 'القوى -الطاقة المتجددة', 'تم مخاطبه ادارة الاشغال باشارة رقم 623 بتاريخ 10/5/2022 لعمل مسار خارجى الذى تم معاينته بمعرفة مندوب ادارة الاتصالات والاشغال ولم يتم الانتهاء من الاعمال المطلوبه', 'power', '20221138', NULL, 'إشاره كتابيه', 'done', NULL, NULL, NULL, '', '=HYPERLINK(\"D:/wamp64/www/starter2/public/images/power/القوى -الطاقة المتجددة/power-20221138-21-08-22.pdf\",\"power-20221138-21-08-22.pdf\")');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `password_resets`
+--
+
+DROP TABLE IF EXISTS `password_resets`;
+CREATE TABLE IF NOT EXISTS `password_resets` (
+  `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `token` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  KEY `password_resets_email_index` (`email`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `posts`
+--
+
+DROP TABLE IF EXISTS `posts`;
+CREATE TABLE IF NOT EXISTS `posts` (
+  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `title` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `body` mediumtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `user_id` int(11) NOT NULL,
+  `cover_image` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `power_station`
+--
+
+DROP TABLE IF EXISTS `power_station`;
+CREATE TABLE IF NOT EXISTS `power_station` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `station_name` varchar(100) DEFAULT NULL,
+  `UpsSttp` tinyint(1) DEFAULT NULL,
+  `UpsRadar` tinyint(1) DEFAULT NULL,
+  `ContractUPS` varchar(100) DEFAULT NULL,
+  `UpslInstallation` varchar(100) DEFAULT NULL,
+  `PreDeliveryUPS` varchar(100) DEFAULT NULL,
+  `FinalDeliveryUPS` varchar(100) DEFAULT NULL,
+  `StatusRatioRadar` varchar(50) DEFAULT NULL,
+  `StatusRatioSTTB` varchar(50) DEFAULT NULL,
+  `LastMessage` varchar(100) DEFAULT NULL,
+  `Desil` varchar(100) DEFAULT NULL,
+  `DeisilInstallation` varchar(45) DEFAULT NULL,
+  `ContractDesil` varchar(100) DEFAULT NULL,
+  `PreDeliveryDesil` varchar(100) DEFAULT NULL,
+  `FinalDeliveryDesil` varchar(100) DEFAULT NULL,
+  `ATS1Transit` varchar(100) DEFAULT NULL,
+  `IsolationTransformer` varchar(100) DEFAULT NULL,
+  `ATS2VTMS` varchar(100) DEFAULT NULL,
+  `AvrRadar` varchar(100) DEFAULT NULL,
+  `SurgeRadar` varchar(100) DEFAULT NULL,
+  `TawkitatSurgeProtect` varchar(100) DEFAULT NULL,
+  `RadarSurgeProtect` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `power_station`
+--
+
+INSERT INTO `power_station` (`id`, `station_name`, `UpsSttp`, `UpsRadar`, `ContractUPS`, `UpslInstallation`, `PreDeliveryUPS`, `FinalDeliveryUPS`, `StatusRatioRadar`, `StatusRatioSTTB`, `LastMessage`, `Desil`, `DeisilInstallation`, `ContractDesil`, `PreDeliveryDesil`, `FinalDeliveryDesil`, `ATS1Transit`, `IsolationTransformer`, `ATS2VTMS`, `AvrRadar`, `SurgeRadar`, `TawkitatSurgeProtect`, `RadarSurgeProtect`) VALUES
+(1, 'الجونة', 0, 0, '−', '−', 'لم يتم', 'لم يتم', 'لم يتم', '-', '-', '30 KVA', '2014', '2019', 'لم يتم', '2016', 'لايوجد', '2022', '2019', 'لايوجد', 'لايوجد', 'قيد التوريد', ''),
+(2, 'القبة', 0, 0, '−', '−', 'لم يتم', 'لم يتم', 'لدى شركة جيت للإصلاح', '−', '−', '100 KVA', '2014', '2019', 'لم يتم', '2016', 'لايوجد', '2022', '2019', 'لايوجد', 'تم الاستلام  وجارى التركيب)', 'لم يتم', 'لم يتم'),
+(3, 'الرسوة', 0, 0, '√', '√', '√', '√', '√', '√', '√', 'قيد التوريد (امر توريد بتاريخ 3-3-2022)مدة التوريد 5 شخور)', '−', '−', '−', '−', 'لايوجد', 'تم استلامه ولكن يركب بعد توريد المولد', 'جاى التوريد', 'لايوجد', 'لايوجد', 'جارى التوريد', 'جارى التركيب'),
+(4, 'راس العش', 0, 0, '−', '−', 'لم يتم', 'لم يتم', 'لدى شركة جيت للإصلاح', '−', '−', '30 KVA', '2014', '2015', 'لم يتم', '2016', '2020', 'تم التركيب', '2015', '2021', '2022', 'جارى التوريد', 'جارى التركيب'),
+(5, 'التينة', 0, 0, '−', '−', 'لم يتم', 'لم يتم', 'لم يتم', '−', '−', '30 KVA', '2014', '2015', 'لم يتم', '2015', '2020', 'جارى التركيب', '2015', '2021', '2022', 'تم التركيب', 'جارى التركيب'),
+(6, 'الكاب', 0, 0, '−', '−', 'لم يتم', 'لم يتم', 'لم يتم', '−', '−', '30 KVA', '2012', '2012', 'لم يتم', '2013', '2020', 'تم التركيب', '2012', '2021', '2022', 'جارى التوريد', 'جارى التركيب'),
+(7, 'القنطرة', 0, 0, '−', '−', 'لم يتم', 'لم يتم', 'لدى شركة جيت للإصلاح', '−', '−', '(تم طلب تغيره في اللميزانية30 KVA', '1994', '1994', 'لم يتم', '1995', '2020', 'تم التركيب', '1994', '2021', '2021', 'جارى التوريد', 'جارى التركيب'),
+(8, 'البلاح', 0, 0, '−', '−', 'لم يتم', 'لم يتم', 'لدى شركة جيت للإصلاح', '−', '−', '30 KVA', '2014', '2015', 'لم يتم', '2016', '2020', 'تم التركيب', '2015', '2021', '2021', 'جارى التوريد', 'جارى التركيب'),
+(9, 'الفردان', 0, 0, '−', '−', 'لم يتم', 'لم يتم', 'لم يتم', '−', '−', '30 KVA', '2014', '2015', 'لم يتم', '2016', '2020', 'جارى التركيب', '2015', '−', '−', 'جارى التوريد', 'جارى التركيب'),
+(10, 'المارينا', 0, 0, '−', '−', 'لم يتم', 'لم يتم', 'لم يتم', '−', '−', '−', '−', '−', 'لم يتم', '−', '2020', 'تم التركيب', '−', '−', '−', 'جارى التوريد', 'جارى التركيب'),
+(11, 'طوسون', 0, 0, '−', '−', 'لم يتم', 'لم يتم', 'لم يتم', '−', '−', '30 KVA', '2014', '2015', 'لم يتم', '2016', '2020', 'تم التركيب', '2015', '2021', '2022', 'جارى التوريد', 'جارى التركيب'),
+(12, 'الدفرسوار', 0, 0, '−', '−', 'لم يتم', 'لم يتم', 'لم يتم', '−', '−', '30 KVA', '2014', '2015', 'لم يتم', '2016', '2020', 'جارى التركيب', '2015', '−', '−', 'جارى التوريد', 'جارى التركيب'),
+(13, 'كبريت', 0, 0, '−', '−', 'لم يتم', 'لم يتم', 'لم يتم', '−', '−', '30 KVA', '2014', '2015', 'لم يتم', '2016', '2020', 'جارى التركيب', '2015', '−', '−', 'جارى التوريد', 'جارى التركيب'),
+(14, 'جنيفة', 0, 0, '−', '−', 'لم يتم', 'لم يتم', 'لم يتم', '−', '−', '30 KVA', '2012', '2012', 'لم يتم', '2013', '2020', 'تم التركيب', '2013', '2021', '2022', 'تم التركيب', 'جارى التركيب'),
+(15, 'الشلوفة', 0, 0, '−', '−', 'لم يتم', 'لم يتم', 'لم يتم', '−', '−', '30 KVA', '2014', '2015', 'لم يتم', '2016', '2020', 'تم التركيب', '2015', '2021', '2021', 'جارى التوريد', 'جارى التركيب'),
+(16, 'بورتوفيق', 0, 0, '−', '−', 'لم يتم', 'لم يتم', 'لايعمل', '−', '−', '30 KVA', '2012', '2012', 'لم يتم', '2013', 'لايوجد', 'تم التركيب', '2013', '2021', '2021', '−', '−'),
+(17, 'فنارة', 0, 0, '−', '−', 'لم يتم', 'لم يتم', 'لدى شركة جيت للإصلاح', '−', '−', '100 KVA', '2016', '2018', 'لم يتم', '2019', 'لايوجد', 'تم التركيب', '2018', '2021', '2021', 'لايوجد', 'لايوجد'),
+(18, 'شرق الفردان', 0, 0, '−', '−', 'لم يتم', 'لم يتم', 'لم يتم', '−', '−', '100 KVA', '2016', '2018', 'لم يتم', '2019', 'لايوجد', 'تم التركيب', '2018', 'لايحتاج تم تريب نظام الطاقة المتجددة', 'جارى التركيب', 'لايوجد', 'لايوجد'),
+(19, 'الارسال', 0, 0, '−', '−', 'لم يتم', 'لم يتم', 'لم يتم', '−', '−', '30 KVA', '1996 مطلوب تغييره', '1996', 'لم يتم', '1996', 'لايوجد', 'تم التركيب', '1996', '2021', '2022', 'لايوجد', 'لايوجد'),
+(20, 'بورفؤاد', 0, 0, '−', '−', 'لم يتم', 'لم يتم', 'لم يتم', '−', '−', '30 KVA', '2012', '2012', 'لم يتم', '2013', 'لايوجد', 'تم التركيب', '2012', '2022', '2021', 'لايوجد', 'لايوجد');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `power_stations`
+--
+
+DROP TABLE IF EXISTS `power_stations`;
+CREATE TABLE IF NOT EXISTS `power_stations` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `station_name` varchar(100) DEFAULT NULL,
+  `UpsSttp` varchar(100) DEFAULT NULL,
+  `UpsRadar` varchar(100) DEFAULT NULL,
+  `ContractUPS` varchar(100) DEFAULT NULL,
+  `UpslInstallation` varchar(100) DEFAULT NULL,
+  `PreDeliveryUPS` varchar(100) DEFAULT NULL,
+  `FinalDeliveryUPS` varchar(100) DEFAULT NULL,
+  `StatusRatioRadar` varchar(50) DEFAULT NULL,
+  `StatusRatioSTTB` varchar(50) DEFAULT NULL,
+  `LastMessage` varchar(100) DEFAULT NULL,
+  `Desil` varchar(100) DEFAULT NULL,
+  `DeisilInstallation` varchar(45) DEFAULT NULL,
+  `ContractDesil` varchar(100) DEFAULT NULL,
+  `PreDeliveryDesil` varchar(100) DEFAULT NULL,
+  `FinalDeliveryDesil` varchar(100) DEFAULT NULL,
+  `ATS1Transit` varchar(100) DEFAULT NULL,
+  `IsolationTransformer` varchar(100) DEFAULT NULL,
+  `ATS2VTMS` varchar(100) DEFAULT NULL,
+  `AvrRadar` varchar(100) DEFAULT NULL,
+  `SurgeRadar` varchar(100) DEFAULT NULL,
+  `TawkitatSurgeProtect` varchar(100) DEFAULT NULL,
+  `RadarSurgeProtect` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `power_stations`
+--
+
+INSERT INTO `power_stations` (`id`, `station_name`, `UpsSttp`, `UpsRadar`, `ContractUPS`, `UpslInstallation`, `PreDeliveryUPS`, `FinalDeliveryUPS`, `StatusRatioRadar`, `StatusRatioSTTB`, `LastMessage`, `Desil`, `DeisilInstallation`, `ContractDesil`, `PreDeliveryDesil`, `FinalDeliveryDesil`, `ATS1Transit`, `IsolationTransformer`, `ATS2VTMS`, `AvrRadar`, `SurgeRadar`, `TawkitatSurgeProtect`, `RadarSurgeProtect`) VALUES
+(1, 'الجونة', '√', '-', '−', '−', '-', '-', NULL, '-', '-', '30 KVA', '2014', '2019', 'لم يتم', '2016', 'لا يوجد', '2022', '2019', 'لايوجد', 'لايوجد', 'قيد التوريد', ''),
+(2, 'القبة', '-', '√', '−', '−', '-', '-', NULL, '−', '−', '100 KVA', '2014', '2019', 'لم يتم', '2016', 'لايوجد', '2022', '2019', 'لايوجد', 'تم الاستلام  وجارى التركيب)', 'لم يتم', 'لم يتم'),
+(3, 'الرسوة', '√', '-', '√', '√', '√', '√', NULL, '√', '-', 'قيد التوريد (امر توريد بتاريخ 3-3-2022)مدة التوريد 5 شهور)', '−', '−', '−', '−', 'لايوجد', 'تم استلامه ولكن يركب بعد توريد المولد', 'جاى التوريد', 'لايوجد', 'لايوجد', 'جارى التوريد', 'جارى التركيب'),
+(4, 'راس العش', '√', '√', '−', '−', '-', '-', 'لدى شركة جيت للإصلاح', '−', '−', '30 KVA', '2014', '2015', 'لم يتم', '2016', '2020', 'تم التركيب', '2015', '2021', '2022', 'جارى التوريد', 'جارى التركيب'),
+(5, 'التينة', '√', '√', '−', '−', '-', '-', '-', '−', '−', '30 KVA', '2014', '2015', 'لم يتم', '2015', '2020', 'جارى التركيب', '2015', '2021', '2022', 'تم التركيب', 'جارى التركيب'),
+(6, 'الكاب', '√', '√', '−', '−', '-', '-', '-', '−', '−', '30 KVA', '2012', '2012', 'لم يتم', '2013', '2020', 'تم التركيب', '2012', '2021', '2022', 'جارى التوريد', 'جارى التركيب'),
+(7, 'القنطرة', '√', '√', '−', '−', '-', '-', 'لدى شركة جيت للإصلاح', '−', '−', '(تم طلب تغيره في اللميزانية30 KVA', '1994', '1994', 'لم يتم', '1995', '2020', 'تم التركيب', '1994', '2021', '2021', 'جارى التوريد', 'جارى التركيب'),
+(8, 'البلاح', '√', '√', '−', '−', '-', '-', 'لدى شركة جيت للإصلاح', '−', '−', '30 KVA', '2014', '2015', 'لم يتم', '2016', '2020', 'تم التركيب', '2015', '2021', '2021', 'جارى التوريد', 'جارى التركيب'),
+(9, 'الفردان', '√', '-', '−', '−', '-', '-', '-', '−', '−', '30 KVA', '2014', '2015', 'لم يتم', '2016', '2020', 'جارى التركيب', '2015', '−', '−', 'جارى التوريد', 'جارى التركيب'),
+(10, 'المارينا', '√', '-', '−', '−', '-', '-', '-', '−', '−', '−', '−', '−', 'لم يتم', '−', '2020', 'تم التركيب', '−', '−', '−', 'جارى التوريد', 'جارى التركيب'),
+(11, 'طوسون', '√', '√', '−', '−', '-', '-', '-', '−', '−', '30 KVA', '2014', '2015', 'لم يتم', '2016', '2020', 'تم التركيب', '2015', '2021', '2022', 'جارى التوريد', 'جارى التركيب'),
+(12, 'الدفرسوار', '√', '-', '−', '−', '-', '-', '-', '−', '−', '30 KVA', '2014', '2015', 'لم يتم', '2016', '2020', 'جارى التركيب', '2015', '−', '−', 'جارى التوريد', 'جارى التركيب'),
+(13, 'كبريت', '√', '-', '−', '−', '-', '-', '-', '−', '−', '30 KVA', '2014', '2015', 'لم يتم', '2016', '2020', 'جارى التركيب', '2015', '−', '−', 'جارى التوريد', 'جارى التركيب'),
+(14, 'جنيفة', '√', '√', '−', '−', '-', '-', '-', '−', '−', '30 KVA', '2012', '2012', 'لم يتم', '2013', '2020', 'تم التركيب', '2013', '2021', '2022', 'تم التركيب', 'جارى التركيب'),
+(15, 'الشلوفة', '√', '√', '−', '−', '-', '-', '-', '−', '−', '30 KVA', '2014', '2015', 'لم يتم', '2016', '2020', 'تم التركيب', '2015', '2021', '2021', 'جارى التوريد', 'جارى التركيب'),
+(16, 'بورتوفيق', '√', '√', '−', '−', '-', '-', '-', '−', '−', '30 KVA', '2012', '2012', 'لم يتم', '2013', 'لايوجد', 'تم التركيب', '2013', '2021', '2021', '−', '−'),
+(17, 'فنارة', '√', '√', '−', '−', '-', '-', 'لدى شركة جيت للإصلاح', '−', '−', '100 KVA', '2016', '2018', 'لم يتم', '2019', 'لايوجد', 'تم التركيب', '2018', '2021', '2021', 'لايوجد', 'لايوجد'),
+(18, 'شرق الفردان', '-', '√', '−', '−', '-', '-', '-', '−', '−', '100 KVA', '2016', '2018', 'لم يتم', '2019', 'لايوجد', 'تم التركيب', '2018', 'لايحتاج تم تريب نظام الطاقة المتجددة', 'جارى التركيب', 'لايوجد', 'لايوجد'),
+(19, 'الارسال', '-', '√', '−', '−', '-', '-', '-', '−', '−', '30 KVA', '1996 مطلوب تغييره', '1996', 'لم يتم', '1996', 'لايوجد', 'تم التركيب', '1996', '2021', '2022', 'لايوجد', 'لايوجد'),
+(20, 'بورفؤاد', '-', '√', '−', '−', '-', '-', '-', '−', '', '30 KVA', '2012', '2012', 'لم يتم', '2013', 'لايوجد', 'تم التركيب', '2012', '2022', '2021', 'لايوجد', 'لايوجد');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `problemstate`
+--
+
+DROP TABLE IF EXISTS `problemstate`;
+CREATE TABLE IF NOT EXISTS `problemstate` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `SubjectID` int(11) DEFAULT NULL,
+  `SectionID` int(11) DEFAULT NULL,
+  `ProblemID` int(11) DEFAULT NULL,
+  `Description` char(255) DEFAULT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `problemstate`
+--
+
+INSERT INTO `problemstate` (`ID`, `SubjectID`, `SectionID`, `ProblemID`, `Description`) VALUES
+(1, 1, 1, 1, 'عدد 2 محطة تعمل بنسبة 100% (طوسون - الشلوفة)'),
+(2, 1, 1, 2, 'عدد 5 محطات تعمل بنسبة 50% (بورفؤاد - الكاب - البلاح - الارسال - جنيفة )'),
+(3, 1, 1, 3, 'عدد 6 محطات رادار متوقفة لأسباب فنية (القبة - رأس العش - القنطرة - شرق الفردان - فنارة -بورتوفيق)'),
+(4, 2, 1, 1, 'عدم وجود دراسة رسمية للتغطية الردارية بالقناة الجدية'),
+(5, 3, 1, 1, 'تكون تلال ناتج الردم على ضفتى القناة الناتجة عن الحفر والتوسعة بالقطاع الجنوبى مما ينتج عنه مناطق عمياء راداريا مثلما حدث من حفر قناة السويس الجديدة واضطر الاحتياج الى تركيب محطات ردارية جديدة'),
+(6, 4, 1, 1, 'كثرة حركة السفن من المناطق المذكورة عاليه'),
+(7, 4, 1, 2, 'الرادارات الحديثة تتميز بتمييز الأهداف القريبة من بعضها ولكن يعيب عليها أن التغطية الرادارية لها قصيرة'),
+(8, 4, 1, 3, 'لا يوجد محطة احتياطية أو تعمل تغطية راداربة متكاملة مع محطة رادار الترسانة وبالتالي عند توقف الرادار لظروف طارئة يتوقف بالكامل تتبع السفن الكثيرة في هذه المنطقة'),
+(9, 5, 1, 1, 'برج محطة القبة - الكاب - القنطرة - الارسال - جنيفة أبراج متهالكة وعند صيانتها دوريا باستخدام الرمالة والمرشمة تشكل خطورة علىوصلات ال WAVE GUIDE  وكابلات المعلومات بين الهوائى أعلى البرج  وشلتر الأجهزة أسفل البرج'),
+(10, 5, 1, 2, 'برج الترسانة - بورفؤاد - شرق البحيرات بورتوفيق أبراج غير متهالكة نظرا لأنها مصنعة من الحديد المجلفن الغير قابل للصدأ لا تشكل خطورة على وصلات وكابلات الرادار'),
+(11, 6, 1, 1, 'عدم تحديد إجراءات إعادة طرح مناقصة لتوريد وتركيب المصاعد للحصول على اقل الأسعار'),
+(12, 7, 1, 1, 'يوجد بقطاع الرادار عدد/2 مهندس مكلفين بأعمال الصيانة والإصلاح والإجراءات الإدارية وذلك للحفاظ على الكفاءة التشغيلية لعدد/13 محطة رادار بطول القناة بالإضافة الى زيادة عدد مجطات الرادار مستقبلا في القطاع الجنوبى والقناة الجديدة وشرق التفريعة شمالا ، مما يبي');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `radars`
+--
+
+DROP TABLE IF EXISTS `radars`;
+CREATE TABLE IF NOT EXISTS `radars` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `station_name` varchar(200) DEFAULT NULL,
+  `location` varchar(6) DEFAULT NULL,
+  `photo` varchar(100) NOT NULL,
+  `supply_date` varchar(120) DEFAULT NULL,
+  `installation` varchar(100) DEFAULT NULL,
+  `operation_date` varchar(100) DEFAULT NULL,
+  `delivery` varchar(100) DEFAULT NULL,
+  `status_of_tower` varchar(255) DEFAULT NULL,
+  `LetterDate` varchar(255) DEFAULT NULL,
+  `Remarks` varchar(255) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `radars`
+--
+
+INSERT INTO `radars` (`id`, `station_name`, `location`, `photo`, `supply_date`, `installation`, `operation_date`, `delivery`, `status_of_tower`, `LetterDate`, `Remarks`, `created_at`, `updated_at`) VALUES
+(1, 'بورفؤاد', '0.5', '', '2011', '(ابريل - مايو - يونيو )2015', '(ابريل - مايو - يونيو )2015', 'لم يتم عمل الإستلام  الإبتدائي حتي الأن', NULL, NULL, NULL, NULL, NULL),
+(2, 'القبة', '1.1', '', '2011', '(ابريل - مايو - يونيو )2015', '(ابريل - مايو - يونيو )2015', 'لم يتم عمل الإستلام  الإبتدائي حتي الأن', NULL, NULL, NULL, NULL, NULL),
+(3, 'رأس العش', '14.3', '', '2017', 'فبراير 2020', NULL, 'لم يتم عمل الإستلام  الإبتدائي حتي الأن', NULL, NULL, NULL, NULL, NULL),
+(4, 'الكاب', '35.4', '', '2011', NULL, '(ابريل - مايو - يونيو )2015', 'لم يتم عمل الإستلام  الإبتدائي حتي الأن', NULL, NULL, NULL, NULL, NULL),
+(5, 'القنطرة', '45.1', '', '2011', '(ابريل - مايو - يونيو )2015', '(ابريل - مايو - يونيو )2015', 'لم يتم عمل الإستلام  الإبتدائي حتي الأن', NULL, NULL, NULL, NULL, NULL),
+(6, 'البلاح', '54.8', '', '2017', 'يوليو - أغسطس (2017)', 'يوليو - أغسطس (2017)', 'لم يتم عمل الإستلام  الإبتدائي حتي الأن', NULL, NULL, NULL, NULL, NULL),
+(7, 'شرق الفردان', '62.9', '', '2017', 'فبراير 2020', NULL, 'لم يتم عمل الإستلام  الإبتدائي حتي الأن', NULL, NULL, NULL, NULL, NULL),
+(8, 'الارسال', '76.1', '', '2011', '(ابريل - مايو - يونيو )2015', '(ابريل - مايو - يونيو )2015', 'لم يتم عمل الإستلام  الإبتدائي حتي الأن', NULL, NULL, NULL, NULL, NULL),
+(9, 'طوسون', '54', '', '2017', 'يوليو - أغسطس (2017)', 'يوليو - أغسطس (2017)', 'لم يتم عمل الإستلام  الإبتدائي حتي الأن', NULL, NULL, NULL, NULL, NULL),
+(10, 'فنارة', '111.3', '1649591885.pdf', '2011', 'فبراير 2020', NULL, 'لم يتم عمل الإستلام  الإبتدائي حتي الأن', 'إنشاء 2019 من الحديد المجلفن غير قابل للصدأ', 'أخر مخاطبة صادرة إلي الهيئة الإقتصادية و المشروعات بالمخابرات العامة \r\nبرقم 651/ ج بتاريخ 5/9/2021', NULL, NULL, NULL),
+(11, 'جنيفة', '134', '1649591481.pdf', '2011', '(ابريل - مايو - يونيو )2015', '(ابريل - مايو - يونيو )2015', 'لم يتم عمل الإستلام  الإبتدائي حتي الأن', NULL, NULL, NULL, NULL, NULL),
+(12, 'الشلوفة', '146.1', '', '2017', 'يوليو - أغسطس (2017)', 'يوليو - أغسطس (2017)', 'لم يتم عمل الإستلام  الإبتدائي حتي الأن', NULL, NULL, NULL, NULL, NULL),
+(13, 'بورتوفيق', '160.6', '', '2011', '(ابريل - مايو - يونيو )2015', '(ابريل - مايو - يونيو )2015', 'لم يتم عمل الإستلام  الإبتدائي حتي الأن', NULL, NULL, NULL, NULL, NULL),
+(14, 'خارج ترسانة بورسعيد', NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(15, 'وشرق البحيرات', NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `sectionsubjects`
+--
+
+DROP TABLE IF EXISTS `sectionsubjects`;
+CREATE TABLE IF NOT EXISTS `sectionsubjects` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `SectionID` int(11) DEFAULT NULL,
+  `Subjects` char(255) DEFAULT NULL,
+  `summary` char(255) DEFAULT NULL,
+  `Objectives` char(255) DEFAULT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `sectionsubjects`
+--
+
+INSERT INTO `sectionsubjects` (`ID`, `SectionID`, `Subjects`, `summary`, `Objectives`) VALUES
+(1, 1, 'الشبكة الردارية لمشروع ال VTMS (عدد /13 محطة رادار)', 'إصلاح الأعطال واستبدال بعض الوحدات طبقا لإجراءات جدول الصيانة الدورية والوقائية لمحطات الرادار من قبل الهيئة الاقتصادية للمشروعات بالمخابرات العامة', 'الاستلام (الابتدائى / النهائي ) للمشروع (في أقرب وقت)'),
+(2, 1, 'التغطية الردارية لقناة السوي للجديدة (من ترقيم 60 كم إلى 95 كم)', 'الشبكة الردارية الحالية عدم إمكانية التغطية لقناة السويس الجديدة بسبب ارتفاعات تلال الردم على ضفتى القناة التي تصل الى منسوب 40  متر', 'استكمال التغطية وتتبع السفن لمشوع ال VTMS'),
+(3, 1, 'التغطية الردارية للتفريعة الجديدة والتوسعة من الترقيم 122 كم ل 162 كم', 'عمل تغطية ردارية للتفريعة الجديدة بطول 10 كم', 'استكمال التغطية وتتبع السفن لمشوع ال VTMS'),
+(4, 1, 'التغطية الردارية لمنطقة ميناء شرق التفريعة', 'وجود محطة رادار وحيدة (محطة رادار الترسانة) لتغطية منطقة شمال القناة و منطقة االانتظار ببورسعيد و شمال التفريعة ومنطقة الانتظار الخاص بها', 'زيادة كفاءة التغطية الرادارية للمنطقة الشمالية للقناة'),
+(5, 1, 'صيانة عدد 9 أبراج رادار', 'تهالك أبراج الرادار', 'زيادة الكفاءة الفنية  للأبراج المعدنية');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE IF NOT EXISTS `users` (
+  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `password` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `users_email_unique` (`email`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `vtms_sections`
+--
+
+DROP TABLE IF EXISTS `vtms_sections`;
+CREATE TABLE IF NOT EXISTS `vtms_sections` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `SectionName` char(100) CHARACTER SET utf8mb4 DEFAULT NULL,
+  `SectionManagerName` char(100) CHARACTER SET utf8mb4 DEFAULT NULL,
+  `RepresentativePerson` char(100) CHARACTER SET utf8mb4 DEFAULT NULL,
+  `CountOfProjects` int(11) DEFAULT NULL,
+  PRIMARY KEY (`ID`),
+  UNIQUE KEY `ID_UNIQUE` (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=cp1257;
+
+--
+-- Dumping data for table `vtms_sections`
+--
+
+INSERT INTO `vtms_sections` (`ID`, `SectionName`, `SectionManagerName`, `RepresentativePerson`, `CountOfProjects`) VALUES
+(1, 'قطاع الرادارات', 'دكتور مهندس أيمن موسى', 'مهندس أحمد عمر', 13);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
