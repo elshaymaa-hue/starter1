@@ -150,6 +150,7 @@
                     <option value="power">power</option>
                     <option value="hospital_centers">hospital_centers</option>
                     <option value="technical_office">technical_office</option>
+                    <option value="Maintenance">Maintenance</option>
                     <option value="Electorinc_Archive">Electorinc Archive</option>
                 </select>
                 <label for="exampleInputEmail1">تحديد القطاع</label>
