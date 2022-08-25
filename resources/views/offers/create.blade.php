@@ -153,7 +153,7 @@ integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jI
                         <option value="power">power</option>
                         <option value="hospital_centers">hospital_centers</option>
                         <option value="technical_office">technical_office</option>
-                        <option value="Electorinc_Archive">Electorinc Archive</option>
+                        <option value="Electronic_Archive">Electronic_Archive</option>
                         <option value="Maintenance">Maintenance</option>
                     </select>
 

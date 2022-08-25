@@ -151,8 +151,8 @@
                     <option value="hospital_centers">hospital_centers</option>
                     <option value="technical_office">technical_office</option>
                     <option value="Maintenance">Maintenance</option>
-                    <option value="Electorinc_Archive">Electorinc Archive</option>
-                </select>
+                    <option value="Electronic_Archive">Electronic_Archive</option>
+               </select>
                 <label for="exampleInputEmail1">تحديد القطاع</label>
             </div>
             <div class="form-group">

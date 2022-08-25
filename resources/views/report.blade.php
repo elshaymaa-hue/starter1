@@ -154,7 +154,7 @@
                         <option value="power">power</option>
                         <option value="hospital_centers">hospital_centers</option>
                         <option value="technical_office">technical_office</option>
-                        <option value="Electorinc Archive">Electorinc Archive</option>
+                        <option value="Electronic_Archive">Electronic_Archive</option>
                         <option value="Maintenance">Maintenance</option>
                         <option value="offers">offers</option>
                     </select>
