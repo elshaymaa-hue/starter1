@@ -293,6 +293,7 @@ integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jI
                                         <option value="waiting">انتظار</option>
                                         <option value="paused">معلق</option>
                                         <option value="transferred">محول</option>
+                                        <option value="monitor">متابعة</option>
                                     </select>
                                     @error('status')
                                     <small class="form-text text-danger">{{$message}}</small>

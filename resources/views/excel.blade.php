@@ -179,6 +179,7 @@
                             <option value="waiting">انتظار</option>
                             <option value="paused">معلق</option>
                             <option value="transferred">محول</option>
+                            <option value="monitor">متابعة</option>
                         </select>
                         @error('status')
                         <small class="form-text text-danger">{{$message}}</small>
@@ -207,7 +208,14 @@
                             <small class="form-text text-danger">{{$message}}</small>
                             @enderror
                          </div>
-                        
+                         <div class="form-group ">
+    
+                            <label for="exampleInputEmail1">{{__('messages.Offer Name en')}}</label>
+                            <input type="textarea" class="form-control" name="name_en"  placeholder="{{__('messages.Offer Name en')}}">
+                            @error('name_en')
+                            <small class="form-text text-danger">{{$message}}</small>
+                            @enderror
+                         </div>
 {{--                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>--}}
 
                      {{--            <input class="form-control mr-sm-2"  type="search" name="search_" placeholder="Search" aria-label="Search">--}}

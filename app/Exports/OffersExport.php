@@ -23,6 +23,7 @@ class OffersExport implements FromCollection
         $output=request()->input('output');
         $type=request()->input('type');
         $name_ar=request()->input('name_ar');
+        $name_en=request()->input('name_en');
         $status=request()->input('status');
         // return Offer::where('input','=',$input)->orderBy('id')->get();
         if ($name)
@@ -37,6 +38,8 @@ class OffersExport implements FromCollection
             return Offer::where('name_ar','=',$name_ar)->orderBy('id')->get();
         if($status)
             return Offer::where('status','=',$status)->orderBy('id')->get();
+        if($name_en)
+            return Offer::where('name_en','=',$name_en)->orderBy('id')->get();
        else
        return Offer::get();
 

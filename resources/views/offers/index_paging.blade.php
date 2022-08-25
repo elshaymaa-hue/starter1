@@ -203,6 +203,8 @@
                 <td  class="btn btn-secondary">{{$offer -> status}}</td>
             @elseif($offer -> status=="start")
                 <td  class="btn btn-primary">{{$offer -> status}}</td>
+            @elseif($offer -> status=="monitor")
+                <td  class="btn btn-warning">{{$offer -> status}}</td>
             @else
                 <td>{{$offer -> status}}</td>
             @endif
