@@ -380,7 +380,7 @@
                                 <div class="divider-custom-line"></div>
                             </div>
                             <!-- Portfolio Modal - Image-->
-                            <a href="{{ url('offers/filter?search_=Electorinc+Archive') }}">
+                            <a href="{{ url('offers/filter?search_=Electronic_Archive') }}">
                             <img class="img-fluid rounded mb-5" src="assets/img/portfolio/game.png" alt="..." />
                             </a>
                             <!-- Portfolio Modal - Text-->
