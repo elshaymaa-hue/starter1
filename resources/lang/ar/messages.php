@@ -63,7 +63,7 @@ return[
     'AvrRadar'=>'AVR Radar' ,
     'SurgeRadar'=>'Surege Protect Radar' ,
     'TawkitatSurgeProtect'=>'Surge Protect STTP',
-    'reply_on'=>'ردا على',
+    'reply_on'=>'ردا على /إلحاقا ب',
     'require_monitor'=>'يحتاج متابعة',
     'monitor_date'=>'تاريخ متابعة',
     'additions'=>'مرفقات',

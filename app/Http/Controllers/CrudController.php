@@ -169,7 +169,10 @@ class CrudController extends Controller
         $status=$request->get('status');
         $monitor=$request->get('require_monitor');
         $details=$request->get('details_ar');
-        $details=$request->get('name_ar');
+        $name_ar=$request->get('name_ar');
+        $name_en=$request->get('name_en');
+
+      
        // $offers = Offer::select('*')->paginate(5);
         // $offers = $users->appends(['keyword'=>'value']);
       $offers=null;
@@ -237,6 +240,12 @@ class CrudController extends Controller
                           ->appends('status',request('status'));
                         //   return view('offers.index_paging')->with('offers', $offers)->with('filter',$filter);
         }
+        if(request('name_en')){
+            $filter = $request->query('filter');
+            $offers = Offer::where(  'name_en',request('name_en'))->paginate(2)
+                            ->appends('name_en',request('name_en'));
+            // return view('offers.index_paging')->with('offers', $offers)->with('filter',$filter);
+            }
         if($offers){
         return view('offers.index_paging')->with('offers', $offers)->with('filter',$filter);
         }
