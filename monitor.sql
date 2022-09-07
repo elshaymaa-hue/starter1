@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Sep 07, 2022 at 07:24 AM
+-- Generation Time: Sep 07, 2022 at 09:24 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.9
 
@@ -183,7 +183,7 @@ CREATE TABLE IF NOT EXISTS `offers` (
   `additions` varchar(100) NOT NULL,
   `link` varchar(1000) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=238 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=239 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `offers`
@@ -408,7 +408,8 @@ INSERT INTO `offers` (`id`, `name_en`, `price`, `photo`, `created_at`, `updated_
 (234, '6-09-2022', NULL, 'vtms-2022252-6-09-2022.pdf', '2022-09-07 07:01:34', '2022-09-07 07:01:34', NULL, 'منظومة المراقبة الرادارية', 'رقم 1004 إقرار حالة برج الإشارة بمحطنى دفرسوار وكبريت وتحديد أعمال الصيانة المطلوبة', 'vtms', NULL, '2022252', 'إشاره كتابيه', 'monitor', NULL, NULL, NULL, '', '=HYPERLINK(\"D:/wamp64/www/starter2/public/images/vtms/منظومة المراقبة الرادارية/vtms-2022252-6-09-2022.pdf\",\"vtms-2022252-6-09-2022.pdf\")'),
 (235, '6-09-2022', NULL, 'vtms-2022687-6-09-2022.pdf', '2022-09-07 07:02:43', '2022-09-07 07:02:43', NULL, 'مراكز الحركة الدور ال 11', 'اشارة 2133 بخصوص توصيات الامانه العامه لوزارة الدفاع الخاصه بتامين انظمة المعلومات بالهيئة برجاء موافاتنا بالمواصفات الفنية لنظام التبريد القياسى لمركز البيانات بحجرة الاجهزه بالدور الحادى عشر', 'vtms', NULL, '2022687', 'إشاره كتابيه', 'done', NULL, NULL, NULL, '', '=HYPERLINK(\"D:/wamp64/www/starter2/public/images/vtms/مراكز الحركة الدور ال 11/vtms-2022687-6-09-2022.pdf\",\"vtms-2022687-6-09-2022.pdf\")'),
 (236, '7-09-2022', NULL, 'power-20221218-7-09-2022.pdf', '2022-09-07 07:09:56', '2022-09-07 07:09:56', NULL, 'القوى -الطاقة المتجددة', 'مذكرة وارد رئاسة رقم 3852 بخصوص كتاب محافظة الإسماعيلية بشأن إفادتها بالمشروعات للمشاركة فى مبادرة المشروعات الخضراء الذكية', 'power', '20221218', NULL, 'مذكرة فريق', 'done', NULL, NULL, NULL, '', '=HYPERLINK(\"D:/wamp64/www/starter2/public/images/power/القوى -الطاقة المتجددة/power-20221218-7-09-2022.pdf\",\"power-20221218-7-09-2022.pdf\")'),
-(237, '7-09-2022', NULL, 'technical_office-20221216-7-09-2022.pdf', '2022-09-07 07:10:48', '2022-09-07 07:10:48', NULL, 'أوامر التوريد', 'أمر توريد رقم 43-303/6167 بتاريخ 6/9/2022 صادر لشركة سوبيك للأثاث المكتبى لتوريد كراسى محورية', 'technical_office', '20221216', NULL, 'أمر توريد', 'done', NULL, NULL, NULL, '', '=HYPERLINK(\"D:/wamp64/www/starter2/public/images/technical_office/أوامر التوريد/technical_office-20221216-7-09-2022.pdf\",\"technical_office-20221216-7-09-2022.pdf\")');
+(237, '7-09-2022', NULL, 'technical_office-20221216-7-09-2022.pdf', '2022-09-07 07:10:48', '2022-09-07 07:10:48', NULL, 'أوامر التوريد', 'أمر توريد رقم 43-303/6167 بتاريخ 6/9/2022 صادر لشركة سوبيك للأثاث المكتبى لتوريد كراسى محورية', 'technical_office', '20221216', NULL, 'أمر توريد', 'done', NULL, NULL, NULL, '', '=HYPERLINK(\"D:/wamp64/www/starter2/public/images/technical_office/أوامر التوريد/technical_office-20221216-7-09-2022.pdf\",\"technical_office-20221216-7-09-2022.pdf\")'),
+(238, '7-09-2022', NULL, 'technical_office-20221219-7-09-2022.pdf', '2022-09-07 09:19:44', '2022-09-07 09:19:44', NULL, 'تصنيع أثاث', 'امر تشغيل رقم 43-6188/310 لتصنيع اثاثات لزوم التحركات', 'technical_office', '20221219', NULL, 'أمر تشغيل', 'done', NULL, NULL, NULL, '', '=HYPERLINK(\"D:/wamp64/www/starter2/public/images/technical_office/تصنيع أثاث/technical_office-20221219-7-09-2022.pdf\",\"technical_office-20221219-7-09-2022.pdf\")');
 
 -- --------------------------------------------------------
 
