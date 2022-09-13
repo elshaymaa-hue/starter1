@@ -216,6 +216,15 @@
                             <small class="form-text text-danger">{{$message}}</small>
                             @enderror
                          </div>
+                       
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">{{__('messages.monitor_date')}}</label>
+                                <input type="text" class="form-control" name ="monitor_date"  aria-describedby="emailHelp" placeholder="{{__('messages.monitor_date')}}">
+                                @error('monitor_date')
+                                <small class="form-text text-danger">{{$message}}</small>
+                                @enderror
+                           
+                        </tr>
 {{--                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>--}}
 
                      {{--            <input class="form-control mr-sm-2"  type="search" name="search_" placeholder="Search" aria-label="Search">--}}

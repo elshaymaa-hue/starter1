@@ -25,6 +25,7 @@ class OffersExport implements FromCollection
         $name_ar=request()->input('name_ar');
         $name_en=request()->input('name_en');
         $status=request()->input('status');
+        $monitor_date=request()->input('monitor_date');
         // return Offer::where('input','=',$input)->orderBy('id')->get();
         if ($name)
             return Offer::where('directory','=',$name)->orderBy('created_at')->get();
@@ -40,6 +41,8 @@ class OffersExport implements FromCollection
             return Offer::where('status','=',$status)->orderBy('id')->get();
         if($name_en)
             return Offer::where('name_en','=',$name_en)->orderBy('id')->get();
+        if($monitor_date)
+            return Offer::where('monitor_date','=',$monitor_date)->orderBy('id')->get();
        else
        return Offer::get();
 
