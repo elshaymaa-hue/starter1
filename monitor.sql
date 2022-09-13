@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Sep 12, 2022 at 12:09 PM
+-- Generation Time: Sep 13, 2022 at 08:18 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.9
 
@@ -183,7 +183,7 @@ CREATE TABLE IF NOT EXISTS `offers` (
   `additions` varchar(100) NOT NULL,
   `link` varchar(1000) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=261 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=264 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `offers`
@@ -432,7 +432,10 @@ INSERT INTO `offers` (`id`, `name_en`, `price`, `photo`, `created_at`, `updated_
 (257, '12-09-2022', NULL, 'power-20221232-12-09-2022.pdf', '2022-09-12 11:45:27', '2022-09-12 11:45:27', NULL, 'أوامر التوريد', 'امر التوريد رقم 25-3064/243 في 25/8/2022 وامر التوريد رقم 25-3092/197 فى 17/8/2022', 'power', '20221232', NULL, 'أمر توريد', 'monitor', NULL, NULL, NULL, '', '=HYPERLINK(\"D:/wamp64/www/starter2/public/images/power/أوامر التوريد/power-20221232-12-09-2022.pdf\",\"power-20221232-12-09-2022.pdf\")'),
 (258, '12-09-2022', NULL, 'vtms-2022714-12-09-2022.pdf', '2022-09-12 11:46:44', '2022-09-12 11:46:44', NULL, 'صيانة مبنى القبة', 'اشاره رقم 2170 بخصوص نقل الاجهزه ومنظومات المراقبه الخاصه بمكتب الميناء والحركه لاجراء اعمال الصيانه والترميم بمبنى القبه بقسم تحركات بورسعيد', 'vtms', NULL, '2022714', 'إشاره كتابيه', 'done', NULL, NULL, NULL, '', '=HYPERLINK(\"D:/wamp64/www/starter2/public/images/vtms/صيانة مبنى القبة/vtms-2022714-12-09-2022.pdf\",\"vtms-2022714-12-09-2022.pdf\")'),
 (259, '12-09-2022', NULL, 'power-2022715-12-09-2022.pdf', '2022-09-12 11:50:46', '2022-09-12 11:50:46', NULL, 'القوى -الطاقة المتجددة', 'سرعه استخراج قسيمه صرف مؤقته بمبلغ 60000 جنيه لتطوير منظومنه التغذيه الكهربائيه لمحطات المراقبه الالكترونيه', 'power', NULL, '2022715', NULL, 'monitor', '2022709', NULL, NULL, 'power-2022715-12-09-2022_a.pdf', '=HYPERLINK(\"D:/wamp64/www/starter2/public/images/power/القوى -الطاقة المتجددة/power-2022715-12-09-2022.pdf\",\"power-2022715-12-09-2022.pdf\")'),
-(260, '12-09-2022', NULL, 'tawkitat-20221216-12-09-2022.pdf', '2022-09-12 11:54:38', '2022-09-12 11:54:38', NULL, 'مشروع المتحف', 'مخاطبه إداره الاتصالات ونظم المعلومات للاختصاص بأعمال نظام الاوديو فيجوال', 'tawkitat', '20221216', NULL, 'إشاره كتابيه', 'monitor', NULL, NULL, NULL, '', '=HYPERLINK(\"D:/wamp64/www/starter2/public/images/tawkitat/مشروع المتحف/tawkitat-20221216-12-09-2022.pdf\",\"tawkitat-20221216-12-09-2022.pdf\")');
+(260, '12-09-2022', NULL, 'tawkitat-20221216-12-09-2022.pdf', '2022-09-12 11:54:38', '2022-09-12 11:54:38', NULL, 'مشروع المتحف', 'مخاطبه إداره الاتصالات ونظم المعلومات للاختصاص بأعمال نظام الاوديو فيجوال', 'tawkitat', '20221216', NULL, 'إشاره كتابيه', 'monitor', NULL, NULL, NULL, '', '=HYPERLINK(\"D:/wamp64/www/starter2/public/images/tawkitat/مشروع المتحف/tawkitat-20221216-12-09-2022.pdf\",\"tawkitat-20221216-12-09-2022.pdf\")'),
+(261, '13-09-2022', NULL, 'Electronic_Archive-2022721-13-09-2022.pdf', '2022-09-13 06:57:13', '2022-09-13 06:57:13', NULL, 'مراجعة إيرادات الملاحة', 'رقم 2206 بتاريخ 2022/9/12 بتوفير صلاحية لقسم مراجعة إيرادات الملاحة ببورسعيد للدخول على تقرير (\"REPORT OF \"Vessel Transit) على شبكة القياس', 'Electronic_Archive', NULL, '2022721', 'إشاره كتابيه', 'done', NULL, NULL, NULL, '', '=HYPERLINK(\"D:/wamp64/www/starter2/public/images/Electronic_Archive/مراجعة إيرادات الملاحة/Electronic_Archive-2022721-13-09-2022.pdf\",\"Electronic_Archive-2022721-13-09-2022.pdf\")'),
+(262, '13-09-2022', NULL, 'vtms-2022722-13-09-2022.pdf', '2022-09-13 06:58:27', '2022-09-13 06:58:27', NULL, 'منظومة المراقبة الرادارية', 'فاكس رقم 625 بإيفاد مندبهم لعمل المعاينات اللازمة لنقل مركز التحكم ببورسعيد الى مكان اخر خارج نطاق المبنى وتحديد الإحتياجات اللازمة لنقل منظومة المراقبة الردارية VTMS', 'vtms', NULL, '2022722', 'فاكس', 'done', NULL, NULL, NULL, '', '=HYPERLINK(\"D:/wamp64/www/starter2/public/images/vtms/منظومة المراقبة الرادارية/vtms-2022722-13-09-2022.pdf\",\"vtms-2022722-13-09-2022.pdf\")'),
+(263, '13-09-2022', NULL, 'power-2022724-13-09-2022.pdf', '2022-09-13 06:59:10', '2022-09-13 06:59:10', NULL, 'القوى -الطاقة المتجددة', NULL, 'power', NULL, '2022724', 'أمر توريد', 'monitor', NULL, NULL, NULL, '', '=HYPERLINK(\"D:/wamp64/www/starter2/public/images/power/القوى -الطاقة المتجددة/power-2022724-13-09-2022.pdf\",\"power-2022724-13-09-2022.pdf\")');
 
 -- --------------------------------------------------------
 
