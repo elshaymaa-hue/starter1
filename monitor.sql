@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Sep 25, 2022 at 07:14 AM
+-- Generation Time: Sep 25, 2022 at 07:31 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.9
 
@@ -183,7 +183,7 @@ CREATE TABLE IF NOT EXISTS `offers` (
   `additions` varchar(100) NOT NULL,
   `link` varchar(1000) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=303 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=304 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `offers`
@@ -473,7 +473,8 @@ INSERT INTO `offers` (`id`, `name_en`, `price`, `photo`, `created_at`, `updated_
 (299, '22-09-2022', NULL, 'technical_office-20221295-22-09-2022.pdf', '2022-09-22 07:07:35', '2022-09-22 07:07:35', NULL, 'الرقم المختصر', 'أتاحة الأتصال على رقم خدمات الطوارئ بالهيئة من خلال أجهزة التتلرا والتليفونات الخارجية حال عدم توفر خط أرضى هيئة', 'technical_office', '20221295', NULL, 'إشاره كتابيه', 'done', NULL, NULL, '9:00 22-09-2022', '', '=HYPERLINK(\"D:/wamp64/www/starter2/public/images/technical_office/الرقم المختصر/technical_office-20221295-22-09-2022.pdf\",\"technical_office-20221295-22-09-2022.pdf\")'),
 (300, '25-09-2022', NULL, 'power-2022760-25-09-2022.pdf', '2022-09-25 06:49:42', '2022-09-25 06:49:42', NULL, 'القوى -الطاقة المتجددة', 'اشاره رقم 2281 بخصوص توفير مهمات الافراد القائمين على تركيبات مشروع تطوير التغذيه الكهربيه لمحطات القطاع الشمالي.', 'power', NULL, '2022760', 'إشاره كتابيه', 'monitor', NULL, NULL, '8:49 25-09-2022', '', '=HYPERLINK(\"D:/wamp64/www/starter2/public/images/power/القوى -الطاقة المتجددة/power-2022760-25-09-2022.pdf\",\"power-2022760-25-09-2022.pdf\")'),
 (301, '25-09-2022', NULL, 'power-2022758-25-09-2022.pdf', '2022-09-25 06:56:54', '2022-09-25 06:50:38', NULL, 'القوى -الطاقة المتجددة', 'لازاله وتقليل ارتفاع الأشجار التى تحجب الهواء عن تربينه الرياح بمحطة الجونه لمشروع التغذية الكهربية بالمحطات البحرية للقطاع الشمالى', 'power', NULL, '2022758', 'إشاره كتابيه', 'done', NULL, NULL, '8:49 25-09-2022', '', '=HYPERLINK(\"D:/wamp64/www/starter2/public/images/power/القوى -الطاقة المتجددة/power-2022758-25-09-2022.pdf\",\"power-2022758-25-09-2022.pdf\")'),
-(302, '25-09-2022', NULL, 'vtms-2022756-25-09-2022.pdf', '2022-09-25 06:58:29', '2022-09-25 06:52:43', NULL, 'مشروع الكهروبصرية', 'تحويل مرفق به مستندات الإستلام النهائي لجميع مراحل المنظومه الكهربصريه', 'vtms', NULL, '2022756', 'إشاره كتابيه', 'done', NULL, NULL, '8:49 25-09-2022', '', '=HYPERLINK(\"D:/wamp64/www/starter2/public/images/vtms/مشروع الكهروبصرية/vtms-2022756-25-09-2022.pdf\",\"vtms-2022756-25-09-2022.pdf\")');
+(302, '25-09-2022', NULL, 'vtms-2022756-25-09-2022.pdf', '2022-09-25 06:58:29', '2022-09-25 06:52:43', NULL, 'مشروع الكهروبصرية', 'تحويل مرفق به مستندات الإستلام النهائي لجميع مراحل المنظومه الكهربصريه', 'vtms', NULL, '2022756', 'إشاره كتابيه', 'done', NULL, NULL, '8:49 25-09-2022', '', '=HYPERLINK(\"D:/wamp64/www/starter2/public/images/vtms/مشروع الكهروبصرية/vtms-2022756-25-09-2022.pdf\",\"vtms-2022756-25-09-2022.pdf\")'),
+(303, '25-09-2022', NULL, 'technical_office-2022755-25-09-2022.pdf', '2022-09-25 07:30:57', '2022-09-25 07:30:57', NULL, 'خدمات الطوارىء', 'أشاره بخصوص احتياجات القسم الخاصة بالشبكه الوطنيه الموحده لخدمات الطوارىء.', 'technical_office', NULL, '2022755', 'إشاره كتابيه', 'monitor', NULL, NULL, '8:49 25-09-2022', '', '=HYPERLINK(\"D:/wamp64/www/starter2/public/images/technical_office/خدمات الطوارىء/technical_office-2022755-25-09-2022.pdf\",\"technical_office-2022755-25-09-2022.pdf\")');
 
 -- --------------------------------------------------------
 
