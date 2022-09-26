@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Sep 25, 2022 at 08:12 AM
+-- Generation Time: Sep 26, 2022 at 07:12 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.9
 
@@ -183,7 +183,7 @@ CREATE TABLE IF NOT EXISTS `offers` (
   `additions` varchar(100) NOT NULL,
   `link` varchar(1000) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=305 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=309 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `offers`
@@ -475,7 +475,11 @@ INSERT INTO `offers` (`id`, `name_en`, `price`, `photo`, `created_at`, `updated_
 (301, '25-09-2022', NULL, 'power-2022758-25-09-2022.pdf', '2022-09-25 06:56:54', '2022-09-25 06:50:38', NULL, 'القوى -الطاقة المتجددة', 'لازاله وتقليل ارتفاع الأشجار التى تحجب الهواء عن تربينه الرياح بمحطة الجونه لمشروع التغذية الكهربية بالمحطات البحرية للقطاع الشمالى', 'power', NULL, '2022758', 'إشاره كتابيه', 'done', NULL, NULL, '8:49 25-09-2022', '', '=HYPERLINK(\"D:/wamp64/www/starter2/public/images/power/القوى -الطاقة المتجددة/power-2022758-25-09-2022.pdf\",\"power-2022758-25-09-2022.pdf\")'),
 (302, '25-09-2022', NULL, 'vtms-2022756-25-09-2022.pdf', '2022-09-25 06:58:29', '2022-09-25 06:52:43', NULL, 'مشروع الكهروبصرية', 'تحويل مرفق به مستندات الإستلام النهائي لجميع مراحل المنظومه الكهربصريه', 'vtms', NULL, '2022756', 'إشاره كتابيه', 'done', NULL, NULL, '8:49 25-09-2022', '', '=HYPERLINK(\"D:/wamp64/www/starter2/public/images/vtms/مشروع الكهروبصرية/vtms-2022756-25-09-2022.pdf\",\"vtms-2022756-25-09-2022.pdf\")'),
 (303, '25-09-2022', NULL, 'technical_office-2022755-25-09-2022.pdf', '2022-09-25 07:30:57', '2022-09-25 07:30:57', NULL, 'خدمات الطوارىء', 'أشاره بخصوص احتياجات القسم الخاصة بالشبكه الوطنيه الموحده لخدمات الطوارىء.', 'technical_office', NULL, '2022755', 'إشاره كتابيه', 'monitor', NULL, NULL, '8:49 25-09-2022', '', '=HYPERLINK(\"D:/wamp64/www/starter2/public/images/technical_office/خدمات الطوارىء/technical_office-2022755-25-09-2022.pdf\",\"technical_office-2022755-25-09-2022.pdf\")'),
-(304, '25-09-2022', NULL, 'Maintenance-20225617-25-09-2022.pdf', '2022-09-25 08:07:25', '2022-09-25 08:06:34', NULL, 'اصلاح آلة حاسبة', 'بخصوص إصلاح أله حاسبة', 'Maintenance', '20225617', NULL, 'إشاره كتابيه', 'done', NULL, NULL, '10:07 25-09-2022', '', '=HYPERLINK(\"D:/wamp64/www/starter2/public/images/Maintenance/اصلاح آلة حاسبة/Maintenance-20225617-25-09-2022.pdf\",\"Maintenance-20225617-25-09-2022.pdf\")');
+(304, '25-09-2022', NULL, 'Maintenance-20225617-25-09-2022.pdf', '2022-09-25 08:07:25', '2022-09-25 08:06:34', NULL, 'اصلاح آلة حاسبة', 'بخصوص إصلاح أله حاسبة', 'Maintenance', '20225617', NULL, 'إشاره كتابيه', 'done', NULL, NULL, '10:07 25-09-2022', '', '=HYPERLINK(\"D:/wamp64/www/starter2/public/images/Maintenance/اصلاح آلة حاسبة/Maintenance-20225617-25-09-2022.pdf\",\"Maintenance-20225617-25-09-2022.pdf\")'),
+(305, '26-09-2022', NULL, 'Electronic_Archive-2022766-26-09-2022.pdf', '2022-09-26 06:34:53', '2022-09-26 06:34:53', NULL, 'الارشيف الالكتروني', 'تعليمات داخلية رقم (12) لسنة 2022 بعمل دراسات وبحث لوضع مواصفات لنظام Informatic موحد لأقسام الحركة ومكاتب الميناء والقياس وأى أقسام تتعامل مع بيانات الملاحة بالهيئة', 'Electronic_Archive', NULL, '2022766', 'أمر ادارى', 'done', NULL, NULL, '8:34 26-09-2022', '', '=HYPERLINK(\"D:/wamp64/www/starter2/public/images/Electronic_Archive/الارشيف الالكتروني/Electronic_Archive-2022766-26-09-2022.pdf\",\"Electronic_Archive-2022766-26-09-2022.pdf\")'),
+(306, '26-09-2022', NULL, 'power-2022764-26-09-2022.pdf', '2022-09-26 06:35:52', '2022-09-26 06:35:52', NULL, 'القوى -الطاقة المتجددة', 'رقم 2283 لمخاطبة الشركات المتخصصة لتوريد وتركيب وتشغيل وإختبار نظام إنذار ومكافحة الحريق لعدد/ 10 غرف بمساحات مختلفة بخصوص مشروع تطوير التغذية الكهربية', 'power', NULL, '2022764', 'إشاره كتابيه', 'done', NULL, NULL, '8:34 26-09-2022', '', '=HYPERLINK(\"D:/wamp64/www/starter2/public/images/power/القوى -الطاقة المتجددة/power-2022764-26-09-2022.pdf\",\"power-2022764-26-09-2022.pdf\")'),
+(307, '26-09-2022', NULL, 'power-20221308-26-09-2022.pdf', '2022-09-26 06:37:37', '2022-09-26 06:37:37', NULL, 'القوى -الطاقة المتجددة', 'اشاره بعدم وجود اجهزة تكييف بقدره مناسبه من الاجهزه المشونه بقطاع التبريدات لغرفه اجهزه منظومه المراقبه الالكترونيه ببورتوفيق', 'power', '20221308', NULL, 'إشاره كتابيه', 'done', NULL, NULL, '8:34 26-09-2022', '', '=HYPERLINK(\"D:/wamp64/www/starter2/public/images/power/القوى -الطاقة المتجددة/power-20221308-26-09-2022.pdf\",\"power-20221308-26-09-2022.pdf\")'),
+(308, '26-09-2022', NULL, 'vtms-20221311-26-09-2022.pdf', '2022-09-26 07:08:35', '2022-09-26 07:08:35', NULL, 'شركة AIRBUS', 'موعد وصول خبراء شركة AIRBUS', 'vtms', '20221311', NULL, 'فاكس', 'done', NULL, NULL, '9:07 26-09-2022', '', '=HYPERLINK(\"D:/wamp64/www/starter2/public/images/vtms/شركة AIRBUS/vtms-20221311-26-09-2022.pdf\",\"vtms-20221311-26-09-2022.pdf\")');
 
 -- --------------------------------------------------------
 
