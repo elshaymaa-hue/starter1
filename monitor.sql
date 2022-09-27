@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Sep 26, 2022 at 12:44 PM
+-- Generation Time: Sep 27, 2022 at 06:51 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.9
 
@@ -183,7 +183,7 @@ CREATE TABLE IF NOT EXISTS `offers` (
   `additions` varchar(100) NOT NULL,
   `link` varchar(1000) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=318 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=321 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `offers`
@@ -488,7 +488,10 @@ INSERT INTO `offers` (`id`, `name_en`, `price`, `photo`, `created_at`, `updated_
 (314, '28-08-2022', NULL, 'technical_office-2022668-28-08-2022.pdf', '2022-09-26 08:44:02', '2022-09-26 08:44:02', NULL, 'محضر التكهين', 'اشارة رقم 2097  لسرعة توفير جهاز تكييف كاسيت بقدرة مناسبه لغرفة اجهزة منظومه المراقبة الالكترونيه ببورتوفيق', 'technical_office', NULL, '2022668', 'إشاره كتابيه', 'monitor', '2022667', NULL, '10:14 26-09-2022', 'technical_office-2022668-28-08-2022_a.pdf', '=HYPERLINK(\"D:/wamp64/www/starter2/public/images/technical_office/محضر التكهين/technical_office-2022668-28-08-2022.pdf\",\"technical_office-2022668-28-08-2022.pdf\")'),
 (315, '28-03-2022', NULL, 'security-2022547-28-03-2022.pdf', '2022-09-26 10:59:52', '2022-09-26 10:59:52', NULL, 'تأمين قاعة الاحتفالات', NULL, 'security', '2022547', NULL, 'تحويل مستندات', 'monitor', NULL, NULL, '11:40 26-09-2022', '', '=HYPERLINK(\"D:/wamp64/www/starter2/public/images/security/تأمين قاعة الاحتفالات/security-2022547-28-03-2022.pdf\",\"security-2022547-28-03-2022.pdf\")'),
 (316, '24-03-2022', NULL, 'tawkitat-2022213-24-03-2022.pdf', '2022-09-26 12:30:23', '2022-09-26 12:30:23', NULL, 'محطة الفردان', 'تنفيذ المسارات المطلوبة حتى يتسنى سحب ومد الكابلات الخاصة بالنظام عند الحاجه دون إتلاف المسطح الأخضر بمحطة الفردان', 'tawkitat', '2022213', NULL, 'إشاره كتابيه', 'done', '2022477', NULL, '2:30 26-09-2022', 'tawkitat-2022213-24-03-2022_a.pdf', '=HYPERLINK(\"D:/wamp64/www/starter2/public/images/tawkitat/محطة الفردان/tawkitat-2022213-24-03-2022.pdf\",\"tawkitat-2022213-24-03-2022.pdf\")'),
-(317, '17-03-2022', NULL, 'tawkitat-2022477-17-03-2022.pdf', '2022-09-26 12:31:39', '2022-09-26 12:31:39', NULL, 'محطة الفردان', 'سرعه نهو الاعمال الخاصه بمسارات كابلات مانع الصواعق والارضى بمشروع لوحات توقيتات بمحطة الفردان', 'tawkitat', '2022477', NULL, 'إشاره كتابيه', 'monitor', NULL, NULL, '2:30 26-09-2022', '', '=HYPERLINK(\"D:/wamp64/www/starter2/public/images/tawkitat/محطة الفردان/tawkitat-2022477-17-03-2022.pdf\",\"tawkitat-2022477-17-03-2022.pdf\")');
+(317, '17-03-2022', NULL, 'tawkitat-2022477-17-03-2022.pdf', '2022-09-26 12:31:39', '2022-09-26 12:31:39', NULL, 'محطة الفردان', 'سرعه نهو الاعمال الخاصه بمسارات كابلات مانع الصواعق والارضى بمشروع لوحات توقيتات بمحطة الفردان', 'tawkitat', '2022477', NULL, 'إشاره كتابيه', 'monitor', NULL, NULL, '2:30 26-09-2022', '', '=HYPERLINK(\"D:/wamp64/www/starter2/public/images/tawkitat/محطة الفردان/tawkitat-2022477-17-03-2022.pdf\",\"tawkitat-2022477-17-03-2022.pdf\")'),
+(318, '26-09-2022', NULL, 'tawkitat-2022772-26-09-2022.pdf', '2022-09-27 06:16:03', '2022-09-27 06:16:03', NULL, 'شاشات قاعة الاحتفالات', 'إشاره بإستخراج التصاريح اللازمه لدخول المارينا الجديده بالكم 76 يوم الخميس الموافق 2022/9/29 بخصوص امر التوريد رقم 109-1534/510 لصالح شركه ايجي ليد للاستيراد والتصدير', 'tawkitat', NULL, '2022772', 'إشاره كتابيه', 'done', NULL, NULL, '8:15 27-09-2022', '', '=HYPERLINK(\"D:/wamp64/www/starter2/public/images/tawkitat/شاشات قاعة الاحتفالات/tawkitat-2022772-26-09-2022.pdf\",\"tawkitat-2022772-26-09-2022.pdf\")'),
+(319, '26-09-2022', NULL, 'technical_office-2022767-26-09-2022.pdf', '2022-09-27 06:18:05', '2022-09-27 06:18:05', NULL, 'تأمين المخزن الجديد لقطع غيار الردار', 'اشارة رقم 2293 بتأمين المخزن الجديد لقطع غيار الردار الخاصة بقسم المراقبة الالكترونية ومحطة ردار الإرسال بالكاميرات', 'technical_office', NULL, '2022767', 'إشاره كتابيه', 'monitor', NULL, NULL, '8:15 27-09-2022', '', '=HYPERLINK(\"D:/wamp64/www/starter2/public/images/technical_office/تأمين المخزن الجديد لقطع غيار الردار/technical_office-2022767-26-09-2022.pdf\",\"technical_office-2022767-26-09-2022.pdf\")'),
+(320, '26-09-2022', NULL, 'security-20221315-26-09-2022.pdf', '2022-09-27 06:21:25', '2022-09-27 06:21:25', NULL, 'مشروع المتحف', 'بخصوص مشروع الترميم الداخلى لشالية ديليسبس الملحق بإستراحة ديليسبس بالإسماعيلية', 'security', '20221315', NULL, 'إشاره كتابيه', 'done', NULL, NULL, '8:15 27-09-2022', '', '=HYPERLINK(\"D:/wamp64/www/starter2/public/images/security/مشروع المتحف/security-20221315-26-09-2022.pdf\",\"security-20221315-26-09-2022.pdf\")');
 
 -- --------------------------------------------------------
 
