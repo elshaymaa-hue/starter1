@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Sep 29, 2022 at 11:36 AM
+-- Generation Time: Oct 03, 2022 at 09:34 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.9
 
@@ -183,7 +183,7 @@ CREATE TABLE IF NOT EXISTS `offers` (
   `additions` varchar(100) NOT NULL,
   `link` varchar(1000) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=334 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=336 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `offers`
@@ -504,7 +504,9 @@ INSERT INTO `offers` (`id`, `name_en`, `price`, `photo`, `created_at`, `updated_
 (330, '29-09-2022', NULL, 'security-20221338-29-09-2022.pdf', '2022-09-29 09:56:31', '2022-09-29 09:56:31', 'خطاب إلى السيد المهندس/ رئيس مجلس إدارة شركة قناة السويس للإستثمار بالإفادة بنتيجة معاينة اللجنة الخاصة بإختبارات شبكات البث التليفزيونى بإستاد القناة الرياضى الجديد بالإسماعيلية', 'تأمين الاستاد', NULL, 'security', '20221338', NULL, 'فاكس', 'done', NULL, NULL, '11:49 29-09-2022', '', '=HYPERLINK(\"D:/wamp64/www/starter2/public/images/security/تأمين الاستاد/security-20221338-29-09-2022.pdf\",\"security-20221338-29-09-2022.pdf\")'),
 (331, '29-09-2022', NULL, 'power-2022783-29-09-2022.pdf', '2022-09-29 09:57:34', '2022-09-29 09:57:34', NULL, 'القوى -الطاقة المتجددة', 'معاينة وعمل التدعيمات الخرسانية لبيارة الصرف الخاصة بمحطة الفردان حتى يتسنى عبور السيارات والأوناش عليها أثناء التركيبات الخاصة بتربينة الرياح', 'power', NULL, '2022783', 'إشاره كتابيه', 'done', NULL, NULL, '11:49 29-09-2022', '', '=HYPERLINK(\"D:/wamp64/www/starter2/public/images/power/القوى -الطاقة المتجددة/power-2022783-29-09-2022.pdf\",\"power-2022783-29-09-2022.pdf\")'),
 (332, '29-09-2022', NULL, 'technical_office-20221337-29-09-2022.pdf', '2022-09-29 10:08:26', '2022-09-29 10:01:29', NULL, 'ترشيد استخدام الورق', 'اشاره لجميع الادارات للترشيد فى إستخدام الورق حتى نتمكن من توفيره نظراً لتضاعف سعره وقلة المعروض بالسوق المحلى وتعثر الإستيراد', 'technical_office', '20221337', NULL, 'فاكس', 'done', NULL, NULL, '11:49 29-09-2022', '', '=HYPERLINK(\"D:/wamp64/www/starter2/public/images/technical_office/ترشيد استخدام الورق/technical_office-20221337-29-09-2022.pdf\",\"technical_office-20221337-29-09-2022.pdf\")'),
-(333, '29-09-2022', NULL, 'technical_office-29-09-2022.pdf', '2022-09-29 10:53:32', '2022-09-29 10:53:32', NULL, 'نظام إنذار ومكافحة الحريق', 'امر توريد رقم 28-1471/100 في 28/7/2021 لتوريد اجهزة اطفاء تلقائي', 'technical_office', NULL, NULL, 'تحويل مستندات', 'done', NULL, NULL, '12:46 29-09-2022', 'technical_office-29-09-2022_a.pdf', '=HYPERLINK(\"D:/wamp64/www/starter2/public/images/technical_office/نظام إنذار ومكافحة الحريق/technical_office-29-09-2022.pdf\",\"technical_office-29-09-2022.pdf\")');
+(333, '29-09-2022', NULL, 'technical_office-29-09-2022.pdf', '2022-09-29 10:53:32', '2022-09-29 10:53:32', NULL, 'نظام إنذار ومكافحة الحريق', 'امر توريد رقم 28-1471/100 في 28/7/2021 لتوريد اجهزة اطفاء تلقائي', 'technical_office', NULL, NULL, 'تحويل مستندات', 'done', NULL, NULL, '12:46 29-09-2022', 'technical_office-29-09-2022_a.pdf', '=HYPERLINK(\"D:/wamp64/www/starter2/public/images/technical_office/نظام إنذار ومكافحة الحريق/technical_office-29-09-2022.pdf\",\"technical_office-29-09-2022.pdf\")'),
+(334, '30-09-2022', NULL, 'vtms-20221344-30-09-2022.pdf', '2022-10-03 07:10:29', '2022-10-03 07:10:29', NULL, 'بيان حادث', 'موافاتهم بكافة التسجيلات الالكترونيه حول حادث السفينه Maersk Durban بالميناء المحوري يوم 18/2/2021 بناءاً على طلب الإدارة القانونية', 'vtms', '20221344', NULL, 'إشاره كتابيه', 'done', NULL, NULL, '8:32 03-10-2022', '', '=HYPERLINK(\"D:/wamp64/www/starter2/public/images/vtms/بيان حادث/vtms-20221344-30-09-2022.pdf\",\"vtms-20221344-30-09-2022.pdf\")'),
+(335, '30-09-2022', NULL, 'vtms-20221349-30-09-2022.pdf', '2022-10-03 07:11:16', '2022-10-03 07:11:16', NULL, 'بيان شمندورة', 'إشارة من محطة الشلوفة بان الشمندورة بالكم 142.00 شرق الخضراء وجدت مغمورة بالمياه فى منتصف البرج', 'vtms', '20221349', NULL, 'تقرير', 'done', NULL, NULL, '8:32 03-10-2022', '', '=HYPERLINK(\"D:/wamp64/www/starter2/public/images/vtms/بيان شمندورة/vtms-20221349-30-09-2022.pdf\",\"vtms-20221349-30-09-2022.pdf\")');
 
 -- --------------------------------------------------------
 
