@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Oct 03, 2022 at 10:44 AM
+-- Generation Time: Oct 05, 2022 at 06:58 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.9
 
@@ -183,7 +183,7 @@ CREATE TABLE IF NOT EXISTS `offers` (
   `additions` varchar(100) NOT NULL,
   `link` varchar(1000) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=341 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=342 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `offers`
@@ -512,6 +512,8 @@ INSERT INTO `offers` (`id`, `name_en`, `price`, `photo`, `created_at`, `updated_
 (338, '03-10-2022', NULL, 'technical_office-20221354-03-10-2022.pdf', '2022-10-03 10:40:17', '2022-10-03 10:40:17', NULL, 'ملاحظات تشغيل أجهزة', 'ارسال مندوبنا من اقسام (اللاسلكي و المساعدات الملاحيه و المراقبه الالكترونيه) لإقرار حالة مجموعة من الاجهزه الكهربائيه الموجوده بمدرستي هيئة قناة السويس الخاصه \"عربي و لغات\"', 'technical_office', '20221354', NULL, 'إشاره كتابيه', 'done', NULL, NULL, '12:36 03-10-2022', '', '=HYPERLINK(\"D:/wamp64/www/starter2/public/images/technical_office/ملاحظات تشغيل أجهزة/technical_office-20221354-03-10-2022.pdf\",\"technical_office-20221354-03-10-2022.pdf\")'),
 (339, '03-10-2022', NULL, 'power-20221355-03-10-2022.pdf', '2022-10-03 10:41:31', '2022-10-03 10:41:31', NULL, 'القوى -الطاقة المتجددة', 'وارد إدارة الرئاسه رقم 4172 الخاص بإجتماع هيئة قناة السويس مع شركة Toyta Tsusho Corporation و بنك اليالبان للتعاون الدولي JBIC وتشكيل لجنه من الادارات المذكوره لتفعيل مذكرة التفاهم', 'power', '20221355', NULL, 'مذكرة فريق', 'done', NULL, NULL, '12:36 03-10-2022', '', '=HYPERLINK(\"D:/wamp64/www/starter2/public/images/power/القوى -الطاقة المتجددة/power-20221355-03-10-2022.pdf\",\"power-20221355-03-10-2022.pdf\")'),
 (340, '03-10-2022', NULL, 'security-20221356-03-10-2022.pdf', '2022-10-03 10:44:46', '2022-10-03 10:44:46', NULL, 'منظومة كاميرات', 'بالدارسة والافاده بالرأي عن استكمال اجراءات توفير منظومة المراقبه لرصيف هندسية الإسماعيلية والمواصفات الفنيه لتأمينه وضمه لمنظومة تأمين مبني الإرشاد بالكاميرات', 'security', '20221356', NULL, 'إشاره كتابيه', 'done', NULL, NULL, '12:36 03-10-2022', '', '=HYPERLINK(\"D:/wamp64/www/starter2/public/images/security/منظومة كاميرات/security-20221356-03-10-2022.pdf\",\"security-20221356-03-10-2022.pdf\")');
+INSERT INTO `offers` (`id`, `name_en`, `price`, `photo`, `created_at`, `updated_at`, `details_en`, `name_ar`, `details_ar`, `directory`, `input`, `output`, `type`, `status`, `reply_on`, `require_monitor`, `monitor_date`, `additions`, `link`) VALUES
+(341, '05-10-2022', NULL, 'vtms-20221362-05-10-2022.pdf', '2022-10-05 06:54:17', '2022-10-05 06:54:17', NULL, 'مرور الضغط العالى فوق القناة', 'مذكرة وارد رئاسة رقم 4233 بعد العرض على السيد الفريق/ رئيس الهيئة بخصوص عقد اجتماع عبور خطوط كهرباء الضغط العالى هوائياً عبر قناة السويس بمقر الهيئة الهندسية للقوات المسلحة يوم الأربعاء الموافق 28/9/2022 الساعة الثالثة', 'vtms', '20221362', NULL, 'مذكرة فريق', 'done', NULL, NULL, '8:14 05-10-2022', '', '=HYPERLINK(\"D:/wamp64/www/starter2/public/images/vtms/مرور الضغط العالى فوق القناة/vtms-20221362-05-10-2022.pdf\",\"vtms-20221362-05-10-2022.pdf\")');
 
 -- --------------------------------------------------------
 
