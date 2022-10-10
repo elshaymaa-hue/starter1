@@ -166,6 +166,7 @@
             <div class="form-group">
                 <label for="exampleInputEmail1">أضف مرفقات</label>
                 <input type="file" class="form-control" placeholder="{{__('messages.additions')}}"  name="additions">
+                <input type="text" class="form-control" name="additions"  value="{{$offer->additions}}">
                 @error('additions')
 
                 <small class="form-text text-danger">{{$message}}</small>
