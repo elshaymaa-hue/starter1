@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Oct 12, 2022 at 07:23 AM
+-- Generation Time: Oct 12, 2022 at 07:56 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.9
 
@@ -183,7 +183,7 @@ CREATE TABLE IF NOT EXISTS `offers` (
   `additions` varchar(100) NOT NULL,
   `link` varchar(1000) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=362 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=363 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `offers`
@@ -533,7 +533,8 @@ INSERT INTO `offers` (`id`, `name_en`, `price`, `photo`, `created_at`, `updated_
 (358, '12-10-2022', NULL, 'tawkitat-2022813-12-10-2022.pdf', '2022-10-12 07:15:20', '2022-10-12 07:15:20', NULL, 'أجهوة صوتيات مدارس', 'مخاطبة إدارة شئون العاملين بأن مجموعة الأجهزة الكهربية الموجودة بمدرستى هيئة قناة السويس الخاصة خارج اختصاصات قطاعات قسم المراقبة الإلكترونية', 'tawkitat', NULL, '2022813', 'إشاره كتابيه', 'done', NULL, NULL, '9:14 12-10-2022', '', '=HYPERLINK(\"D:/wamp64/www/starter2/public/images/tawkitat/أجهوة صوتيات مدارس/tawkitat-2022813-12-10-2022.pdf\",\"tawkitat-2022813-12-10-2022.pdf\")'),
 (359, '12-10-2022', NULL, 'security-2022814-12-10-2022.pdf', '2022-10-12 07:16:42', '2022-10-12 07:16:42', NULL, 'المساعدات الملاحية', NULL, 'security', NULL, '2022814', 'تقرير', 'done', NULL, NULL, '9:16 12-10-2022', '', '=HYPERLINK(\"D:/wamp64/www/starter2/public/images/security/المساعدات الملاحية/security-2022814-12-10-2022.pdf\",\"security-2022814-12-10-2022.pdf\")'),
 (360, '12-10-2022', NULL, 'tawkitat-2022816-12-10-2022.pdf', '2022-10-12 07:17:28', '2022-10-12 07:17:28', NULL, 'مشروع المتحف', NULL, 'tawkitat', NULL, '2022816', 'إشاره كتابيه', 'monitor', NULL, NULL, '9:16 12-10-2022', '', '=HYPERLINK(\"D:/wamp64/www/starter2/public/images/tawkitat/مشروع المتحف/tawkitat-2022816-12-10-2022.pdf\",\"tawkitat-2022816-12-10-2022.pdf\")'),
-(361, '12-10-2022', NULL, 'tawkitat-2022817-12-10-2022.pdf', '2022-10-12 07:19:02', '2022-10-12 07:19:02', NULL, 'اختبار محطات أمر توريد', 'رقم 2405 محضر تجاوز الفتره الاعتماديه لعدد /3 مواقع وفق شروط أمر التوريد رقم 26-376/814 بتاريخ 2015/9/17 الصادر لشركه جيزه للأنظمه', 'tawkitat', NULL, '2022817', 'تقرير', 'monitor', NULL, NULL, '9:16 12-10-2022', '', '=HYPERLINK(\"D:/wamp64/www/starter2/public/images/tawkitat/اختبار محطات أمر توريد/tawkitat-2022817-12-10-2022.pdf\",\"tawkitat-2022817-12-10-2022.pdf\")');
+(361, '12-10-2022', NULL, 'tawkitat-2022817-12-10-2022.pdf', '2022-10-12 07:19:02', '2022-10-12 07:19:02', NULL, 'اختبار محطات أمر توريد', 'رقم 2405 محضر تجاوز الفتره الاعتماديه لعدد /3 مواقع وفق شروط أمر التوريد رقم 26-376/814 بتاريخ 2015/9/17 الصادر لشركه جيزه للأنظمه', 'tawkitat', NULL, '2022817', 'تقرير', 'monitor', NULL, NULL, '9:16 12-10-2022', '', '=HYPERLINK(\"D:/wamp64/www/starter2/public/images/tawkitat/اختبار محطات أمر توريد/tawkitat-2022817-12-10-2022.pdf\",\"tawkitat-2022817-12-10-2022.pdf\")'),
+(362, '12-10-2022', NULL, 'security-20221392-12-10-2022.pdf', '2022-10-12 07:55:47', '2022-10-12 07:55:47', NULL, 'منظومة تأمين الترسانة', 'موافاتهم بتاريخ نجاح بدء التشغيل لتوريد وتركيب منظومة مراقبة بالكاميرات لتأمين ترسانة بورسعيد البحرية ومبنى القبة ببورسعيد حتى يمكنهم إحتساب بدايه وفترة الضمان', 'security', '20221392', NULL, 'إشاره كتابيه', 'monitor', NULL, NULL, '9:55 12-10-2022', '', '=HYPERLINK(\"D:/wamp64/www/starter2/public/images/security/منظومة تأمين الترسانة/security-20221392-12-10-2022.pdf\",\"security-20221392-12-10-2022.pdf\")');
 
 -- --------------------------------------------------------
 
