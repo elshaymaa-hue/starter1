@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Oct 13, 2022 at 10:29 AM
+-- Generation Time: Oct 13, 2022 at 10:51 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.9
 
@@ -183,7 +183,7 @@ CREATE TABLE IF NOT EXISTS `offers` (
   `additions` varchar(100) NOT NULL,
   `link` varchar(1000) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=379 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=380 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `offers`
@@ -549,7 +549,8 @@ INSERT INTO `offers` (`id`, `name_en`, `price`, `photo`, `created_at`, `updated_
 (375, '12-10-2022', NULL, 'tawkitat-20221400-12-10-2022.pdf', '2022-10-13 08:14:34', '2022-10-13 08:08:56', NULL, 'تأمين قاعة الاحتفالات', 'الموافقه على أستخراج تصاريح دخول المارينا لعدد /2 فرد مندوبي شركه إيجي ليد للاستيراد والتصدير', 'tawkitat', '20221400', NULL, 'إشاره كتابيه', 'monitor', '2022772', NULL, '9:36 13-10-2022', 'tawkitat-20221400-12-10-2022_a.pdf', '=HYPERLINK(\"D:/wamp64/www/starter2/public/images/tawkitat/تأمين قاعة الاحتفالات/tawkitat-20221400-12-10-2022.pdf\",\"tawkitat-20221400-12-10-2022.pdf\")'),
 (376, '05-06-2022', NULL, 'technical_office-2022426-05-06-2022.pdf', '2022-10-13 08:16:27', '2022-10-13 08:16:27', NULL, 'تركيب تكييفات', 'إشارة بعمل معاينة لمخزن قطع الغيار الإلكترونية بمحطة رادار الإرسال لتحديد قدرات اجهزة التكييف المطلوبه وافادتنا عن مناسبة الأجهزة الموضحة (بالبند رقم 2 بالمعاينة)', 'technical_office', '2022426', NULL, 'إشاره كتابيه', 'monitor', NULL, NULL, '9:36 13-10-2022', '', '=HYPERLINK(\"D:/wamp64/www/starter2/public/images/technical_office/تركيب تكييفات/technical_office-2022426-05-06-2022.pdf\",\"technical_office-2022426-05-06-2022.pdf\")'),
 (377, '19-05-2022', NULL, 'technical_office-2022379-19-05-2022.pdf', '2022-10-13 08:29:36', '2022-10-13 08:29:36', NULL, 'تركيب تكييفات', 'طلب الموافقة على توفير تكييفات لغرفتى مخزن الإرسال', 'technical_office', '2022379', NULL, 'إشاره كتابيه', 'monitor', '2022353', NULL, '9:36 13-10-2022', 'technical_office-2022379-19-05-2022_a.pdf', '=HYPERLINK(\"D:/wamp64/www/starter2/public/images/technical_office/تركيب تكييفات/technical_office-2022379-19-05-2022.pdf\",\"technical_office-2022379-19-05-2022.pdf\")'),
-(378, '03-07-2022', NULL, 'technical_office-2022513-03-07-2022.pdf', '2022-10-13 08:33:27', '2022-10-13 08:33:27', NULL, 'تركيب تكييفات', 'اشاره رقم 1696 مرفق بها رد الاشغال بالمواصفات لاجهزه التكييف المطلوبه لمخزن قطع غيار الرادار بمحطة رادار الارسال', 'technical_office', NULL, '2022513', 'إشاره كتابيه', 'monitor', NULL, NULL, '9:36 13-10-2022', 'technical_office-2022513-03-07-2022_a.pdf', '=HYPERLINK(\"D:/wamp64/www/starter2/public/images/technical_office/تركيب تكييفات/technical_office-2022513-03-07-2022.pdf\",\"technical_office-2022513-03-07-2022.pdf\")');
+(378, '03-07-2022', NULL, 'technical_office-2022513-03-07-2022.pdf', '2022-10-13 08:33:27', '2022-10-13 08:33:27', NULL, 'تركيب تكييفات', 'اشاره رقم 1696 مرفق بها رد الاشغال بالمواصفات لاجهزه التكييف المطلوبه لمخزن قطع غيار الرادار بمحطة رادار الارسال', 'technical_office', NULL, '2022513', 'إشاره كتابيه', 'monitor', NULL, NULL, '9:36 13-10-2022', 'technical_office-2022513-03-07-2022_a.pdf', '=HYPERLINK(\"D:/wamp64/www/starter2/public/images/technical_office/تركيب تكييفات/technical_office-2022513-03-07-2022.pdf\",\"technical_office-2022513-03-07-2022.pdf\")'),
+(379, '13-10-2022', NULL, 'vtms-2022824-13-10-2022.pdf', '2022-10-13 10:51:09', '2022-10-13 10:51:09', NULL, 'منظومة إطفاء الحريق', 'إجتماع لجنه الامر الاداري الداخلي 71 لسنه 2022 الخاص بتنفيذ وتركيب واستلام منظومه مكافحه الحريق الموافق 2022/10/17', 'vtms', NULL, '2022824', 'إشاره كتابيه', 'done', NULL, NULL, '12:50 13-10-2022', '', '=HYPERLINK(\"D:/wamp64/www/starter2/public/images/vtms/منظومة إطفاء الحريق/vtms-2022824-13-10-2022.pdf\",\"vtms-2022824-13-10-2022.pdf\")');
 
 -- --------------------------------------------------------
 
