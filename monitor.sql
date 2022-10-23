@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Oct 23, 2022 at 11:55 AM
+-- Generation Time: Oct 23, 2022 at 12:27 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.9
 
@@ -183,7 +183,7 @@ CREATE TABLE IF NOT EXISTS `offers` (
   `additions` varchar(100) NOT NULL,
   `link` varchar(1000) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=413 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=416 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `offers`
@@ -581,7 +581,10 @@ INSERT INTO `offers` (`id`, `name_en`, `price`, `photo`, `created_at`, `updated_
 (409, '23-10-2022', NULL, 'power-2022861-23-10-2022.pdf', '2022-10-23 11:49:22', '2022-10-23 11:49:22', NULL, 'القوى -الطاقة المتجددة', 'إشارة رقم 2505 بتوفير سياره دوبل كابينة وسيارة ميكروباص لنقل الافراد للمحطات البحرية للقطاع الشمالي لمدة شهر بدأً من 2022/10/24 لتطوير التغذيه الكهربيه للمحطات باستخدام الطاقه المتجدده', 'power', NULL, '2022861', 'إشاره كتابيه', 'monitor', NULL, NULL, '13:45 23-10-2022', '', '=HYPERLINK(\"D:/wamp64/www/starter2/public/images/power/القوى -الطاقة المتجددة/power-2022861-23-10-2022.pdf\",\"power-2022861-23-10-2022.pdf\")'),
 (410, '23-10-2022', NULL, 'power-2022862-23-10-2022.pdf', '2022-10-23 11:50:18', '2022-10-23 11:50:18', NULL, 'القوى -الطاقة المتجددة', 'إشاره رقم 2506 بخصوص مشروع تطوير التغذيه الكهربية لتوفير ونش أرضي لرفع المعدات وأبراج التربينة (18م) مع العلم بأن أقصي حمل هو واحد طن وذلك في محطات (الكاب - التينه - رأس العش - الرسوة - الجونة)', 'power', NULL, '2022862', 'إشاره كتابيه', 'monitor', NULL, NULL, '13:45 23-10-2022', '', '=HYPERLINK(\"D:/wamp64/www/starter2/public/images/power/القوى -الطاقة المتجددة/power-2022862-23-10-2022.pdf\",\"power-2022862-23-10-2022.pdf\")'),
 (411, '23-10-2022', NULL, 'power-2022863-23-10-2022.pdf', '2022-10-23 11:51:20', '2022-10-23 11:51:20', NULL, 'القوى -الطاقة المتجددة', 'إشارة رقم 2507 بتوفير ونش لرفع المعدات وأبراج التربينة لمحطات قطاع الإسماعيلية (مارينا نمره 6 -الارسال- الفردان- البلاح)', 'power', NULL, '2022863', 'إشاره كتابيه', 'monitor', NULL, NULL, '13:45 23-10-2022', '', '=HYPERLINK(\"D:/wamp64/www/starter2/public/images/power/القوى -الطاقة المتجددة/power-2022863-23-10-2022.pdf\",\"power-2022863-23-10-2022.pdf\")'),
-(412, '23-10-2022', NULL, 'tawkitat-2022864-23-10-2022.pdf', '2022-10-23 11:52:50', '2022-10-23 11:52:50', NULL, 'محضر استلام', 'رقم 2510 باصل المحضر الخاص بتجاوز الفتره الاعتمادية لعدد/ 2 موقع وهم (كبريت - الرسوة)', 'tawkitat', NULL, '2022864', 'تحويل مستندات', 'monitor', NULL, NULL, '13:45 23-10-2022', '', '=HYPERLINK(\"D:/wamp64/www/starter2/public/images/tawkitat/محضر استلام/tawkitat-2022864-23-10-2022.pdf\",\"tawkitat-2022864-23-10-2022.pdf\")');
+(412, '23-10-2022', NULL, 'tawkitat-2022864-23-10-2022.pdf', '2022-10-23 11:52:50', '2022-10-23 11:52:50', NULL, 'محضر استلام', 'رقم 2510 باصل المحضر الخاص بتجاوز الفتره الاعتمادية لعدد/ 2 موقع وهم (كبريت - الرسوة)', 'tawkitat', NULL, '2022864', 'تحويل مستندات', 'monitor', NULL, NULL, '13:45 23-10-2022', '', '=HYPERLINK(\"D:/wamp64/www/starter2/public/images/tawkitat/محضر استلام/tawkitat-2022864-23-10-2022.pdf\",\"tawkitat-2022864-23-10-2022.pdf\")'),
+(413, '23-10-2022', NULL, 'vtms-20221470-23-10-2022.pdf', '2022-10-23 12:26:10', '2022-10-23 12:22:41', NULL, 'عرض vssim', 'دعوة فريق شركة Vissim لعرض منظومة إدارة الحركة الملاحية وتتبع السفن VTMS', 'vtms', '20221470', NULL, 'إشاره كتابيه', 'monitor', NULL, NULL, '14:24 23-10-2022', '', '=HYPERLINK(\"D:/wamp64/www/starter2/public/images/vtms/عرض vssim/vtms-20221470-23-10-2022.pdf\",\"vtms-20221470-23-10-2022.pdf\")'),
+(414, '23-10-2022', NULL, 'tawkitat-20221470-23-10-2022.pdf', '2022-10-23 12:26:52', '2022-10-23 12:23:46', NULL, 'عرض vssim', 'دعوة فريق شركة Vissim لعرض منظومة إدارة الحركة الملاحية وتتبع السفن VTMS', 'tawkitat', '20221470', NULL, 'إشاره كتابيه', 'monitor', NULL, NULL, '14:24 23-10-2022', '', '=HYPERLINK(\"D:/wamp64/www/starter2/public/images/tawkitat/عرض vssim/tawkitat-20221470-23-10-2022.pdf\",\"tawkitat-20221470-23-10-2022.pdf\")'),
+(415, '23-10-2022', NULL, 'Electronic_Archive-20221470-23-10-2022.pdf', '2022-10-23 12:24:39', '2022-10-23 12:24:39', NULL, 'عرض vssim', 'دعوة فريق شركة Vissim لعرض منظومة إدارة الحركة الملاحية وتتبع السفن VTMS', 'Electronic_Archive', '20221470', NULL, 'إشاره كتابيه', 'monitor', NULL, NULL, '14:24 23-10-2022', '', '=HYPERLINK(\"D:/wamp64/www/starter2/public/images/Electronic_Archive/عرض vssim/Electronic_Archive-20221470-23-10-2022.pdf\",\"Electronic_Archive-20221470-23-10-2022.pdf\")');
 
 -- --------------------------------------------------------
 
