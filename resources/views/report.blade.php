@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>WELCOME</title>
-
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <!-- Fonts -->
 {{--        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">--}}
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -224,6 +224,25 @@
 
                         <label for="exampleInputEmail1">{{__('messages.Offer Name ar')}}</label>
                         <input type="textarea" class="form-control" name="name_ar"  placeholder="{{__('messages.Offer Name ar')}}">
+                        {{-- <select id="name_ar" name="name_ar" class="form-control">
+                            <option value="" selected disabled></option>
+                            @foreach ($subjects as $key => $subject)
+                                <option value="{{ $key }}"> {{ $subject }}</option>
+                            @endforeach
+                        </select> --}}
+                        {{-- <label for="exampleInputEmail1">{{__('messages.Offer Name ar')}}</label>
+                        <select name ="name_ar">
+                            <option value=""></option>
+                            <option value="مشروع المتحف">مشروع المتحف</option>
+                            <option value="منظومة كاميرات">منظومة كاميرات</option>
+                            <option value="منظومة تامين ورش صيانة">منظومة تامين ورش صيانة</option>
+                            <option value="منظومة تأمين الترسانة">منظومة تأمين الترسانة</option>
+                            <option value="منظومة المراقبة الرادارية">منظومة المراقبة الرادارية</option>
+                            <option value="منظومة اطفاء تلقائى خاصة بالمولد">منظومة اطفاء تلقائى خاصة بالمولد</option>
+                            <option value="منظومة إطفاء الحريق">منظومة إطفاء الحريق</option>
+                            <option value="ملاحظات متابعة محطات">ملاحظات متابعة محطات</option>
+                        </select> --}}
+                        
                         @error('name_ar')
                         <small class="form-text text-danger">{{$message}}</small>
                         @enderror
@@ -261,5 +280,73 @@
                 </div>
             </div>
         </div>
+        {{-- <script>
+            // when country dropdown changes
+            $('#subject').change(function() {
+
+                // var countryID = $(this).val();
+    
+                // if (countryID) {
+    
+                    $.ajax({
+                        type: "GET",
+                        url: "{{ url('getSubject') }},
+                        success: function(res) {
+    
+                            if (res) {
+    
+                                $("#subject").empty();
+                                $("#subject").append('<option>Select Subject</option>');
+                                $.each(res, function(key, value) {
+                                    $("#subject").append('<option value="' + key + '">' + value +
+                                        '</option>');
+                                });
+    
+                            } else {
+    
+                                $("#subject").empty();
+                            }
+                        }
+                    });
+            //     } else {
+    
+            //         $("#subject").empty();
+            //         $("#city").empty();
+            //     }
+             });
+    
+            // when state dropdown changes
+            // $('#state').on('change', function() {
+    
+            //     var stateID = $(this).val();
+    
+            //     if (stateID) {
+    
+            //         $.ajax({
+            //             type: "GET",
+            //             url: "{{ url('getCity') }}?state_id=" + stateID,
+            //             success: function(res) {
+    
+            //                 if (res) {
+            //                     $("#city").empty();
+            //                     $("#city").append('<option>Select City</option>');
+            //                     $.each(res, function(key, value) {
+            //                         $("#city").append('<option value="' + key + '">' + value +
+            //                             '</option>');
+            //                     });
+    
+            //                 } else {
+    
+            //                     $("#city").empty();
+            //                 }
+            //             }
+            //         });
+            //     } else {
+    
+            //         $("#city").empty();
+            //     }
+            // });
+    
+        </script> --}}
     </body>
 </html>

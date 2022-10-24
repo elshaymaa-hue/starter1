@@ -1,5 +1,5 @@
 <?php
-
+use App\Http\Controllers\DropdownController;
 define('PAGINATION_COUNT',3);
 /*
 |--------------------------------------------------------------------------
@@ -130,6 +130,10 @@ Route::post('/emailusers/{data}', function () {
     Mail::to('nassarelshaymaa@gmail')->send(new notifyEmail());
     return 'A message has been sent to Mailtrap!';
 });
+Route::get('dropdown',[DropdownController::class, 'index']);
+Route::get('getState',[DropdownController::class, 'getState'])->name('getState');
+Route::get('getCity',[DropdownController::class, 'getCity'])->name('getCity');
+
 Route::get('sendbasicemail','MailController@basic_email');
 Route::get('sendhtmlemail','MailController@html_email')->name('mails.send');
 Route::get('sendattachmentemail','MailController@attachment_email');
