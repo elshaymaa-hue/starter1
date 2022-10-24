@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Oct 24, 2022 at 06:37 AM
+-- Generation Time: Oct 24, 2022 at 08:39 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.9
 
@@ -183,7 +183,7 @@ CREATE TABLE IF NOT EXISTS `offers` (
   `additions` varchar(100) NOT NULL,
   `link` varchar(1000) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=417 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=420 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `offers`
@@ -585,7 +585,10 @@ INSERT INTO `offers` (`id`, `name_en`, `price`, `photo`, `created_at`, `updated_
 (413, '23-10-2022', NULL, 'vtms-20221470-23-10-2022.pdf', '2022-10-23 12:26:10', '2022-10-23 12:22:41', NULL, 'عرض vssim', 'دعوة فريق شركة Vissim لعرض منظومة إدارة الحركة الملاحية وتتبع السفن VTMS', 'vtms', '20221470', NULL, 'إشاره كتابيه', 'monitor', NULL, NULL, '14:24 23-10-2022', '', '=HYPERLINK(\"D:/wamp64/www/starter2/public/images/vtms/عرض vssim/vtms-20221470-23-10-2022.pdf\",\"vtms-20221470-23-10-2022.pdf\")'),
 (414, '23-10-2022', NULL, 'tawkitat-20221470-23-10-2022.pdf', '2022-10-23 12:26:52', '2022-10-23 12:23:46', NULL, 'عرض vssim', 'دعوة فريق شركة Vissim لعرض منظومة إدارة الحركة الملاحية وتتبع السفن VTMS', 'tawkitat', '20221470', NULL, 'إشاره كتابيه', 'monitor', NULL, NULL, '14:24 23-10-2022', '', '=HYPERLINK(\"D:/wamp64/www/starter2/public/images/tawkitat/عرض vssim/tawkitat-20221470-23-10-2022.pdf\",\"tawkitat-20221470-23-10-2022.pdf\")'),
 (415, '23-10-2022', NULL, 'Electronic_Archive-20221470-23-10-2022.pdf', '2022-10-23 12:24:39', '2022-10-23 12:24:39', NULL, 'عرض vssim', 'دعوة فريق شركة Vissim لعرض منظومة إدارة الحركة الملاحية وتتبع السفن VTMS', 'Electronic_Archive', '20221470', NULL, 'إشاره كتابيه', 'monitor', NULL, NULL, '14:24 23-10-2022', '', '=HYPERLINK(\"D:/wamp64/www/starter2/public/images/Electronic_Archive/عرض vssim/Electronic_Archive-20221470-23-10-2022.pdf\",\"Electronic_Archive-20221470-23-10-2022.pdf\")'),
-(416, '24-10-2022', NULL, 'security-20221471-24-10-2022.pdf', '2022-10-24 06:33:34', '2022-10-24 06:33:34', NULL, 'تأمين مبنى ق.س العاصمه الاداريه', 'فاكس لجماعة المهندسين الإستشاريين بخصوص عملية اعمال استشاريه هندسية لمبانى هيئة قناة السويس بالعاصمة الإدارية الجديدة', 'security', '20221471', NULL, 'فاكس', 'monitor', NULL, NULL, '08:32 24-10-2022', '', '=HYPERLINK(\"D:/wamp64/www/starter2/public/images/security/تأمين مبنى ق.س العاصمه الاداريه/security-20221471-24-10-2022.pdf\",\"security-20221471-24-10-2022.pdf\")');
+(416, '24-10-2022', NULL, 'security-20221471-24-10-2022.pdf', '2022-10-24 06:33:34', '2022-10-24 06:33:34', NULL, 'تأمين مبنى ق.س العاصمه الاداريه', 'فاكس لجماعة المهندسين الإستشاريين بخصوص عملية اعمال استشاريه هندسية لمبانى هيئة قناة السويس بالعاصمة الإدارية الجديدة', 'security', '20221471', NULL, 'فاكس', 'monitor', NULL, NULL, '08:32 24-10-2022', '', '=HYPERLINK(\"D:/wamp64/www/starter2/public/images/security/تأمين مبنى ق.س العاصمه الاداريه/security-20221471-24-10-2022.pdf\",\"security-20221471-24-10-2022.pdf\")'),
+(417, '24-10-2022', NULL, 'technical_office-20221472-24-10-2022.pdf', '2022-10-24 08:32:17', '2022-10-24 08:32:17', NULL, 'الرقم المختصر', 'إفادة الجهات التي تقوم إدارتنا بالتعامل معها للإستفادة من تفعيل الرقم المختصر لهيئة قناة السويس رقم (151) وسيتم الإعلان عن هذه الخدمه علي الموقع الإلكتروني', 'technical_office', '20221472', NULL, 'إشاره كتابيه', 'done', NULL, NULL, '10:31 24-10-2022', '', '=HYPERLINK(\"D:/wamp64/www/starter2/public/images/technical_office/الرقم المختصر/technical_office-20221472-24-10-2022.pdf\",\"technical_office-20221472-24-10-2022.pdf\")'),
+(418, '24-10-2022', NULL, 'technical_office-2022867-24-10-2022.pdf', '2022-10-24 08:34:25', '2022-10-24 08:34:25', NULL, 'القوى -الطاقة المتجددة', 'اشاره رقم 2519 بخصوص توفير قطع الغيار اللازمة (موديولات التحكم) لضمان إستمرار التغذية الكهربيه لمولدات ولوحات الكهرباء لمحطات المراقبة الالكترونية المتوفره فقط من خلال الشركه المصرية للتجارة والتنمية', 'technical_office', NULL, '2022867', 'إشاره كتابيه', 'monitor', NULL, NULL, '10:31 24-10-2022', '', '=HYPERLINK(\"D:/wamp64/www/starter2/public/images/technical_office/القوى -الطاقة المتجددة/technical_office-2022867-24-10-2022.pdf\",\"technical_office-2022867-24-10-2022.pdf\")'),
+(419, '24-10-2022', NULL, 'power-2022867-24-10-2022.pdf', '2022-10-24 08:35:01', '2022-10-24 08:35:01', NULL, 'القوى -الطاقة المتجددة', 'اشاره رقم 2519 بخصوص توفير قطع الغيار اللازمة (موديولات التحكم) لضمان إستمرار التغذية الكهربيه لمولدات ولوحات الكهرباء لمحطات المراقبة الالكترونية المتوفره فقط من خلال الشركه المصرية للتجارة والتنمية', 'power', NULL, '2022867', 'إشاره كتابيه', 'monitor', NULL, NULL, '10:31 24-10-2022', '', '=HYPERLINK(\"D:/wamp64/www/starter2/public/images/power/القوى -الطاقة المتجددة/power-2022867-24-10-2022.pdf\",\"power-2022867-24-10-2022.pdf\")');
 
 -- --------------------------------------------------------
 
