@@ -131,6 +131,7 @@ Route::post('/emailusers/{data}', function () {
     return 'A message has been sent to Mailtrap!';
 });
 Route::get('dropdown',[DropdownController::class, 'index']);
+Route::get('getSubject',[DropdownController::class, 'getSubject'])->name('getSubject');
 Route::get('getState',[DropdownController::class, 'getState'])->name('getState');
 Route::get('getCity',[DropdownController::class, 'getCity'])->name('getCity');
 
