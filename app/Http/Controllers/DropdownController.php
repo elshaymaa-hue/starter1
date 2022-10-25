@@ -14,12 +14,7 @@ class DropdownController extends Controller
         $countries = DB::table("countries")->pluck("name", "id");
         return view('dropdown', compact('countries'));
     }
-    public function getSubject()
-    {
-        $offers = DB::table("offers")
-        ->pluck("name_ar", "id")->distinct();
-        return view('dropdown', compact('offers'));
-    }
+    
     public function getState(Request $request)
     {
         $states = DB::table("states")
