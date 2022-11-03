@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Nov 02, 2022 at 11:09 AM
+-- Generation Time: Nov 03, 2022 at 06:41 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.9
 
@@ -49286,7 +49286,7 @@ CREATE TABLE IF NOT EXISTS `offers` (
   `additions` varchar(100) NOT NULL,
   `link` varchar(1000) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=448 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=449 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `offers`
@@ -49720,7 +49720,8 @@ INSERT INTO `offers` (`id`, `name_en`, `price`, `photo`, `created_at`, `updated_
 (444, '02-11-2022', NULL, 'vtms-2022903-02-11-2022.pdf', '2022-11-02 10:54:13', '2022-11-02 10:54:13', NULL, 'توريد HDMI Extender', 'مذكرة مرفوعه للعرض على السيد المهندس/ مدير ادارة التحركات لتوريد وتركيب عدد/1 HDMI EXTENDER بمشتملاته لزوم توصيل شاشة نظام العرض بقاعة إجتماعات الدور السابع بمبنى الإرشاد', 'vtms', NULL, '2022903', 'مذكرة فريق', 'done', NULL, NULL, '12:10 02-11-2022', '', '=HYPERLINK(\"D:/wamp64/www/starter2/public/images/vtms/توريد HDMI Extender/vtms-2022903-02-11-2022.pdf\",\"vtms-2022903-02-11-2022.pdf\")'),
 (445, '02-11-2022', NULL, 'vtms-2022905-02-11-2022.pdf', '2022-11-02 10:55:32', '2022-11-02 10:55:32', NULL, 'شركة NOR CONTROL', 'رقم 2587 لعمل برنامج زيارة لعدد/ 2 خبير من شركة NORCONTROL النرويجية بالإضافة إلى عدد/ 4 من التوكيل المصرى GET وتجهيز القاعة الصغرى (القاعة الزرقاء) بمبنى المحاكاة يوم 2022/11/6', 'vtms', NULL, '2022905', 'إشاره كتابيه', 'monitor', NULL, NULL, '12:10 02-11-2022', '', '=HYPERLINK(\"D:/wamp64/www/starter2/public/images/vtms/شركة NOR CONTROL/vtms-2022905-02-11-2022.pdf\",\"vtms-2022905-02-11-2022.pdf\")'),
 (446, '02-11-2022', NULL, 'vtms-2022906-02-11-2022.pdf', '2022-11-02 11:03:38', '2022-11-02 11:03:38', NULL, 'توريد HDMI Extender', 'فاكس رقم 721 لشركه الشرق الاوسط الخاص بالموافقة على توريد وتركيب عدد/1 HDMI EXTENDER', 'vtms', NULL, '2022906', 'فاكس', 'monitor', NULL, NULL, '12:10 02-11-2022', '', '=HYPERLINK(\"D:/wamp64/www/starter2/public/images/vtms/توريد HDMI Extender/vtms-2022906-02-11-2022.pdf\",\"vtms-2022906-02-11-2022.pdf\")'),
-(447, '02-11-2022', NULL, 'power-2022902-02-11-2022.pdf', '2022-11-02 11:05:48', '2022-11-02 11:05:48', NULL, 'القوى -الطاقة المتجددة', 'رقم 2575 تشكيل لجنة لتقييم وضع المنظومات بالمواقع (مخازن الكم 81- رصيف الكركات ورصيف التحركات- مبني الإرشاد) ودراسة الإستفادة بمكوناتها في أي من إدارات الهيئة', 'power', NULL, '2022902', 'إشاره كتابيه', 'monitor', NULL, NULL, '12:10 02-11-2022', '', '=HYPERLINK(\"D:/wamp64/www/starter2/public/images/power/القوى -الطاقة المتجددة/power-2022902-02-11-2022.pdf\",\"power-2022902-02-11-2022.pdf\")');
+(447, '02-11-2022', NULL, 'power-2022902-02-11-2022.pdf', '2022-11-02 11:05:48', '2022-11-02 11:05:48', NULL, 'القوى -الطاقة المتجددة', 'رقم 2575 تشكيل لجنة لتقييم وضع المنظومات بالمواقع (مخازن الكم 81- رصيف الكركات ورصيف التحركات- مبني الإرشاد) ودراسة الإستفادة بمكوناتها في أي من إدارات الهيئة', 'power', NULL, '2022902', 'إشاره كتابيه', 'monitor', NULL, NULL, '12:10 02-11-2022', '', '=HYPERLINK(\"D:/wamp64/www/starter2/public/images/power/القوى -الطاقة المتجددة/power-2022902-02-11-2022.pdf\",\"power-2022902-02-11-2022.pdf\")'),
+(448, '02-11-2022', NULL, 'security-20221552-02-11-2022.pdf', '2022-11-03 06:36:46', '2022-11-03 06:36:05', NULL, 'تجهيز مدارس', 'عدد/9 لوحات تصميمات لإنشاء عدد/ 14 فصل بمدرسة الهيئه الخاصة للغات بالإسماعيلية لوضع مواصفات كاميرات المراقبه (المرفقات طرف اللاسلكى عن طريق الاداره)', 'security', '20221552', NULL, 'إشاره كتابيه', 'monitor', NULL, NULL, '08:35 03-11-2022', '', '=HYPERLINK(\"D:/wamp64/www/starter2/public/images/security/تجهيز مدارس/security-20221552-02-11-2022.pdf\",\"security-20221552-02-11-2022.pdf\")');
 
 -- --------------------------------------------------------
 
