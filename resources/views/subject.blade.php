@@ -12,9 +12,10 @@
 <body>
 
     <div class="container">
-        <h3>Laravel 8 Dynamic Dependent Dropdown using jQuery Ajax</h3>
+        <h3>اختر القطاع </h3>
         <div class="panel panel-primary">
-            <div class="panel-heading">Laravel 8 Dynamic Dependent Dropdown using jQuery Ajax</div>
+            <div class="panel-heading">حدد الموضوع الخاص بك</div>
+            <form  method="GET" action="{{route('offers.filter')}}" enctype="multipart/form-data" >
             <div class="panel-body">
                 <div class="form-group">
                     <label for="section">section:</label>
@@ -27,13 +28,15 @@
                 </div>
                 <div class="form-group">
                     <label for="subject">Subject:</label>
-                    <select name="subject" id="subject" class="form-control"></select>
+                    <select name="name_ar" id="name_ar" class="form-control"></select>
                 </div>
                 <div class="form-group">
                     <label for="subsubject">sub subject:</label>
                     <select name="subsubject" id="subsubject" class="form-control"></select>
                 </div>
             </div>
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">{{__('messages.search')}}</button>
+            </form>
         </div>
     </div>
     <script>
@@ -51,16 +54,16 @@
 
                         if (res) {
 
-                            $("#subject").empty();
-                            $("#subject").append('<option>Select Subject</option>');
+                            $("#name_ar").empty();
+                            $("#name_ar").append('<option>Select Subject</option>');
                             $.each(res, function(key, value) {
-                                $("#subject").append('<option value="' + key + '">' + value +
+                                $("#name_ar").append('<option value="' + value + '">' + value +
                                     '</option>');
                             });
 
                         } else {
 
-                            $("#subject").empty();
+                            $("#name_ar").empty();
                         }
                     }
                 });

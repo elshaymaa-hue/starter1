@@ -20,7 +20,7 @@
 <!-- Navigation-->
 <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
     <div class="container">
-        <a class="navbar-brand" href="#page-top">VESSEL TRAFFIC MANAGEMENT SYSTEM (VTMS) v9.0</a>
+        <a class="navbar-brand" href="#page-top">VESSEL TRAFFIC MANAGEMENT SYSTEM (VTMS) v10.0</a>
         <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             Menu
             <i class="fas fa-bars"></i>
@@ -371,7 +371,7 @@
                                 <div class="divider-custom-line"></div>
                             </div>
                             <!-- Portfolio Modal - Image-->
-                            <a class="btn btn-xl btn-outline-light" href="{{ url('report ') }}">
+                            <a class="btn btn-xl btn-outline-light" href="{{ url('subject ') }}">
                             <img class="img-fluid rounded mb-5" src="assets/img/portfolio/circus.png" alt="..." />
                             </a>
                             <!-- Portfolio Modal - Text-->
