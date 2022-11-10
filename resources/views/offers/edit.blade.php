@@ -89,7 +89,7 @@
                     <a class="nav-link" href="{{ route('offers.index-paging') }}">Display Documents</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url('offers/report') }}">Reports</a>
+                    <a class="nav-link" href="{{ url('/report') }}">Reports</a>
                 </li>
     {{--            <li class="nav-item">--}}
     {{--                <a class="nav-link" href="{{ url('/exportpdf') }}">downloadpdf </a>--}}

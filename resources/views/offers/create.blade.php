@@ -83,7 +83,7 @@ integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jI
                         <a class="nav-link" href="{{ route('offers.index-paging') }}">Display Documents</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url('offers/report') }}">Reports</a>
+                        <a class="nav-link" href="{{ url('/report') }}">Reports</a>
                     </li>
         {{--            <li class="nav-item">--}}
         {{--                <a class="nav-link" href="{{ url('/exportpdf') }}">downloadpdf </a>--}}
