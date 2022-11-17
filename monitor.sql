@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Nov 17, 2022 at 09:21 AM
+-- Generation Time: Nov 17, 2022 at 09:34 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.9
 
@@ -54399,7 +54399,7 @@ INSERT INTO `subject` (`id`, `name`, `directory`, `directory_id`) VALUES
 (185, 'إدارة الاتصالات', 'monitoring', 12),
 (186, NULL, 'offers', 0),
 (187, 'تعليمات داخلية', 'Human_Resources', 14),
-(188, 'المنظومة الكهروبصرية الخاصه بتأمين مواقع الهيئة الهامة', 'security', 8);
+(188, 'المنظومة الكهروبصرية الخاصه بتأمين مواقع الهيئة الهامة', 'security', 5);
 
 -- --------------------------------------------------------
 
