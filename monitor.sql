@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Nov 16, 2022 at 12:37 PM
+-- Generation Time: Nov 17, 2022 at 09:21 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.9
 
@@ -49130,7 +49130,7 @@ CREATE TABLE IF NOT EXISTS `directory` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(100) NOT NULL DEFAULT 'offers',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `directory`
@@ -49146,7 +49146,11 @@ INSERT INTO `directory` (`id`, `name`) VALUES
 (7, 'tawkitat'),
 (8, 'technical_office'),
 (9, 'Maintenance'),
-(10, 'Electronic_Archive');
+(10, 'Electronic_Archive'),
+(11, 'offers'),
+(12, 'monitoring'),
+(13, 'offers'),
+(14, 'Human_Resources');
 
 -- --------------------------------------------------------
 
@@ -49286,7 +49290,7 @@ CREATE TABLE IF NOT EXISTS `offers` (
   `additions` varchar(100) NOT NULL,
   `link` varchar(1000) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=510 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=513 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `offers`
@@ -49778,7 +49782,10 @@ INSERT INTO `offers` (`id`, `name_en`, `price`, `photo`, `created_at`, `updated_
 (506, '15-11-2022', NULL, 'security-20221624-15-11-2022.pdf', '2022-11-16 07:30:55', '2022-11-16 07:30:55', NULL, 'تأمين قاعة الاحتفالات', 'التنسيق مع إدارة التحركات بتحدبدالأحمال الكهربائية المطلوبة لأجهزة الصوتيات ومكبراتها والترجمة الفورية لمنظومة المراقبة بالكاميرات لقاعة الإحتفالات بالمارينا الجديدة', 'security', '20221624', NULL, 'إشاره كتابيه', 'monitor', '2022648', NULL, '13:59 15-11-2022', '', '=HYPERLINK(\"D:/wamp64/www/starter2/public/images/security/تأمين قاعة الاحتفالات/security-20221624-15-11-2022.pdf\",\"security-20221624-15-11-2022.pdf\")'),
 (507, '16-11-2022', NULL, 'security-20221637-16-11-2022.pdf', '2022-11-16 12:26:57', '2022-11-16 12:26:57', NULL, 'تركيب كاميرات', 'إشاره الى الكراكات لموافاتهم بموعد قيام الشركات بإجراء المعاينة لمواقع تركيب الكاميرات الخاصه بمنظومه المراقبه بالكاميرات لتأمين المعديات وموافاتهم بأسماء مندوبينا وأرقام هواتفهم للتواصل والتنسيق', 'security', '20221637', NULL, 'إشاره كتابيه', 'monitor', NULL, NULL, '14:26 16-11-2022', '', '=HYPERLINK(\"D:/wamp64/www/starter2/public/images/security/تركيب كاميرات/security-20221637-16-11-2022.pdf\",\"security-20221637-16-11-2022.pdf\")'),
 (508, '16-11-2022', NULL, 'power-20221641-16-11-2022.pdf', '2022-11-16 12:28:52', '2022-11-16 12:28:52', NULL, 'الخط المصرى السعودى', 'حضور مندوب إدارة (الهندسية-التحركات-الاتصالات ونظم المعلومات) مؤتمر بمقر هيئة عمليات القوات المسلحة الساعة الثانية عشر ظهراً يوم الأحد الموافق 2022/11/20', 'power', '20221641', NULL, 'إشاره كتابيه', 'monitor', NULL, NULL, '14:26 16-11-2022', '', '=HYPERLINK(\"D:/wamp64/www/starter2/public/images/power/الخط المصرى السعودى/power-20221641-16-11-2022.pdf\",\"power-20221641-16-11-2022.pdf\")'),
-(509, '16-11-2022', NULL, 'security-20633-16-11-2022.pdf', '2022-11-16 12:31:20', '2022-11-16 12:31:20', 'تم تكرارها', 'تأمين محطة وقود', 'بخصوص انشاء محطه تموين وقود', 'security', '20633', NULL, 'إشاره كتابيه', 'monitor', '20221633', NULL, '14:26 16-11-2022', 'security-20633-16-11-2022_a.pdf', '=HYPERLINK(\"D:/wamp64/www/starter2/public/images/security/تأمين محطة وقود/security-20633-16-11-2022.pdf\",\"security-20633-16-11-2022.pdf\")');
+(509, '16-11-2022', NULL, 'security-20633-16-11-2022.pdf', '2022-11-16 12:31:20', '2022-11-16 12:31:20', 'تم تكرارها', 'تأمين محطة وقود', 'بخصوص انشاء محطه تموين وقود', 'security', '20633', NULL, 'إشاره كتابيه', 'monitor', '20221633', NULL, '14:26 16-11-2022', 'security-20633-16-11-2022_a.pdf', '=HYPERLINK(\"D:/wamp64/www/starter2/public/images/security/تأمين محطة وقود/security-20633-16-11-2022.pdf\",\"security-20633-16-11-2022.pdf\")'),
+(510, '17-11-2022', NULL, 'Human_Resources-20221643-17-11-2022.pdf', '2022-11-17 09:13:16', '2022-11-17 09:05:34', NULL, 'تعليمات داخلية', 'منشور رقم (7) لعام 2022 بالتوجه إلى عيادات طب الأسرة بشوقى خلاف ليتم التسجيل والكشف على المرضى وتحويل الحالات التى تستدعى العرض على الأخصائيين بمستشفى نمرة 6', 'Human_Resources', '20221643', NULL, NULL, 'done', NULL, NULL, '11:03 17-11-2022', '', '=HYPERLINK(\"D:/wamp64/www/starter2/public/images/Human_Resources/تعليمات داخلية/Human_Resources-20221643-17-11-2022.pdf\",\"Human_Resources-20221643-17-11-2022.pdf\")'),
+(511, '17-11-2022', NULL, 'security-20221644-17-11-2022.pdf', '2022-11-17 09:13:58', '2022-11-17 09:09:28', NULL, 'المنظومة الكهروبصرية الخاصه بتأمين مواقع الهيئة الهامة', 'أمر إداري رقم (441) لسنة 2022 الخاص بتقييم وضع المنظومة الكهروبصرية الخاصه بتأمين مواقع الهيئة الهامة ووضع التوصيات اللازمة', 'security', '20221644', NULL, 'أمر ادارى', 'monitor', NULL, NULL, '11:03 17-11-2022', '', '=HYPERLINK(\"D:/wamp64/www/starter2/public/images/security/المنظومة الكهروبصرية الخاصه بتأمين مواقع الهيئة الهامة/security-20221644-17-11-2022.pdf\",\"security-20221644-17-11-2022.pdf\")'),
+(512, '17-11-2022', NULL, 'monitoring-2022976-17-11-2022.pdf', '2022-11-17 09:12:34', '2022-11-17 09:11:09', NULL, 'إدارة الاتصالات', 'منشور رقم (7) لعام 2022 بالتوجه إلى عيادات طب الأسرة بشوقى خلاف ليتم التسجيل والكشف على المرضى وتحويل الحالات التى تستدعى العرض على الأخصائيين بمستشفى نمرة 6', 'monitoring', NULL, '2022976', 'إشاره كتابيه', 'monitor', NULL, NULL, '11:03 17-11-2022', '', '=HYPERLINK(\"D:/wamp64/www/starter2/public/images/monitoring/إدارة الاتصالات/monitoring-2022976-17-11-2022.pdf\",\"monitoring-2022976-17-11-2022.pdf\")');
 
 -- --------------------------------------------------------
 
@@ -54198,7 +54205,7 @@ CREATE TABLE IF NOT EXISTS `subject` (
   `directory` varchar(100) NOT NULL DEFAULT 'offers',
   `directory_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=184 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=189 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `subject`
@@ -54387,7 +54394,12 @@ INSERT INTO `subject` (`id`, `name`, `directory`, `directory_id`) VALUES
 (180, 'محضر استلام', 'tawkitat', 7),
 (181, 'عرض vssim', 'vtms', 2),
 (182, 'عرض vssim', 'tawkitat', 7),
-(183, 'عرض vssim', 'Electronic_Archive', 10);
+(183, 'عرض vssim', 'Electronic_Archive', 10),
+(184, NULL, 'offers', 0),
+(185, 'إدارة الاتصالات', 'monitoring', 12),
+(186, NULL, 'offers', 0),
+(187, 'تعليمات داخلية', 'Human_Resources', 14),
+(188, 'المنظومة الكهروبصرية الخاصه بتأمين مواقع الهيئة الهامة', 'security', 8);
 
 -- --------------------------------------------------------
 

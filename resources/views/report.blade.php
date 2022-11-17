@@ -113,6 +113,8 @@
                         <option value="power">power</option>
                         <option value="hospital_centers">hospital_centers</option>
                         <option value="technical_office">technical_office</option>
+                        <option value="monitoring">monitoring</option>
+                        <option value="Human_Resources">Human_Resources</option>
                     </select>
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                 </form>
@@ -157,6 +159,8 @@
                         <option value="Electronic_Archive">Electronic_Archive</option>
                         <option value="Maintenance">Maintenance</option>
                         <option value="offers">offers</option>
+                        <option value="monitoring">monitoring</option>
+                        <option value="Human_Resources">Human_Resources</option>
                     </select>
                     </div>
                         </td>
