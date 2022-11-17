@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Nov 17, 2022 at 09:59 AM
+-- Generation Time: Nov 17, 2022 at 10:06 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.9
 
@@ -54326,7 +54326,7 @@ INSERT INTO `subject` (`id`, `name`, `directory`, `directory_id`) VALUES
 (112, 'مراكز الحركة الدور ال 11', 'vtms', 2),
 (113, 'مراكز حركة', 'vtms', 2),
 (114, 'الجهاز المركزى للمحاسبات', 'technical_office', 8),
-(115, 'تامين ورش صيانة', 'security', 5),
+(115, 'تأمين ورش صيانة', 'security', 5),
 (116, 'تركيبات مشروعات التوقيتات', 'tawkitat', 7),
 (117, 'الرقم المختصر', 'technical_office', 8),
 (118, 'تصنيع أثاث', 'technical_office', 8),
