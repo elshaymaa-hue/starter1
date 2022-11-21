@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Nov 21, 2022 at 07:38 AM
+-- Generation Time: Nov 21, 2022 at 07:46 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.9
 
@@ -54215,7 +54215,7 @@ CREATE TABLE IF NOT EXISTS `subject` (
   `directory` varchar(100) NOT NULL DEFAULT 'offers',
   `directory_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=189 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=193 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `subject`
@@ -54409,7 +54409,9 @@ INSERT INTO `subject` (`id`, `name`, `directory`, `directory_id`) VALUES
 (185, 'إدارة الاتصالات', 'monitoring', 12),
 (186, NULL, 'offers', 0),
 (187, 'تعليمات داخلية', 'Human_Resources', 14),
-(188, 'المنظومة الكهروبصرية الخاصه بتأمين مواقع الهيئة الهامة', 'security', 5);
+(188, 'المنظومة الكهروبصرية الخاصه بتأمين مواقع الهيئة الهامة', 'security', 5),
+(189, 'تجميع بيانات لمركز الابحاث', 'tawkitat', 7),
+(190, 'الربط بالـــــVTMS', 'tawkitat', 7);
 
 -- --------------------------------------------------------
 
