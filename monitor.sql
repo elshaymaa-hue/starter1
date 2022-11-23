@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Nov 22, 2022 at 07:29 AM
+-- Generation Time: Nov 23, 2022 at 07:27 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.9
 
@@ -49290,7 +49290,7 @@ CREATE TABLE IF NOT EXISTS `offers` (
   `additions` varchar(100) NOT NULL,
   `link` varchar(1000) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=529 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=530 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `offers`
@@ -49801,7 +49801,8 @@ INSERT INTO `offers` (`id`, `name_en`, `price`, `photo`, `created_at`, `updated_
 (525, '22-11-2022', NULL, 'radars-20221661-22-11-2022.pdf', '2022-11-22 07:11:40', '2022-11-22 07:11:40', NULL, 'قطاع الشمندورات', 'قيام لنش المحطة بالمرور على قطاع الشمندورات ووجد الشمندورة اخضر بالقناة الغربية بالكم 89 غير متواجدة', 'radars', '20221661', NULL, 'إشاره كتابيه', 'monitor', NULL, NULL, '09:07 22-11-2022', '', '=HYPERLINK(\"D:/wamp64/www/starter2/public/images/radars/قطاع الشمندورات/radars-20221661-22-11-2022.pdf\",\"radars-20221661-22-11-2022.pdf\")'),
 (526, '22-11-2022', NULL, 'security-2022988-22-11-2022.pdf', '2022-11-22 07:13:50', '2022-11-22 07:13:50', NULL, 'تجهيز مدارس', 'رقم 2759 تحديد مندوب للتواصل معه بخصوص انشاء عدد/14 فصل بمدرسة الهيئة للغات لأعمال المراقبة بالكاميرات وعمل محضر تنسيق لتحديد المتطلبات والمواصفات الفنية لتلبية إحتياجات الكاميرات', 'security', NULL, '2022988', 'إشاره كتابيه', 'monitor', '20221627', NULL, '09:07 22-11-2022', 'security-2022988-22-11-2022_a.pdf', '=HYPERLINK(\"D:/wamp64/www/starter2/public/images/security/تجهيز مدارس/security-2022988-22-11-2022.pdf\",\"security-2022988-22-11-2022.pdf\")'),
 (527, '22-11-2022', NULL, 'radars-2022989-22-11-2022.pdf', '2022-11-22 07:14:57', '2022-11-22 07:14:57', NULL, 'ابراج رادار', 'رقم 2765 بإدراج صيانة المصعد الخاص ببرج فنارة ضمن عقد الصيانة للمصاعد الخاصة بإدارة الأشغال', 'radars', NULL, '2022989', 'إشاره كتابيه', 'monitor', NULL, NULL, '09:07 22-11-2022', '', '=HYPERLINK(\"D:/wamp64/www/starter2/public/images/radars/ابراج رادار/radars-2022989-22-11-2022.pdf\",\"radars-2022989-22-11-2022.pdf\")'),
-(528, '22-11-2022', NULL, 'vtms-2022991-22-11-2022.pdf', '2022-11-22 07:16:54', '2022-11-22 07:15:54', NULL, 'عرض vssim', 'أصل فاتورة شركة Vissim رقم 6274 للدفعه النصف سنوية الخاصه بعقد صيانة منظومة AIS', 'vtms', NULL, '2022991', 'إشاره كتابيه', 'monitor', NULL, NULL, '09:07 22-11-2022', '', '=HYPERLINK(\"D:/wamp64/www/starter2/public/images/vtms/عرض vssim/vtms-2022991-22-11-2022.pdf\",\"vtms-2022991-22-11-2022.pdf\")');
+(528, '22-11-2022', NULL, 'vtms-2022991-22-11-2022.pdf', '2022-11-22 07:16:54', '2022-11-22 07:15:54', NULL, 'عرض vssim', 'أصل فاتورة شركة Vissim رقم 6274 للدفعه النصف سنوية الخاصه بعقد صيانة منظومة AIS', 'vtms', NULL, '2022991', 'إشاره كتابيه', 'monitor', NULL, NULL, '09:07 22-11-2022', '', '=HYPERLINK(\"D:/wamp64/www/starter2/public/images/vtms/عرض vssim/vtms-2022991-22-11-2022.pdf\",\"vtms-2022991-22-11-2022.pdf\")'),
+(529, '23-11-2022', NULL, 'vtms-2022992-23-11-2022.pdf', '2022-11-23 07:21:07', '2022-11-23 07:19:59', NULL, 'تأمين مركز الأبحاث', 'رقم 2773 مرفق أصل محضر معاينة موقع عملية تأهيل وتجهيز صالة القناة بمركز الأبحاث متضمنة رسم هندسي لمواقع الكاميرات', 'vtms', NULL, '2022992', 'إشاره كتابيه', 'done', NULL, NULL, '09:19 23-11-2022', '', '=HYPERLINK(\"D:/wamp64/www/starter2/public/images/vtms/تأمين مركز الأبحاث/vtms-2022992-23-11-2022.pdf\",\"vtms-2022992-23-11-2022.pdf\")');
 
 -- --------------------------------------------------------
 
