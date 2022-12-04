@@ -154,6 +154,9 @@
         <th scope="col">{{__('messages.input')}}</th>
         <th scope="col">{{__('messages.output')}}</th>
         <th scope="col">{{__('messages.type')}}</th>
+        <th scope="col">{{__('messages.Requested_side')}}</th>
+        <th scope="col">{{__('messages.letterNo')}}</th>
+        <th scope="col">{{__('messages.side_type')}}</th>
         <th scope="col">{{__('messages.directory')}}</th>
         <th scope="col">{{__('messages.Offer Name en')}}</th>
         <th scope="col">{{__('messages.Offer Name ar')}}</th>
@@ -183,6 +186,9 @@
             <td>{{$offer -> input}}</td>
             <td>{{$offer -> output}}</td>
             <td>{{$offer -> type}}</td>
+            <td>{{$offer -> Requested_side}}</td>
+            <td>{{$offer -> letterNo}}</td>
+            <td>{{$offer -> side_type}}</td>
             <td>{{$offer -> directory}}</td>
             <td>{{$offer -> name_en}}</td>
             <td>{{$offer -> name_ar}}</td>

@@ -191,6 +191,28 @@ integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jI
                       </div>
                             </td>
                             <td>
+                                <div class="form-group">
+                          <label for="exampleInputEmail1">{{__('messages.side_type')}}</label>
+                          <select name ="side_type">
+                            <option value="all" ></option>
+                            <option value="internal">داخلى</option>
+                            <option value="external">خارجى</option>
+                          </select>
+                          @error('side_type')
+                          <small class="form-text text-danger">{{$message}}</small>
+                          @enderror
+                      </div>
+                            </td>
+                            <td>
+                                <div class="form-group">
+                          <label for="exampleInputEmail1">{{__('messages.Requested_side')}}</label>
+                          <input type="text" class="form-control" name ="Requested_side"  aria-describedby="emailHelp" placeholder="{{__('messages.Requested_side')}}">
+                          @error('Requested_side')
+                          <small class="form-text text-danger">{{$message}}</small>
+                          @enderror
+                      </div>
+                            </td>
+                            <td>
                                <div class="form-group">
                           <label for="exampleInputEmail1">{{__('messages.Offer Name ar')}}</label>
                           <input type="text" class="form-control" name ="name_ar"  aria-describedby="emailHelp" placeholder="{{__('messages.Offer Name ar')}}">
@@ -201,6 +223,15 @@ integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jI
                             </td>
                         </tr>
                         <tr>
+                            <td>
+                                <div class="form-group">
+                          <label for="exampleInputEmail1">{{__('messages.letterNo')}}</label>
+                          <input type="text" class="form-control" name ="letterNo"  aria-describedby="emailHelp" placeholder="{{__('messages.letterNo')}}">
+                          @error('letterNo')
+                          <small class="form-text text-danger">{{$message}}</small>
+                          @enderror
+                      </div>
+                            </td>
                             <td>
                                <div class="form-group">
                         <label for="exampleInputEmail1">{{__('messages.input')}}</label>

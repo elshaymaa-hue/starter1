@@ -27,7 +27,7 @@ class CrudController extends Controller
 
     public function getOffers()
     {
-       return Offer::select('id', 'name_'.LaravelLocalization::getCurrentLocale().' as name','details_'.LaravelLocalization::getCurrentLocale().' as details','price','reply_on','additions','link')->get();
+       return Offer::select('id', 'name_'.LaravelLocalization::getCurrentLocale().' as name','details_'.LaravelLocalization::getCurrentLocale().' as details','price','reply_on','additions','link','Requested_side','letterNo','side_type')->get();
       //  return Offer::select('id', 'name_ar','name_en','details_ar', 'details_en','price')->get();
     }
 
@@ -65,7 +65,7 @@ class CrudController extends Controller
             'reply_on',
             'require_monitor',
             'monitor_date',
-            'link'
+            'link','Requested_side','letterNo','side_type'
             )->get();
             $contents=response()->json($offers, 202,
             [
@@ -151,7 +151,10 @@ class CrudController extends Controller
             'require_monitor'=>$request->require_monitor,
             'monitor_date'=>$request->monitor_date,
             'additions'=>$additions,
-            'link'=>$link
+            'link'=>$link,
+            'Requested_side'=>$request->Requested_side,
+            'letterNo'=>$request->letterNo,
+            'side_type'=>$request->side_type
 
 
         ]);
@@ -171,6 +174,9 @@ class CrudController extends Controller
         $details=$request->get('details_ar');
         $name_ar=$request->get('name_ar');
         $name_en=$request->get('name_en');
+        $Requested_side=$request->get('Requested_side');
+        $letterNo=$request->get('letterNo');
+        $side_type=$request->get('side_type');
 
       
        // $offers = Offer::select('*')->paginate(5);
@@ -204,6 +210,15 @@ class CrudController extends Controller
                         ->appends('type',request('type'));
         // return view('offers.index_paging')->with('offers', $offers)->with('filter',$filter);
         }
+        if($Requested_side){
+           $offers = Offer::where(  'Requested_side','=',$Requested_side)->orderBy('id')->paginate(2);
+            }
+    // if($letterNo){
+    //       $offers = Offer::where(  'letterNo','=',$letterNo)->orderBy('id')->paginate(2);
+    //         }
+    // if($side_type){
+    //     $offers = Offer::where(  'side_type','=',$side_type)->orderBy('id')->paginate(2);
+    //         }
         if(request('monitor_date')){
             $filter = $request->query('filter');
             $offers = Offer::where(  'monitor_date',request('monitor_date'))->paginate(2)
@@ -246,6 +261,8 @@ class CrudController extends Controller
                             ->appends('name_en',request('name_en'));
             // return view('offers.index_paging')->with('offers', $offers)->with('filter',$filter);
             }
+       
+       
         if($offers){
         return view('offers.index_paging')->with('offers', $offers)->with('filter',$filter);
         }
@@ -265,7 +282,10 @@ class CrudController extends Controller
         'reply_on',
         'require_monitor',
         'monitor_date',
-        'additions'
+        'additions',
+        'Requested_side',
+        'letterNo',
+        'side_type'
     )->get();
     $contents=response()->json($offers, 202,
     [
@@ -310,7 +330,7 @@ class CrudController extends Controller
       $offer=  Offer::find($offer_id);
       if(!$offer)
       return redirect()->back();
-      $offer=Offer::select ('id','name_ar','name_en','details_ar','details_en','price','photo','input','output','type','status','reply_on', 'require_monitor', 'monitor_date','additions')->find($offer_id);
+      $offer=Offer::select ('id','name_ar','name_en','details_ar','details_en','price','photo','input','output','type','status','reply_on', 'require_monitor', 'monitor_date','additions','Requested_side','letterNo','side_type')->find($offer_id);
       return view('offers.edit',compact('offer'));
 //      return $offer_id;
     }
@@ -387,7 +407,11 @@ class CrudController extends Controller
            'require_monitor'=>$request->require_monitor,
            'monitor_date'=>$request->monitor_date,
            'additions'=>$additions,
-           'link'=> $link
+           'link'=> $link,
+           'Requested_side'=>$request->Requested_side,
+           'letterNo'=>$request->letterNo,
+           'side_type'=>$request->side_type
+   
         ]);
 //
         return redirect()->back()->with(['success' => $file_name.'-'.' تم التحديث بنجاح ']);

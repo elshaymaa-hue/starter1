@@ -63,13 +63,16 @@ return[
     'AvrRadar'=>'AVR Radar' ,
     'SurgeRadar'=>'Surege Protect Radar' ,
     'TawkitatSurgeProtect'=>'Surge Protect STTP',
-    'reply_on'=>'ردا على',
-    'require_monitor'=>'يحتاج متابعة',
-    'monitor_date'=>'تاريخ متابعة',
-    'additions'=>'مرفقات',
-    'search'=>'ابحث',
-    'search document'=>'ابحث عن مستند',
-    'created_at'=>'تاريخ الانشاء'
+    'reply_on'=>'reply on',
+    'require_monitor'=>'require monitor',
+    'monitor_date'=>'monitor date',
+    'additions'=>'additions',
+    'search'=>'search',
+    'search document'=>'search document',
+    'created_at'=>'created_at',
+    'Requested_side' => 'Requested_side',
+    'letterNo'=>'letterNo',
+    'side_type'=> 'side_type'
 
 
 ];

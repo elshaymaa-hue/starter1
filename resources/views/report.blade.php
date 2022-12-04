@@ -143,6 +143,24 @@
                     <table class="table">
                     <tr>
                         <td>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">{{__('messages.input')}}</label>
+                                <input type="text" class="form-control" name ="input"  aria-describedby="emailHelp" placeholder="{{__('messages.input')}}">
+                                @error('input')
+                                <small class="form-text text-danger">{{$message}}</small>
+                                @enderror
+                            </div>
+                            </td>
+                            <td>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">{{__('messages.output')}}</label>
+                                <input type="text" class="form-control" name ="output"  aria-describedby="emailHelp" placeholder="{{__('messages.output')}}">
+                                @error('output')
+                                <small class="form-text text-danger">{{$message}}</small>
+                                @enderror
+                            </div>
+                            </td>
+                        <td>
                     <div class="form-group ">
                     <label for="exampleInputEmail1">{{__('messages.directory')}}</label>
 
@@ -184,28 +202,23 @@
                         @enderror
                     </div>
                         </td>
-                    </tr>
-                    </table>
-                    <table class="table">
-                    <tr>
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">{{__('messages.input')}}</label>
-                        <input type="text" class="form-control" name ="input"  aria-describedby="emailHelp" placeholder="{{__('messages.input')}}">
-                        @error('input')
-                        <small class="form-text text-danger">{{$message}}</small>
-                        @enderror
-                    </div>
-                    </tr>
-                    <tr>
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">{{__('messages.output')}}</label>
-                        <input type="text" class="form-control" name ="output"  aria-describedby="emailHelp" placeholder="{{__('messages.output')}}">
-                        @error('output')
-                        <small class="form-text text-danger">{{$message}}</small>
-                        @enderror
-                    </div>
+                        <td>
+                            <div class="form-group">
+                      <label for="exampleInputEmail1">{{__('messages.side_type')}}</label>
+                      <select name ="side_type">
+                        <option value="all"></option>
+                        <option value="internal">داخلى</option>
+                        <option value="external">خارجى</option>
+                      </select>
+                      @error('side_type')
+                      <small class="form-text text-danger">{{$message}}</small>
+                      @enderror
+                  </div>
+                        </td>
+                        
                 </tr>
                 <tr>
+                    <td>
                     <div class="form-group">
                         <label for="exampleInputEmail1">{{__('messages.type')}}</label>
                         <input type="text" class="form-control" name ="type"  aria-describedby="emailHelp" placeholder="{{__('messages.type')}}">
@@ -213,8 +226,18 @@
                         <small class="form-text text-danger">{{$message}}</small>
                         @enderror
                     </div>
-                </tr>
-                <tr>
+                
+                    <td>
+                        <div class="form-group">
+                  <label for="exampleInputEmail1">{{__('messages.Requested_side')}}</label>
+                  <input type="text" class="form-control" name ="Requested_side"  aria-describedby="emailHelp" placeholder="{{__('messages.Requested_side')}}">
+                  @error('Requested_side')
+                  <small class="form-text text-danger">{{$message}}</small>
+                  @enderror
+              </div>
+                    </td>
+                
+                <td>
                     <div class="form-group">
                         <label for="exampleInputEmail1">{{__('messages.monitor_date')}}</label>
                         <input type="text" class="form-control" name ="monitor_date"  aria-describedby="emailHelp" placeholder="{{__('messages.monitor_date')}}">
@@ -222,8 +245,19 @@
                         <small class="form-text text-danger">{{$message}}</small>
                         @enderror
                     </div>
+                </td>
+                <td>
+                    <div class="form-group">
+              <label for="exampleInputEmail1">{{__('messages.letterNo')}}</label>
+              <input type="text" class="form-control" name ="letterNo"  aria-describedby="emailHelp" placeholder="{{__('messages.letterNo')}}">
+              @error('letterNo')
+              <small class="form-text text-danger">{{$message}}</small>
+              @enderror
+          </div>
+                </td>
                 </tr>
                 <tr>
+                    
                     <div class="form-group ">
 
                         <label for="exampleInputEmail1">{{__('messages.Offer Name ar')}}</label>
@@ -253,6 +287,10 @@
                      </div>
                     </tr>
                     <tr>
+                   
+                    </tr>
+                    <tr>
+                        
                         <div class="form-group ">
     
                             <label for="exampleInputEmail1">{{__('messages.Offer details ar')}}</label>
@@ -271,15 +309,18 @@
                             <small class="form-text text-danger">{{$message}}</small>
                             @enderror
                          </div>
+                    
                     </tr>
+                </table>
                     <tr>
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">{{__('messages.search')}}</button>
+                        <td>
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">{{__('messages.search')}}</button></td>
 
                      {{--            <input class="form-control mr-sm-2"  type="search" name="search_" placeholder="Search" aria-label="Search">--}}
 
-                   <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Export to Excel </button>
+                   <td><button class="btn btn-outline-success my-2 my-sm-0" type="submit">Export to Excel </button></td>
                     </tr>
-                    </table>
+                 
                 </form>
                 </div>
             </div>

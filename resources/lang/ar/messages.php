@@ -69,5 +69,8 @@ return[
     'additions'=>'مرفقات',
     'search'=>'ابحث',
     'search document'=>'ابحث عن مستند',
-    'created_at'=>'تاريخ الانشاء'
+    'created_at'=>'تاريخ الانشاء',
+    'Requested_side' => 'الجهة الطالبة',
+    'letterNo'=>'رقم المكاتبة',
+    'side_type'=> 'نوع الجهة'
 ];

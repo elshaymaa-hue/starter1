@@ -188,6 +188,7 @@
                     </table>
                     <table class="table">
                     <tr>
+                        <td>
                     <div class="form-group">
                         <label for="exampleInputEmail1">{{__('messages.input')}}</label>
                         <input type="text" class="form-control" name ="input"  aria-describedby="emailHelp" placeholder="{{__('messages.input')}}">
@@ -195,8 +196,8 @@
                         <small class="form-text text-danger">{{$message}}</small>
                         @enderror
                     </div>
-                    </tr>
-                    <tr>
+                    </td>
+                    <td>
                     <div class="form-group">
                         <label for="exampleInputEmail1">{{__('messages.output')}}</label>
                         <input type="text" class="form-control" name ="output"  aria-describedby="emailHelp" placeholder="{{__('messages.output')}}">
@@ -204,8 +205,10 @@
                         <small class="form-text text-danger">{{$message}}</small>
                         @enderror
                     </div>
+                    </td>
                 </tr>
                 <tr>
+                    <td>
                     <div class="form-group">
                         <label for="exampleInputEmail1">{{__('messages.type')}}</label>
                         <input type="text" class="form-control" name ="type"  aria-describedby="emailHelp" placeholder="{{__('messages.type')}}">
@@ -213,6 +216,29 @@
                         <small class="form-text text-danger">{{$message}}</small>
                         @enderror
                     </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                  <label for="exampleInputEmail1">{{__('messages.side_type')}}</label>
+                  <select name ="side_type">
+                    <option value="" ></option>
+                    <option value="internal">داخلى</option>
+                    <option value="external">خارجى</option>
+                  </select>
+                  @error('side_type')
+                  <small class="form-text text-danger">{{$message}}</small>
+                  @enderror
+              </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                  <label for="exampleInputEmail1">{{__('messages.Requested_side')}}</label>
+                  <input type="text" class="form-control" name ="Requested_side"  aria-describedby="emailHelp" placeholder="{{__('messages.Requested_side')}}">
+                  @error('Requested_side')
+                  <small class="form-text text-danger">{{$message}}</small>
+                  @enderror
+              </div>
+                    </td>
                 </tr>
                 <tr>
                     <div class="form-group">
@@ -234,6 +260,7 @@
                      </div>
                     </tr>
                     <tr>
+                        <td>
                         <div class="form-group ">
     
                             <label for="exampleInputEmail1">{{__('messages.Offer Name ar')}}</label>
@@ -242,7 +269,18 @@
                             <small class="form-text text-danger">{{$message}}</small>
                             @enderror
                          </div>
+                        </td>
+                        <td>
+                            <div class="form-group">
+                      <label for="exampleInputEmail1">{{__('messages.letterNo')}}</label>
+                      <input type="text" class="form-control" name ="letterNo"  aria-describedby="emailHelp" placeholder="{{__('messages.letterNo')}}">
+                      @error('letterNo')
+                      <small class="form-text text-danger">{{$message}}</small>
+                      @enderror
+                  </div>
+                        </td>
                         </tr>
+                        
                         <tr>
                             <div class="form-group ">
         
@@ -254,18 +292,19 @@
                              </div>
                         </tr>
                     <tr>
-                    <td>
+                    </table>
+                   
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">{{__('messages.search')}}</button>
 
                      {{--            <input class="form-control mr-sm-2"  type="search" name="search_" placeholder="Search" aria-label="Search">--}}
-                    </td>
+                    
                    {{-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit"> </button> --}}
-                   <td>
+                   
                     <a href="{{route('offers.export')}}" class="btn btn-danger"> Export to Excel</a>
-                 </td>
+                 
     
-                    </tr>
-                    </table>
+                   
+                  
                 </form>
                 </div>
             </div>

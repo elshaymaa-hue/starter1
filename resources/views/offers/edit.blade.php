@@ -188,6 +188,28 @@
                     </div>
                     </td>
                     <td>
+                        <div class="form-group">
+                  <label for="exampleInputEmail1">{{__('messages.side_type')}}</label>
+                  <select name ="side_type">
+                    <option value="all" ></option>
+                    <option value="داخلى">داخلى</option>
+                    <option value="خارجى">خارجى</option>
+                  </select>
+                  @error('side_type')
+                  <small class="form-text text-danger">{{$message}}</small>
+                  @enderror
+              </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                  <label for="exampleInputEmail1">{{__('messages.Requested_side')}}</label>
+                  <input type="text" class="form-control" name ="Requested_side"  aria-describedby="emailHelp" placeholder="{{__('messages.Requested_side')}}">
+                  @error('Requested_side')
+                  <small class="form-text text-danger">{{$message}}</small>
+                  @enderror
+              </div>
+                    </td>
+                    <td>
                     <div class="form-group">
                         <label for="exampleInputEmail1">{{__('messages.Offer Name ar')}}</label>
                         <input type="text" class="form-control" name="name_ar" placeholder="{{__('messages.Offer Name ar')}}" value="{{$offer->name_ar}}">
@@ -195,6 +217,15 @@
                         <small class="form-text text-danger">{{$message}}</small>
                         @enderror
                     </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                  <label for="exampleInputEmail1">{{__('messages.letterNo')}}</label>
+                  <input type="text" class="form-control" name ="letterNo"  aria-describedby="emailHelp" placeholder="{{__('messages.letterNo')}}">
+                  @error('letterNo')
+                  <small class="form-text text-danger">{{$message}}</small>
+                  @enderror
+              </div>
                     </td>
                     </tr>
            <tr>
