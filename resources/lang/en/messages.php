@@ -70,9 +70,9 @@ return[
     'search'=>'search',
     'search document'=>'search document',
     'created_at'=>'created_at',
-    'Requested_side' => 'Requested_side',
-    'letterNo'=>'letterNo',
-    'side_type'=> 'side_type'
+    'Requested_side' => 'الجهة الطالبة',
+    'letterNo'=>'رقم المكاتبة',
+    'side_type'=> 'نوع الجهة'
 
 
 ];
