@@ -195,8 +195,8 @@ integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jI
                           <label for="exampleInputEmail1">{{__('messages.side_type')}}</label>
                           <select name ="side_type">
                             <option value="all" ></option>
-                            <option value="internal">داخلى</option>
-                            <option value="external">خارجى</option>
+                            <option value="داخلى">داخلى</option>
+                            <option value="خارجى">خارجى</option>
                           </select>
                           @error('side_type')
                           <small class="form-text text-danger">{{$message}}</small>
