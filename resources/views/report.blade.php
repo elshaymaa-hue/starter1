@@ -111,7 +111,6 @@
                         <option value="radars">radars</option>
                         <option value="tawkitat">tawkitat</option>
                         <option value="power">power</option>
-                        <option value="hospital_centers">hospital_centers</option>
                         <option value="technical_office">technical_office</option>
                         <option value="monitoring">monitoring</option>
                         <option value="Human_Resources">Human_Resources</option>
@@ -172,7 +171,6 @@
                         <option value="radars">radars</option>
                         <option value="tawkitat">tawkitat</option>
                         <option value="power">power</option>
-                        <option value="hospital_centers">hospital_centers</option>
                         <option value="technical_office">technical_office</option>
                         <option value="Electronic_Archive">Electronic_Archive</option>
                         <option value="Maintenance">Maintenance</option>
