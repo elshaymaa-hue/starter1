@@ -181,9 +181,11 @@
 
 
     @foreach($offers as $offer)
+    
         <tr align="right" lang="ar">
-            <th scope="row">{{$offer -> id}}</th>
-            <td>{{$offer -> input}}</td>
+            <th scope="row">{{$offer->id}}</th>
+         
+            <td>{{$offer->input}}</td>
             <td>{{$offer -> output}}</td>
             <td>{{$offer -> type}}</td>
             <td>{{$offer -> Requested_side}}</td>
@@ -193,7 +195,9 @@
             <td>{{$offer -> name_en}}</td>
             <td>{{$offer -> name_ar}}</td>
             <td>{{$offer -> price}}</td>
+            
         </tr>
+  
         <tr  align="right" lang="ar">
             <td></td>
             <td>{{$offer -> details_ar}}</td>
@@ -231,14 +235,15 @@
             @if($offer->additions)
             {{--            <td><img  style="width: 90px; height: 90px;" src="{{asset('images/offers/'.$offer->photo)}}"></td>--}}
                 @if (file_exists('images/'.$offer->directory.'/'.$offer->name_ar.'/'.$offer->additions))
-                <td align="right"><embed src="{{asset('images/'.$offer->directory.'/'.$offer->name_ar.'/'.$offer->additions)}}" width="300px" height ="400px"></td>
+                <td align="right"><embed src="{{asset('images/'.$offer->directory.'/'.$offer->name_ar.'/'.$offer->additions)}}" width="400px" height ="400px"></td>
                @else
-                    <td align="right"><embed src="{{asset('images/'.$offer->directory.'/'.$offer->additions)}}" width="300px" height ="400px"></td>
+                    <td align="right"><embed src="{{asset('images/'.$offer->directory.'/'.$offer->additions)}}" width="400px" height ="400px"></td>
                 @endif
         @else
             <td></td>
         @endif
             <td align="right">{{$offer -> created_at}}</td>
+            
             <td>
                 <a href="{{url('offers/edit/'.$offer -> id)}}" class="btn btn-success"> {{__('messages.update')}}</a>
             </td>
@@ -247,6 +252,7 @@
              </td>
 
         </tr>
+    
         
     @endforeach
 
