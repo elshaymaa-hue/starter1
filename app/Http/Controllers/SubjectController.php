@@ -19,7 +19,7 @@ class SubjectController extends Controller
      public function getSubject(Request $request)
      {
          $subjects = DB::table("subject")
-             ->where("directory_id", $request->directory_id)
+             ->where("directory", $request->directory)
              ->pluck("name", "id");
          return response()->json($subjects);
      }

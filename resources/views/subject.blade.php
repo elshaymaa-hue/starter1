@@ -128,9 +128,10 @@
                     <select id="directory" name="directory" class="form-control">
                         <option value="" selected disabled>إختر القطاع</option>
                         @foreach ($directories as $key => $directory)
-                            <option value="{{ $key }}"> {{ $directory }}</option>
+                            <option value="{{ $directory }}"> {{ $directory }}</option>
                         @endforeach
                     </select>
+                   
                 </div>
                 <div class="form-group">
                     <label for="subject">الموضوعات</label>
@@ -155,7 +156,7 @@
 
                 $.ajax({
                     type: "GET",
-                    url: "{{ url('getSubject') }}?directory_id=" + directoryID,
+                    url: "{{ url('getSubject') }}?directory=" + directoryID,
                     success: function(res) {
 
                         if (res) {
