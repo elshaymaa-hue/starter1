@@ -244,11 +244,13 @@ class CrudController extends Controller
             $filter = $request->query('filter');
             if($name){
             $offers = Offer::where( 'directory',request('search_'))->where(  'name_ar',request('name_ar'))->paginate(2)
-                            ->appends('directory',request('search_'),'name_ar',request('name_ar'));
+                            ->appends('directory',request('search_'))
+                            ->appends('name_ar',request('name_ar'));
             }
            elseif(request('directory')){
                 $offers = Offer::where( 'directory',request('directory'))->where(  'name_ar',request('name_ar'))->paginate(2)
-                                ->appends( 'directory',request('directory'),'name_ar',request('name_ar'));
+                                ->appends( 'directory',request('directory'))
+                                ->appends('name_ar',request('name_ar'));
                 }
 
             else
