@@ -237,23 +237,23 @@ class CrudController extends Controller
                 return redirect()->back()->with('alert','%'.request('details_ar').'%');
                 }
         }
-        if(request('name_ar')){
+        // if(request('name_ar')){
             // $generatequery = "select * from offers where details_ar like '%$details%'";
 
             // $offers = Offer::select($generatequery)->paginate(2);
             $filter = $request->query('filter');
-            if($name){
+            if($name && request('name_ar')){
             $offers = Offer::where( 'directory',request('search_'))->where(  'name_ar',request('name_ar'))->paginate(2)
                             ->appends('directory',request('search_'))
                             ->appends('name_ar',request('name_ar'));
             }
-           elseif(request('directory')){
+           elseif(request('directory')&& request('name_ar')){
                 $offers = Offer::where( 'directory',request('directory'))->where(  'name_ar',request('name_ar'))->paginate(2)
                                 ->appends( 'directory',request('directory'))
                                 ->appends('name_ar',request('name_ar'));
                 }
 
-            else
+             elseif(request('name_ar'))
             {
                 $offers = Offer::where(  'name_ar',request('name_ar'))->paginate(2)
                 ->appends('name_ar',request('name_ar')); 
@@ -264,7 +264,7 @@ class CrudController extends Controller
             if(!$offers){
             return redirect()->back()->with('alert','%'.request('name_ar').'%');
             }
-    }
+    // }
         if($status){
         $filter = $request->query('filter');
         $offers = Offer::where(  'status','=',$status)->orderBy('id')->paginate(2)
