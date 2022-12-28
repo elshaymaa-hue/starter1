@@ -211,7 +211,9 @@ class CrudController extends Controller
         // return view('offers.index_paging')->with('offers', $offers)->with('filter',$filter);
         }
         if($Requested_side){
-           $offers = Offer::where(  'Requested_side','=',$Requested_side)->orderBy('id')->paginate(2);
+            $filter = $request->query('filter');
+           $offers = Offer::where(  'Requested_side','=',$Requested_side)->orderBy('id')->paginate(2)
+                    ->appends('Requested_side',request('Requested_side'));
             }
     // if($letterNo){
     //       $offers = Offer::where(  'letterNo','=',$letterNo)->orderBy('id')->paginate(2);
