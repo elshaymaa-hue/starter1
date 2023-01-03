@@ -197,7 +197,7 @@
                             $("#subsubject").empty();
                             $("#subsubject").append('<option>Select sub subject</option>');
                             $.each(res, function(key, value) {
-                                $("#subsubject").append('<option value="' + key + '">' + value +
+                                $("#subsubject").append('<option value="' +  value + '">' + value +
                                     '</option>');
                             });
 
