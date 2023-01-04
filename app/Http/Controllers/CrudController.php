@@ -263,7 +263,7 @@ class CrudController extends Controller
                                     ->appends('name_ar',request('name_ar'))
                                     ->appends('subsubject',request('subsubject'));
                     }
-             elseif(!request('directory')&& !request('name')&&rrequest('name_ar'))
+             elseif(!request('directory')&& !request('name')&&request('name_ar'))
             {
                 $offers = Offer::where(  'name_ar',request('name_ar'))->paginate(2)
                 ->appends('name_ar',request('name_ar')); 
