@@ -162,7 +162,7 @@
                         if (res) {
 
                             $("#name_ar").empty();
-                            $("#name_ar").append('<option>Select Subject</option>');
+                            $("#name_ar").append('<option></option>');
                             $.each(res, function(key, value) {
                                 $("#name_ar").append('<option value="' + value + '">' + value +
                                     '</option>');
@@ -182,20 +182,20 @@
         });
 
         // when sub subject dropdown changes
-        $('#subsubject').on('change', function() {
+        $('#name_ar').on('change', function() {
 
-            var subjectID = $(this).val();
-
-            if (subjectID) {
+            var subject = $(this).val();
+            
+            if (subject) {
 
                 $.ajax({
                     type: "GET",
-                    url: "{{ url('getSubSubject') }}?subject_id=" + subjectID,
+                    url: "{{ url('getSubSubjects') }}?subject=" +subject,
                     success: function(res) {
 
                         if (res) {
                             $("#subsubject").empty();
-                            $("#subsubject").append('<option>Select sub subject</option>');
+                            $("#subsubject").append('<option></option>');
                             $.each(res, function(key, value) {
                                 $("#subsubject").append('<option value="' +  value + '">' + value +
                                     '</option>');

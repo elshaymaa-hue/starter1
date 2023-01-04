@@ -157,7 +157,7 @@
         <th scope="col">{{__('messages.Requested_side')}}</th>
         <th scope="col">{{__('messages.letterNo')}}</th>
         <th scope="col">{{__('messages.side_type')}}</th>
-        <th scope="col">{{__('messages.directory')}}</th>
+        <th scope="col">{{__('messages.subsubject')}}</th>
         <th scope="col">{{__('messages.Offer Name en')}}</th>
         <th scope="col">{{__('messages.Offer Name ar')}}</th>
         <th scope="col">{{__('messages.Offer Price')}}</th>
@@ -191,7 +191,7 @@
             <td>{{$offer -> Requested_side}}</td>
             <td>{{$offer -> letterNo}}</td>
             <td>{{$offer -> side_type}}</td>
-            <td>{{$offer -> directory}}</td>
+            <td>{{$offer -> subsubject}}</td>
             <td>{{$offer -> name_en}}</td>
             <td>{{$offer -> name_ar}}</td>
             <td>{{$offer -> price}}</td>

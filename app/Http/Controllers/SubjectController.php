@@ -26,8 +26,9 @@ class SubjectController extends Controller
  
      public function getSubSubjects(Request $request)
      {
+        
          $subsubjects = DB::table("subsubject")
-             ->where("subject_id", $request->subject_id)
+             ->where("subject", $request->subject)
              ->pluck("name", "id");
          return response()->json($subsubjects);
      }

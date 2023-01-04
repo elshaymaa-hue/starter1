@@ -218,6 +218,15 @@
                     </td>
                     <td>
                         <div class="form-group">
+                   <label for="exampleInputEmail1">{{__('messages.subsubject')}}</label>
+                   <input type="text" class="form-control" name ="subsubject"  aria-describedby="emailHelp" value="{{$offer->subsubject}}">
+                   @error('subsubject')
+                   <small class="form-text text-danger">{{__('messages.subsubject required')}}</small>
+                   @enderror
+               </div>
+                     </td>
+                    <td>
+                        <div class="form-group">
                   <label for="exampleInputEmail1">{{__('messages.letterNo')}}</label>
                   <input type="text" class="form-control" name ="letterNo"  aria-describedby="emailHelp" placeholder="{{__('messages.letterNo')}}">
                   @error('letterNo')

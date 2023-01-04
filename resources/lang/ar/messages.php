@@ -72,5 +72,6 @@ return[
     'created_at'=>'تاريخ الانشاء',
     'Requested_side' => 'الجهة الطالبة',
     'letterNo'=>'رقم المكاتبة',
-    'side_type'=> 'نوع الجهة'
+    'side_type'=> 'نوع الجهة',
+    'subsubject'=>'المواضيع الفرعية'
 ];

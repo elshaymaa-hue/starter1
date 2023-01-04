@@ -142,7 +142,7 @@ Route::get('getCity',[DropdownController::class, 'getCity'])->name('getCity');
 
 Route::get('subject',[SubjectController::class, 'index'])->name('getDirectory');
 Route::get('getSubject',[SubjectController::class, 'getSubject'])->name('getSubject');
-Route::get('getSubSubject',[SubjectController::class, 'getSubSubject'])->name('getSubSubject');
+Route::get('getSubSubjects',[SubjectController::class, 'getSubSubjects'])->name('getSubSubjects');
 
 Route::get('sendbasicemail','MailController@basic_email');
 Route::get('sendhtmlemail','MailController@html_email')->name('mails.send');

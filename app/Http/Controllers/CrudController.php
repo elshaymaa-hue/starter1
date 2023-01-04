@@ -65,7 +65,7 @@ class CrudController extends Controller
             'reply_on',
             'require_monitor',
             'monitor_date',
-            'link','Requested_side','letterNo','side_type'
+            'link','Requested_side','letterNo','side_type','subsubject'
             )->get();
             $contents=response()->json($offers, 202,
             [
@@ -100,6 +100,7 @@ class CrudController extends Controller
             $in=$request->input;
             $out=$request->output;
             $date = $request->name_en;
+            $subsubject=$request->subsubject;
             $file_name = $dir.'-'.$date .'.' . $file_extension;
             if($in)  $file_name = $dir.'-'.$in.'-'.$date .'.' . $file_extension;
             if($out)  $file_name = $dir.'-'.$out.'-'.$date .'.' . $file_extension;
@@ -154,7 +155,8 @@ class CrudController extends Controller
             'link'=>$link,
             'Requested_side'=>$request->Requested_side,
             'letterNo'=>$request->letterNo,
-            'side_type'=>$request->side_type
+            'side_type'=>$request->side_type,
+            'subsubject'=>$request->subsubject
 
 
         ]);
@@ -177,6 +179,7 @@ class CrudController extends Controller
         $Requested_side=$request->get('Requested_side');
         $letterNo=$request->get('letterNo');
         $side_type=$request->get('side_type');
+        $subsubject=$request->get('subsubject');
 
       
        // $offers = Offer::select('*')->paginate(5);
@@ -249,13 +252,18 @@ class CrudController extends Controller
                             ->appends('directory',request('search_'))
                             ->appends('name_ar',request('name_ar'));
             }
-           elseif(request('directory')&& request('name_ar')){
+           elseif(request('directory')&& request('name_ar')&&!(request('subsubject'))){
                 $offers = Offer::where( 'directory',request('directory'))->where(  'name_ar',request('name_ar'))->paginate(2)
                                 ->appends( 'directory',request('directory'))
                                 ->appends('name_ar',request('name_ar'));
                 }
-
-             elseif(request('name_ar'))
+            elseif(request('directory')&& request('name_ar')&&request('subsubject')){
+                    $offers = Offer::where( 'directory',request('directory'))->where(  'name_ar',request('name_ar'))->where( 'subsubject',request('subsubject'))->paginate(2)
+                                    ->appends( 'directory',request('directory'))
+                                    ->appends('name_ar',request('name_ar'))
+                                    ->appends('subsubject',request('subsubject'));
+                    }
+             elseif(!request('directory')&& !request('name')&&rrequest('name_ar'))
             {
                 $offers = Offer::where(  'name_ar',request('name_ar'))->paginate(2)
                 ->appends('name_ar',request('name_ar')); 
@@ -303,7 +311,8 @@ class CrudController extends Controller
         'additions',
         'Requested_side',
         'letterNo',
-        'side_type'
+        'side_type',
+        'subsubject'
     )->get();
     $contents=response()->json($offers, 202,
     [
@@ -348,7 +357,7 @@ class CrudController extends Controller
       $offer=  Offer::find($offer_id);
       if(!$offer)
       return redirect()->back();
-      $offer=Offer::select ('id','name_ar','name_en','details_ar','details_en','price','photo','input','output','type','status','reply_on', 'require_monitor', 'monitor_date','additions','Requested_side','letterNo','side_type')->find($offer_id);
+      $offer=Offer::select ('id','name_ar','name_en','details_ar','details_en','price','photo','input','output','type','status','reply_on', 'require_monitor', 'monitor_date','additions','Requested_side','letterNo','side_type','subsubject')->find($offer_id);
       return view('offers.edit',compact('offer'));
 //      return $offer_id;
     }
@@ -365,6 +374,7 @@ class CrudController extends Controller
             $in=$request->input;
             $out=$request->output;
             $date = $request->name_en;
+            $subsubject=$request->subsubject;
             $file_name = $dir.'-'.$date .'.' . $file_extension;
             if($in)  $file_name = $dir.'-'.$in.'-'.$date .'.' . $file_extension;
             if($out)  $file_name = $dir.'-'.$out.'-'.$date .'.' . $file_extension;
@@ -428,7 +438,8 @@ class CrudController extends Controller
            'link'=> $link,
            'Requested_side'=>$request->Requested_side,
            'letterNo'=>$request->letterNo,
-           'side_type'=>$request->side_type
+           'side_type'=>$request->side_type,
+           'subsubject'=>$request->subsubject
    
         ]);
 //
