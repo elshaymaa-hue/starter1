@@ -48,7 +48,7 @@ integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jI
             }
 
             .title {
-                font-size: 84px;
+                font-size: 40px;
             }
 
             .links > a {
@@ -117,7 +117,7 @@ integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jI
         
             </div>
         </nav>
-        <div class="flex-center position-ref full-height">
+        <div class="flex-center position-ref ">
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth

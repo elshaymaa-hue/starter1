@@ -49,12 +49,13 @@
         }
 
         .title {
-            font-size: 84px;
+            font-size: 40px;
         }
 
         .error {
             color: #ae1c17;
         }
+      
 
         .links > a {
             color: #636b6f;
@@ -124,7 +125,7 @@
         </div>
     </nav>
 
-<div class="flex-center position-ref full-height">
+<div class="flex-center position-ref ">
     <div class="content">
         <div class="title m-b-md">
             {{__('messages.update your offer')}}
@@ -188,7 +189,7 @@
                     <td>
                         <div class="form-group">
                   <label for="exampleInputEmail1">{{__('messages.side_type')}}</label>
-                  <select name ="side_type">
+                  <select name ="side_type"  placeholder="{{__('messages.side_type')}}" value="{{$offer->side_type}}">
                     <option value="all" ></option>
                     <option value="داخلى">داخلى</option>
                     <option value="خارجى">خارجى</option>
@@ -201,7 +202,7 @@
                     <td>
                         <div class="form-group">
                   <label for="exampleInputEmail1">{{__('messages.Requested_side')}}</label>
-                  <input type="text" class="form-control" name ="Requested_side"  aria-describedby="emailHelp" placeholder="{{__('messages.Requested_side')}}">
+                  <input type="text" class="form-control" name ="Requested_side"  aria-describedby="emailHelp" placeholder="{{__('messages.Requested_side')}}"  value="{{$offer->Requested_side}}">
                   @error('Requested_side')
                   <small class="form-text text-danger">{{$message}}</small>
                   @enderror
