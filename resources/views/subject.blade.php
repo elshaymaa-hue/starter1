@@ -143,6 +143,7 @@
                 </div>
             </div>
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">{{__('messages.search')}}</button>
+            <td><a href="{{route('offers.export')}}" class="btn btn-danger"> Export to Excel</a></td>
             </form>
         </div>
     </div>

@@ -181,6 +181,15 @@
                     </div>
                         </td>
                         <td>
+                            <div class="form-group">
+                       <label for="exampleInputEmail1">{{__('messages.subsubject')}}</label>
+                       <input type="text" class="form-control" name ="subsubject"  aria-describedby="emailHelp">
+                       @error('subsubject')
+                       <small class="form-text text-danger">{{__('messages.subsubject required')}}</small>
+                       @enderror
+                   </div>
+                         </td>
+                        <td>
                     <div class="form-group ">
 
                         <label for="exampleInputEmail1">{{__('messages.status')}}</label>
@@ -316,7 +325,7 @@
 
                      {{--            <input class="form-control mr-sm-2"  type="search" name="search_" placeholder="Search" aria-label="Search">--}}
 
-                   <td><button class="btn btn-outline-success my-2 my-sm-0" type="submit">Export to Excel </button></td>
+                   <td><a href="{{route('offers.export')}}" class="btn btn-danger"> Export to Excel</a></td>
                     </tr>
                  
                 </form>

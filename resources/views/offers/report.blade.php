@@ -134,7 +134,8 @@
                       {{ Session :: get('alert') }}
                 </div>
                 @endif
-                <form class="form-group"  method="GET" action="{{route('offers.filter')}}" action="{{route('offers.export')}}" enctype="multipart/form-data" >
+                <form class="form-group"  method="GET" enctype="multipart/form-data" > 
+                {{-- <form class="form-group"  method="GET" action="{{route('offers.filter')}}" action="{{route('offers.export')}}" enctype="multipart/form-data" > --}}
                     {{--            <input class="form-control mr-sm-2"  type="search" name="search_" placeholder="Search" aria-label="Search">--}}
 
 
@@ -292,13 +293,14 @@
                     <tr>
                     </table>
                    
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">{{__('messages.search')}}</button>
+                    {{-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">{{__('messages.search')}}</button> --}}
 
+                    
                      {{--            <input class="form-control mr-sm-2"  type="search" name="search_" placeholder="Search" aria-label="Search">--}}
                     
                    {{-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit"> </button> --}}
-                   
-                    <a href="{{route('offers.export')}}" class="btn btn-danger"> Export to Excel</a>
+                   <a href="{{route('offers.filter')}}" class="btn btn-success"> {{__('messages.search')}}</a>
+                    <a href="{{url('/excel')}}" class="btn btn-danger"> Export to Excel</a>
                  
     
                    

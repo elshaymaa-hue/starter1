@@ -107,7 +107,7 @@
             </ul>
             <form class="form-inline my-2 my-lg-0"  method="GET" action="{{route('offers.filter')}}" enctype="multipart/form-data" >
     {{--            <input class="form-control mr-sm-2"  type="search" name="search_" placeholder="Search" aria-label="Search">--}}
-                <select name ="search_">
+                <select name ="search_" >
                     <option value="all"> </option>
                     <option value="vtms">vtms</option>
                     <option value="security">security</option>
@@ -144,7 +144,7 @@
             {{-- <input name="_token" value="{{csrf_token()}}"> --}}
             <div class="form-group">
 
-                <select name ="dir">
+                <select name ="dir" value="{{$offer->dir}}">
                     <option value="vtms">vtms</option>
                     <option value="security">security</option>
                     <option value="radars">radars</option>

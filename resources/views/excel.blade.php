@@ -137,7 +137,7 @@
 
 
                 </div>
-
+                
                 <form class="form-group"  method="GET" action="{{route('offers.export')}}" enctype="multipart/form-data" >
                     {{--            <input class="form-control mr-sm-2"  type="search" name="search_" placeholder="Search" aria-label="Search">--}}
 
@@ -185,6 +185,15 @@
                         <small class="form-text text-danger">{{$message}}</small>
                         @enderror
                     </div>
+                   
+                        <div class="form-group">
+                   <label for="exampleInputEmail1">{{__('messages.subsubject')}}</label>
+                   <input type="text" class="form-control" name ="subsubject"  aria-describedby="emailHelp">
+                   @error('subsubject')
+                   <small class="form-text text-danger">{{__('messages.subsubject required')}}</small>
+                   @enderror
+               </div>
+                  
                     <div class="form-group">
                         <label for="exampleInputEmail1">{{__('messages.output')}}</label>
                         <input type="text" class="form-control" name ="output"  aria-describedby="emailHelp" placeholder="{{__('messages.output')}}">
@@ -228,7 +237,8 @@
 {{--                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>--}}
 
                      {{--            <input class="form-control mr-sm-2"  type="search" name="search_" placeholder="Search" aria-label="Search">--}}
-
+                     
+        
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Export to Excel </button>
                 </form>
                 </div>

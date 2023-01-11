@@ -43,6 +43,16 @@ class OffersExport implements FromCollection
             return Offer::where('name_en','=',$name_en)->orderBy('id')->get();
         if($monitor_date)
             return Offer::where('monitor_date','=',$monitor_date)->orderBy('id')->get();
+        elseif(request('directory')&& request('name_ar')&&!(request('subsubject'))){
+             return Offer::where( 'directory',request('directory'))->where(  'name_ar',request('name_ar'))->get();
+        }
+        elseif(request('directory')&& request('name_ar')&&request('subsubject')){
+            return Offer::where( 'directory',request('directory'))->where(  'name_ar',request('name_ar'))->where( 'subsubject',request('subsubject'))->get();
+         }
+        elseif(!request('directory')&& !request('name_ar')&&request('subsubject')){
+                return Offer::where( 'subsubject',request('subsubject'))->get();
+                            
+        }
        else
        return Offer::get();
 
